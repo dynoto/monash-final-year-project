@@ -1,0 +1,20 @@
+<div class="criterias form">
+<?php echo $this->Form->create('Criteria'); ?>
+	<fieldset>
+		<legend><?php echo __('Add Criteria'); ?></legend>
+	<?php
+		echo $this->Form->input('name');
+		echo $this->Form->input('type');
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit')); ?>
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+
+		<li><?php echo $this->Html->link(__('List Criterias'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('List Criteria Values'), array('controller' => 'criteria_values', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
