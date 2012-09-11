@@ -47,7 +47,7 @@ class CriteriaValuesController extends AppController {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
 		}
-		$criterias = $this->CriteriaValue->Criterium->find('list');
+		$criterias = $this->CriteriaValue->Criteria->find('list');
 		$kitchens = $this->CriteriaValue->Kitchen->find('list');
 		$this->set(compact('criterias', 'kitchens'));
 	}
@@ -74,7 +74,7 @@ class CriteriaValuesController extends AppController {
 		} else {
 			$this->request->data = $this->CriteriaValue->read(null, $id);
 		}
-		$criterias = $this->CriteriaValue->Criterium->find('list');
+		$criterias = $this->CriteriaValue->Criteria->find('list');
 		$kitchens = $this->CriteriaValue->Kitchen->find('list');
 		$this->set(compact('criterias', 'kitchens'));
 	}
