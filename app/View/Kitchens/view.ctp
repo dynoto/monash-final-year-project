@@ -1,3 +1,7 @@
+<?php
+    $content_override = array('title'=>'','css'=>'admin.css','js'=>NULL);
+    echo $this->element('override',array("content_override"=>$content_override));
+?>
 <div class="kitchens view">
 <h2><?php  echo __('Kitchen'); ?></h2>
 	<dl>
