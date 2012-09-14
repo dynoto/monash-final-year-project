@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $('select.filter_criteria').dropdownchecklist();
+    $('select.criteria_filter').dropdownchecklist();
 });

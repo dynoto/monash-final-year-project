@@ -17,32 +17,33 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
         foreach ($info as $id => $datum) {
             if($count==0 or $count==2){ echo "<div class='row-fluid' id='gallery_row'>"; } ?>
             <div class="span6" id="image_frame">
-                    <a href="#<?php echo $datum['name']; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$datum['images'][0],array('tag'=>'kitchen images')) ?>
+                    <?php $item_name = str_replace(' ', '_', $datum['name']) ?>
+                    <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
+                        <?php echo $this->Html->image('kitchens/'.$datum['images'][0],array('alt'=>'kitchen images')) ?>
                     </a>
                     <p><?php echo $datum['name'];?></p>
             </div>
 
             <!-- modal starts here -->
-            <div class="modal hide fade" id="<?php echo $name; ?>">
+            <div class="modal hide fade" id="<?php echo $item_name; ?>">
                 <div class="modal-header">
-                    <h3><?php echo $name ?></h3>
+                    <h3><?php echo $datum['name'] ?></h3>
                     <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.</p>
                 </div>
                 <div class="modal-body">
-                    <div class="carousel slide" id="carousel_<?php echo $name; ?>">
+                    <div class="carousel slide" id="carousel_<?php echo $datum['name']; ?>">
                         <div class="carousel-inner">
                             <?php
                             $carousel_class = "item active";
                             foreach($datum['images'] as $image){ 
                             ?>
-                            <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image,array('tag'=>'gallery image')); ?></div>
+                            <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image,array('alt'=>'gallery image')); ?></div>
                             <?php 
                             $carousel_class = "item";    
                             } ?>
                         </div>
-                        <a class="carousel-control left" href="#carousel_<?php echo $name; ?>" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#carousel_<?php echo $name; ?>" data-slide="next">&rsaquo;</a>
+                        <a class="carousel-control left" href="#carousel_<?php echo $datum['name']; ?>" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#carousel_<?php echo $datum['name']; ?>" data-slide="next">&rsaquo;</a>
                     </div>
                 </div>
                 <div class="modal-footer">
