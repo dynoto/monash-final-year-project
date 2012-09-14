@@ -1,39 +1,26 @@
 <?php
     echo $this->extend('/Common/users');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>'users/gallery','js'=>'users/gallery');
+    $content_override = array('title'=>'SK Kitchens Gallery','css'=>['dropdown-checklist','users/gallery'],'js'=>['jquery-ui','dropdown-checklist','users/gallery']);
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
 <!-- CONTENT STARTS HERE -->
 <div class="row-fluid">
 <?php
-$data_output = array(
-    'Color'=>array('Red','Blue','Green','Black'),
-    'Style'=>array('Modern','ConTemporary','Vintage','Italian'),
-    'Material'=>array('Wood','Iron','Aluminium','Plastic'));
-
-echo $this->element('side_bar',array("data_output"=>$data_output));
+echo $this->element('side_bar',array("data_output"=>$sidebar_data));
 ?>
 
 <div class="span7">
     <?php
         $count = 0;
-        $image_output = array(  '1'=> array(  "Kitchen_One" => array("11.jpg","12.jpg"), 
-                                "Two_Kitchen" => array("21.jpg"),
-                                "ThreeK"   => array("31.jpg","32.jpg"),
-                                "QuadKitchen" => array("41.jpg","42.jpg","42.jpg")),
-                                '2'=> array(  "Fifth_Kitchen" => array("41.jpg","42.jpg","42.jpg"), 
-                                "Sixth_Kits" => array("12.jpg","11.jpg"),
-                                "Lucky_Kitch7n"   => array("21.jpg"),
-                                "Octo_chen" => array("31.jpg","32.jpg"))            
-                             );
-        foreach ($image_output[$page] as $name=>$images) {
+        $info = array_splice($info, ($page-1) * 4,4);
+        foreach ($info as $id => $datum) {
             if($count==0 or $count==2){ echo "<div class='row-fluid' id='gallery_row'>"; } ?>
             <div class="span6" id="image_frame">
-                    <a href="#<?php echo $name; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$images[0],array('tag'=>'kitchen images')) ?>
+                    <a href="#<?php echo $datum['name']; ?>" role="button" data-toggle="modal" class="modal_toggle">
+                        <?php echo $this->Html->image('kitchens/'.$datum['images'][0],array('tag'=>'kitchen images')) ?>
                     </a>
-                    <p><?php echo $name;?></p>
+                    <p><?php echo $datum['name'];?></p>
             </div>
 
             <!-- modal starts here -->
@@ -47,7 +34,7 @@ echo $this->element('side_bar',array("data_output"=>$data_output));
                         <div class="carousel-inner">
                             <?php
                             $carousel_class = "item active";
-                            foreach($images as $image){ 
+                            foreach($datum['images'] as $image){ 
                             ?>
                             <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image,array('tag'=>'gallery image')); ?></div>
                             <?php 

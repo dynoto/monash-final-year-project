@@ -1,10 +1,10 @@
 <div class="span3">
     <div class="well span9 offset3" id="search_well">
         <form>
-        <?php   foreach ($data_output as $key=>$values){    ?>
+        <?php   foreach ($sidebar_data as $key=>$values){    ?>
             <h5><label class="search_label"><?php echo $key; ?></label></h5>
-            <select class="span12" id=<?php echo 'search_'.$key; ?> >
-                <option> - none -</option>
+            <select class="span12 filter_criteria" id="<?php echo 'search_'.$key; ?>" name="<?php echo 'search_'.$key; ?>" multiple="multiple" >
+                <!--<option> - none - </option>-->
                 <?php foreach ($values as $value) {  ?>
                 <option> <?php echo $value;?> </option>
                 <?php } ?>
