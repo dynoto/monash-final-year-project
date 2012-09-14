@@ -1,3 +1,7 @@
+<?php
+    $content_override = array('title'=>'SK Kitchens Index','css'=>'admin.css','js'=>NULL);
+    echo $this->element('override',array("content_override"=>$content_override));
+?>
 <div class="kitchens index">
 	<h2><?php echo __('Kitchens'); ?></h2>
 	<table cellpadding="0" cellspacing="0">

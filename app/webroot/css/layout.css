@@ -1,0 +1,17 @@
+ul.nav-tabs > li {
+    font-size: 1.15em;
+    text-align: center;
+}
+ul.nav-tabs > li > a {
+    padding-left: 0;
+    padding-right: 0;
+}
+* {
+    font-family: 'Nixie One',cursive;
+}
+#logo {
+    width: 30%;
+}
+ul.nav.nav-tabs {
+    margin-bottom: 2%;
+}
