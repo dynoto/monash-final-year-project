@@ -1,6 +1,6 @@
 <?php
     echo $this->extend('/Common/users');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>'kitchens','js'=>NULL);
+    $content_override = array('title'=>'SK Kitchens Gallery','css'=>'users/gallery','js'=>'users/gallery');
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
@@ -45,9 +45,14 @@ echo $this->element('side_bar',array("data_output"=>$data_output));
                 <div class="modal-body">
                     <div class="carousel slide" id="carousel_<?php echo $name; ?>">
                         <div class="carousel-inner">
-                            <?php foreach($images as $image){ ?>
-                                <div class="item"><img src="images/kitchens/<?php echo $image;?>"/></div>
-                            <?php } ?>
+                            <?php
+                            $carousel_class = "item active";
+                            foreach($images as $image){ 
+                            ?>
+                            <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image,array('tag'=>'gallery image')); ?></div>
+                            <?php 
+                            $carousel_class = "item";    
+                            } ?>
                         </div>
                         <a class="carousel-control left" href="#carousel_<?php echo $name; ?>" data-slide="prev">&lsaquo;</a>
                         <a class="carousel-control right" href="#carousel_<?php echo $name; ?>" data-slide="next">&rsaquo;</a>
@@ -65,18 +70,18 @@ echo $this->element('side_bar',array("data_output"=>$data_output));
     <div class="row-fluid" id="paginate">
         <div class="pagination pagination-right">
             <ul>
-                <?php   if($page == 1){ echo "<li class='disabled'>";
-                            echo $this->Html->link('Prev','/#');
-                        }else{
-                            echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1));}
+                <?php   if($page == 1){ 
+                            echo "<li class='disabled'>";
+                            echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
+                        else{ echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1)); }
                         echo "</li>";
                 ?>
                 <li><?php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
                 <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) ?></li>
-                <?php   if($page == 2){ echo "<li class='disabled'>";
-                            echo $this->Html->link('Next','');
-                        }else{
-                            echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1));}
+                <?php   if($page == 2){ 
+                            echo "<li class='disabled'>";
+                            echo $this->Html->link('Next','',array('onclick'=>'return false'));}
+                        else{ echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1)); }
                         echo "</li>";
                 ?>
             </ul>

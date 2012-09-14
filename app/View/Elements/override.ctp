@@ -9,7 +9,7 @@
     
     $this->start('view_js');
         if(isset($content_override['js'])){
-            echo $this->Html->css($content_override['js']);
+            echo $this->Html->script($content_override['js']);
         }
     $this->end();
 ?>
