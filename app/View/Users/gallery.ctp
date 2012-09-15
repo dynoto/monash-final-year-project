@@ -10,7 +10,8 @@
 echo $this->element('side_bar',array("data_output"=>$sidebar_data));
 ?>
 
-<div class="span7">
+<div class="row-fluid span7">
+<div class="row-fluid span12">
     <?php
         $count = 0;
         $info = array_splice($info, ($page-1) * 4,4);
@@ -55,32 +56,27 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
             <?php if($count==1 or $count==3){ echo "</div>"; }
             $count+=1;
             }?>
-    <div class="row-fluid" id="paginate">
-        <div class="pagination pagination-right">
-            <ul>
-                <?php   if($page == 1){ 
-                            echo "<li class='disabled'>";
-                            echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
-                        else{ echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1)); }
-                        echo "</li>";
-                ?>
-                <li><?php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
-                <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) ?></li>
-                <?php   if($page == 2){ 
-                            echo "<li class='disabled'>";
-                            echo $this->Html->link('Next','',array('onclick'=>'return false'));}
-                        else{ echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1)); }
-                        echo "</li>";
-                ?>
-            </ul>
-        </div>
-    </div>
-</div>    
-    
-    
-    
-    
-
+</div>
+<div class="row-fluid span12" id="paginate">
+<div class="pagination pagination-right">
+    <ul>
+        <?php   if($page == 1){ 
+                    echo "<li class='disabled'>";
+                    echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
+                else{ echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1)); }
+                echo "</li>";
+        ?>
+        <li><?php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
+        <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) ?></li>
+        <?php   if($page == 2){ 
+                    echo "<li class='disabled'>";
+                    echo $this->Html->link('Next','',array('onclick'=>'return false'));}
+                else{ echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1)); }
+                echo "</li>";
+        ?>
+    </ul>
+</div>
+</div>
 </div>
 
 
