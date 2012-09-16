@@ -2395,3 +2395,867 @@
 #1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2012-09-15 13:55:59 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:55:59 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:56:27 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:56:27 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:56:28 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:56:28 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:56:29 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:56:29 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:56:30 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:56:30 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:58:10 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:58:10 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:58:22 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 13:58:22 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 13:59:49 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 13:59:49 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:00:03 Error: [MissingTableException] Table criterias for model Criteria was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(3179): Model->setSource('criterias')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1068): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(15): Model->find('all')
+#4 [internal function]: UsersController->gallery()
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-15 14:00:11 Error: [MissingTableException] Table criterias for model Criteria was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(3179): Model->setSource('criterias')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1068): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(15): Model->find('all')
+#4 [internal function]: UsersController->gallery()
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-15 14:09:06 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 14:09:06 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:09:17 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 14:09:17 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:19:31 Error: Fatal Error (64): Cannot use [] for reading in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 21]
+2012-09-15 14:19:31 Error: [FatalErrorException] Cannot use [] for reading
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/Volumes/Files/...', 21)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/Volumes/Files/...', 21, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/Volumes/Files/...', 21, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:22:41 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 14:22:41 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:22:55 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 14:22:55 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 14:50:19 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'criteria.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 14:51:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'criteriavalues.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 14:51:31 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 14:52:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Value.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 14:52:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criterias.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 14:52:51 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:32:24 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:32:26 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:32:34 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:32:40 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:32:46 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:32:50 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-15 15:37:02 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 15:37:02 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 15:37:27 Error: Fatal Error (1): Cannot access empty property in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php, line 432]
+2012-09-15 15:37:27 Error: [FatalErrorException] Cannot access empty property
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot access e...', '/Volumes/Files/...', 432)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot access e...', '/Volumes/Files/...', 432, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 15:39:52 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:41:28 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:41:42 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValues.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:41:48 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Value.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:42:05 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 15:46:26 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 15:46:26 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 15:46:45 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 15:46:45 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 15:46:48 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 15:46:48 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 15:46:54 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 15:46:54 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 16:06:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 16:13:23 Error: Fatal Error (4): syntax error, unexpected ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 16]
+2012-09-15 16:13:23 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 16, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 16, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 16:14:04 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 15]
+2012-09-15 16:14:04 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 16:15:40 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criterias.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 16:16:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(17): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-15 16:55:05 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 27]
+2012-09-15 16:55:05 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 27)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 27, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 27, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 17:46:12 Error: Fatal Error (1): Cannot use string offset as an array in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 41]
+2012-09-15 17:46:12 Error: [FatalErrorException] Cannot use string offset as an array
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/Volumes/Files/...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/Volumes/Files/...', 41, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/Volumes/Files/...', 41, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 17:48:26 Error: Fatal Error (1): Cannot use string offset as an array in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 42]
+2012-09-15 17:48:26 Error: [FatalErrorException] Cannot use string offset as an array
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 17:53:57 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 86]
+2012-09-15 17:53:57 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 86)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 86, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 86, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 17:56:55 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 88]
+2012-09-15 17:56:55 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 88)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 88, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 88, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-15 18:13:30 Error: Fatal Error (1): Call to undefined method UsersController::element() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 36]
+2012-09-15 18:13:30 Error: [FatalErrorException] Call to undefined method UsersController::element()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 36)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 36, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 36, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 03:59:34 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 30]
+2012-09-16 03:59:34 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 03:59:36 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 30]
+2012-09-16 03:59:36 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 03:59:49 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 30]
+2012-09-16 03:59:49 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 04:00:01 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 30]
+2012-09-16 04:00:01 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 30)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 30, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:25:21 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 48]
+2012-09-16 16:25:21 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 48)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 48, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 48, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:25:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(49): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:26:03 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValues.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(49): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:26:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(49): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:29:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:31:30 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 48]
+2012-09-16 16:31:30 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 48)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 48, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 48, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:31:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:32:10 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:32:49 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(CriteriaValue), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(49): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:33:16 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 55]
+2012-09-16 16:33:16 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 55)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 55, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 55, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:33:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Criteria_Values.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(50): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:35:10 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 56]
+2012-09-16 16:35:10 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 56)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 56, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 56, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:35:48 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(50): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:36:12 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(50): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:36:23 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(50): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:37:44 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 56]
+2012-09-16 16:37:44 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 56)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 56, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 56, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:38:09 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 58]
+2012-09-16 16:38:09 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:38:22 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 58]
+2012-09-16 16:38:22 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:38:34 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 59]
+2012-09-16 16:38:34 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 59)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:40:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:43:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 16:49:21 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 58]
+2012-09-16 16:49:21 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:49:42 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 59]
+2012-09-16 16:49:42 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 59)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:49:51 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 59]
+2012-09-16 16:49:51 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 59)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 16:50:04 Error: Fatal Error (1): Cannot unset string offsets in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php, line 59]
+2012-09-16 16:50:04 Error: [FatalErrorException] Cannot unset string offsets
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/Volumes/Files/...', 59)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/Volumes/Files/...', 59, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-16 17:04:59 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(51): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 17:17:01 Error: [MissingTableException] Table kitchens_criteria_values for model KitchensCriteriaValue was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(3179): Model->setSource('kitchens_criter...')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1068): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#4 [internal function]: UsersController->gallery('1')
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-16 17:17:31 Error: [MissingTableException] Table kitchen_criteria_values for model KitchenCriteriaValue was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(3179): Model->setSource('kitchen_criteri...')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1068): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#4 [internal function]: UsersController->gallery('1')
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-16 17:18:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValuesKitchen.tag_id' in 'on clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 17:21:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FilterCriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery('1')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 17:33:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValues.kitchen_id' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1342): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1204): DboSource->fetchAssociated(Object(Kitchen), 'SELECT `Criteri...', Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1117): DboSource->queryAssociation(Object(Kitchen), Object(AppModel), 'hasMany', 'CriteriaValues', Array, Array, true, Array, 0, Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#8 [internal function]: UsersController->gallery()
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-09-16 17:33:55 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValuesKitchen.id' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `FilterC...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `FilterC...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1274): DboSource->fetchAll('SELECT `FilterC...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1117): DboSource->queryAssociation(Object(Kitchen), Object(CriteriaValue), 'hasMany', 'FilterCriteriaV...', Array, Array, true, Array, 0, Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#7 [internal function]: UsersController->gallery()
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-16 17:34:13 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FilterCriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 17:34:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FilterCriteriaValue.name' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(60): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-09-16 17:51:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'CriteriaValuesKitchen.CriteriaValue_id' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/UsersController.php(53): Model->find('all', Array)
+#6 [internal function]: UsersController->gallery()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

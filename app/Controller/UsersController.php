@@ -8,37 +8,65 @@ Class UsersController extends AppController{
     }
     
     public function gallery($page=1){
-        $sidebar_data = array(  'Color'=>array('Red','Blue','Green','Black'),
-                                'Style'=>array('Modern','ConTemporary','Vintage','Italian'),
-                                'Material'=>array('Wood','Iron','Aluminium','Plastic'));
-
-        $info = array ( 
-            '1' => array('name'=>'Kitchen One'    ,'Color'=>'Red','Style'=>'Modern','Material'=>'Wood','images'=>array("11.jpg","12.jpg")),
-            '2' => array('name'=>'Second Kitchen' ,'Color'=>'Blue','Style'=>'Italian','Material'=>'Wood','images'=>array("21.jpg")),
-            '3' => array('name'=>'ThreeK'         ,'Color'=>'Green','Style'=>'Italian','Material'=>'Iron','images'=>array("31.jpg","32.jpg")),
-            '4' => array('name'=>'Fourth Kitchen' ,'Color'=>'Black','Style'=>'Vintage','Material'=>'Iron','images'=>array("41.jpg","42.jpg","42.jpg")),
-            '5' => array('name'=>'Fifth Kitchen'  ,'Color'=>'Red','Style'=>'Italian','Material'=>'Iron','images'=>array("41.jpg","42.jpg","42.jpg")),
-            '6' => array('name'=>'Sixth Kitchen'  ,'Color'=>'Blue','Style'=>'Contemporary','Material'=>'Aluminium','images'=>array("12.jpg","11.jpg")),
-            '7' => array('name'=>'7eventh Kitchen','Color'=>'Red','Style'=>'Contemporary','Material'=>'Plastic','images'=>array("21.jpg")),
-            '8' => array('name'=>'Eighth Kitchen' ,'Color'=>'Black','Style'=>'Modern','Material'=>'Plastic','images'=>array("31.jpg","32.jpg"))
-            );
+        /* ----------LOAD ESSENTIAL MODELS-----------------*/
+        $models = array('Kitchen','Image','CriteriaValue','Criteria');
+        foreach($models as $model){
+            $this->loadModel($model);
+        }
         
-        if(!empty($this->request->data)){
-            $criteria_filter = $this->request->data;
-            foreach($info as $id =>$datum){
-                $deletion = true;
-                foreach($criteria_filter as $criteria=>$subcriterium){
-                    foreach ($subcriterium as $subcriteria){
-                        if($datum[$criteria] === $subcriteria){
-                            $deletion = false;
-                        }
-                    }
-                }
-                if($deletion == true){
-                    unset($info[$id]);
+        /* ----------DB QUERY FOR SIDEBAR----------------- */
+        $sidebar_data = $this->Criteria->find('all');
+        foreach($sidebar_data as $count => $result){
+            $array_values   = array();
+            foreach($result['CriteriaValue'] as $values){
+                $array_values[$values['id']] = $values['name'];
+            }
+            $result['Criteria']['values'] = $array_values;
+            $sidebar_data[$count] = $result['Criteria'];
+            unset($sidebar_data[$count]['CriteriaValue']);
+            unset($sidebar_data[$count]['Criteria']);
+        }
+        $temp_array = array();
+        foreach ($sidebar_data as $values){
+            $temp_array[$values['id']] = $values;
+        }
+        $sidebar_data = $temp_array;
+        unset($temp_array);
+        
+        /* ----------DB QUERY FOR GALLERY CONTENT--------- */
+        $conditions = array();
+        if($this->request->is('Post')){
+            $filter_values = $this->request->data;
+            print_r(serialize($filter_values));
+            foreach ($filter_values as $filter_value){
+                foreach ($filter_value as $value){
+                    $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
                 }
             }
+            $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
         }
+        $info = $this->Kitchen->find('all',array(
+            'fields'=> 'DISTINCT Kitchen.*',
+            'limit'=> 5,
+            'offset'=> ($page-1)*4,
+            'conditions' => $conditions
+        ));
+        if(count($info) > 4){
+            array_pop($info);
+        }else{
+            $page = Null;
+        }
+        
+        foreach ($info as $key_a => $datum){
+            foreach ($datum['CriteriaValue'] as $key_b =>$datum_val){
+                    if($sidebar_data[$datum_val['criteria_id']]['id'] == $datum_val['criteria_id']){
+                        $info[$key_a]['CriteriaValue'][$key_b]['criteria_name'] = $sidebar_data[$datum_val['criteria_id']]['name'];
+                    }
+                    unset($info[$key_a]['CriteriaValue'][$key_b]['CriteriaValuesKitchen']);
+            }
+        }
+        
+        /* ----------SET ALL VALUES TO VIEW--------------- */
         $this->set('page',$page);
         $this->set('sidebar_data',$sidebar_data);
         $this->set('info',$info);

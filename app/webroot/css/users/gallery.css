@@ -22,7 +22,7 @@ div#image_frame > p {
 }
 
 div.carousel-inner{
-    height: 350px;
+    height: 325px;
 }
 
 div.carousel-inner > div > img {
@@ -30,7 +30,7 @@ div.carousel-inner > div > img {
 }
 
 div.modal{
-    width:57%;
+    width:50%;
 }
 
 div#paginate{

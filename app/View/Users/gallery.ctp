@@ -14,37 +14,43 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
 <div class="row-fluid span12">
     <?php
         $count = 0;
-        $info = array_splice($info, ($page-1) * 4,4);
-        foreach ($info as $id => $datum) {
-            if($count==0 or $count==2){ echo "<div class='row-fluid' id='gallery_row'>"; } ?>
+        /*$info = array_splice($info, ($page-1) * 4,4);*/
+        foreach ($info as $key_a => $datum) {
+            if($count==0 or $count==2){ echo "<div class='row-fluid' id='gallery_row'>"; }
+            $kitchen_name = $datum['Kitchen']['name']; ?>
             <div class="span6" id="image_frame">
-                    <?php $item_name = str_replace(' ', '_', $datum['name']) ?>
+                    <?php $item_name = str_replace(' ', '_', $kitchen_name) ?>
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$datum['images'][0],array('alt'=>'kitchen images')) ?>
+                        <?php echo $this->Html->image('kitchens/'.$datum['Image'][0]['name'],array('alt'=>'kitchen images')) ?>
                     </a>
-                    <p><?php echo $datum['name'];?></p>
+                    <p><?php echo $kitchen_name;?></p>
             </div>
 
             <!-- modal starts here -->
             <div class="modal hide fade" id="<?php echo $item_name; ?>">
                 <div class="modal-header">
-                    <h3><?php echo $datum['name'] ?></h3>
+                    <h3><?php echo $kitchen_name ?></h3>
                     <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.</p>
+                    <div class="row-fluid">
+                        <?php foreach($datum['CriteriaValue'] as $criteria_value){ ?>
+                        <p class="span3"><?php echo $criteria_value['criteria_name'].' : '.$criteria_value['name'];?></p>
+                    <?php } ?>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <div class="carousel slide" id="carousel_<?php echo $datum['name']; ?>">
+                    <div class="carousel slide" id="carousel_<?php echo $item_name; ?>">
                         <div class="carousel-inner">
                             <?php
                             $carousel_class = "item active";
-                            foreach($datum['images'] as $image){ 
+                            foreach($datum['Image'] as $image){ 
                             ?>
-                            <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image,array('alt'=>'gallery image')); ?></div>
+                            <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/'.$image['name'],array('alt'=>'gallery image')); ?></div>
                             <?php 
                             $carousel_class = "item";    
                             } ?>
                         </div>
-                        <a class="carousel-control left" href="#carousel_<?php echo $datum['name']; ?>" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#carousel_<?php echo $datum['name']; ?>" data-slide="next">&rsaquo;</a>
+                        <a class="carousel-control left" href="#carousel_<?php echo $item_name; ?>" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#carousel_<?php echo $item_name; ?>" data-slide="next">&rsaquo;</a>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -66,9 +72,11 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
                 else{ echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1)); }
                 echo "</li>";
         ?>
-        <li><?php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
-        <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) ?></li>
-        <?php   if($page == 2){ 
+        <!--
+        <li><?/*php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
+        <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) */?></li>
+        -->
+        <?php   if($page == Null){ 
                     echo "<li class='disabled'>";
                     echo $this->Html->link('Next','',array('onclick'=>'return false'));}
                 else{ echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1)); }

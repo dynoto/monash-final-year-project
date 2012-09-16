@@ -8,7 +8,7 @@
             <?php 
             $current_action = $this->params['action'];
             $links = array( 'Home'=>'index',
-                            'About Us'=>'indexx',
+                            'About Us'=>'about_us',
                             'Gallery'=>'gallery',
                             'Products'=>'products',
                             'Testimonials'=>'testimonials',
@@ -25,5 +25,5 @@
     </div></div>
 </div>
 </header>
-
 <?php echo $this->fetch('content'); ?>
+<?php echo $this->element('sql_dump');?>
