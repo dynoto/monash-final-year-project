@@ -1,11 +1,9 @@
 <div class="span3">
     <div class="well span9 offset3" id="search_well">
         <?php echo $this->Form->Create('user',array('action'=>'gallery','id'=>'criteria_filter')); ?>
-        <input type="hidden" name="page_filter" id="page_filter" value="<?php echo $this_page; ?>"/>
         <?php foreach ($sidebar_data as $data){    ?>
             <h5><label class="search_label"><?php echo $data['name']; ?></label></h5>
             <select class="span12 criteria_filter" id="<?php echo 'search_'.$data['name']; ?>" name="<?php echo $data['name']; ?>[]" multiple="multiple" >
-                <?php print_r($data['values']); ?>
                 <?php foreach ($data['values'] as $key=>$value) {  
                     if (in_array($key, $selected)){
                         $select = "selected";
@@ -23,4 +21,19 @@
             </div>
         <?php echo $this->Form->end(); ?>
     </div>
+</div>
+
+<div style="display:none">
+    <?php echo $this->Form->Create('user',array('action'=>'gallery','id'=>'hidden_criteria_filter')); ?>
+    <input type="hidden" name="page_filter" id="page_filter" value="<?php echo $this_page; ?>"/>
+    <?php foreach ($sidebar_data as $data){    ?>
+            <select name="<?php echo $data['name']; ?>[]" multiple="multiple" >
+                <?php foreach ($data['values'] as $key=>$value) {  
+                        if (in_array($key, $selected)){ ?>
+                            <option value="<?php echo $key; ?>" selected></option>
+                <?php   }
+                      } ?>
+            </select>
+        <?php }
+    echo $this->Form->end(); ?>
 </div>

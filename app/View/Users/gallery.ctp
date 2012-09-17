@@ -5,9 +5,6 @@
 ?>
 
 <!-- CONTENT STARTS HERE -->
-<?php print_r($selected); 
-echo in_array(5, $selected);
-?>
 <div class="row-fluid">
 <?php
 echo $this->element('side_bar',array("data_output"=>$sidebar_data));
@@ -70,15 +67,17 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
     <div class="pagination pagination-right">
         <ul>
             <?php   if($this_page == 1){ 
-                        echo "<li class='disabled'>";
-                        echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
-                    else{ echo $this->Html->link('Prev',array('onclick'=>'return false','id'=>'page_switch')); }
+                            echo "<li class='disabled'>";
+                            echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
+                    else{   echo "<li>";
+                            echo $this->Html->link('Prev','',array('onclick'=>'return false','id'=>'page_switch')); }
                     echo "</li>";
             ?>
             <?php   if($pagination == 'end'){ 
                         echo "<li class='disabled'>";
                         echo $this->Html->link('Next','',array('onclick'=>'return false'));}
-                    else{ echo $this->Html->link('Next','',array('onclick'=>'return false','id'=>'page_switch')); }
+                    else{   echo "<li>";
+                            echo $this->Html->link('Next','',array('onclick'=>'return false','id'=>'page_switch')); }
                     echo "</li>";
             ?>
         </ul>

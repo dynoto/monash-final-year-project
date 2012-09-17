@@ -10,7 +10,6 @@ Class UsersController extends AppController{
     }
     
     public function gallery($page=1){
-        echo 'page : '.$page;
         /* ----------LOAD ESSENTIAL MODELS-----------------*/
         $models = array('Kitchen','Image','CriteriaValue','Criteria');
         foreach($models as $model){
@@ -41,14 +40,15 @@ Class UsersController extends AppController{
         $selected = array();
         if($this->request->is('Post')){
             $filter_values = $this->request->data;
-            //$page = $filter_values['page_filter'];
             unset($filter_values['page_filter']);
-            foreach ($filter_values as $filter_value){
-                foreach ($filter_value as $value){
-                    $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
+            if(!empty($filter_values)){
+                foreach ($filter_values as $filter_value){
+                    foreach ($filter_value as $value){
+                        $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
+                    }
                 }
+                $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
             }
-            $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
             $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
         }
         $info = $this->Kitchen->find('all',array(
