@@ -2,12 +2,15 @@
 App::uses('AppController', 'Controller');
 
 Class UsersController extends AppController{
+    var $uses = false;
+    
     public $helper = array('controller','form','html');        
     
     public function index(){
     }
     
     public function gallery($page=1){
+        echo 'page : '.$page;
         /* ----------LOAD ESSENTIAL MODELS-----------------*/
         $models = array('Kitchen','Image','CriteriaValue','Criteria');
         foreach($models as $model){
@@ -35,14 +38,17 @@ Class UsersController extends AppController{
         
         /* ----------DB QUERY FOR GALLERY CONTENT--------- */
         $conditions = array();
+        $selected = array();
         if($this->request->is('Post')){
             $filter_values = $this->request->data;
-            print_r(serialize($filter_values));
+            //$page = $filter_values['page_filter'];
+            unset($filter_values['page_filter']);
             foreach ($filter_values as $filter_value){
                 foreach ($filter_value as $value){
                     $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
                 }
             }
+            $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
             $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
         }
         $info = $this->Kitchen->find('all',array(
@@ -51,11 +57,15 @@ Class UsersController extends AppController{
             'offset'=> ($page-1)*4,
             'conditions' => $conditions
         ));
-        if(count($info) > 4){
-            array_pop($info);
-        }else{
-            $page = Null;
+        
+        if($page == 1 and count($info) < 4){
+            $pagination = 'hide';
         }
+        elseif(count($info) > 4){
+            array_pop($info);
+            $pagination = '';
+        }
+        else{ $pagination = 'end'; }
         
         foreach ($info as $key_a => $datum){
             foreach ($datum['CriteriaValue'] as $key_b =>$datum_val){
@@ -67,7 +77,12 @@ Class UsersController extends AppController{
         }
         
         /* ----------SET ALL VALUES TO VIEW--------------- */
-        $this->set('page',$page);
+        if(isset($filter_values)){
+            $this->set('filter_values',$filter_values);
+        }
+        $this->set('selected',$selected);
+        $this->set('pagination',$pagination);
+        $this->set('this_page',$page);
         $this->set('sidebar_data',$sidebar_data);
         $this->set('info',$info);
     }

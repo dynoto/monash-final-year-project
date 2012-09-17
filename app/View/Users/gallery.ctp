@@ -1,10 +1,13 @@
 <?php
     echo $this->extend('/Common/users');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>['dropdown-checklist','users/gallery'],'js'=>['jquery-ui','dropdown-checklist','users/gallery']);
+    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','users/gallery'),'js'=>array('jquery-ui','dropdown-checklist','users/gallery'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
 <!-- CONTENT STARTS HERE -->
+<?php print_r($selected); 
+echo in_array(5, $selected);
+?>
 <div class="row-fluid">
 <?php
 echo $this->element('side_bar',array("data_output"=>$sidebar_data));
@@ -14,7 +17,6 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
 <div class="row-fluid span12">
     <?php
         $count = 0;
-        /*$info = array_splice($info, ($page-1) * 4,4);*/
         foreach ($info as $key_a => $datum) {
             if($count==0 or $count==2){ echo "<div class='row-fluid' id='gallery_row'>"; }
             $kitchen_name = $datum['Kitchen']['name']; ?>
@@ -63,28 +65,26 @@ echo $this->element('side_bar',array("data_output"=>$sidebar_data));
             $count+=1;
             }?>
 </div>
-<div class="row-fluid span12" id="paginate">
-<div class="pagination pagination-right">
-    <ul>
-        <?php   if($page == 1){ 
-                    echo "<li class='disabled'>";
-                    echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
-                else{ echo $this->Html->link('Prev',array('controller'=>'users','action'=>'gallery',$page-1)); }
-                echo "</li>";
-        ?>
-        <!--
-        <li><?/*php echo $this->Html->link('1',array('controller'=>'users','action'=>'gallery',1)) ?></li>
-        <li><?php echo $this->Html->link('2',array('controller'=>'users','action'=>'gallery',2)) */?></li>
-        -->
-        <?php   if($page == Null){ 
-                    echo "<li class='disabled'>";
-                    echo $this->Html->link('Next','',array('onclick'=>'return false'));}
-                else{ echo $this->Html->link('Next',array('controller'=>'users','action'=>'gallery',$page+1)); }
-                echo "</li>";
-        ?>
-    </ul>
-</div>
-</div>
+<?php if($pagination != "hide"){ ?>
+    <div class="row-fluid span12" id="paginate">
+    <div class="pagination pagination-right">
+        <ul>
+            <?php   if($this_page == 1){ 
+                        echo "<li class='disabled'>";
+                        echo $this->Html->link('Prev','',array('onclick'=>'return false'));}
+                    else{ echo $this->Html->link('Prev',array('onclick'=>'return false','id'=>'page_switch')); }
+                    echo "</li>";
+            ?>
+            <?php   if($pagination == 'end'){ 
+                        echo "<li class='disabled'>";
+                        echo $this->Html->link('Next','',array('onclick'=>'return false'));}
+                    else{ echo $this->Html->link('Next','',array('onclick'=>'return false','id'=>'page_switch')); }
+                    echo "</li>";
+            ?>
+        </ul>
+    </div>
+    </div>
+<?php } ?>
 </div>
 
 
