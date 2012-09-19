@@ -12,4 +12,10 @@ $(document).ready(function(){
        $('form#hidden_criteria_filter').attr('action',page_filter);
        $('form#hidden_criteria_filter').submit();
     });
+    
+    $('button#sidebar_reset').click(function(){
+        $('form#criteria_filter').children('select.criteria_filter').children('option').prop("checked",false);
+        $('span.ui-dropdownchecklist-text').text("");
+        $('[id^=ddcl-]').attr('checked',false);
+    })
 });
