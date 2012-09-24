@@ -4,33 +4,27 @@ form > select {
 form > h5 {
     margin-bottom: 0;
 }
-div#image_frame {
-    background: none repeat scroll 0 0 #FAFAFA;
+div.image_frame {
+    background: #FAFAFA;
     border-radius: 2%;
     box-shadow: 5px 5px 10px #C8C8C8;
     margin-bottom: 3%;
     padding-top: 2%;
-    text-align: center;
     padding: 2% 4% 0;
 }
-div#image_frame > a > img {
-    margin-bottom: 3%;
+div.image_frame > a > img {
     height: 170px;
+    margin: 0 auto 3%;
+    display: block;
 }
-div#image_frame > p {
+div.image_frame > p {
     font-size: 1.15em;
-}
-
-div.carousel-inner{
-    height: 325px;
+    display: block;
+    text-align: center;
 }
 
 div.carousel-inner > div > img {
     margin: 0 auto;
-}
-
-div.modal{
-    width:50%;
 }
 
 div#paginate{

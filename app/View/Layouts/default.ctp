@@ -17,4 +17,6 @@
         <?php echo $this->fetch('content');    ?>
     <!-- Content Ends Here -->
 </body>
+
+    <?php echo $this->element('sql_dump') ?>
 </html>

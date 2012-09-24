@@ -22,3 +22,22 @@ div[id*="ddcl"]{
 form#criteria_filter > div#action_buttons {
     margin-top:5%;
 }
+
+img#under_construction{
+    width: 700px;
+    margin: 0 auto;
+}
+
+div.modal{
+    width: 60%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+}
+
+img.modal_carousel_image{
+    display: inline-block;
+    margin: 0 auto;
+    height: 300px;
+}

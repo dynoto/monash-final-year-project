@@ -1,3 +1,6 @@
 div.carousel-inner {
     box-shadow: 5px 5px 10px;
 }
+div.carousel-inner > img.item{
+    margin: 0 auto;
+}

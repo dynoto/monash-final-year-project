@@ -4270,6 +4270,7 @@ a.thumbnail:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
+
 .modal {
   position: fixed;
   top: 50%;
@@ -4294,12 +4295,12 @@ a.thumbnail:hover {
   -moz-background-clip: padding-box;
   background-clip: padding-box;
 }
+
 .modal.fade {
   -webkit-transition: opacity .3s linear, top .3s ease-out;
   -moz-transition: opacity .3s linear, top .3s ease-out;
   -o-transition: opacity .3s linear, top .3s ease-out;
   transition: opacity .3s linear, top .3s ease-out;
-  top: -25%;
 }
 .modal.fade.in {
   top: 50%;
