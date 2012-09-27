@@ -1,7 +1,10 @@
 <header>
 <div class="row-fluid">
     <div class="span8 offset2" id="div_header">
-        <?php echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo')); ?>
+        <?php 
+        echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
+        echo $this->Html->link('Administrator? Click Here',array('controller'=>'administrators'),array('class'=>'login_switch'));
+        ?>
     </div>
     <div class="row-fluid"><div class="span8 offset2">
         <ul class="nav nav-tabs">
@@ -18,7 +21,7 @@
                 else{ $params = "span2"; }
                 ?>
                 <li class="<?php echo $params; ?>">
-                    <?php echo $this->Html->link($name,array('controller'=>'users','action'=>$href)); ?>
+                    <?php echo $this->Html->link($name,array('controller'=>'visitors','action'=>$href)); ?>
                 </li>
                 <?php } ?>
         </ul>

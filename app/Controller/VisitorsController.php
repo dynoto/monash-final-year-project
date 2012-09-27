@@ -1,17 +1,15 @@
 <?php
 App::uses('AppController', 'Controller');
 
-Class UsersController extends AppController{
+Class VisitorsController extends AppController{
     var $uses = false;
     public $helper = array('controller','form','html');     
     private $__sidebar_query;
     private $__content_query;
     
     public function index(){
+        
     }
-    
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
     
     public function gallery($page=1){
         /* ----------LOAD ESSENTIAL MODELS-----------------*/

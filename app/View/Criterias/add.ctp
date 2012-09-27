@@ -1,20 +1,26 @@
-<div class="criterias form">
-<?php echo $this->Form->create('Criteria'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Criteria'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('type');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Criterias'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Criteria Values'), array('controller' => 'criteria_values', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
-	</ul>
+<?php
+echo $this->extend('/Common/admins');
+$content_override = array('title' => 'Manage Criteria', 'css' => 'admins/common');
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid offset2">
+    <div class="span8">
+        <?php echo $this->Form->create('Criteria'); ?>
+        <fieldset>
+            <h4>Add Criteria</h4>
+            <?php
+            echo $this->Form->input('name');
+            echo $this->Form->input('type');
+            ?>
+        </fieldset>
+        <div class="span3" style="margin-left: 0px">
+        <?php
+        echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline'));
+        echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary offset1'));
+        ?>
+        </div>
+        <?php
+        echo $this->Form->end();
+        ?>
+    </div>
 </div>

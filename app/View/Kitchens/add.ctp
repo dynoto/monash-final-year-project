@@ -1,24 +1,51 @@
-<div class="kitchens form">
-<?php echo $this->Form->create('Kitchen'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Kitchen'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('CriteriaValue');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Kitchens'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Images'), array('controller' => 'images', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Testimonials'), array('controller' => 'testimonials', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Criteria Values'), array('controller' => 'criteria_values', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
-	</ul>
+<?php
+echo $this->extend('/common/admins');
+$override = array('css' => 'admins/common', 'js' => NULL, 'title' => 'New Kitchen');
+echo $this->element('override', array('content_override' => $override));
+?>
+<div class="row-fluid">
+    <div class="span2">
+        <div class="offset1">
+            <h4><?php echo __('Actions'); ?></h4>
+            <ul class="nav nav-tabs nav-stacked">
+                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row-fluid span8">
+        <?php echo $this->Form->create('Kitchen'); ?>
+            <h4><?php echo __('Add Kitchen'); ?></h4>
+            <div class="row-fluid well">
+                <div class="span6">
+                    <?php
+                    echo $this->Form->input('name');
+                    echo $this->Form->input('description', array('class' => 'span10'));
+                    echo $this->Form->input('Testimonial.description', array('label' => 'Testimonial', 'class' => 'span10'));
+                    echo $this->Form->submit('Submit', array('class' => 'btn btn-primary btn-large'));
+                    ?>
+                </div>
+                <div class="span5">
+                    <fieldset>
+                        <legend>Criteria</legend>
+                        <?php foreach ($criteria_data as $key_a => $val_a) { ?>
+                            <div class="row-fluid">
+                                <?php
+                                $temp_array = array();
+                                foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
+                                    $temp_array[$val_aa['id']] = $val_aa['name'];
+                                }
+                                echo $this->Form->input('CriteriaValuesKitchen.CriteriaValue_id', array(
+                                    'options' => $temp_array,
+                                    'multiple' => '',
+                                    'name'=>'data[CriteriaValuesKitchen][CriteriaValue_id][]',
+                                    'label' => $val_a['Criteria']['name']
+                                ));
+                                ?>
+                            </div>
+                        <?php } ?>
+                    </fieldset>
+                </div>
+            </div>
+        <?php echo $this->Form->end(); ?>
+    </div>
 </div>

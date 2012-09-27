@@ -1,23 +1,30 @@
-<div class="criteriaValues form">
-<?php echo $this->Form->create('CriteriaValue'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Criteria Value'); ?></legend>
-	<?php
-		echo $this->Form->input('criteria_id');
-		echo $this->Form->input('name');
-		echo $this->Form->input('Kitchen');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<?php
+echo $this->extend('/common/admins');
+$content_override = array('css' => 'admins/common', 'title' => 'Add Criteria Value');
+echo $this->element('override', array('content_override' => $content_override));
+?>
+<div class="row-fluid span10">
+    <div class="span2">
+        <h4><?php echo __('Actions'); ?></h4>
+        <ul class="nav nav-tabs nav-stacked">
+            <li><?php echo $this->Html->link(__('List Criterias'), array('controller' => 'criterias', 'action' => 'index')); ?> </li>
+            <li><?php echo $this->Html->link(__('New Criteria'), array('controller' => 'criterias', 'action' => 'add')); ?> </li>
+            <li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
+        </ul>
+    </div>
+    <div class="span8">
+        <?php echo $this->Form->create('CriteriaValue'); ?>
+        <fieldset>
+            <h4>Add Criteria Value</h4>
+            <?php
+            echo $this->Form->input('criteria_id');
+            echo $this->Form->input('name');
+            ?>
+        </fieldset>
 
-		<li><?php echo $this->Html->link(__('List Criteria Values'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Criterias'), array('controller' => 'criterias', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Criteria'), array('controller' => 'criterias', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Kitchen'), array('controller' => 'kitchens', 'action' => 'add')); ?> </li>
-	</ul>
+        <?php
+        $submit = array('label' => 'Submit', 'class' => 'btn btn-primary');
+        echo $this->Form->end($submit);
+        ?>
+    </div>
 </div>

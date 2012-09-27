@@ -1,12 +1,12 @@
 <?php
-    echo $this->extend('/Common/users');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','users/gallery'),'js'=>array('jquery-ui','dropdown-checklist','users/filter'));
+    echo $this->extend('/Common/visitors');
+    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
 <!-- CONTENT STARTS HERE -->
 <div class="row-fluid">
-<?php echo $this->element('side_bar',array('user_action'=>'gallery')); ?>
+<?php echo $this->element('side_bar',array('visitor_action'=>'gallery')); ?>
 <div class="row-fluid span7">
 <div class="row-fluid span12">
     <?php

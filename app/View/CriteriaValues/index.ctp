@@ -1,3 +1,8 @@
+<?php
+echo $this->extend('/Common/admins');
+$content_override = array('title'=>'Manage Criteria','css'=>'admins/common');
+echo $this->element('override',array("content_override"=>$content_override));
+?>
 <div class="criteriaValues index">
 	<h2><?php echo __('Criteria Values'); ?></h2>
 	<table cellpadding="0" cellspacing="0">

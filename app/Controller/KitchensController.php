@@ -1,5 +1,7 @@
 <?php
+
 App::uses('AppController', 'Controller');
+
 /**
  * Kitchens Controller
  *
@@ -7,97 +9,125 @@ App::uses('AppController', 'Controller');
  */
 class KitchensController extends AppController {
 
-/**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->Kitchen->recursive = 0;
-		$this->set('kitchens', $this->paginate());
-	}
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->Kitchen->recursive = 0;
+        $this->set('kitchens', $this->paginate());
+    }
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		$this->Kitchen->id = $id;
-		if (!$this->Kitchen->exists()) {
-			throw new NotFoundException(__('Invalid kitchen'));
-		}
-		$this->set('kitchen', $this->Kitchen->read(null, $id));
-	}
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        $this->loadModel('Criteria');
+        $this->Kitchen->id = $id;
+        if (!$this->Kitchen->exists()) {
+            throw new NotFoundException(__('Invalid kitchen'));
+        }
+        $this->set('kitchen', $this->Kitchen->read(null, $id));
+        $this->set('criteria_names', $this->Criteria->find('list'));
+    }
 
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Kitchen->create();
-			if ($this->Kitchen->save($this->request->data)) {
-				$this->Session->setFlash(__('The kitchen has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
-			}
-		}
-		$criteriaValues = $this->Kitchen->CriteriaValue->find('list');
-		$this->set(compact('criteriaValues'));
-	}
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        $this->loadModel('Criteria');
+        $this->loadModel('Testimonial');
+        $this->loadModel('CriteriaValuesKitchen');
+        $this->loadModel('Image');
+        $this->set('criteria_data', $this->Criteria->find('all'));
+        if ($this->request->is('post')) {
+            $request_data = $this->request->data;
+            $this->Kitchen->create();
+            if ($this->Kitchen->save($this->request->data)) {
+                $this->Session->setFlash(__('The kitchen has been saved'));
+                $kitchen_id = $this->Kitchen->id;
+                $request_data['Testimonial']['kitchen_id'] = $kitchen_id;
+                $this->Testimonial->create();
+                $this->Testimonial->save($request_data);
+                foreach ($request_data['CriteriaValuesKitchen']['CriteriaValue_id'] as $key_a => $val_a) {
+                    $this->CriteriaValuesKitchen->create();
+                    $temp_array['CriteriaValuesKitchen'] = array('criteria_value_id' => $val_a, 'kitchen_id' => $kitchen_id);
+                    $this->CriteriaValuesKitchen->save($temp_array);
+                }
+                $this->redirect(array('action' => 'view', $kitchen_id));
+            } else {
+                $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
+            }
+        }
+        $criteriaValues = $this->Kitchen->CriteriaValue->find('list');
+        $this->set(compact('criteriaValues'));
+    }
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		$this->Kitchen->id = $id;
-		if (!$this->Kitchen->exists()) {
-			throw new NotFoundException(__('Invalid kitchen'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Kitchen->save($this->request->data)) {
-				$this->Session->setFlash(__('The kitchen has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
-			}
-		} else {
-			$this->request->data = $this->Kitchen->read(null, $id);
-		}
-		$criteriaValues = $this->Kitchen->CriteriaValue->find('list');
-		$this->set(compact('criteriaValues'));
-	}
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        $this->Kitchen->id = $id;
+        $this->set('kitchen_id', $id);
+        if (!$this->Kitchen->exists()) {
+            throw new NotFoundException(__('Invalid kitchen'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Kitchen->save($this->request->data)) {
+                $this->Session->setFlash(__('The kitchen has been saved'));
+                $this->redirect(array('action' => 'view', $id));
+            } else {
+                $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
+            }
+        } else {
+            $this->request->data = $this->Kitchen->read(null, $id);
+        }
+        $criteriaValues = $this->Kitchen->CriteriaValue->find('list');
+        $this->set(compact('criteriaValues'));
+    }
 
-/**
- * delete method
- *
- * @throws MethodNotAllowedException
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		if (!$this->request->is('post')) {
-			throw new MethodNotAllowedException();
-		}
-		$this->Kitchen->id = $id;
-		if (!$this->Kitchen->exists()) {
-			throw new NotFoundException(__('Invalid kitchen'));
-		}
-		if ($this->Kitchen->delete()) {
-			$this->Session->setFlash(__('Kitchen deleted'));
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('Kitchen was not deleted'));
-		$this->redirect(array('action' => 'index'));
-	}
+    /**
+     * delete method
+     *
+     * @throws MethodNotAllowedException
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        if (!$this->request->is('post')) {
+            throw new MethodNotAllowedException();
+        }
+        $this->Kitchen->id = $id;
+        if (!$this->Kitchen->exists()) {
+            throw new NotFoundException(__('Invalid kitchen'));
+        } else {
+            $this->loadModel('Testimonial');
+            $this->loadModel('Image');
+            $this->loadModel('CriteriaValuesKitchen');
+            
+            $this->Testimonial->deleteAll(array('Testimonial.kitchen_id'=>$id));
+            $this->Image->deleteAll(array('Image.kitchen_id'=>$id));
+            $this->CriteriaValuesKitchen->deleteAll(array('CriteriaValuesKitchen.kitchen_id'=>$id));
+        }
+        if ($this->Kitchen->delete()) {
+            $this->Session->setFlash(__('Kitchen deleted'));
+            $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('Kitchen was not deleted'));
+            $this->redirect(array('action' => 'index'));
+        }
+    }
+
 }

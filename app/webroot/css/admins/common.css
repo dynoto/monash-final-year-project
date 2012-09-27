@@ -1,0 +1,19 @@
+body{
+    
+}
+.table.table-bordered.table-striped{
+    margin-top: 1%;
+}
+li.active.span2 > a{
+    
+}
+ul.nav-stacked > li > a {
+    font-size: 0.9em;
+}
+ul.nav-stacked{
+    padding-bottom: 10%;
+}
+td.actions, th.actions{
+    width: 20%;
+    text-align: center;
+}

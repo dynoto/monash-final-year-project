@@ -37,12 +37,19 @@ class CriteriaValuesKitchensController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id=null) {
+                $this->loadModel('Kitchen',$id);
+                $this->loadModel('Criteria');
+                $this->loadModel('CriteriaValue');
+                $this->set('criteria_ids',$this->Criteria->find('list'));
+                $this->set('criteria_data',$this->Criteria->find('all'));
+                $this->set('kitchen_data',$this->Kitchen->read());
 		if ($this->request->is('post')) {
 			$this->CriteriaValuesKitchen->create();
-			if ($this->CriteriaValuesKitchen->save($this->request->data)) {
+                        $request_data = $this->request->data;
+			if ($this->CriteriaValuesKitchen->save($request_data)) {
 				$this->Session->setFlash(__('The criteria values kitchen has been saved'));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
 			} else {
 				$this->Session->setFlash(__('The criteria values kitchen could not be saved. Please, try again.'));
 			}

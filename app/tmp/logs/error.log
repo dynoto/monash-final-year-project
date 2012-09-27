@@ -3741,3 +3741,675 @@
 #1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2012-09-24 19:17:02 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Criterias/Common/admins.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(693): View->_getViewFileName('Common/admins')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Criterias/view.ctp(1): View->extend('Common/admins')
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriasController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-24 19:25:58 Error: [MissingActionException] Action UsersController::criteria() could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-24 19:33:38 Error: [MissingActionException] Action UsersController::criteria() could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-24 19:34:03 Error: [MissingActionException] Action AdministratorsController::order() could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AdministratorsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-09-25 10:08:42 Error: Fatal Error (4): syntax error, unexpected '}' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/AdministratorsController.php, line 13]
+2012-09-25 10:08:42 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-25 10:09:01 Error: [MissingControllerException] Controller class CriteriaController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 11:10:48 Error: [MissingControllerException] Controller class CakephpController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 12:55:59 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 13:28:38 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 13:28:55 Error: [MissingControllerException] Controller class IndexController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 13:29:26 Error: [MissingControllerException] Controller class IndexController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 13:29:34 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:19:32 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:19:34 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:19:48 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:19:53 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:20:07 Error: [MissingControllerException] Controller class VisitorsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:20:26 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:20:26 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:20:28 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:20:28 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:21:17 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:21:17 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 14:37:58 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 15:25:20 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/CriteriaValues/common/admins.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(693): View->_getViewFileName('common/admins')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/CriteriaValues/add.ctp(2): View->extend('common/admins')
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-25 15:34:40 Error: [CakeException] Blocks can only contain strings.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(657): ViewBlock->set('view_title', NULL)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Elements/override.ctp(2): View->assign('view_title', NULL)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(424): View->_render('/Volumes/Files/...', Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/CriteriaValues/add.ctp(4): View->element('override', Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#11 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-09-25 15:51:38 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 15:51:43 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 16:02:35 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 16:03:40 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`engineered`.`criteria_values`, CONSTRAINT `fk_substyles_styles` FOREIGN KEY (`criteria_id`) REFERENCES `criterias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('DELETE `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/Database/Mysql.php(397): DboSource->execute('DELETE `Criteri...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2382): Mysql->delete(Object(Criteria), Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriasController.php(92): Model->delete()
+#5 [internal function]: CriteriasController->delete('5')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriasController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriasController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-25 16:14:19 Error: Fatal Error (1): Call to a member function deleteAll() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriasController.php, line 94]
+2012-09-25 16:14:19 Error: [FatalErrorException] Call to a member function deleteAll() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 94, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 94, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-25 17:48:37 Error: [NotFoundException] Invalid criteria
+#0 [internal function]: CriteriasController->view('21')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriasController), Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriasController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-25 17:49:39 Error: [NotFoundException] Invalid criteria
+#0 [internal function]: CriteriasController->view('21')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriasController), Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriasController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-25 17:53:44 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 17:53:58 Error: [NotFoundException] Invalid criteria value
+#0 [internal function]: CriteriaValuesController->edit('20')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesController), Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-25 17:54:07 Error: [NotFoundException] Invalid criteria value
+#0 [internal function]: CriteriaValuesController->edit('20')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesController), Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-09-25 17:54:18 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:02:29 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:18:51 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:20:07 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:23:58 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:30:45 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:31:13 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:38:50 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:38:55 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:39:18 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:43:04 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:43:44 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:44:11 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:44:55 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:45:23 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:45:28 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:46:21 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:46:33 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:47:11 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:54:02 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:54:27 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/common/admin.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(693): View->_getViewFileName('/common/admin')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Kitchens/view.ctp(2): View->extend('/common/admin')
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-09-25 18:54:36 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:56:18 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:56:56 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:58:48 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-25 18:59:09 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-26 06:41:21 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php, line 33]
+2012-09-26 06:41:21 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 33)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 33, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 33, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 06:41:42 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php, line 34]
+2012-09-26 06:41:42 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 34, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 34, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 07:15:13 Error: Fatal Error (1): Call to undefined method CriteriaValuesKitchensController::find() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 41]
+2012-09-26 07:15:13 Error: [FatalErrorException] Call to undefined method CriteriaValuesKitchensController::find()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 41, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 41, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 07:15:41 Error: Fatal Error (1): Call to undefined method CriteriaValuesKitchensController::find() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 42]
+2012-09-26 07:15:41 Error: [FatalErrorException] Call to undefined method CriteriaValuesKitchensController::find()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 07:16:36 Error: Fatal Error (1): Call to undefined method CriteriaValuesKitchensController::find() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 42]
+2012-09-26 07:16:36 Error: [FatalErrorException] Call to undefined method CriteriaValuesKitchensController::find()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 07:16:40 Error: Fatal Error (1): Call to undefined method CriteriaValuesKitchensController::find() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 42]
+2012-09-26 07:16:40 Error: [FatalErrorException] Call to undefined method CriteriaValuesKitchensController::find()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 07:16:50 Error: Fatal Error (1): Call to undefined method CriteriaValuesKitchensController::find() in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 42]
+2012-09-26 07:16:50 Error: [FatalErrorException] Call to undefined method CriteriaValuesKitchensController::find()
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 08:01:44 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php, line 34]
+2012-09-26 08:01:44 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 34)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 34, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 34, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 08:17:15 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 42]
+2012-09-26 08:17:15 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 42, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 42, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 11:25:11 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 44]
+2012-09-26 11:25:11 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 44, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 44, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 11:27:05 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 47]
+2012-09-26 11:27:05 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 11:27:06 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 47]
+2012-09-26 11:27:06 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 16:09:10 Error: Fatal Error (64): Can't use method return value in write context in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 50]
+2012-09-26 16:09:10 Error: [FatalErrorException] Can't use method return value in write context
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Volumes/Files/...', 50)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Volumes/Files/...', 50, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Volumes/Files/...', 50, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 16:09:32 Error: Fatal Error (64): Can't use method return value in write context in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php, line 50]
+2012-09-26 16:09:32 Error: [FatalErrorException] Can't use method return value in write context
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Can't use metho...', '/Volumes/Files/...', 50)
+#1 [internal function]: ErrorHandler::handleError(64, 'Can't use metho...', '/Volumes/Files/...', 50, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Can't use metho...', '/Volumes/Files/...', 50, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 16:12:29 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php(54): Model->save(Array)
+#5 [internal function]: CriteriaValuesKitchensController->add('1')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesKitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesKitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-26 16:13:48 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(AppModel), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/CriteriaValuesKitchensController.php(54): Model->save(Array)
+#5 [internal function]: CriteriaValuesKitchensController->add('1')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesKitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesKitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-26 16:49:32 Error: [MissingHelperException] Helper class KitchenHelper could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Kitchen')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(812): HelperCollection->__isset('Kitchen')
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Kitchens/edit.ctp(11): View->__get('Kitchen')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-26 17:24:46 Error: Fatal Error (4): syntax error, unexpected '<' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Elements/under_construction.ctp, line 3]
+2012-09-26 17:24:47 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 3, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 3, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 17:25:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-26 17:25:02 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-26 17:25:12 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-26 17:30:53 Error: [MissingControllerException] Controller class -Controller could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-26 19:10:24 Error: Fatal Error (4): syntax error, unexpected 's' (T_STRING), expecting ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Kitchens/add.ctp, line 38]
+2012-09-26 19:10:24 Error: [FatalErrorException] syntax error, unexpected 's' (T_STRING), expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 38, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 38, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-26 19:23:09 Error: Fatal Error (4): syntax error, unexpected ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Kitchens/add.ctp, line 47]
+2012-09-26 19:23:09 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 47, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 07:25:24 Error: [MissingHelperException] Helper class KitchenHelper could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Kitchen')
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(812): HelperCollection->__isset('Kitchen')
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Kitchens/add.ctp(24): View->__get('Kitchen')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 07:48:49 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`engineered`.`testimonials`, CONSTRAINT `fk_testimonials_kitchens1` FOREIGN KEY (`kitchen_id`) REFERENCES `kitchens` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('DELETE `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/Database/Mysql.php(397): DboSource->execute('DELETE `Kitchen...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2382): Mysql->delete(Object(Kitchen), Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(110): Model->delete()
+#5 [internal function]: KitchensController->delete('19')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:19:24 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(60): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:32:30 Error: Fatal Error (64): Cannot use [] for reading in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php, line 58]
+2012-09-27 08:32:30 Error: [FatalErrorException] Cannot use [] for reading
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 08:32:32 Error: Fatal Error (64): Cannot use [] for reading in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php, line 58]
+2012-09-27 08:32:32 Error: [FatalErrorException] Cannot use [] for reading
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(64, 'Cannot use [] f...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot use [] f...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 64, 'Cannot use [] f...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-09-27 08:50:06 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2225): Model->save(Array, Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2031): Model->saveAssociated(Array, Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->saveAll(Array)
+#7 [internal function]: KitchensController->add()
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#11 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-09-27 08:54:16 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:57:57 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:58:24 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:59:12 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 08:59:51 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_kitchens1` FOREIGN KEY (`kitchen_id`) REFERENCES `kitchens` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:02:26 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`engineered`.`testimonials`, CONSTRAINT `fk_testimonials_kitchens1` FOREIGN KEY (`kitchen_id`) REFERENCES `kitchens` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('DELETE `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/Database/Mysql.php(397): DboSource->execute('DELETE `Kitchen...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2382): Mysql->delete(Object(Kitchen), Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(117): Model->delete()
+#5 [internal function]: KitchensController->delete('22')
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:12:09 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(63): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:12:55 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(63): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:13:07 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(64): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:13:22 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(64): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:13:29 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(64): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 09:13:44 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`criteria_values_kitchens`, CONSTRAINT `fk_kitchens_subcriterias_subcriterias1` FOREIGN KEY (`criteria_value_id`) REFERENCES `criteria_values` (`id`) ON DELETE NO ACTION ON UPDATE)
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(CriteriaValuesKitchen), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/KitchensController.php(65): Model->save(Array)
+#5 [internal function]: KitchensController->add()
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-09-27 11:27:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Product.discounts_id' in 'on clause'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Product...', Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Product...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Product...', false)
+#4 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Product), Array)
+#5 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate(NULL, Array, Array)
+#7 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/Controller/ProductsController.php(17): Controller->paginate()
+#8 [internal function]: ProductsController->index()
+#9 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#10 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}

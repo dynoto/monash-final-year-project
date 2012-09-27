@@ -39,17 +39,17 @@ class CriteriaValuesController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+                    $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			$this->CriteriaValue->create();
 			if ($this->CriteriaValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The criteria value has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
 			} else {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
 		}
 		$criterias = $this->CriteriaValue->Criteria->find('list');
-		$kitchens = $this->CriteriaValue->Kitchen->find('list');
-		$this->set(compact('criterias', 'kitchens'));
+		$this->set(compact('criterias'));
 	}
 
 /**
@@ -65,9 +65,10 @@ class CriteriaValuesController extends AppController {
 			throw new NotFoundException(__('Invalid criteria value'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+                        $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			if ($this->CriteriaValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The criteria value has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
 			} else {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
@@ -96,8 +97,9 @@ class CriteriaValuesController extends AppController {
 			throw new NotFoundException(__('Invalid criteria value'));
 		}
 		if ($this->CriteriaValue->delete()) {
+                        $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			$this->Session->setFlash(__('Criteria value deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
 		}
 		$this->Session->setFlash(__('Criteria value was not deleted'));
 		$this->redirect(array('action' => 'index'));

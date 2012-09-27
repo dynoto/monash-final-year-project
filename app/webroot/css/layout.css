@@ -1,3 +1,7 @@
+html,body{
+    height: 100%;
+}
+
 ul.nav-tabs > li {
     font-size: 1.15em;
     text-align: center;
@@ -40,4 +44,8 @@ img.modal_carousel_image{
     display: inline-block;
     margin: 0 auto;
     height: 300px;
+}
+a.login_switch{
+    float: right;
+    margin-top: 2%;
 }
