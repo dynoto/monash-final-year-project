@@ -1,6 +1,8 @@
 <?php
 echo $this->extend('/Common/admins');
-$content_override = array('title' => 'Manage Criteria', 'css' => 'admins/common');
+$content_override = array(  'title' => 'Manage Criteria', 
+                            'css' => array('admins/common'),
+                            'js'=>NULL;
 echo $this->element('override', array("content_override" => $content_override));
 
 $delete_logo = $this->Html->image('common/delete.png');
@@ -15,7 +17,6 @@ $view_logo = $this->Html->image('common/view.png');
                 <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Criteria'), array('action' => 'edit', $criteria['Criteria']['id'])); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Criteria'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Are you sure you want to delete # %s?', $criteria['Criteria']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('New Criteria'), array('action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
             </ul>
         </div>

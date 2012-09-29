@@ -13,7 +13,7 @@ echo $this->element('override', array("content_override" => $content_override));
                 <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $kitchen['Kitchen']['id'])); ?> </li>
             </ul>
             <ul class="nav nav-tabs nav-stacked">
-                <li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add','Kitchen',$kitchen['Kitchen']['id'])); ?> </li>
                 <li><?php echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values_kitchens', 'action' => 'add',$kitchen['Kitchen']['id'])); ?> </li>
             </ul>
@@ -112,8 +112,8 @@ echo $this->element('override', array("content_override" => $content_override));
                             <td><?php echo $criteria_names[$criteriaValue['criteria_id']]; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
                             <td class="actions">
-                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'criteria_values', 'action' => 'edit', $criteriaValue['id'])); ?>
-                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'criteria_values', 'action' => 'delete', $criteriaValue['id']), null, __('Are you sure you want to delete " %s " ?', $criteriaValue['name'])); ?>
+                                <?php echo $this->Html->link(__('Edit'), array('controller' => 'criteria_values_kitchens', 'action' => 'add', $kitchen['Kitchen']['id'])); ?>
+                                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'criteria_values_kitchens', 'action' => 'delete', $criteriaValue['CriteriaValuesKitchen']['id'], $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete " %s " ?', $criteriaValue['name'])); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

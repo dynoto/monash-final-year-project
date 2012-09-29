@@ -49,7 +49,7 @@ class CriteriaValuesKitchensController extends AppController {
                         $request_data = $this->request->data;
 			if ($this->CriteriaValuesKitchen->save($request_data)) {
 				$this->Session->setFlash(__('The criteria values kitchen has been saved'));
-				//$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
+				$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
 			} else {
 				$this->Session->setFlash(__('The criteria values kitchen could not be saved. Please, try again.'));
 			}
@@ -88,7 +88,7 @@ class CriteriaValuesKitchensController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$kitchen_id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -98,7 +98,7 @@ class CriteriaValuesKitchensController extends AppController {
 		}
 		if ($this->CriteriaValuesKitchen->delete()) {
 			$this->Session->setFlash(__('Criteria values kitchen deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
 		}
 		$this->Session->setFlash(__('Criteria values kitchen was not deleted'));
 		$this->redirect(array('action' => 'index'));

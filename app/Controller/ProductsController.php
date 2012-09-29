@@ -13,6 +13,7 @@ class ProductsController extends AppController {
  * @return void
  */
 	public function index() {
+            $this->redirect(array('controller'=>'administrators'));
 		$this->Product->recursive = 0;
 		$this->set('products', $this->paginate());
 	}

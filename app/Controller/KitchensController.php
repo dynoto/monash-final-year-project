@@ -54,14 +54,19 @@ class KitchensController extends AppController {
                 $this->Session->setFlash(__('The kitchen has been saved'));
                 $kitchen_id = $this->Kitchen->id;
                 $request_data['Testimonial']['kitchen_id'] = $kitchen_id;
+                
+                //SAVE TESTIMONIAL
                 $this->Testimonial->create();
                 $this->Testimonial->save($request_data);
+                
+                //SAVE RELATED KITCHEN CRITERIA VALUES
                 foreach ($request_data['CriteriaValuesKitchen']['CriteriaValue_id'] as $key_a => $val_a) {
                     $this->CriteriaValuesKitchen->create();
                     $temp_array['CriteriaValuesKitchen'] = array('criteria_value_id' => $val_a, 'kitchen_id' => $kitchen_id);
                     $this->CriteriaValuesKitchen->save($temp_array);
                 }
-                $this->redirect(array('action' => 'view', $kitchen_id));
+                
+                $this->redirect(array('controller'=>'images','action' => 'add', 'Kitchen',$kitchen_id));
             } else {
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
             }
