@@ -2,7 +2,7 @@
 echo $this->extend('/Common/admins');
 $content_override = array(  'title' => 'Manage Criteria', 
                             'css' => array('admins/common'),
-                            'js'=>NULL;
+                            'js'=>NULL);
 echo $this->element('override', array("content_override" => $content_override));
 
 $delete_logo = $this->Html->image('common/delete.png');
@@ -21,7 +21,7 @@ $view_logo = $this->Html->image('common/view.png');
             </ul>
         </div>
     </div>
-    <div class="span8 row-fluid">
+    <div class="span8">
         <div class="row-fluid">
             <h4><?php echo __('Criteria'); ?></h4>
             <dl>
@@ -43,11 +43,10 @@ $view_logo = $this->Html->image('common/view.png');
             </dl>
         </div>
         <div class="row-fluid">
-            <h4><?php echo __('Related Criteria Values'); ?></h4>
+            <h4><?php echo __('Criteria Values'); ?></h4>
             <?php if (!empty($criteria['CriteriaValue'])): ?>
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th><?php echo __('Criteria Id'); ?></th>
                         <th><?php echo __('Id'); ?></th>
                         <th><?php echo __('Name'); ?></th>
                         <th class="actions"><?php echo __('Actions'); ?></th>
@@ -57,7 +56,6 @@ $view_logo = $this->Html->image('common/view.png');
                     foreach ($criteria['CriteriaValue'] as $criteriaValue):
                         ?>
                         <tr>
-                            <td><?php echo $criteriaValue['criteria_id']; ?></td>
                             <td><?php echo $criteriaValue['id']; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
                             <td class="actions">
@@ -68,12 +66,6 @@ $view_logo = $this->Html->image('common/view.png');
                     <?php endforeach; ?>
                 </table>
             <?php endif; ?>
-
-            <div class="actions">
-                <ul>
-                    <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
-                </ul>
-            </div>
         </div>
     </div>
 </div>

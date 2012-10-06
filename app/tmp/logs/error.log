@@ -4877,3 +4877,97 @@
 #3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-09-29 14:12:17 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-09-29 14:14:58 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Criterias/view.ctp, line 5]
+2012-09-29 14:14:58 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-01 09:39:13 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Volumes/Files/Dropbox/Projects/IE_Project_Team34/app/View/Criterias/view.ctp, line 5]
+2012-10-01 09:39:13 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#2 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#3 /Volumes/Files/Dropbox/Projects/IE_Project_Team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-04 17:20:31 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/view.ctp, line 5]
+2012-10-04 17:20:31 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 06:47:48 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/view.ctp, line 63]
+2012-10-05 06:47:48 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 63)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 63, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 63, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 06:49:19 Error: [NotFoundException] Invalid kitchen
+#0 [internal function]: KitchensController->view()
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-05 06:49:34 Error: [NotFoundException] Invalid kitchen
+#0 [internal function]: KitchensController->view()
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-05 06:49:46 Error: [NotFoundException] Invalid kitchen
+#0 [internal function]: KitchensController->view()
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(KitchensController), Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(KitchensController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-05 06:49:51 Error: Fatal Error (4): syntax error, unexpected ',' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/view.ctp, line 63]
+2012-10-05 06:49:51 Error: [FatalErrorException] syntax error, unexpected ','
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 63)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 63, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 63, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 07:05:29 Error: Fatal Error (4): syntax error, unexpected ''onclick'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/view.ctp, line 67]
+2012-10-05 07:05:29 Error: [FatalErrorException] syntax error, unexpected ''onclick'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 67, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 67, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 07:07:37 Error: Fatal Error (4): syntax error, unexpected '','' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/view.ctp, line 67]
+2012-10-05 07:07:37 Error: [FatalErrorException] syntax error, unexpected '','' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 67, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 67, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-05 14:41:12 Error: Fatal Error (4): syntax error, unexpected ',', expecting ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Visitors/gallery.ctp, line 5]
+2012-10-05 14:41:12 Error: [FatalErrorException] syntax error, unexpected ',', expecting ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 5)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 5, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-06 03:46:31 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-06 03:46:32 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

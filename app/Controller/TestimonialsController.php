@@ -73,7 +73,8 @@ class TestimonialsController extends AppController {
 		} else {
 			$this->request->data = $this->Testimonial->read(null, $id);
 		}
-		$kitchens = $this->Testimonial->Kitchen->find('list');
+		$kitchens = $this->Testimonial->Kitchen->find('list',array('conditions'=>array('id'=>$id)));
+		$this->set('kitchen_id',$id);
 		$this->set(compact('kitchens'));
 	}
 

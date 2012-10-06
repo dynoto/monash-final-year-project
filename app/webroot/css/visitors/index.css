@@ -1,6 +1,19 @@
 div.carousel-inner {
-    box-shadow: 5px 5px 10px;
+	box-shadow: 5px 5px 10px;
+	max-width: 94%;
+	margin: 0 auto;
 }
-div.carousel-inner > img.item{
-    margin: 0 auto;
+img.item{
+    height:100%;
+
+}
+
+div.carousel,div.carousel-inner{
+	height:100%;
+}
+a.carousel-control.left{
+	left: -3%;
+}
+a.carousel-control.right{
+	left: 99%;
 }

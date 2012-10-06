@@ -12,12 +12,12 @@
     <?php
         $count = 0;
         foreach ($info as $key_a => $val_a) {
-            if($count==0 or $count==2){ ?> <div class='row-fluid' id='gallery_row'> <?php } ?>
+            if($count==0 or $count==2){ ?> <div class='row-fluid gallery_row'> <?php } ?>
             <?php $kitchen_name = $val_a['Kitchen']['name']; ?>
-            <div class="span6 image_frame">
+            <div class="row-fluid span6 image_frame">
                     <?php $item_name = str_replace(' ', '_', $kitchen_name) ?>
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images')) ?>
+                        <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail')) ?>
                     </a>
                     <p><?php echo $kitchen_name;?></p>
             </div>
@@ -28,6 +28,6 @@
             
             <?php if($count==1 or $count==3){ ?> </div> <?php } ?>
             <?php $count+=1; }?>
+        <?php echo $this->element('pagination'); ?>
 </div>
-<?php echo $this->element('pagination'); ?>
 </div>

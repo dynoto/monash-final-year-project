@@ -9,8 +9,8 @@ echo $this->element('override', array("content_override" => $content_override));
     <?php echo $this->element('side_bar',array('visitor_action'=>'testimonials')); ?>
     <div class="row-fluid span8">
         <?php foreach ($info as $key_a => $val_a) { ?>
-            <div class="row-fluid">
-                <div class="span4 image_frame">
+            <div class="row-fluid testimonial_frame">
+                <div class="row-fluid span4 image_frame">
                     <?php 
                     $kitchen_name = $val_a['Kitchen']['name'];
                     $kitchen_code = str_replace(' ', '_', $kitchen_name);
@@ -19,9 +19,9 @@ echo $this->element('override', array("content_override" => $content_override));
                         <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name']); ?>
                     </a>
                 </div>
-                <div class="span7 testimonial_frame">
+                <div class="row-fluid span7">
                     <h4><?php echo $kitchen_name; ?></h4>
-                    <p><?php echo $val_a['Testimonial'][0]['description'] ?></p>
+                    <p class="testimonial_description"><?php echo $val_a['Testimonial'][0]['description'] ?></p>
                 </div>
             </div>
             <?php echo $this->element('gallery_modal',array('item'=>$val_a));

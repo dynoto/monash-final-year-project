@@ -1,5 +1,5 @@
 <?php if($pagination != "hide"){ ?>
-    <div class="row-fluid span12" id="paginate">
+    <div class="span12" id="paginate">
     <div class="pagination pagination-right">
         <ul>
             <?php   if($this_page == 1){ 
