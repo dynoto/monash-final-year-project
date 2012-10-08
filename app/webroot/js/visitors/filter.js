@@ -17,5 +17,7 @@ $(document).ready(function(){
         $('form#criteria_filter').children('select.criteria_filter').children('option').prop("checked",false);
         $('span.ui-dropdownchecklist-text').text("");
         $('[id^=ddcl-]').attr('checked',false);
-    })
+    });
+
+    $('div.modal').detach().appendTo('body');
 });

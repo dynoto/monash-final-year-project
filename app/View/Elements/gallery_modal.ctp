@@ -5,7 +5,7 @@ $kitchen_description= $item['Kitchen']['description'];
 
 ?>
 
-<div class="modal hide fade" id="<?php echo $kitchen_code; ?>">
+<div class="modal hide fade hspn10" id="<?php echo $kitchen_code; ?>">
     <div class="modal-header">
         <h3><?php echo $kitchen_name; ?></h3>
         <p><?php echo $kitchen_description; ?></p>
@@ -15,13 +15,13 @@ $kitchen_description= $item['Kitchen']['description'];
             <?php } ?>
         </div>
     </div>
-    <div class="modal-body">
-        <div class="carousel slide" id="carousel_<?php echo $kitchen_code; ?>">
-            <div class="carousel-inner">
+    <div class="modal-body hspn8">
+        <div class="carousel slide hspn12" id="carousel_<?php echo $kitchen_code; ?>">
+            <div class="carousel-inner hspn12">
                 <?php
                 $carousel_class = "item active";
                 foreach ($item['Image'] as $image) { ?>
-                    <div class="<?php echo $carousel_class; ?>"><?php echo $this->Html->image('kitchens/' . $image['name'], array('class'=>'modal_carousel_image' ,'alt' => 'gallery image')); ?></div>
+                    <div class="<?php echo $carousel_class.' hspn12'; ?>"><?php echo $this->Html->image('kitchens/' . $image['name'], array('class'=>'modal_carousel_image hspn12' ,'alt' => 'gallery image')); ?></div>
                     <?php $carousel_class = "item";
                 } ?>
             </div>
@@ -29,7 +29,5 @@ $kitchen_description= $item['Kitchen']['description'];
             <a class="carousel-control right" href="#carousel_<?php echo $kitchen_code; ?>" data-slide="next">&rsaquo;</a>
         </div>
     </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    </div>
+
 </div>

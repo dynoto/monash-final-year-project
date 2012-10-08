@@ -9,16 +9,11 @@ div.image_frame {
     background: none repeat scroll 0 0 #FAFAFA;
     border-radius: 2% 2% 2% 2%;
     box-shadow: 5px 5px 10px #C8C8C8;
-    height: 100%;
-    margin-bottom: 3%;
     padding: 2% 4% 0;
 }
-div.gallery_row {
-    height: 48%;
-}
+
 img.kitchen_thumbnail {
     display: block;
-    height: 83%;
     margin: 0 auto 3%;
 }
 div.image_frame > p {
@@ -31,4 +26,8 @@ div.carousel-inner > div > img {
 }
 div#paginate {
     margin: -2% 0 0;
+}
+
+div.gallery_row{
+    margin-left: 0;
 }

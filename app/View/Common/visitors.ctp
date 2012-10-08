@@ -1,4 +1,3 @@
-
 <div class="row-fluid header">
     <div class="span8 offset2">
     <div class="row-fluid ">

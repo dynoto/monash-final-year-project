@@ -1,17 +1,12 @@
 div.carousel-inner{
 	margin: 0 auto;
-	height: 100%;
 	box-shadow: 5px 5px 10px;
 }
 
 img.item{
-	height:100%;
 	width: 100%;
 }
 
-div.carousel{
-	height:100%;
-}
 a.carousel-control.left{
 	left: -8%;
 }

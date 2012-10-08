@@ -5,8 +5,8 @@
 ?>
 
 <!--START OF BODY CONTENT -->
-<div class="row-fluid">
-    <div class="span8 offset2 row-fluid">
+<div class="row-fluid hspn10">
+    <div class="span8 offset2">
         <div class="carousel slide" id="index_carousel">
             <div class="carousel-inner">
                 <?php 
