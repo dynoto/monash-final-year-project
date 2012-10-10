@@ -4,10 +4,13 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
+			<th><?php echo $this->Paginator->sort('approved'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('discounts_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('discount_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('users_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -15,14 +18,15 @@
 	<tr>
 		<td><?php echo h($customer['Customer']['id']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['name']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['email']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['address']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['phone']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['approved']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
-		<td>
-			<?php echo $this->Html->link($customer['Discounts']['id'], array('controller' => 'discounts', 'action' => 'view', $customer['Discounts']['id'])); ?>
-		</td>
+		<td><?php echo h($customer['Customer']['discount_id']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Customer']['users_id']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>

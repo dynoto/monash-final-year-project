@@ -4,7 +4,6 @@ $kitchen_code       = str_replace(' ', '_', $kitchen_name);
 $kitchen_description= $item['Kitchen']['description'];
 
 ?>
-
 <div class="modal hide fade hspn10" id="<?php echo $kitchen_code; ?>">
     <div class="modal-header">
         <h3><?php echo $kitchen_name; ?></h3>
@@ -25,9 +24,8 @@ $kitchen_description= $item['Kitchen']['description'];
                     <?php $carousel_class = "item";
                 } ?>
             </div>
-            <a class="carousel-control left" href="#carousel_<?php echo $kitchen_code; ?>" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#carousel_<?php echo $kitchen_code; ?>" data-slide="next">&rsaquo;</a>
         </div>
     </div>
-
+    <a class="carousel-control left" href="#carousel_<?php echo $kitchen_code; ?>" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carousel_<?php echo $kitchen_code; ?>" data-slide="next">&rsaquo;</a>
 </div>

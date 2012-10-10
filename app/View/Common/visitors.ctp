@@ -1,10 +1,8 @@
 <div class="row-fluid header">
     <div class="span8 offset2">
     <div class="row-fluid ">
-        <?php 
-        echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
-        echo $this->Html->link('Administrator? Click Here',array('controller'=>'administrators'),array('class'=>'login_switch'));
-        ?>
+        <?php   echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
+                echo $this->Html->link('Login',array('controller'=>'administrators'),array('class'=>'login_switch')); ?>
     </div>
     <div class="row-fluid ">
         <ul class="nav nav-tabs">

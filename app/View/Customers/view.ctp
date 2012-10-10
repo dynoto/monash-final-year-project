@@ -11,6 +11,11 @@
 			<?php echo h($customer['Customer']['name']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Email'); ?></dt>
+		<dd>
+			<?php echo h($customer['Customer']['email']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Address'); ?></dt>
 		<dd>
 			<?php echo h($customer['Customer']['address']); ?>
@@ -21,14 +26,24 @@
 			<?php echo h($customer['Customer']['phone']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Approved'); ?></dt>
+		<dd>
+			<?php echo h($customer['Customer']['approved']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Customer Type'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Discounts'); ?></dt>
+		<dt><?php echo __('Discount Id'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($customer['Discounts']['id'], array('controller' => 'discounts', 'action' => 'view', $customer['Discounts']['id'])); ?>
+			<?php echo h($customer['Customer']['discount_id']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Users Id'); ?></dt>
+		<dd>
+			<?php echo h($customer['Customer']['users_id']); ?>
 			&nbsp;
 		</dd>
 	</dl>

@@ -6,7 +6,12 @@ Class VisitorsController extends AppController{
     public $helper = array('controller','form','html');     
     private $__sidebar_query;
     private $__content_query;
-    
+
+    public function beforeFilter(){
+        parent::beforeFilter();
+        $this->Auth->allow('gallery');
+    }
+
     public function index(){
         
     }

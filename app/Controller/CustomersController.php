@@ -13,7 +13,6 @@ class CustomersController extends AppController {
  * @return void
  */
 	public function index() {
-            $this->redirect(array('controller'=>'administrators'));
 		$this->Customer->recursive = 0;
 		$this->set('customers', $this->paginate());
 	}

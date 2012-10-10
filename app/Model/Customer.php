@@ -4,7 +4,9 @@ App::uses('AppModel', 'Model');
  * Customer Model
  *
  * @property CustomerType $CustomerType
- * @property Discounts $Discounts
+ * @property Discount $Discount
+ * @property Users $Users
+ * @property Order $Order
  */
 class Customer extends AppModel {
 
@@ -15,6 +17,16 @@ class Customer extends AppModel {
  */
 	public $validate = array(
 		'customer_type_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'users_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -41,12 +53,41 @@ class Customer extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Discounts' => array(
-			'className' => 'Discounts',
-			'foreignKey' => 'discounts_id',
+		'Discount' => array(
+			'className' => 'Discount',
+			'foreignKey' => 'discount_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Users' => array(
+			'className' => 'Users',
+			'foreignKey' => 'users_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'Order' => array(
+			'className' => 'Order',
+			'foreignKey' => 'customer_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

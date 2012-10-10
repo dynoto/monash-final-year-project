@@ -5,10 +5,13 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
+		echo $this->Form->input('email');
 		echo $this->Form->input('address');
 		echo $this->Form->input('phone');
+		echo $this->Form->input('approved');
 		echo $this->Form->input('customer_type_id');
-		echo $this->Form->input('discounts_id');
+		echo $this->Form->input('discount_id');
+		echo $this->Form->input('users_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
