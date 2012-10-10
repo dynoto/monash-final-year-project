@@ -57,6 +57,7 @@ class User extends AppModel {
  *
  * @var array
  */
+	
 	public $belongsTo = array(
 		'Group' => array(
 			'className' => 'Group',
@@ -66,4 +67,22 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public $actsAs = array('acl'=>array('type'=>'requester'));
+
+	public function parentNode(){
+		if (!$this->id && empty($this->data)){
+			return Null;
+		}
+		if (isset($this->data['User']['group_id'])){
+			$groupId = $this->data['User']['group_id'];
+		} else {
+			$groupId = $this->field('group_id');
+		}
+		if (!$groupId) {
+			return null;
+		} else {
+			return array('Group' => array('id' => $groupId));
+		}
+	}
 }

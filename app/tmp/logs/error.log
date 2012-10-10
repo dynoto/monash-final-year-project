@@ -5099,3 +5099,171 @@
 #3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-10-10 06:33:18 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('DELETE `Group` ...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/Database/Mysql.php(397): DboSource->execute('DELETE `Group` ...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2382): Mysql->delete(Object(Group), Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#5 [internal function]: GroupsController->delete('1')
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-10 06:37:46 Error: Fatal Error (1): Undefined class constant 'beforeFilter' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php, line 16]
+2012-10-10 06:37:46 Error: [FatalErrorException] Undefined class constant 'beforeFilter'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Undefined class...', '/Volumes/Files/...', 16)
+#1 [internal function]: ErrorHandler::handleError(1, 'Undefined class...', '/Volumes/Files/...', 16, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Undefined class...', '/Volumes/Files/...', 16, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-10 06:39:14 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(User))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(101): Model->delete()
+#8 [internal function]: UsersController->delete('1')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-10 06:41:07 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 3
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(User))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(101): Model->delete()
+#8 [internal function]: UsersController->delete('3')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-10 06:41:16 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(User))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(101): Model->delete()
+#8 [internal function]: UsersController->delete('2')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-10 06:41:41 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(Group), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(Group))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#8 [internal function]: GroupsController->delete('1')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-10 06:41:44 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(Group), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(Group))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#8 [internal function]: GroupsController->delete('2')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-10 06:42:23 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'd33fd9b28f3c36a93ff856f73bbfc09c33d2c97d' for key 'password_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(48): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-10 06:43:36 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '5da635fb2f36bc8571a94f9048ccb50914b487a9' for key 'password_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(48): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-10 06:50:09 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'user' for key 'name_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(48): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-10 06:50:14 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'user2' for key 'name_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(48): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
