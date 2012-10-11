@@ -35,7 +35,7 @@ class AppController extends Controller {
 	
 	public $components = array(
 	'Acl',
-	'Auth' => array('authorize' => array('actionPath'=>'Controllers')),
+	'Auth' => array('authorize' => array('actionPath'=>'Controllers/')),
 	'Session'	
 	);
 

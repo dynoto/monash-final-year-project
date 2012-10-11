@@ -14,7 +14,7 @@ class UsersController extends AppController {
  */
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow(array('*'));
+		$this->Auth->allow();//array('login'));
 	}
 
 	public function index() {
@@ -114,5 +114,9 @@ class UsersController extends AppController {
 				$this->Session->setFlash("Your Username or Password is incorrect");
 			}
 		}
+	}
+
+	public function logout(){
+
 	}
 }
