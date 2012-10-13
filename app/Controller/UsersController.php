@@ -12,9 +12,16 @@ class UsersController extends AppController {
  *
  * @return void
  */
+
+	public $helpers = array('Html','Form','Session');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow();//array('login'));
+		$this->Auth->allow('login','logout');
+		$this->Auth->authenticate = array(
+			"Form"=>array(
+				'fields'=>array("username" =>"name")
+			)
+		);
 	}
 
 	public function index() {
@@ -107,16 +114,40 @@ class UsersController extends AppController {
 	}
 
 	public function login(){
+
 		if ($this->request->is('post')){
-			if ($this->Auth->login()){
-				$this->redirect($this->Auth->redirect());
-			} else{
-				$this->Session->setFlash("Your Username or Password is incorrect");
+			if ($this->Session->read('Auth.User')){
+				echo "you have been logged in";
+				//$this->redirect('/');
+			} else {
+				if ($this->Auth->login()){
+					$this->redirect($this->Auth->redirect());
+				} else{
+					$this->Session->setFlash("Your Username or Password is incorrect");
+				}
 			}
 		}
 	}
 
 	public function logout(){
-
+		$this->redirect($this->Auth->logout());
 	}
+
+	//THIS METHOD BELOW IS TO ACTIVATE THE ACL, DO NOT DELETE, DO NOT UNCOMMENT ON LIVE SERVER
+	//DO AclExtras.AclExtras aco_sync on the Cake console before proceeding on setting ACL
+	public function initDB(){
+		$group = $this->User->Group;
+		$group->id = 4;
+		$this->Acl->allow($group,'controllers');
+
+		$group->id = 5;
+		$this->Acl->deny($group,'controllers');
+		$this->Acl->deny($group,'controllers/Users/');
+		$this->Acl->allow($group,'controllers/Users/login');
+		$this->Acl->allow($group,'controllers/Users/logout');
+
+		echo "All Done";
+		exit;
+	}
+	//END OF ACL METHOD ACTIVATION
 }

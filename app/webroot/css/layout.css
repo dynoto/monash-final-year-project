@@ -4,6 +4,10 @@ body,html{
 div.header{
     height: auto;
 }
+div.login_bar{
+    display: inline;
+    float: right;
+}
 
 ul.nav-tabs > li {
     font-size: 1.15em;

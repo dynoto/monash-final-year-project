@@ -14,6 +14,7 @@
     ?>
 </head>
 <body>
+    <?php echo $this->Session->flash(); ?>
     <!-- Content Starts Here -->
         <?php echo $this->fetch('content');    ?>
     <!-- Content Ends Here -->

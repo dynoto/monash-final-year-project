@@ -35,7 +35,7 @@ class AppController extends Controller {
 	
 	public $components = array(
 	'Acl',
-	'Auth' => array('authorize' => array('actionPath'=>'Controllers/')),
+	'Auth' => array('authorize' => array('Actions' => array('actionPath'=>'controllers'))),
 	'Session'	
 	);
 
@@ -45,5 +45,6 @@ class AppController extends Controller {
 		$this->Auth->loginAction 	= array('controller'=>'users','action'=>'login');
 		$this->Auth->loginRedirect 	= array('controller'=>'visitors');
 		$this->Auth->logoutRedirect = array('controller'=>'users','action'=>'login');
+		$this->set('authUser',$this->Auth->user());
 	}
 }

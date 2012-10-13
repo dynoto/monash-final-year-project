@@ -2,7 +2,9 @@
     <div class="span8 offset2">
     <div class="row-fluid ">
         <?php   echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
-                echo $this->Html->link('Login',array('controller'=>'administrators'),array('class'=>'login_switch')); ?>
+                //echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'),array('class'=>'login_switch')); 
+                echo $this->element('login_bar',array('visitor'=>true));
+        ?>
     </div>
     <div class="row-fluid ">
         <ul class="nav nav-tabs">

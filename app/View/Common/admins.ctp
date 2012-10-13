@@ -3,7 +3,7 @@
     <div class="span8 offset2" id="div_header">
         <?php 
         echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
-        echo $this->Html->link('Visitor? Click Here',array('controller'=>'visitors'),array('class'=>'login_switch'));
+        echo $this->element('login_bar');
         ?>
     </div>
     <div class="span8 offset2">
