@@ -2,16 +2,13 @@ config/database.php
 app/config/database.php
 !empty
 app/tmp/*
-app/tmp/cache/models/myapp_cake_model_default_engineered_criteria_values
+.DS_Store
+app/tmp/cache/models/myapp_cake_model_default_engineered_aros_acos
 
-app/tmp/cache/models/myapp_cake_model_default_engineered_criteria_values
+app/tmp/cache/models/myapp_cake_model_default_engineered_aros
 
-app/tmp/cache/models/myapp_cake_model_default_engineered_criterias
+app/tmp/cache/models/myapp_cake_model_default_engineered_acos
 
-app/tmp/.DS_Store
+app/tmp/cache/models/myapp_cake_model_default_engineered_groups
 
-app/tmp/cache/.DS_Store
-
-app/tmp/.DS_Store
-
-app/tmp/cache/models/myapp_cake_model_default_engineered_list
+app/tmp/cache/models/myapp_cake_model_default_engineered_users
