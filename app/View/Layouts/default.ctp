@@ -9,7 +9,7 @@
                         ));
         echo $this->fetch('view_css');
         echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js',
-                            'twitter_bootstrap/bootstrap.min'));
+                            'twitter_bootstrap/bootstrap.min','layout'));
         echo $this->fetch('view_js');
     ?>
 </head>

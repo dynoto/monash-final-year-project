@@ -9,7 +9,7 @@ echo $this->element('override',array('content_override'=>$content_override));
 		echo $this->Form->create('User',array('controller'=>'Users','action'=>'login'));
 		echo $this->Form->input('User.name');
 		echo $this->Form->input('User.password');
-		echo $this->Form->end('login');
+		echo $this->Form->end(array('label'=>'Log In' ,'class'=>'btn btn-primary btn-large'));
 
 	?>
 </div>

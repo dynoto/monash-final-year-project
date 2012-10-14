@@ -19,8 +19,9 @@ echo $this->element('override', array("content_override" => $content_override));
         <h4><?php echo __('Edit Criteria'); ?></h4>
         <?php
         echo $this->Form->input('id');
-        echo $this->Form->input('name',array('required'=>'true'));
-        echo $this->Form->input('type');
+        echo $this->Form->input('name',array('required'=>true));
+        echo $this->Form->input('kitchen',array('selected'=>true));
+        echo $this->Form->input('product',array('selected'=>true));
         ?>
         <div class="span3" style="margin-left: 0px">
             <?php

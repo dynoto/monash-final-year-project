@@ -15,6 +15,15 @@ class Criteria extends AppModel {
  *
  * @var array
  */
+	public $name = "Criteria";
+	public $validate = array(
+		'name' => array(
+			'rule'=>'alphaNumeric',
+			'required'=>true,
+			'notEmpty'=>false,
+			'message' =>'Cannot be Empty'
+		)
+	);
 	public $hasMany = array(
 		'CriteriaValue' => array(
 			'className' => 'CriteriaValue',

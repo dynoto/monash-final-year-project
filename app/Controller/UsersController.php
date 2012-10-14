@@ -16,10 +16,12 @@ class UsersController extends AppController {
 	public $helpers = array('Html','Form','Session');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('login','logout');
+		$this->Auth->allow('login','logout','add');
+		//$this->Auth->allow();
 		$this->Auth->authenticate = array(
 			"Form"=>array(
-				'fields'=>array("username" =>"name")
+				'fields'=>array("username" =>"name"),
+				'scope'=>array("User.approved" => 1)
 			)
 		);
 	}
@@ -52,7 +54,9 @@ class UsersController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->User->create();
-			if ($this->User->save($this->request->data)) {
+			$requestData = $this->request->data;
+			//$requestData['User'] = array('approved'=>0);
+			if ($this->User->save($requestData)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -114,16 +118,15 @@ class UsersController extends AppController {
 	}
 
 	public function login(){
-
 		if ($this->request->is('post')){
 			if ($this->Session->read('Auth.User')){
-				echo "you have been logged in";
-				//$this->redirect('/');
+				$this->Session->setFlash("you have been logged in");
+				$this->redirect('/');
 			} else {
 				if ($this->Auth->login()){
 					$this->redirect($this->Auth->redirect());
 				} else{
-					$this->Session->setFlash("Your Username or Password is incorrect");
+					$this->Session->setFlash("Your Username & Password is incorrect / User have not yet approved");
 				}
 			}
 		}
@@ -131,16 +134,22 @@ class UsersController extends AppController {
 
 	public function logout(){
 		$this->redirect($this->Auth->logout());
+		exit;
 	}
 
 	//THIS METHOD BELOW IS TO ACTIVATE THE ACL, DO NOT DELETE, DO NOT UNCOMMENT ON LIVE SERVER
-	//DO AclExtras.AclExtras aco_sync on the Cake console before proceeding on setting ACL
+	//DO ./cake schema create DbAcl
+	//DO ./cake acl create aco root controllers
+	//DO ./cake AclExtras.AclExtras aco_sync
+	//CREATE ADMINS GROUP FROM WEBSITE
+	//CREATE USERS GROUP FROM WEBSITE 
+	
 	public function initDB(){
 		$group = $this->User->Group;
-		$group->id = 4;
+		$group->id = 3; //ADMINISITRATORS GROUP ID
 		$this->Acl->allow($group,'controllers');
 
-		$group->id = 5;
+		$group->id = 4; //CUSTOMERS GROUP ID
 		$this->Acl->deny($group,'controllers');
 		$this->Acl->deny($group,'controllers/Users/');
 		$this->Acl->allow($group,'controllers/Users/login');
@@ -149,5 +158,6 @@ class UsersController extends AppController {
 		echo "All Done";
 		exit;
 	}
+	
 	//END OF ACL METHOD ACTIVATION
 }

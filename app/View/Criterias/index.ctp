@@ -14,14 +14,16 @@ echo $this->element('override',array("content_override"=>$content_override));
                 <tr>
                     <th><?php echo $this->Paginator->sort('id'); ?></th>
                     <th><?php echo $this->Paginator->sort('name'); ?></th>
-                    <th><?php echo $this->Paginator->sort('type'); ?></th>
+                    <th><?php echo $this->Paginator->sort('kitchen'); ?></th>
+                    <th><?php echo $this->Paginator->sort('product'); ?></th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php foreach ($criterias as $criteria): ?>
                     <tr>
                         <td><?php echo h($criteria['Criteria']['id']); ?>&nbsp;</td>
                         <td><?php echo h($criteria['Criteria']['name']); ?>&nbsp;</td>
-                        <td><?php echo h($criteria['Criteria']['type']); ?>&nbsp;</td>
+                        <td><?php echo h($criteria['Criteria']['kitchen']); ?>&nbsp;</td>
+                        <td><?php echo h($criteria['Criteria']['product']); ?>&nbsp;</td>
                         <td class="actions">
                             <?php echo $this->Html->link(__('View'), array('action' => 'view', $criteria['Criteria']['id'])); ?>
                             <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $criteria['Criteria']['id'])); ?>

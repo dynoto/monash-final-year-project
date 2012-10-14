@@ -1,9 +1,13 @@
 <div class="row-fluid header">
     <div class="span8 offset2">
     <div class="row-fluid ">
+        <div class="span6">
         <?php   echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
                 //echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'),array('class'=>'login_switch')); 
-                echo $this->element('login_bar',array('visitor'=>true));
+        ?>
+        </div>
+        <?php      
+        echo $this->element('login_bar',array('visitor'=>true));
         ?>
     </div>
     <div class="row-fluid ">

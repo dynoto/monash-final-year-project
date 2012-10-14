@@ -1,10 +1,10 @@
 <header>
 <div class="row-fluid" style="height:auto">
     <div class="span8 offset2" id="div_header">
-        <?php 
-        echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
-        echo $this->element('login_bar');
-        ?>
+        <div class="span6">
+        <?php echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));?>
+        </div>
+        <?php echo $this->element('login_bar'); ?>
     </div>
     <div class="span8 offset2">
         <ul class="nav nav-tabs">

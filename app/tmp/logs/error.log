@@ -5656,3 +5656,391 @@
 2012-10-13 05:12:16 Error: [MissingControllerException] Controller class JsController could not be found.
 #0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-10-13 06:25:31 Error: Fatal Error (4): syntax error, unexpected ')' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Users/login.ctp, line 16]
+2012-10-13 06:25:31 Error: [FatalErrorException] syntax error, unexpected ')'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 16)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 16, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 16, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-13 09:18:59 Error: [MissingActionException] Action VisitorsController::new() could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(VisitorsController), Object(CakeRequest), Object(CakeResponse))
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-13 09:29:29 Error: Fatal Error (4): syntax error, unexpected '{' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php, line 58]
+2012-10-13 09:29:29 Error: [FatalErrorException] syntax error, unexpected '{'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 58)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 58, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 58, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-13 09:50:44 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php, line 56]
+2012-10-13 09:50:44 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-13 09:50:45 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php, line 56]
+2012-10-13 09:50:45 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-13 09:51:50 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php, line 56]
+2012-10-13 09:51:50 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 56, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-13 14:33:08 Error: [MissingControllerException] Controller class CommonController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-13 14:33:09 Error: [MissingControllerException] Controller class CommonController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-13 14:33:21 Error: [MissingControllerException] Controller class CommonController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-13 15:37:19 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-13 15:41:53 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(107): AclBehavior->node(Object(User), Array, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1754): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(83): Model->save(Array)
+#8 [internal function]: UsersController->edit('1')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:42:05 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(User))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(112): Model->delete()
+#8 [internal function]: UsersController->delete('1')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:42:14 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(User))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(112): Model->delete()
+#8 [internal function]: UsersController->delete('2')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:42:25 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-13 15:44:17 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-13 15:44:59 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(107): AclBehavior->node(Object(User), Array, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), true, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1754): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#8 [internal function]: UsersController->add()
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:45:21 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'name_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#5 [internal function]: UsersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-13 15:45:29 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(107): AclBehavior->node(Object(User), Array, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), true, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1754): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#8 [internal function]: UsersController->add()
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:48:16 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(107): AclBehavior->node(Object(User), Array, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), true, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1754): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/UsersController.php(59): Model->save(Array)
+#8 [internal function]: UsersController->add()
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-13 15:49:36 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('DELETE `Group` ...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/Database/Mysql.php(397): DboSource->execute('DELETE `Group` ...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2382): Mysql->delete(Object(Group), Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#5 [internal function]: GroupsController->delete('1')
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-13 15:49:43 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(Group), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterDelete(Object(Group))
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#8 [internal function]: GroupsController->delete('2')
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-14 03:56:28 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-14 06:58:59 Error: Fatal Error (4): syntax error, unexpected '}' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php, line 15]
+2012-10-14 06:58:59 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 15)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 15, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 15, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 07:16:45 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Model/Criteria.php, line 27]
+2012-10-14 07:16:45 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:42:50 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:42:50 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:42:56 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:42:56 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:43:18 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:43:18 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:45:09 Error: Fatal Error (4): syntax error, unexpected ')', expecting ',' or ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:45:09 Error: [FatalErrorException] syntax error, unexpected ')', expecting ',' or ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:47:26 Error: Fatal Error (4): syntax error, unexpected ',' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:47:26 Error: [FatalErrorException] syntax error, unexpected ','
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 08:48:29 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 08:48:29 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:03:03 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 10:03:04 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:03:36 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 13]
+2012-10-14 10:03:36 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 13, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:13:53 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Criterias/add.ctp, line 11]
+2012-10-14 10:13:53 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 11, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 11, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:29:01 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php, line 8]
+2012-10-14 10:29:01 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 8, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 8, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:29:06 Error: Fatal Error (4): syntax error, unexpected '$this' (T_VARIABLE) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php, line 8]
+2012-10-14 10:29:06 Error: [FatalErrorException] syntax error, unexpected '$this' (T_VARIABLE)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 8)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 8, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 8, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-14 10:29:16 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('load', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('load', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(613): DboSource->fetchAll('load', Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(784): DboSource->query('load', Array, Object(Image))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php(20): Model->__call('load', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php(20): Image->load()
+#7 [internal function]: AdministratorsController->set_homepage()
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(AdministratorsController), Array)
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AdministratorsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-10-14 10:30:30 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('load', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('load', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(613): DboSource->fetchAll('load', Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(784): DboSource->query('load', Array, Object(Image))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php(20): Model->__call('load', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/AdministratorsController.php(20): Image->load()
+#7 [internal function]: AdministratorsController->set_homepage()
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(AdministratorsController), Array)
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(AdministratorsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-10-14 10:36:50 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Administrators/index.ctp, line 4]
+2012-10-14 10:36:50 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 4, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 4, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
