@@ -24,7 +24,7 @@ echo $this->element('override', array('content_override' => $override));
             </div>
             <div class="span6">
                 <?php
-                echo $this->Form->input('name');
+                echo $this->Form->input('name',array('required'=>true));
                 echo $this->Form->input('description', array('class' => 'span10'));
                 echo $this->Form->input('Testimonial.description', array('label' => 'Testimonial', 'class' => 'span10'));
                 echo $this->Form->submit('Submit', array('class' => 'btn btn-primary btn-large'));

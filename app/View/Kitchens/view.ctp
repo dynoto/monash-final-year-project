@@ -10,11 +10,17 @@ echo $this->element('override', array("content_override" => $content_override));
             <ul class="nav nav-tabs nav-stacked">
                 <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Kitchen'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?> </li>
-                <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $kitchen['Kitchen']['id'])); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $kitchen['Kitchen']['name'])); ?> </li>
             </ul>
             <ul class="nav nav-tabs nav-stacked">
                 <li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add','Kitchen',$kitchen['Kitchen']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add')); ?> </li>
+                <li>
+                    <?php 
+                    if(!isset($kitchen['Testimonial'])){
+                        echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add',$kitchen['Kitchen']['id'])); 
+                    }
+                    ?> 
+                </li>
                 <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values_kitchens', 'action' => 'add',$kitchen['Kitchen']['id'])); ?> </li>
             </ul>
         </div>
@@ -58,7 +64,7 @@ echo $this->element('override', array("content_override" => $content_override));
                     <td class="actions">
                         <?php 
                         echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
-                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id']), null, __('Are you sure you want to delete # %s?', $image['id'])); 
+                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
                         ?>
                     </td>
                 </tr>
@@ -75,16 +81,12 @@ echo $this->element('override', array("content_override" => $content_override));
     <h4><?php echo __(' Testimonials'); ?></h4>
     <?php if (!empty($kitchen['Testimonial'])): ?>
     <table class="table table-striped">
-        <tr>
-            <th><?php echo __('Description'); ?></th>
-            <th class="actions"><?php echo __('Actions'); ?></th>
-        </tr>
         <?php foreach ($kitchen['Testimonial'] as $testimonial): ?>
         <tr>
             <td><?php echo $testimonial['description']; ?></td>
             <td class="actions">
                 <?php echo $this->Html->link(__('Edit'), array('controller' => 'testimonials', 'action' => 'edit', $testimonial['id'])); ?>
-                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'testimonials', 'action' => 'delete', $testimonial['id']), null, __('Are you sure you want to delete # %s?', $testimonial['id'])); ?>
+                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'testimonials', 'action' => 'delete', $testimonial['id'], $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete the testimonial?', $testimonial['id'])); ?>
             </td>
         </tr>
     <?php endforeach; ?>

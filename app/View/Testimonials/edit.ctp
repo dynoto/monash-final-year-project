@@ -23,8 +23,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		echo $this->Form->input('id');
 		echo $this->Form->input('description');
 		echo $this->Form->input('kitchen_id');
-		echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-primary'));
-		echo $this->Form->end; 
+		echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 
 		?>
 	</div>
 </div>

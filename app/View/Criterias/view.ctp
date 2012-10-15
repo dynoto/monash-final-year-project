@@ -25,7 +25,7 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="row-fluid">
             <h4><?php echo __('Criteria'); ?></h4>
             <dl>
-                <dt><?php echo __('Id'); ?></dt>
+                <dt><?php echo __('Id').' : '; ?></dt>
                 <dd>
                     <?php echo h($criteria['Criteria']['id']); ?>
                     &nbsp;
@@ -35,9 +35,32 @@ $view_logo = $this->Html->image('common/view.png');
                     <?php echo h($criteria['Criteria']['name']); ?>
                     &nbsp;
                 </dd>
-                <dt><?php echo __('Type'); ?></dt>
+                <dt><?php echo __('Gallery'); ?></dt>
                 <dd>
-                    <?php echo h($criteria['Criteria']['type']); ?>
+                    <?php
+                    switch ($criteria['Criteria']['kitchen']) {
+                        case 0:
+                            echo 'No';
+                            break;
+                        case 1:
+                            echo 'Yes';
+                            break;
+                    }
+                    ?>
+                    &nbsp;
+                </dd>
+                <dt><?php echo __('Product'); ?></dt>
+                <dd>
+                    <?php
+                    switch ($criteria['Criteria']['product']) {
+                        case 0:
+                            echo 'No';
+                            break;
+                        case 1:
+                            echo 'Yes';
+                            break;
+                    }
+                    ?>
                     &nbsp;
                 </dd>
             </dl>

@@ -11,8 +11,6 @@ $this->element('override', array('content_override' => $override));
                 <li><?php echo $this->Html->link('Back',array('action'=>'view',$kitchen_id)) ?></li>
                 <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Kitchen.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Kitchen.id'))); ?></li>
                 <li><?php echo $this->Html->link(__('List Kitchens'), array('action' => 'index')); ?></li>
-                <li><?php echo $this->Html->link(__('List Images'), array('controller' => 'images', 'action' => 'index')); ?> </li>
-                <li><?php echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add')); ?> </li>
             </ul>
         </div>
     </div>
@@ -22,7 +20,7 @@ $this->element('override', array('content_override' => $override));
             <h4><?php echo __('Edit Kitchen'); ?></h4>
             <?php
             echo $this->Form->input('id');
-            echo $this->Form->input('name');
+            echo $this->Form->input('name',array('required'=>true));
             echo $this->Form->input('description',array('class'=>'span8'));
             ?>
         </fieldset>

@@ -24,7 +24,7 @@ echo $this->element('override', array("content_override" => $content_override));
             <?php
             echo $this->Form->input('criteria_id');
             echo $this->Form->input('id');
-            echo $this->Form->input('name');
+            echo $this->Form->input('name',array('required'=>true));
             ?>
         </fieldset>
         <?php

@@ -14,6 +14,12 @@ class ImagesController extends AppController {
      *
      * @return void
      */
+    public function beforeFilter(){
+        parent::beforeFilter();
+        $this->Auth->allow('add_ajax');
+    }
+
+
     public function index() {
         $this->Image->recursive = 0;
         $this->set('images', $this->paginate());
@@ -52,6 +58,8 @@ class ImagesController extends AppController {
         if ($type == 'Kitchen') {
             $kitchens = $this->Image->Kitchen->find('list');
             $this->set('item_name',$kitchens[$id]);
+        } else {
+
         }
         $this->set('item_type', $type);
         $this->set('item_id', $id);
@@ -94,7 +102,7 @@ class ImagesController extends AppController {
      * @param string $id
      * @return void
      */
-    public function delete($id = null) {
+    public function delete($id = null,$kitchen_id = null) {
         if (!$this->request->is('post')) {
             throw new MethodNotAllowedException();
         }
@@ -104,15 +112,17 @@ class ImagesController extends AppController {
         }
         if ($this->Image->delete()) {
             $this->Session->setFlash(__('Image deleted'));
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
         }
         $this->Session->setFlash(__('Image was not deleted'));
-        $this->redirect(array('action' => 'index'));
+        $this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
     }
 
     public function add_ajax($id = null,$type = null){
+
+
+
         $targetFolder = Router::url('/app/webroot/img/kitchens/'); // Relative to the root
-        //echo $this->Html->Url('/');
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
             $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;

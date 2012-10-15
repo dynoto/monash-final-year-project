@@ -6044,3 +6044,189 @@
 #3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-10-15 02:58:25 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Testimonials/common/admins.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(693): View->_getViewFileName('common/admins')
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Testimonials/add.ctp(2): View->extend('common/admins')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(920): include('/Volumes/Files/...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(883): View->_evaluate('/Volumes/Files/...', Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(475): View->_render('/Volumes/Files/...')
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(TestimonialsController), Object(CakeRequest), Object(CakeResponse))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2012-10-15 03:00:35 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:00:49 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:00:54 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:01:08 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:02:06 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id' at line 1
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('id', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('id', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(613): DboSource->fetchAll('id', Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(784): DboSource->query('id', Array, Object(Kitchen))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/TestimonialsController.php(50): Model->__call('id', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/TestimonialsController.php(50): Kitchen->id(NULL)
+#7 [internal function]: TestimonialsController->add()
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(TestimonialsController), Array)
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(TestimonialsController), Object(CakeRequest), Object(CakeResponse))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2012-10-15 03:05:46 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Kitchen.kitchen_id' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Kitchen...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Kitchen...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Kitchen...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Kitchen), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(600): Model->find('first', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(784): DboSource->query('findByKitchenId', Array, Object(Kitchen))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/TestimonialsController.php(50): Model->__call('findByKitchenId', Array)
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/TestimonialsController.php(50): Kitchen->findByKitchenId(1)
+#9 [internal function]: TestimonialsController->add()
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(TestimonialsController), Array)
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(TestimonialsController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 03:06:00 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:07:02 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:08:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:09:30 Error: Fatal Error (1): Call to a member function find() on a non-object in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/TestimonialsController.php, line 50]
+2012-10-15 03:09:30 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 50, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 50, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 03:12:07 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:12:25 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:13:35 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:13:58 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:14:11 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:15:48 Error: Fatal Error (4): syntax error, unexpected '?>' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Testimonials/add.ctp, line 11]
+2012-10-15 03:15:48 Error: [FatalErrorException] syntax error, unexpected '?>'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 11, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 11, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 03:15:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:16:21 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:16:37 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:16:57 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:17:09 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:17:15 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:18:50 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:19:10 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:19:18 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:19:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:21:24 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:21:49 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 03:21:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:21:01 Error: Fatal Error (4): syntax error, unexpected ',' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/add.ctp, line 27]
+2012-10-15 04:21:01 Error: [FatalErrorException] syntax error, unexpected ','
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 04:21:14 Error: Fatal Error (4): syntax error, unexpected ',' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Kitchens/add.ctp, line 27]
+2012-10-15 04:21:14 Error: [FatalErrorException] syntax error, unexpected ','
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 27)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 27, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 04:22:24 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:25:13 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:36:55 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:37:16 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:40:14 Error: Fatal Error (4): syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/ImagesController.php, line 17]
+2012-10-15 04:40:14 Error: [FatalErrorException] syntax error, unexpected 'beforeFilter' (T_STRING), expecting variable (T_VARIABLE)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 17, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 17, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 04:48:58 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:50:57 Error: [MissingControllerException] Controller class KitchenController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:52:19 Error: [MissingControllerException] Controller class KitchenController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:52:29 Error: [MissingControllerException] Controller class KitchenssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:53:19 Error: [MissingControllerException] Controller class KitchenssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 04:55:01 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

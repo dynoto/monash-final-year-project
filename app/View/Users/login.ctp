@@ -7,8 +7,8 @@ echo $this->element('override',array('content_override'=>$content_override));
 	<div class="span8 offset2">
 	<?php
 		echo $this->Form->create('User',array('controller'=>'Users','action'=>'login'));
-		echo $this->Form->input('User.name');
-		echo $this->Form->input('User.password');
+		echo $this->Form->input('User.name',array('required'=>true));
+		echo $this->Form->input('User.password',array('required'=>true));
 		echo $this->Form->end(array('label'=>'Log In' ,'class'=>'btn btn-primary btn-large'));
 
 	?>

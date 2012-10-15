@@ -23,7 +23,7 @@ echo $this->element('override', array("content_override" => $content_override));
                         <td class="actions">
                             <?php echo $this->Html->link(__('View'), array('action' => 'view', $kitchen['Kitchen']['id'])); ?>
                             <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?>
-                            <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $kitchen['Kitchen']['id'])); ?>
+                            <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $kitchen['Kitchen']['name'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

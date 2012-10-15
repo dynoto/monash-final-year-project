@@ -37,17 +37,18 @@ class TestimonialsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id = null) {
 		if ($this->request->is('post')) {
 			$this->Testimonial->create();
 			if ($this->Testimonial->save($this->request->data)) {
 				$this->Session->setFlash(__('The testimonial has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
 			} else {
 				$this->Session->setFlash(__('The testimonial could not be saved. Please, try again.'));
 			}
 		}
-		$kitchens = $this->Testimonial->Kitchen->find('list');
+		$kitchens = $this->Testimonial->Kitchen->find('list',array('conditions'=>array('id'=>$id)));
+		$this->set('kitchen_id',$id);
 		$this->set(compact('kitchens'));
 	}
 
@@ -66,7 +67,7 @@ class TestimonialsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Testimonial->save($this->request->data)) {
 				$this->Session->setFlash(__('The testimonial has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
 			} else {
 				$this->Session->setFlash(__('The testimonial could not be saved. Please, try again.'));
 			}
@@ -86,7 +87,7 @@ class TestimonialsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $kitchen_id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -96,9 +97,9 @@ class TestimonialsController extends AppController {
 		}
 		if ($this->Testimonial->delete()) {
 			$this->Session->setFlash(__('Testimonial deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
 		}
 		$this->Session->setFlash(__('Testimonial was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));
 	}
 }

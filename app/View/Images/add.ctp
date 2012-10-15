@@ -16,7 +16,7 @@ $(document).ready(function(){
         <div class="offset1">
         <h4><?php echo __('Actions'); ?></h4>
         <ul class="nav nav-tabs nav-stacked">
-            <li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
+            <li><?php echo $this->Html->link(__('Back'), array('controller' => $item_type.'s', 'action' => 'view',$item_id)); ?> </li>
         </ul>
         </div>
     </div>

@@ -9,7 +9,7 @@ echo $this->element('override', array("content_override" => $content_override));
         <fieldset>
             <h4>Add Criteria</h4>
             <?php 
-            echo $this->Form->input('name');
+            echo $this->Form->input('name',array('required'=>true));
             echo $this->Form->input('kitchen',array('selected'=>true));
             echo $this->Form->input('product',array('selected'=>true));
             ?>
