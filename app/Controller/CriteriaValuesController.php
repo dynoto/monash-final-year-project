@@ -37,7 +37,7 @@ class CriteriaValuesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($id = null) {
 		if ($this->request->is('post')) {
                     $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			$this->CriteriaValue->create();
@@ -48,7 +48,7 @@ class CriteriaValuesController extends AppController {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
 		}
-		$criterias = $this->CriteriaValue->Criteria->find('list');
+		$criterias = $this->CriteriaValue->Criteria->find('list',array('conditions'=>array('id'=>$id)));
 		$this->set(compact('criterias'));
 	}
 
@@ -88,7 +88,7 @@ class CriteriaValuesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$criteria_id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -97,11 +97,11 @@ class CriteriaValuesController extends AppController {
 			throw new NotFoundException(__('Invalid criteria value'));
 		}
 		if ($this->CriteriaValue->delete()) {
-                        $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			$this->Session->setFlash(__('Criteria value deleted'));
 			$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
-		}
+		} else {
 		$this->Session->setFlash(__('Criteria value was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
+		}
 	}
 }

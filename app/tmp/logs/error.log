@@ -6230,3 +6230,494 @@
 2012-10-15 04:55:01 Error: [MissingControllerException] Controller class CssController could not be found.
 #0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-10-15 05:54:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'criteria_id' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CriteriaValuesController.php(51): Model->find('list', Array)
+#6 [internal function]: CriteriaValuesController->add('1')
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesController), Array)
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-10-15 05:54:36 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'criteria_id' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Criteri...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Criteri...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Criteri...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Criteria), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CriteriaValuesController.php(51): Model->find('list', Array)
+#6 [internal function]: CriteriaValuesController->add('1')
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CriteriaValuesController), Array)
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-10-15 05:59:11 Error: Fatal Error (4): syntax error, unexpected '$item_type' (T_VARIABLE) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Images/add.ctp, line 39]
+2012-10-15 05:59:11 Error: [FatalErrorException] syntax error, unexpected '$item_type' (T_VARIABLE)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 39)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 39, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 39, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 06:24:21 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 06:24:27 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:56:17 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Customers/add.ctp, line 4]
+2012-10-15 07:56:17 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 4)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 4, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 4, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 07:56:24 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:56:40 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:56:51 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:57:02 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:57:20 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 07:58:26 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:19:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:19:56 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:20:42 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:20:42 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:21:06 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:21:07 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:22:12 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:22:12 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 08:32:54 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(49): Model->save(Array)
+#5 [internal function]: CustomersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-15 08:33:55 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(50): Model->save(Array)
+#5 [internal function]: CustomersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-15 08:38:53 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`customers`, CONSTRAINT `fk_customers_customer_type1` FOREIGN KEY (`customer_type_id`) REFERENCES `customer_types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Customer), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(53): Model->save(Array)
+#5 [internal function]: CustomersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-15 08:41:08 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'cust1' for key 'name_UNIQUE'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(51): Model->save(Array)
+#5 [internal function]: CustomersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-15 08:50:26 Error: [MissingActionException] Action UsersController::dbacl() could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-10-15 08:50:58 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 08:53:02 Error: [MissingTableException] Table aros for model Aro was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(3179): Model->setSource('aros')
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1301): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1476): Model->schema()
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(118): Model->create()
+#4 [internal function]: AclBehavior->afterSave(Object(Group), true, Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1754): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(48): Model->save(Array)
+#10 [internal function]: GroupsController->add()
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#14 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-10-15 08:53:19 Error: [MissingTableException] Table aros for model Aro was not found in datasource default.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(3179): Model->setSource('aros')
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/AclNode.php(62): Model->getDataSource()
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(89): AclNode->node(Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Behavior/aclBehavior.php(135): AclBehavior->node(Object(Group), NULL, 'Aro')
+#4 [internal function]: AclBehavior->afterDelete(Object(Group))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#6 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2386): CakeEventManager->dispatch(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/GroupsController.php(97): Model->delete()
+#10 [internal function]: GroupsController->delete('1')
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(GroupsController), Array)
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest), Object(CakeResponse))
+#14 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2012-10-15 08:54:18 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 08:57:01 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 09:05:15 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 09:05:35 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 09:13:54 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 9
+)
+"
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Permission.php(89): AclNode->node(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Acl/DbAcl.php(71): Permission->check(Array, 'controllers/Use...', '*')
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AclComponent.php(108): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php(39): AclComponent->check(Array, 'controllers/Use...')
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(379): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/AuthComponent.php(326): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Utility/ObjectCollection.php(130): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Event/CakeEventManager.php(246): call_user_func(Array, Object(CakeEvent))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2012-10-15 09:15:22 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 09:16:10 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`engineered`.`users`, CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `en...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `en...')
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(51): Model->save(Array)
+#5 [internal function]: CustomersController->add()
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2012-10-15 09:27:08 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 09:27:40 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 09:39:50 Error: Fatal Error (1): Call to a member function link() on a non-object in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Elements/login_bar.ctp, line 5]
+2012-10-15 09:39:50 Error: [FatalErrorException] Call to a member function link() on a non-object
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/Volumes/Files/...', 5)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/Volumes/Files/...', 5, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/Volumes/Files/...', 5, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 11:01:11 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 14:56:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'discount.percent' in 'field list'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Discoun...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Discoun...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Discoun...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Discount), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(91): Model->find('list', Array)
+#6 [internal function]: CustomersController->edit('1')
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-10-15 15:08:57 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php, line 124]
+2012-10-15 15:08:57 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 124)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 124, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 124, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 15:08:59 Error: Fatal Error (4): syntax error, unexpected ';' in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php, line 124]
+2012-10-15 15:08:59 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 124)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 124, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 124, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 15:13:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer1' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Custome...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Custome...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Custome...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Customer), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(126): Model->find('all', Array)
+#6 [internal function]: CustomersController->approve()
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2012-10-15 15:17:37 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Customers/approve.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-15 15:18:32 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Customers/approve.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-15 15:18:42 Error: [MissingViewException] View file "/Volumes/Files/Dropbox/Projects/ie_project_team34/app/View/Customers/approve.ctp" is missing.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-10-15 15:26:52 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:31:41 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Custome...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Custome...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Custome...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Customer), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate(Array, Array, Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(25): Controller->paginate(Array)
+#8 [internal function]: CustomersController->index()
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-15 16:33:59 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php, line 24]
+2012-10-15 16:33:59 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 16:34:01 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php, line 24]
+2012-10-15 16:34:01 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 16:34:02 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [/Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php, line 24]
+2012-10-15 16:34:02 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/Volumes/Files/...', 24)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/Volumes/Files/...', 24, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-10-15 16:34:17 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'where clause'
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Custome...', Array)
+#2 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Custome...', Array, Array)
+#3 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Custome...', false)
+#4 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Customer), Array)
+#5 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate(NULL, Array, Array)
+#7 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/Controller/CustomersController.php(24): Controller->paginate(NULL, Array)
+#8 [internal function]: CustomersController->index()
+#9 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(CustomersController), Array)
+#10 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CustomersController), Object(CakeRequest), Object(CakeResponse))
+#12 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2012-10-15 16:43:55 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:43:56 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:44:12 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:44:12 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:45:31 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:45:31 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:45:58 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:45:59 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:46:24 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:46:25 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:47:09 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-15 16:47:10 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

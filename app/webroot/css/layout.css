@@ -91,20 +91,20 @@ a.login_switch {
 .hspn12 {
     height: 99.5%;
 }
-/*
-a#login_bar_toggle_button {
-    padding: 0;
-}
-*/
 a#login_bar_toggle_button > img {
     width: 40px;
 }
 div#login_bar_content {
-    border-radius: 0 0 7px 7px;
     border: 1px solid #DDDDDD;
-    padding: 2% 5% 0;
-    display:inline-block;
+    border-radius: 0 0 7px 7px;
+    text-align: center;
+}
+div#login_bar_content > p {
+    display: inline-block;
+    margin-top: 3%;
+    white-space: nowrap;
 }
 div#login_bar_content > p > a {
-    margin-left: 5%;
+    display: inline-block;
+    margin: 0 5%;
 }

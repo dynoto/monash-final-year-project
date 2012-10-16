@@ -16,8 +16,7 @@ class UsersController extends AppController {
 	public $helpers = array('Html','Form','Session');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('login','logout','add');
-		//$this->Auth->allow();
+		$this->Auth->allow('login','logout','add','initDB');
 		$this->Auth->authenticate = array(
 			"Form"=>array(
 				'fields'=>array("username" =>"name"),
@@ -55,7 +54,7 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			$requestData = $this->request->data;
-			//$requestData['User'] = array('approved'=>0);
+			$requestData['User']['approved'] = 1;
 			if ($this->User->save($requestData)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -126,7 +125,7 @@ class UsersController extends AppController {
 				if ($this->Auth->login()){
 					$this->redirect($this->Auth->redirect());
 				} else{
-					$this->Session->setFlash("Your Username & Password is incorrect / User have not yet approved");
+					$this->Session->setFlash("Your Username & Password is incorrect / User have not yet approved",'session_error');
 				}
 			}
 		}
@@ -146,10 +145,10 @@ class UsersController extends AppController {
 	
 	public function initDB(){
 		$group = $this->User->Group;
-		$group->id = 3; //ADMINISITRATORS GROUP ID
+		$group->id = 1; //ADMINISITRATORS GROUP ID
 		$this->Acl->allow($group,'controllers');
 
-		$group->id = 4; //CUSTOMERS GROUP ID
+		$group->id = 2; //CUSTOMERS GROUP ID
 		$this->Acl->deny($group,'controllers');
 		$this->Acl->deny($group,'controllers/Users/');
 		$this->Acl->allow($group,'controllers/Users/login');

@@ -12,10 +12,20 @@ class CustomersController extends AppController {
  *
  * @return void
  */
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('add');
+		$this->loadModel('User');
+	}
+
 	public function index() {
-		$this->redirect(array('controller'=>'administrators'));
 		$this->Customer->recursive = 0;
+		$this->paginate = array('conditions'=>array('User.approved'=>1));
 		$this->set('customers', $this->paginate());
+		$user_count = $this->User->find('count',array('conditions'=>array('approved'=>0,'group_id'=>2)));
+		if($user_count > 0){
+			$this->set('user_count',$user_count);
+		}	
 	}
 
 /**
@@ -40,17 +50,24 @@ class CustomersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Customer->create();
-			if ($this->Customer->save($this->request->data)) {
-				$this->Session->setFlash(__('The customer has been saved'));
-				$this->redirect(array('action' => 'index'));
+			$this->loadModel('User');
+			$this->User->create();
+			$request_data = $this->request->data;
+			$request_data['User']['group_id'] = 2; // 2 = CUSTOMERS GROUP
+			$request_data['User']['approved'] = 0; // 0 = NOT APPROVED BY DEFAULT
+			if($this->User->save($request_data)){
+				$request_data['Customer']['user_id'] = $this->User->id;
+				$this->Customer->create();
+				if ($this->Customer->save($request_data)) {
+					$this->Session->setFlash(__('Your account has been successfully created !'));
+					$this->redirect(array('controller'=>'visitors'));
 			} else {
-				$this->Session->setFlash(__('The customer could not be saved. Please, try again.'));
+				$this->Session->setFlash(__("Your account couldn't be created, please try again."));
 			}
 		}
+		}
 		$customerTypes = $this->Customer->CustomerType->find('list');
-		$discounts = $this->Customer->Discount->find('list');
-		$this->set(compact('customerTypes', 'discounts'));
+		$this->set(compact('customerTypes'));
 	}
 
 /**
@@ -102,5 +119,15 @@ class CustomersController extends AppController {
 		}
 		$this->Session->setFlash(__('Customer was not deleted'));
 		$this->redirect(array('action' => 'index'));
+	}
+
+	public function approve($id = null) {
+		if ($this->request->is('post')){
+
+		} else {
+			$users = $this->Customer->User->find('list',array('conditions'=>array('approved'=>0,'group_id'=>2),'fields'=>'id'));
+			$customers = $this->Customer->find('all',array('conditions'=>array('user_id'=>$users)));
+			$this->set(compact($users,$customers));
+		}
 	}
 }

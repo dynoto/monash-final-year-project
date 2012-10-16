@@ -17,7 +17,7 @@ $view_logo = $this->Html->image('common/view.png');
                 <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Criteria'), array('action' => 'edit', $criteria['Criteria']['id'])); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Criteria'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Are you sure you want to delete # %s?', $criteria['Criteria']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
+                <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add', $criteria['Criteria']['id'])); ?> </li>
             </ul>
         </div>
     </div>
@@ -83,7 +83,7 @@ $view_logo = $this->Html->image('common/view.png');
                             <td><?php echo $criteriaValue['name']; ?></td>
                             <td class="actions">
                                 <?php echo $this->Html->link($edit_logo, array('controller' => 'criteria_values', 'action' => 'edit', $criteriaValue['id']), array('escape' => false)); ?>
-                                <?php echo $this->Form->postLink($delete_logo, array('controller' => 'criteria_values', 'action' => 'delete', $criteriaValue['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $criteriaValue['id'])); ?>
+                                <?php echo $this->Form->postLink($delete_logo, array('controller' => 'criteria_values', 'action' => 'delete', $criteriaValue['id'],$criteria['Criteria']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $criteriaValue['name'])); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -1,11 +1,14 @@
-<div id="login_bar" class="offset1 span5">
-	<div id="login_bar_content" style="display:none">
-		<?php
-		if (!$authUser){
+<div id="login_bar" class="offset3 span3">
+	<div id="login_bar_content" style="display:none row-fluid">
+		<?php if (!$authUser){ ?>
+		<p><?php
+			echo $this->Html->link('Register',array('controller'=>'customers','action'=>'add'));
 			echo $this->Html->link('Log In',array('controller'=>'users','action'=>'login'));
+		?></p>
+		<?php 
 		}else{ 
 			?>
-			<p style="white-space:nowrap;">Welcome <?php echo $authUser['name']?><br>
+			<p>Welcome <b><i><?php echo $authUser['name']?></i></b><br>
 			<?php
 			$groupName = $authUser['Group']['name'];
 			if($groupName == 'Administrators' && isset($visitor)){

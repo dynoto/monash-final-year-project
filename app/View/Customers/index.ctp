@@ -1,16 +1,45 @@
-<div class="customers index">
-	<h2><?php echo __('Customers'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+<?php
+echo $this->extend('/common/admins');
+$content_override = array('title' => 'Customers List', 'css' => 'admins/common', 'js' => NULL);
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid">
+<div class="span2">
+	<div class="offset1">
+	<h4><?php echo __('Actions'); ?></h4>
+	<ul class="nav nav-tabs nav-stacked">
+		<?php if(isset($user_count)){ ?>
+			<li><?php 
+				echo $this->Html->link('Pending Approval : '.$user_count, 
+					array('action'=>'approve'),
+					array('class'=>'alert alert-error')
+				);
+			?></li>
+		<?php } ?>
+		<li><?php echo $this->Html->link('New Customer', array('action' => 'add')); ?></li>
+	</ul>
+		<ul class="nav nav-tabs nav-stacked">
+		<li><?php echo $this->Html->link('List Customer Types', array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link('New Customer Type', array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
+	</ul>
+	<ul class="nav nav-tabs nav-stacked">
+		<li><?php echo $this->Html->link('List Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link('New Discounts', array('controller' => 'discounts', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
+</div>
+
+<div class="span9">
+	<h4><?php echo __('Customers'); ?></h4>
+	<table cellpadding="0" cellspacing="0" class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
-			<th><?php echo $this->Paginator->sort('approved'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('discount_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('users_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -21,12 +50,10 @@
 		<td><?php echo h($customer['Customer']['email']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['address']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['phone']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['approved']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
-		<td><?php echo h($customer['Customer']['discount_id']); ?>&nbsp;</td>
-		<td><?php echo h($customer['Customer']['users_id']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Discount']['name']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>
@@ -50,13 +77,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Customer'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Customer Types'), array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Customer Type'), array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Discounts'), array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Discounts'), array('controller' => 'discounts', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

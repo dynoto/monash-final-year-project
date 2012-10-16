@@ -46,7 +46,7 @@ class CriteriaValuesKitchensController extends AppController {
                 $this->set('kitchen_data',$this->Kitchen->read());
 		if ($this->request->is('post')) {
 			$this->CriteriaValuesKitchen->create();
-                        $request_data = $this->request->data;
+            $request_data = $this->request->data;
 			if ($this->CriteriaValuesKitchen->save($request_data)) {
 				$this->Session->setFlash(__('The criteria values kitchen has been saved'));
 				$this->redirect(array('controller'=>'kitchens','action' => 'view',$id));

@@ -19,9 +19,9 @@ echo $this->element('override', array("content_override" => $content_override));
                         <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('class'=>'hspn12')); ?>
                     </a>
                 </div>
-                <div class="span8">
+                <div class="span8 hspn12">
                     <h4><?php echo $kitchen_name; ?></h4>
-                    <p class="testimonial_description"><?php echo $val_a['Testimonial'][0]['description'] ?></p>
+                    <p class="testimonial_description hspn9"><?php echo $val_a['Testimonial'][0]['description'] ?></p>
                 </div>
             </div>
             <?php echo $this->element('gallery_modal',array('item'=>$val_a));
