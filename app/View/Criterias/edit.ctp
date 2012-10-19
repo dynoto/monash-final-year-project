@@ -21,8 +21,8 @@ echo $this->element('override', array("content_override" => $content_override));
         <?php
         echo $this->Form->input('id');
         echo $this->Form->input('name',array('required'=>true));
-        echo $this->Form->input('kitchen',array('selected'=>true));
-        echo $this->Form->input('product',array('selected'=>true));
+        echo $this->Form->input('kitchen',array('label'=>'Gallery','options'=>array(1=>'Yes',0=>'No')));
+        echo $this->Form->input('product',array('options'=>array(1=>'Yes',0=>'No')));
         ?>
         <div class="span3" style="margin-left: 0px">
             <?php

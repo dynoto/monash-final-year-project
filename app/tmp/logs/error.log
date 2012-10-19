@@ -6721,3 +6721,6 @@
 2012-10-15 16:47:10 Error: [MissingControllerException] Controller class JsController could not be found.
 #0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-10-19 04:18:50 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
