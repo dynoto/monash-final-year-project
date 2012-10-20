@@ -16,16 +16,24 @@
             <div class="span6 hspn11 image_frame">
                     <?php $item_name = str_replace(' ', '_', $kitchen_name) ?>
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10')) ?>
+                        <?php
+                        if(isset($val_a['Image'][0])){
+                            echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10'));
+                        } else {
+                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10'));
+                        } 
+                        ?>
                     </a>
                     <p><?php echo $kitchen_name;?></p>
             </div>
 
             <!-- modal starts here -->
-            <?php echo $this->element('gallery_modal',array('item'=>$val_a)); ?>
+            <?php 
+            echo $this->element('gallery_modal',array('item'=>$val_a)); 
+            ?>
             <!-- modal ends here -->
             
             <?php if($count==1 or $count==3){ ?> </div> <?php } ?>
             <?php $count+=1; }?>
-        <?php echo $this->element('pagination'); ?>
+        <?php echo $this->element('pagination',array('pagination'=>$paginate_data)); ?>
 </div>

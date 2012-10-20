@@ -2,7 +2,7 @@
 	<div id="login_bar_content" style="display:none row-fluid">
 		<?php if (!$authUser){ ?>
 		<p><?php
-			echo $this->Html->link('Register',array('controller'=>'customers','action'=>'add'));
+			//echo $this->Html->link('Register',array('controller'=>'customers','action'=>'add'));
 			echo $this->Html->link('Log In',array('controller'=>'users','action'=>'login'));
 		?></p>
 		<?php 

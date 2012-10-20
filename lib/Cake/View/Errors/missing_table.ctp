@@ -27,3 +27,4 @@
 </p>
 
 <?php echo $this->element('exception_stack_trace'); ?>
+<?php pr( Debugger::trace() ); ?>

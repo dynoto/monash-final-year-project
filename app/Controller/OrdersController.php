@@ -13,7 +13,7 @@ class OrdersController extends AppController {
  * @return void
  */
 	public function index() {
-            $this->redirect(array('controller'=>'administrators'));
+        $this->redirect(array('controller'=>'administrators'));
 		$this->Order->recursive = 0;
 		$this->set('orders', $this->paginate());
 	}

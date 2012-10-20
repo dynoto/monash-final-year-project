@@ -25,6 +25,11 @@ ul.nav-tabs > li > a {
 ul.nav.nav-tabs {
     margin-bottom: 2%;
 }
+ul.nav.nav-tabs.nav-stacked > li > a {
+    text-align: left;
+    padding-left: 7%;
+}
+
 div[id*="ddcl"] {
     width: 13%;
 }
@@ -40,7 +45,12 @@ div.modal {
     margin: 0 auto;
     padding: 0;
     right: 0;
-    width: 60%;
+    width: 70%;
+    overflow: hidden;
+}
+div.modal-header{
+    overflow-y:scroll; 
+    padding-left: 4%;
 }
 div.carousel.slide {
     margin: 0;

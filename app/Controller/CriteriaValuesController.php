@@ -43,12 +43,13 @@ class CriteriaValuesController extends AppController {
 			$this->CriteriaValue->create();
 			if ($this->CriteriaValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The criteria value has been saved'));
-				$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
+				$this->redirect(array('action' => 'add',$id));
 			} else {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
 		}
-		$criterias = $this->CriteriaValue->Criteria->find('list',array('conditions'=>array('id'=>$id)));
+		$criterias = $this->CriteriaValue->Criteria->find('list');
+		$this->set('kitchen_id',$id);
 		$this->set(compact('criterias'));
 	}
 

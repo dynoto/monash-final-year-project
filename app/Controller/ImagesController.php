@@ -55,7 +55,7 @@ class ImagesController extends AppController {
                 $this->Session->setFlash(__('The image could not be saved. Please, try again.'));
             }
         }
-        if ($type == 'Kitchens') {
+        if ($type == 'Kitchen') {
             $kitchens = $this->Image->Kitchen->find('list');
             $this->set('item_name',$kitchens[$id]);
         } else {

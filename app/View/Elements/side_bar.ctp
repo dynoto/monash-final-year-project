@@ -1,23 +1,14 @@
 <div class="span3">
     <div class="well span9 offset3" id="search_well">
         <?php echo $this->Form->Create('visitor',array('action'=>$visitor_action,'id'=>'criteria_filter')); ?>
-        <?php foreach ($sidebar_data as $data){    ?>
-            <h5><label class="search_label"><?php echo $data['name']; ?></label></h5>
-            <select class="span12 criteria_filter" id="<?php echo 'search_'.$data['name']; ?>" name="<?php echo $data['name']; ?>[]" multiple="multiple" >
-                <?php foreach ($data['values'] as $key=>$value) {  
-                    if (in_array($key, $selected)){
-                        $select = "selected";
-                    }else {
-                        $select = Null;
-                    }
-                    ?>
-                <option value="<?php echo $key; ?>" <?php echo $select; ?>> <?php echo $value;?> </option>
-                <?php } ?>
-            </select>
-        <?php } ?>
+        <?php 
+            foreach ($sidebar_data as $data){
+            echo $this->Form->input('CriteriaValuesKitchen.criteria_value_id.'.$data['id'],array('label'=>$data['name'],'id'=>'search_'.$data['name'],'multiple'=>'multiple','options'=>$data['values'],'selected'=>$selected,'hiddenField'=>null, 'class'=>'span12 criteria_filter'));
+            } 
+        ?>
             <div class="row-fluid" id="action_buttons">
-                <button type="reset" class="btn span6" id="sidebar_reset">Reset</button>
-                <button type="submit" class="btn span6 btn-primary" id="sidebar_filter">Filter</button>
+                <?php echo $this->Html->link('Reset',array('action'=>'gallery'),array('class'=>'btn span6','style'=>array('line-height:30px; font-size:15px; font-family:Helvetica')));?>
+                <button type="submit" class="btn span6 btn-primary btn-large" id="sidebar_filter">Filter</button>
             </div>
         <?php echo $this->Form->end(); ?>
     </div>
@@ -25,15 +16,10 @@
 
 <div style="display:none">
     <?php echo $this->Form->Create('visitor',array('action'=>$visitor_action,'id'=>'hidden_criteria_filter')); ?>
-    <input type="hidden" name="page_filter" id="page_filter" value="<?php echo $this_page; ?>"/>
-    <?php foreach ($sidebar_data as $data){    ?>
-            <select name="<?php echo $data['name']; ?>[]" multiple="multiple" >
-                <?php foreach ($data['values'] as $key=>$value) {  
-                        if (in_array($key, $selected)){ ?>
-                            <option value="<?php echo $key; ?>" selected></option>
-                <?php   }
-                      } ?>
-            </select>
-        <?php }
+    <input type="hidden" name="page_filter" id="page_filter" value="<?php echo $paginate_data['page']; ?>"/>
+    <?php 
+            foreach ($sidebar_data as $data){
+            echo $this->Form->input('CriteriaValuesKitchen.criteria_value_id.'.$data['id'],array('label'=>$data['name'],'id'=>'search_'.$data['name'],'multiple'=>'multiple','options'=>$data['values'],'selected'=>$selected,'hiddenField'=>null, 'class'=>'span12'));
+            } 
     echo $this->Form->end(); ?>
 </div>

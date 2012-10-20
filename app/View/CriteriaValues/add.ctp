@@ -8,6 +8,9 @@ echo $this->element('override', array('content_override' => $content_override));
         <div class="offset1">
         <h4><?php echo __('Actions'); ?></h4>
         <ul class="nav nav-tabs nav-stacked">
+            <li>
+                <?php echo $this->Html->link('Back',array('controller'=>'kitchen','action'=>'view',$kitchen_id)); ?>
+            </li>
             <li><?php echo $this->Html->link(__('List Criterias'), array('controller' => 'criterias', 'action' => 'index')); ?> </li>
             <li><?php echo $this->Html->link(__('New Criteria'), array('controller' => 'criterias', 'action' => 'add')); ?> </li>
             <li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
@@ -19,13 +22,13 @@ echo $this->element('override', array('content_override' => $content_override));
         <fieldset>
             <h4>Add Criteria Value</h4>
             <?php
-            echo $this->Form->input('criteria_id');
-            echo $this->Form->input('name');
+            echo $this->Form->input('criteria_id',array('selected'=>$kitchen_id));
+            echo $this->Form->input('name',array('required'=>true));
             ?>
         </fieldset>
 
         <?php
-        $submit = array('label' => 'Submit', 'class' => 'btn btn-primary');
+        $submit = array('class' => 'btn btn-primary btn-large');
         echo $this->Form->end($submit);
         ?>
     </div>

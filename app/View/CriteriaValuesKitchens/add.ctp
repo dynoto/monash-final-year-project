@@ -20,7 +20,10 @@ echo $this->element('override', array('content_override' => $content_override));
     <div class="span2">
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
-            <ul>
+            <ul class="nav nav-tabs nav-stacked">
+                <li>
+                    <?php echo $this->Html->link('Back',array('controller'=>'kitchens','action'=>'view',$kitchen_data['Kitchen']['id'])); ?>
+                </li>
                 <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add')); ?> </li>
                 <li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
             </ul>

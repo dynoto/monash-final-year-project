@@ -10,13 +10,13 @@ echo $this->element('override', array("content_override" => $content_override));
             <ul class="nav nav-tabs nav-stacked">
                 <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Kitchen'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?> </li>
-                <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $kitchen['Kitchen']['name'])); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $kitchen['Kitchen']['name'])); ?> </li>
             </ul>
             <ul class="nav nav-tabs nav-stacked">
                 <li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add','Kitchen',$kitchen['Kitchen']['id'])); ?> </li>
                 <li>
                     <?php 
-                    if(!isset($kitchen['Testimonial'])){
+                    if(empty($kitchen['Testimonial'])){
                         echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add',$kitchen['Kitchen']['id'])); 
                     }
                     ?> 
@@ -85,7 +85,7 @@ echo $this->element('override', array("content_override" => $content_override));
         <tr>
             <td><?php echo $testimonial['description']; ?></td>
             <td class="actions">
-                <?php echo $this->Html->link(__('Edit'), array('controller' => 'testimonials', 'action' => 'edit', $testimonial['id'])); ?>
+                <?php echo $this->Html->link(__('Edit'), array('controller' => 'testimonials', 'action' => 'edit', $testimonial['id'],$kitchen['Kitchen']['id'])); ?>
                 <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'testimonials', 'action' => 'delete', $testimonial['id'], $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete the testimonial?', $testimonial['id'])); ?>
             </td>
         </tr>

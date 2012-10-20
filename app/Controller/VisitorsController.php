@@ -3,39 +3,41 @@ App::uses('AppController', 'Controller');
 
 Class VisitorsController extends AppController{
     var $uses = false;
-    public $helper = array('controller','form','html');     
+    public $helper = array('controller','form','html','paginator');     
     private $__sidebar_query;
     private $__content_query;
+    private $__gallery_content_filter;
+    private $__get_kitchen_info;
+    private $__pagination;
 
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow();
+        $models = array('Kitchen','Image','CriteriaValue','Criteria','CriteriaValuesKitchen','Testimonial');
+        foreach($models as $model){
+            $this->loadModel($model);
+        }
     }
 
     public function index(){
         
     }
-    
-    public function gallery($page=1){
-        /* ----------LOAD ESSENTIAL MODELS-----------------*/
-        $models = array('Kitchen','Image','CriteriaValue','Criteria');
-        foreach($models as $model){
-            $this->loadModel($model);
+
+    public function gallery($page = 1){
+
+        unset($this->request->data['page_filter']);
+        if(isset($this->request->data) and !empty($this->request->data)){
+            $kitchen_ids  = $this->__gallery_content_filter();
+        }else{
+            $kitchen_ids  = $this->Kitchen->find('list',array('fields'=>'id'));
         }
+        $this->__get_kitchen_info($kitchen_ids,$page);
         
-        
-        /* ----------DB QUERY FOR GALLERY CONTENT--------- */
-        
-        $return_data = $this->__content_query($page);
-        
-        /* ----------SET ALL VALUES TO VIEW--------------- */
-        if(isset($return_data['filter_values'])){
-            $this->set('filter_values',$return_data['filter_values']);
-        }
-        $this->set('selected',$return_data['selected']);
-        $this->set('pagination',$return_data['pagination']);
-        $this->set('this_page',$page);
-        $this->set('info',$return_data['info']);
+        $this->__sidebar_query();
+        $paginate_data = $this->__pagination($kitchen_ids,$page);
+        $this->set('paginate_data',$paginate_data);
+        //$this->set('pagination',$return_data['pagination']);
+        //$this->set('info',$kitchen_info);
     }
     
     /*------------------------------------------------------------------------------------------------*/
@@ -51,25 +53,20 @@ Class VisitorsController extends AppController{
     
     public function testimonials($page=1){
         /* ----------LOAD ESSENTIAL MODELS-----------------*/
-        $models = array('Kitchen','Image','CriteriaValue','Criteria','Testimonial');
-        foreach($models as $model){
-            $this->loadModel($model);
+        unset($this->request->data['page_filter']);
+
+        $testimonials_id = $this->Testimonial->find('list',array('fields'=>array('kitchen_id')));
+        if(isset($this->request->data) and !empty($this->request->data)){
+            $kitchen_ids  = $this->__gallery_content_filter();
+            $kitchen_ids  = array_intersect($kitchen_ids, $testimonials_id);
+        }else{
+            $kitchen_ids  = $testimonials_id;
         }
+        $this->__get_kitchen_info($kitchen_ids,$page);
         
-        /* ----------LOAD CONTENT------------------------- */
-        $return_data = $this->__content_query($page,true);
-        
-        /* ----------SET ALL VALUES TO VIEW--------------- */
-        if(isset($return_data['filter_values'])){
-            $this->set('filter_values',$return_data['filter_values']);
-        }
-        
-        //$this->__printthis($return_data['info']);
-        
-        $this->set('selected',$return_data['selected']);
-        $this->set('pagination',$return_data['pagination']);
-        $this->set('this_page',$page);
-        $this->set('info',$return_data['info']);
+        $this->__sidebar_query();
+        $paginate_data = $this->__pagination($kitchen_ids,$page);
+        $this->set('paginate_data',$paginate_data);
     }
     
     /*------------------------------------------------------------------------------------------------*/
@@ -82,9 +79,69 @@ Class VisitorsController extends AppController{
     public function contact_us(){
         
     }
-    
-    private function __sidebar_query(){
-        $sidebar_data = $this->Criteria->find('all');
+
+    /*------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------------------------------------------------------------*/
+
+    private function __gallery_content_filter(){
+        $filter = $this->request->data['CriteriaValuesKitchen']['criteria_value_id'];
+        foreach ($filter as $key_a => $value_a) {
+            if (isset($kitchen)){
+                $conditions = array('criteria_value_id'=>$value_a,'kitchen_id'=>$kitchen);
+            } else {
+                $conditions = array('criteria_value_id'=>$value_a);
+            }
+            $kitchen = $this->CriteriaValuesKitchen->find('list',array(
+                'conditions'=>$conditions,
+                'fields'=>array('id','kitchen_id'),
+                'group' =>array('kitchen_id')
+            ));
+        }
+        return $kitchen;
+
+    }
+
+    private function __get_kitchen_info($kitchen_ids,$page=1){
+        $this->paginate = array(
+                'conditions'=>array('id'=>$kitchen_ids),
+                'limit'=>4,
+                'page' => $page
+            );
+        $info = $this->paginate('Kitchen');
+        $criterias = $this->Criteria->find('list');
+        foreach ($info as $key_a => $val_a) {
+            foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
+                $info[$key_a]['CriteriaValue'][$key_aa]['criteria_name'] = $criterias[$val_aa['criteria_id']];
+            }
+        }
+
+        $this->set('info',$info);
+    }
+
+    private function __pagination($kitchen_ids,$page=1){
+        $pagination = array();
+        $kitchen_count = count($kitchen_ids);
+        if($kitchen_count <= 4){
+            $pagination['hide'] = true;
+        } elseif ($kitchen_count > 4) {
+            $pagination['hide'] = false;
+            $count = ($page-1) * 4;
+            if (($kitchen_count - $count) <= 4){
+                $pagination['last'] = true;
+            } else {
+                $pagination['last'] = false;
+            }
+            $pagination['page'] = $page;
+            return $pagination;
+        }
+    }
+
+    private function __sidebar_query($type = 'kitchen'){
+        $sidebar_data = $this->Criteria->find('all',array('conditions'=>array('Criteria.'.$type => 1)));
         foreach($sidebar_data as $count => $result){
             $array_values   = array();
             foreach($result['CriteriaValue'] as $values){
@@ -100,17 +157,25 @@ Class VisitorsController extends AppController{
             $temp_array[$values['id']] = $values;
         }
         
+        $selected = array();
+        if(isset($this->request->data) and !empty($this->request->data)){
+            foreach ($this->request->data['CriteriaValuesKitchen']['criteria_value_id'] as $key_a => $val_a) {
+                foreach ($val_a as $key_aa => $val_aa) {
+                    $selected[] = $val_aa;
+                }
+            }
+        }
+        $this->set('selected',$selected);
         $this->set('sidebar_data',$temp_array);
-        return $temp_array;
     }
     
-    private function __content_query($page,$testimonial_mode=false){
-        $sidebar_data = $this->__sidebar_query();
+    private function __content_query($page,$testimonial_mode=false,$section='kitchen'){
+        $sidebar_data = $this->__sidebar_query($section);
         $conditions = array();
         $selected = array();
         $filter_values = null;
         if($this->request->is('Post')){
-            $filter_values = $this->request->data;
+            $filter_values = $this->request->data['CriteriaValuesKitchen'][''];
             unset($filter_values['page_filter']);
             if(!empty($filter_values)){
                 foreach ($filter_values as $filter_value){

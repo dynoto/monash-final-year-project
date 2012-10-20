@@ -16,7 +16,13 @@ echo $this->element('override', array("content_override" => $content_override));
                     $kitchen_code = str_replace(' ', '_', $kitchen_name);
                     ?>
                     <a href="#<?php echo $kitchen_code; ?>" role="button" data-toggle="modal" class="modal_toggle">
-                        <?php echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('class'=>'hspn12')); ?>
+                        <?php
+                        if(isset($val_a['Image'][0]['name'])){
+                        echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('class'=>'hspn12')); 
+                        } else {
+                            echo $this->Html->image('common/image_error.jpg',array('class'=>'hspn12'));
+                        }
+                        ?>
                     </a>
                 </div>
                 <div class="span8 hspn12">

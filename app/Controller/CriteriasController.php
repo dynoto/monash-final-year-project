@@ -73,6 +73,7 @@ class CriteriasController extends AppController {
         } else {
             $this->request->data = $this->Criteria->read(null, $id);
         }
+        $this->set('criteria_id',$id);
     }
 
     /**

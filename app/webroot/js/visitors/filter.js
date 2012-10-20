@@ -9,11 +9,13 @@ $(document).ready(function(){
            page_filter -= 1;
        }
        page_filter = $('form#criteria_filter').attr('action')+'/'+page_filter;
+
        $('form#hidden_criteria_filter').attr('action',page_filter);
        $('form#hidden_criteria_filter').submit();
     });
     
     $('button#sidebar_reset').click(function(){
+        window.location.href = window.location.href;
         $('form#criteria_filter').children('select.criteria_filter').children('option').prop("checked",false);
         $('span.ui-dropdownchecklist-text').text("");
         $('[id^=ddcl-]').attr('checked',false);

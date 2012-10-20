@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/common/admins');
-$override = array('title' => 'Add Image for Kitchen', 'css' => array('admins/common','admins/uploadify'), 'js' => array('admins/ajax_image_upload','admins/jquery.uploadify-3.1.min'));
+$override = array('title' => 'Add Image for Kitchen', 'css' => array('admins/common','admins/uploadify'), 'js' => array('admins/jquery.uploadify-3.1.min'));
 echo $this->element('override',array('content_override'=>$override));
 ?>
 <script type="text/javascript">
@@ -35,9 +35,9 @@ $(document).ready(function(){
                 <div class="row-fluid">
             <?php
             echo $this->Form->create('Image', array('type'=>'file','url'=>array('action'=>'add',$item_type,$item_id)));
-            echo $this->Form->input('',array('type'=>'hidden','name'=>$item_type.'_id','val'=>$item_id));
+            //echo $this->Form->input('',array('type'=>'hidden','name'=>$item_type.'_id','val'=>$item_id));
             echo $this->Form->input('Kitchen Name',array('type'=>'text','value'=>$item_name,'disabled'));
-            echo $this->Form->input('Upload Image',array('type'=>'file','name'=>$item_type.'_id'));
+            echo $this->Form->input('Upload Image',array('type'=>'file','id'=>'ImageUploadImage'));
             ?>
                 </div>
             <?php

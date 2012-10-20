@@ -19,6 +19,7 @@ class CustomersController extends AppController {
 	}
 
 	public function index() {
+		$this->redirect(array('controller'=>'administrators'));
 		$this->Customer->recursive = 0;
 		$this->paginate = array('conditions'=>array('User.approved'=>1));
 		$this->set('customers', $this->paginate());

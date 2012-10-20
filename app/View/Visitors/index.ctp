@@ -7,7 +7,7 @@
 <!--START OF BODY CONTENT -->
 <div class="row-fluid hspn10">
     <div class="span8 offset2">
-        <div class="carousel slide" id="index_carousel">
+        <div class="carousel slide carousel-fade" id="index_carousel">
             <div class="carousel-inner">
                 <?php 
                     $images = array('cover1.jpg','cover2.jpg','cover3.jpg','cover4.jpg');
