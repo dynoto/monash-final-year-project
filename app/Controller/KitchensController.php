@@ -96,7 +96,6 @@ class KitchensController extends AppController {
             $request_data = $this->request->data;
             if ($this->Kitchen->save($request_data)) {
                 $this->Session->setFlash(__('The kitchen has been saved'));
-                //$this->redirect(array('action' => 'view', $id));
             } else {
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
             }
@@ -110,8 +109,8 @@ class KitchensController extends AppController {
                 $this->CriteriaValuesKitchen->deleteAll(array('kitchen_id'=>$id));
                 $this->CriteriaValuesKitchen->create();
                 $this->CriteriaValuesKitchen->saveAll($request_data['CriteriaValuesKitchen']);
-                //$this->CriteriaValuesKitchen->save($request_data);
             }
+            $this->redirect(array('action' => 'view', $id));
 
         } else {
             $this->request->data = $this->Kitchen->read(null, $id);

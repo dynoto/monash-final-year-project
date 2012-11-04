@@ -36,7 +36,12 @@ $(document).ready(function(){
             <hr>
             <h4>Testimonial</h4>
             <?php
-            echo $this->Form->input('Testimonial.description',array('class'=>'span8','value'=>$data['Testimonial'][0]['description']));
+            if(!empty($data['Testimonial'][0])){
+                $testimonial_value = $data['Testimonial'][0]['description'];
+            } else {
+                $testimonial_value = null;
+            }
+            echo $this->Form->input('Testimonial.description',array('class'=>'span8','value'=>$testimonial_value));
             ?>
             <!--ADD IMAGE SECTION -->
             <hr>

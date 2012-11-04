@@ -7992,3 +7992,12 @@
 #8 /Volumes/Files/Dropbox/Projects/ie_project_team34/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(CriteriaValuesKitchensController), Object(CakeRequest), Object(CakeResponse))
 #9 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2012-10-21 04:54:20 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-21 04:54:30 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-21 04:55:22 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Volumes/Files/Dropbox/Projects/ie_project_team34/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -9,7 +9,7 @@ echo $this->element('override', array('content_override' => $content_override));
         <h4><?php echo __('Actions'); ?></h4>
         <ul class="nav nav-tabs nav-stacked">
             <li>
-                <?php echo $this->Html->link('Back',array('controller'=>'kitchen','action'=>'view',$kitchen_id)); ?>
+                <?php echo $this->Html->link('Back',array('controller'=>'criterias','action'=>'view',$kitchen_id)); ?>
             </li>
             <li><?php echo $this->Html->link(__('List Criterias'), array('controller' => 'criterias', 'action' => 'index')); ?> </li>
             <li><?php echo $this->Html->link(__('New Criteria'), array('controller' => 'criterias', 'action' => 'add')); ?> </li>
