@@ -18,7 +18,7 @@ echo $this->element('override', array("content_override" => $content_override));
                     <a href="#<?php echo $kitchen_code; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
                         if(isset($val_a['Image'][0]['name'])){
-                        echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('class'=>'hspn12')); 
+                        echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('class'=>'hspn12')); 
                         } else {
                             echo $this->Html->image('common/image_error.jpg',array('class'=>'hspn12'));
                         }

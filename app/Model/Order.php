@@ -3,7 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * Order Model
  *
- * @property Customers $Customers
+ * @property Customer $Customer
+ * @property OrderItem $OrderItem
  */
 class Order extends AppModel {
 
@@ -13,7 +14,7 @@ class Order extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'customers_id' => array(
+		'customer_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -33,12 +34,34 @@ class Order extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Customers' => array(
-			'className' => 'Customers',
-			'foreignKey' => 'customers_id',
+		'Customer' => array(
+			'className' => 'Customer',
+			'foreignKey' => 'customer_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+	public $hasMany = array(
+		'OrderItem' => array(
+			'className' => 'OrderItem',
+			'foreignKey' => 'order_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
 }

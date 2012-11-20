@@ -14,7 +14,7 @@ echo $this->element('override', array("content_override" => $content_override));
             echo $this->Form->input('product',array('options'=>array(1=>'Yes',0=>'No')));
             ?>
         </fieldset>
-        <div class="span3" style="margin-left: 0px">
+        <div class="span3 no-margin-left">
         <?php
         echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline'));
         echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary offset1'));

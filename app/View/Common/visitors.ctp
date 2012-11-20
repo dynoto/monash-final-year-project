@@ -1,8 +1,8 @@
 <div class="row-fluid header">
-    <div class="span8 offset2">
+    <div class="span10 offset1">
     <div class="row-fluid ">
         <div class="span6">
-        <?php   echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));
+        <?php   echo $this->Html->image('common/Softkitchens-logo.png',array('id'=>'logo','alt'=>'SK logo'));
                 //echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'),array('class'=>'login_switch')); 
         ?>
         </div>
@@ -33,4 +33,5 @@
     </div>
 </div>
 </div>
-    <?php echo $this->fetch('content'); ?>
+<?php echo $this->Session->flash(); ?>
+<?php echo $this->fetch('content'); ?>

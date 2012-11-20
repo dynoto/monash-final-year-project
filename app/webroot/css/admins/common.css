@@ -1,16 +1,22 @@
-body{
-    
-}
-.table.table-bordered.table-striped{
+.table.table-bordered.table-striped {
     margin-top: 1%;
 }
 ul.nav-stacked > li > a {
     font-size: 0.9em;
 }
-ul.nav-stacked{
+ul.nav-stacked {
     padding-bottom: 10%;
 }
-td.actions, th.actions{
-    width: 20%;
+td.actions, th.actions {
     text-align: center;
+    width: 20%;
+}
+div.inline-criteria-values {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+div.inline-criteria-values > div {
+    display: inline-block;
+    margin-right: 3%;
+    vertical-align: top;
 }

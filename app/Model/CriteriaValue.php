@@ -63,6 +63,21 @@ class CriteriaValue extends AppModel {
 			'finderQuery' => '',
 			'deleteQuery' => '',
 			'insertQuery' => ''
+		),
+		'Product' => array(
+			'className' => 'Product',
+			'joinTable' => 'criteria_values_products',
+			'foreignKey' => 'criteria_value_id',
+			'associationForeignKey' => 'product_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

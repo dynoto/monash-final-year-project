@@ -1,23 +1,27 @@
 
 body, html {
+    font-size: 90%;
     height: 92%;
 }
 div.header {
     height: auto;
-}
-div#login_bar {
-    text-align: right;
+    max-width: 1024px;
+    margin:0 auto;
 }
 ul.nav-tabs > li {
-    font-size: 1.15em;
     text-align: center;
 }
 ul.nav-tabs > li > a {
+    font-size: 1.2em;
+}
+div.modal-header,div.modal-body,ul.nav-tabs > li > a{
     padding-left: 0;
     padding-right: 0;
 }
+
 * {
-    font-family: 'Nixie One',cursive;
+    font-family: 'Raleway',sans-serif !important;
+    font-size: 1em;
 }
 #logo {
     width: 60%;
@@ -26,10 +30,10 @@ ul.nav.nav-tabs {
     margin-bottom: 2%;
 }
 ul.nav.nav-tabs.nav-stacked > li > a {
-    text-align: left;
     padding-left: 7%;
+    text-align: left;
+    font-size: 1em;
 }
-
 div[id*="ddcl"] {
     width: 13%;
 }
@@ -43,14 +47,10 @@ img#under_construction {
 div.modal {
     left: 0;
     margin: 0 auto;
+    overflow: hidden;
     padding: 0;
     right: 0;
     width: 70%;
-    overflow: hidden;
-}
-div.modal-header{
-    overflow-y:scroll; 
-    padding-left: 4%;
 }
 div.carousel.slide {
     margin: 0;
@@ -63,7 +63,7 @@ a.login_switch {
     float: right;
 }
 .hspn {
-    height: inherit;
+    height: 99.5%;
 }
 .hspn1 {
     height: 8.29167%;
@@ -101,20 +101,73 @@ a.login_switch {
 .hspn12 {
     height: 99.5%;
 }
+.no-margin{
+    margin: 0 !important;
+}
+.no-margin-left{
+    margin-left: 0px !important;
+}
+.no-margin-right{
+    margin-right: 0px !important;
+}
+.no-margin-top{
+    margin-top: 0px !important;
+}
+.no-margin-bottom{
+    margin-bottom: 0px !important;
+}
+.no-margin-vertical{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.no-margin-horizontal{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.no-padding{
+    padding: 0 !important;
+}
+.no-padding-left{
+    padding-left: 0px !important;
+}
+.no-padding-right{
+    padding-right: 0px !important;
+}
+.no-padding-top{
+    padding-top: 0px !important;
+}
+.no-padding-bottom{
+    padding-bottom: 0px !important;
+}
+.no-padding-vertical{
+    padding-top: 0px !important;
+    padding-bottom: 0px; !important
+}
+.no-padding-horizontal{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 a#login_bar_toggle_button > img {
-    width: 40px;
+    float: right;
+    width: 14%;
 }
 div#login_bar_content {
-    border: 1px solid #DDDDDD;
-    border-radius: 0 0 7px 7px;
-    text-align: center;
+    text-align: right;
 }
 div#login_bar_content > p {
+    border-bottom: 1px solid #DDDDDD;
     display: inline-block;
-    margin-top: 3%;
+    margin: 3% 0 1%;
+    padding: 0 5%;
     white-space: nowrap;
+    text-align: right;
 }
 div#login_bar_content > p > a {
-    display: inline-block;
-    margin: 0 5%;
+    margin-right: 10px;
+}
+button.close {
+    font-size: 3em;
+    right: 2%;
+    position: absolute;
 }

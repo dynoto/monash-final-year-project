@@ -71,8 +71,7 @@ $view_logo = $this->Html->image('common/view.png');
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th><?php echo __('Id'); ?></th>
-                        <th><?php echo __('Name'); ?></th>
-                        <th class="actions"><?php echo __('Actions'); ?></th>
+                        <th><?php echo __('Value'); ?></th>
                     </tr>
                     <?php
                     $i = 0;
@@ -81,10 +80,6 @@ $view_logo = $this->Html->image('common/view.png');
                         <tr>
                             <td><?php echo $criteriaValue['id']; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
-                            <td class="actions">
-                                <?php echo $this->Html->link('Edit', array('controller' => 'criteria_values', 'action' => 'edit', $criteriaValue['id']), array('escape' => false)); ?>
-                                <?php echo $this->Form->postLink('Delete', array('controller' => 'criteria_values', 'action' => 'delete', $criteriaValue['id'],$criteria['Criteria']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $criteriaValue['name'])); ?>
-                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

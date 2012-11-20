@@ -15,18 +15,46 @@ class CustomersController extends AppController {
 	public function beforeFilter(){
 		parent::beforeFilter();
 		$this->Auth->allow('add');
-		$this->loadModel('User');
+		$models = ['User','CustomerType','Discount','Order','Product'];
+		foreach ($models as $key => $value) {
+			$this->loadModel($value);
+		}
 	}
 
 	public function index() {
-		$this->redirect(array('controller'=>'administrators'));
 		$this->Customer->recursive = 0;
-		$this->paginate = array('conditions'=>array('User.approved'=>1));
+		$this->paginate = array('conditions'=>array('User.approved'=>1,'User.group_id'=>2));
 		$this->set('customers', $this->paginate());
 		$user_count = $this->User->find('count',array('conditions'=>array('approved'=>0,'group_id'=>2)));
 		if($user_count > 0){
 			$this->set('user_count',$user_count);
 		}	
+	}
+
+	public function approve(){
+		if($this->request->is('post')){
+			$data = $this->request->data;
+			pr($data);
+			$customers = $data['Customer']['Checked'];
+			$users = $this->Customer->find('list',array('conditions'=>array('id'=>$customers),'fields'=>'user_id'));
+			if($data['Customer']['approve_boolean'] == 1){
+				pr($users);
+				$this->User->updateAll(
+					array('User.approved'=>1),
+					array('User.id'=>$users)
+				);
+			}elseif ($data['Customer']['approve_boolean'] == -1) {
+				$this->Customer->deleteAll(array('Customer.id'=>$customers),false);
+				$this->User->deleteAll(array('User.id'=>$users),false);
+			}
+		}
+
+		$this->Customer->recursive = 0;
+		$this->paginate = array('conditions'=>array('User.approved'=>0,'User.group_id'=>2));
+		$this->set('customers', $this->paginate());
+		$discounts = $this->Discount->find('list');
+		$customerTypes = $this->CustomerType->find('list');
+		$this->set(compact('discounts','customerTypes'));
 	}
 
 /**
@@ -122,13 +150,13 @@ class CustomersController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 
-	public function approve($id = null) {
-		if ($this->request->is('post')){
+	// public function approve($id = null) {
+	// 	if ($this->request->is('post')){
 
-		} else {
-			$users = $this->Customer->User->find('list',array('conditions'=>array('approved'=>0,'group_id'=>2),'fields'=>'id'));
-			$customers = $this->Customer->find('all',array('conditions'=>array('user_id'=>$users)));
-			$this->set(compact($users,$customers));
-		}
-	}
+	// 	} else {
+	// 		$users = $this->Customer->User->find('list',array('conditions'=>array('approved'=>0,'group_id'=>2),'fields'=>'id'));
+	// 		$customers = $this->Customer->find('all',array('conditions'=>array('user_id'=>$users)));
+	// 		$this->set(compact($users,$customers));
+	// 	}
+	// }
 }

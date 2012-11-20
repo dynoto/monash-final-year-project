@@ -11,14 +11,14 @@ $this->element('override',array("content_override"=>$override));
 				<li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?></li>
 				<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Customer.id')), null, __('Are you sure you want to delete this customer?')); ?></li>
 			</ul>
-			<ul class="nav nav-tabs nav-stacked">
+<!-- 			<ul class="nav nav-tabs nav-stacked">
 				<li><?php echo $this->Html->link(__('List Customer Types'), array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
 				<li><?php echo $this->Html->link(__('New Customer Type'), array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
-			</ul>
-			<ul class="nav nav-tabs nav-stacked">
+			</ul> -->
+<!-- 			<ul class="nav nav-tabs nav-stacked">
 				<li><?php echo $this->Html->link(__('List Discounts'), array('controller' => 'discounts', 'action' => 'index')); ?> </li>
 				<li><?php echo $this->Html->link(__('New Discounts'), array('controller' => 'discounts', 'action' => 'add')); ?> </li>
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 	<div class="span8">

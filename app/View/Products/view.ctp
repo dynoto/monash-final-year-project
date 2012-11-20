@@ -1,31 +1,104 @@
-<div class="products view">
-<h2><?php  echo __('Product'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Discounts'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($product['Discounts']['id'], array('controller' => 'discounts', 'action' => 'view', $product['Discounts']['id'])); ?>
-			&nbsp;
-		</dd>
-	</dl>
+<?php
+echo $this->extend('/common/admins');
+$content_override = array('title' => 'View Product', 'css' => array('admins/common','admins/kitchen_product_view'), 'js' => array('admins/kitchen_product_view'));
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid">
+    <div class="span2">
+        <div class="offset1">
+            <h4><?php echo __('Actions'); ?></h4>
+            <ul class="nav nav-tabs nav-stacked">
+                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('Edit Product'), array('action' => 'edit', $products['Product']['id'])); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete product'), array('action' => 'delete', $products['Product']['id']), null, __('Are you sure you want to delete %s?', $products['Product']['name'])); ?> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="span8">
+        <div class="products view">
+            <h4><?php echo __('Product'); ?></h4>
+            <dl>
+                <dt><?php echo __('Id'); ?></dt>
+                <dd>
+                    <?php echo h($products['Product']['id']); ?>
+                    &nbsp;
+                </dd>
+                <dt><?php echo __('Name'); ?></dt>
+                <dd>
+                    <?php echo h($products['Product']['name']); ?>
+                    &nbsp;
+                </dd>
+                <dt><?php echo __('Price'); ?></dt>
+                <dd>
+                    <?php echo '$ '.h($products['Product']['price']); ?>
+                    &nbsp;
+                </dd>
+                <dt><?php echo __('Discount'); ?></dt>
+                <dd>
+                    <?php echo h($products['Discount']['value']).'%'; ?>
+                    &nbsp;
+                </dd>
+                <dt><?php echo __('Description'); ?></dt>
+                <dd>
+                    <?php echo h($products['Product']['description']); ?>
+                    &nbsp;
+                </dd>
+            </dl>
+        </div>
+
+        <!-- IMAGES -->
+        <div class="related">
+            <h4><?php echo __(' Images'); ?></h4>
+            <?php if (!empty($products['Image'])): ?>
+            <table class="table table-striped">
+                <tr>
+                    <th><?php echo __('Id'); ?></th>
+                    <th><?php echo __('Name'); ?></th>
+                    <th class="actions"><?php echo __('Actions'); ?></th>
+                </tr>
+                <?php foreach ($products['Image'] as $image): ?>
+                <tr>
+                    <td><?php echo $image['id']; ?></td>
+                    <td><?php echo $image['name']; ?></td>
+                    <td class="actions">
+                        <?php 
+                        echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
+                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'products',$products['Product']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
+                        ?>
+                    </td>
+                </tr>
+                <tr class="image_column" id="<?php echo $image['id']; ?>"style="display">
+                    <td colspan="3">
+                        <?php echo $this->Html->image('product/'.$image['name']); ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+            <?php endif; ?>
+        </div>
+
+        <!-- CRITERIA VALUES -->
+        <div class="inline-criteria-values">
+            <h4><?php echo __(' Criteria Values'); ?></h4>
+            <?php 
+            if (!empty($products['CriteriaValue'])){
+                foreach ($criteria_names as $id => $name){
+                ?>
+                <div>
+                    <h5><?php echo $name ?></h5>
+                    <?php
+                    foreach ($products['CriteriaValue'] as $criteriaValue){
+                        if($criteriaValue['criteria_id'] == $id){
+                            echo $this->Form->input('',array('label'=>$criteriaValue['name'],'type'=>'checkbox','multiple'=>'checkbox','checked','disabled'=>'disabled'));
+                        }
+                    }
+                    ?>
+                    <br>
+                </div>
+                <?php 
+                }
+            } 
+            ?>
+        </div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Product'), array('action' => 'edit', $product['Product']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Product'), array('action' => 'delete', $product['Product']['id']), null, __('Are you sure you want to delete # %s?', $product['Product']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Products'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Product'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Discounts'), array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Discounts'), array('controller' => 'discounts', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

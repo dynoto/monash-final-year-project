@@ -65,35 +65,7 @@ class ImagesController extends AppController {
         $this->set('item_id', $id);
         $this->set('item_new', $new);
     }
-
-    /**
-     * edit method
-     *
-     * @throws NotFoundException
-     * @param string $id
-     * @return void
-     */
-
-    /*
-    public function edit($id = null) {
-        $this->Image->id = $id;
-        if (!$this->Image->exists()) {
-            throw new NotFoundException(__('Invalid image'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->Image->save($this->request->data)) {
-                $this->Session->setFlash(__('The image has been saved'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('The image could not be saved. Please, try again.'));
-            }
-        } else {
-            $this->request->data = $this->Image->read(null, $id);
-        }
-        $kitchens = $this->Image->Kitchen->find('list');
-        $this->set(compact('kitchens'));
-    }
-    */
+    
     /**
      * delete method
      *
@@ -102,7 +74,7 @@ class ImagesController extends AppController {
      * @param string $id
      * @return void
      */
-    public function delete($id = null,$kitchen_id = null) {
+    public function delete($id = null,$type,$type_id) {
         if (!$this->request->is('post')) {
             throw new MethodNotAllowedException();
         }
@@ -112,17 +84,14 @@ class ImagesController extends AppController {
         }
         if ($this->Image->delete()) {
             $this->Session->setFlash(__('Image deleted'));
-            $this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
+            $this->redirect(array('controller'=>$type,'action' => 'view',$type_id));
         }
         $this->Session->setFlash(__('Image was not deleted'));
-        $this->redirect(array('controller'=>'kitchens','action' => 'view',$kitchen_id));
+        $this->redirect(array('controller'=>$type,'action' => 'view',$type_id));
     }
 
     public function add_ajax($id = null,$type = null){
-
-
-
-        $targetFolder = Router::url('/app/webroot/img/kitchens/'); // Relative to the root
+        $targetFolder = Router::url('/app/webroot/img/'.$type.'/'); // Relative to the root
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
             $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
@@ -138,7 +107,8 @@ class ImagesController extends AppController {
             } else {
                 echo 'Invalid file type.';
             }
-            $image_data = array('name'=>$hashFile,'kitchen_id'=>$id);
+            $type = $type.'_id';
+            $image_data = array('name'=>$hashFile,$type=>$id);
             $this->Image->create();
             if($this->Image->save($image_data)){
                 echo 'Image Saved Successfully';

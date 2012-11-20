@@ -20,6 +20,7 @@ class KitchensController extends AppController {
         $this->loadModel('Testimonial');
         $this->loadModel('CriteriaValuesKitchen');
         $this->loadModel('Image');
+        $this->loadModel('CriteriaValue');
     }
 
     public function index() {
@@ -35,13 +36,12 @@ class KitchensController extends AppController {
      * @return void
      */
     public function view($id = null) {
-        $this->loadModel('Criteria');
         $this->Kitchen->id = $id;
         if (!$this->Kitchen->exists()) {
             throw new NotFoundException(__('Invalid kitchen'));
         }
         $this->set('kitchen', $this->Kitchen->read(null, $id));
-        $this->set('criteria_names', $this->Criteria->find('list'));
+        $this->set('criteria_names', $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1))));
     }
 
     /**
@@ -50,7 +50,6 @@ class KitchensController extends AppController {
      * @return void
      */
     public function add() {
-        $this->set('criteria_data', $this->Criteria->find('all',array('conditions'=>array('kitchen'=>1))));
         if ($this->request->is('post')) {
             $request_data = $this->request->data;
             $this->Kitchen->create();
@@ -75,7 +74,9 @@ class KitchensController extends AppController {
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
             }
         }
+        $this->set('criteria_data', $this->Criteria->find('all',array('conditions'=>array('kitchen'=>1))));
         $criteriaValues = $this->Kitchen->CriteriaValue->find('list');
+        pr($criteriaValues);
         $this->set(compact('criteriaValues'));
     }
 
@@ -110,7 +111,7 @@ class KitchensController extends AppController {
                 $this->CriteriaValuesKitchen->create();
                 $this->CriteriaValuesKitchen->saveAll($request_data['CriteriaValuesKitchen']);
             }
-            $this->redirect(array('action' => 'view', $id));
+            // $this->redirect(array('action' => 'view', $id));
 
         } else {
             $this->request->data = $this->Kitchen->read(null, $id);
@@ -136,10 +137,6 @@ class KitchensController extends AppController {
         if (!$this->Kitchen->exists()) {
             throw new NotFoundException(__('Invalid kitchen'));
         } else {
-            $this->loadModel('Testimonial');
-            $this->loadModel('Image');
-            $this->loadModel('CriteriaValuesKitchen');
-            
             $this->Testimonial->deleteAll(array('Testimonial.kitchen_id'=>$id));
             $this->Image->deleteAll(array('Image.kitchen_id'=>$id));
             $this->CriteriaValuesKitchen->deleteAll(array('CriteriaValuesKitchen.kitchen_id'=>$id));
@@ -153,4 +150,44 @@ class KitchensController extends AppController {
         }
     }
 
+    public function fill_missing_criteria(){
+        if($this->request->is('post')){
+            $saveData = $this->request->data['criteriaValuesKitchen'];
+            $saveArray = [];
+            foreach ($saveData as $k_id => $cv_val) {
+                foreach ($cv_val as $c_key => $cv_id) {
+                    $row = ['kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id];
+                    array_push($saveArray, $row);
+                }
+            }
+            if($this->CriteriaValuesKitchen->saveAll($saveArray)){
+                $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
+            }
+
+        }
+            $missing = [];
+            $kitchens = $this->Kitchen->find('list');
+            $criterias = $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1)));
+            $criteriasArray = [];
+            foreach ($kitchens as $k_id => $k_name) {
+                $temp_array = [];
+                $kitCriteriaValues   = $this->CriteriaValuesKitchen->find('list',array('conditions'=>array('kitchen_id'=>$k_id),'fields'=>array('id','criteria_value_id')));
+                foreach ($criterias as $c_id => $c_name) {
+                    $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
+                    $criteriasArray[$c_id]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
+                    $array_intersect = array_intersect($criteriaValues, $kitCriteriaValues);
+                    if(count($array_intersect) == 0){
+                        $temp_array[$c_id] = $c_name;
+                    }
+                }
+                $missing[$k_id] = $temp_array;
+            }
+            $criterias = $criteriasArray;
+            $this->Kitchen->recursive = 0;
+            $kitchens  = $this->Kitchen->find('list');
+            $images = $this->Image->find('list',array('fields'=>array('kitchen_id','name')));
+            $this->set(compact('kitchens','missing','criterias','images'));
+        
+        
+    }
 }

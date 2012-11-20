@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/common/admins');
-$content_override = array('title' => '', 'css' => array('admins/common','admins/kitchens_view'), 'js' => array('admins/kitchens_view'));
+$content_override = array('title' => 'View Kitchen', 'css' => array('admins/common','admins/kitchens_product_view'), 'js' => array('admins/kitchen_product_view'));
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
@@ -11,17 +11,6 @@ echo $this->element('override', array("content_override" => $content_override));
                 <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Kitchen'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $kitchen['Kitchen']['name'])); ?> </li>
-            </ul>
-            <ul class="nav nav-tabs nav-stacked">
-                <li><?php echo $this->Html->link(__('New Image'), array('controller' => 'images', 'action' => 'add','Kitchen',$kitchen['Kitchen']['id'])); ?> </li>
-                <li>
-                    <?php 
-                    if(empty($kitchen['Testimonial'])){
-                        echo $this->Html->link(__('New Testimonial'), array('controller' => 'testimonials', 'action' => 'add',$kitchen['Kitchen']['id'])); 
-                    }
-                    ?> 
-                </li>
-                <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values_kitchens', 'action' => 'add',$kitchen['Kitchen']['id'])); ?> </li>
             </ul>
         </div>
     </div>
@@ -55,65 +44,59 @@ echo $this->element('override', array("content_override" => $content_override));
                     <th><?php echo __('Name'); ?></th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
-                <?php
-                foreach ($kitchen['Image'] as $image):
-                    ?>
+                <?php foreach ($kitchen['Image'] as $image): ?>
                 <tr>
                     <td><?php echo $image['id']; ?></td>
                     <td><?php echo $image['name']; ?></td>
                     <td class="actions">
                         <?php 
                         echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
-                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
+                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'kitchens,$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
                         ?>
                     </td>
                 </tr>
                 <tr class="image_column" id="<?php echo $image['id']; ?>"style="display">
                     <td colspan="3">
-                        <?php echo $this->Html->image('kitchens/'.$image['name']); ?>
+                        <?php echo $this->Html->image('kitchen/'.$image['name']); ?>
                     </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+            <?php endif; ?>
+        </div>
+        <div class="related">
+            <h4><?php echo __(' Testimonials'); ?></h4>
+            <?php if (!empty($kitchen['Testimonial'])): ?>
+            <table class="table table-striped">
+                <?php foreach ($kitchen['Testimonial'] as $testimonial): ?>
+                <tr>
+                    <td><?php echo $testimonial['description']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
-    <?php endif; ?>
-</div>
-<div class="related">
-    <h4><?php echo __(' Testimonials'); ?></h4>
-    <?php if (!empty($kitchen['Testimonial'])): ?>
-    <table class="table table-striped">
-        <?php foreach ($kitchen['Testimonial'] as $testimonial): ?>
-        <tr>
-            <td><?php echo $testimonial['description']; ?></td>
-            <td class="actions">
-                <?php echo $this->Html->link(__('Edit'), array('controller' => 'testimonials', 'action' => 'edit', $testimonial['id'],$kitchen['Kitchen']['id'])); ?>
-                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'testimonials', 'action' => 'delete', $testimonial['id'], $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete the testimonial?', $testimonial['id'])); ?>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-<?php endif; ?>
-</div>
-<div class="related">
-    <h4><?php echo __(' Criteria Values'); ?></h4>
-    <?php if (!empty($kitchen['CriteriaValue'])): ?>
-    <table class="table table-striped">
-        <tr>
-            <th><?php echo __('Criteria Name'); ?></th>
-            <th><?php echo __('Name'); ?></th>
-            <th class="actions"><?php echo __('Actions'); ?></th>
-        </tr>
-        <?php foreach ($kitchen['CriteriaValue'] as $criteriaValue): ?>
-        <tr>
-            <td><?php echo $criteria_names[$criteriaValue['criteria_id']]; ?></td>
-            <td><?php echo $criteriaValue['name']; ?></td>
-            <td class="actions">
-                <?php echo $this->Html->link(__('Edit'), array('controller' => 'criteria_values_kitchens', 'action' => 'add', $kitchen['Kitchen']['id'])); ?>
-                <?php echo $this->Form->postLink(__('Delete'), array('controller' => 'criteria_values_kitchens', 'action' => 'delete', $criteriaValue['CriteriaValuesKitchen']['id'], $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete " %s " ?', $criteriaValue['name'])); ?>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-</table>
-<?php endif; ?>
-</div>
+        <?php endif; ?>
+        </div>
+        <div class="inline-criteria-values">
+            <h4><?php echo __(' Criteria Values'); ?></h4>
+            <?php 
+            if (!empty($kitchen['CriteriaValue'])){
+                foreach ($criteria_names as $id => $name){
+                ?>
+                <div>
+                    <h5><?php echo $name ?></h5>
+                    <?php
+                    foreach ($kitchen['CriteriaValue'] as $criteriaValue){
+                        if($criteriaValue['criteria_id'] == $id){
+                            echo $this->Form->input('',array('label'=>$criteriaValue['name'],'type'=>'checkbox','multiple'=>'checkbox','checked','disabled'=>'disabled'));
+                        }
+                    }
+                    ?>
+                    <br>
+                </div>
+                <?php 
+                }
+            } 
+            ?>
+        </div>
 </div>
 </div>

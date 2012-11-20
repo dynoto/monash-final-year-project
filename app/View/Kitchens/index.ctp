@@ -4,7 +4,15 @@ $content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/commo
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
-    <div class="span8 offset2">
+    <div class="span2">
+        <div class="offset1">
+        <h4><?php echo __('Actions'); ?></h4>
+        <ul class="nav nav-tabs nav-stacked">
+        <li><?php echo $this->Html->link('Fill Missing Criteria',array('action'=>'fill_missing_criteria')); ?></li>
+        </ul>
+    </div>
+    </div>
+    <div class="span8">
         <div class="row-fluid">
             <h4 style="display:inline"><?php echo __('Kitchens'); ?></h4>
             <?php echo $this->Html->link(__('New Kitchen'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>

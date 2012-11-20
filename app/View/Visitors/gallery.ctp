@@ -18,7 +18,7 @@
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
                         if(isset($val_a['Image'][0])){
-                            echo $this->Html->image('kitchens/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10'));
+                            echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10'));
                         } else {
                             echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'kitchen_thumbnail hspn10'));
                         } 

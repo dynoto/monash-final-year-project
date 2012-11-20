@@ -8,7 +8,7 @@ $data = $this->request->data;
 $(document).ready(function(){
         $('#ImageUploadImage').uploadify({
             'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
-            'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Kitchen']['id'].'/Kitchen/');?>",
+            'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Kitchen']['id'].'/kitchen/');?>",
         });
     });
 </script>
@@ -53,8 +53,10 @@ $(document).ready(function(){
             <!--EDIT CRITERIA VALUES SECTION-->
             <hr>
             <h4>Criteria Values</h4>
+            <div class="inline-criteria-values">
             <?php
             foreach ($criterias as $key_a => $val_a) { ?>
+            <div>
             <h5><?php echo $val_a['Criteria']['name']; ?></h5>
             <?php
                 $temp = null;
@@ -63,7 +65,9 @@ $(document).ready(function(){
                 }
                 echo $this->Form->input('CriteriaValuesKitchen.criteria_value_id',array('label'=>false,'type'=>'select','multiple'=>'checkbox','options'=>$temp,'selected'=>$checked,'hiddenField'=>null)); ?>
                 <br>
+            </div>
             <?php } ?>
+            </div>
         </fieldset>
         <?php 
         echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 

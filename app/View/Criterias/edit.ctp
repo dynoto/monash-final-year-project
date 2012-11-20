@@ -4,7 +4,7 @@ $content_override = array('title' => 'Manage Criteria', 'css' => 'admins/common'
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
-    <div class="span2">
+    <div class="span2 row-fluid">
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class="nav nav-tabs nav-stacked">
@@ -15,24 +15,30 @@ echo $this->element('override', array("content_override" => $content_override));
             </ul>
         </div>
     </div>
-    <div class="span8">
+    <div class="span8 row-fluid">
         <?php echo $this->Form->create('Criteria'); ?>
-        <h4><?php echo __('Edit Criteria'); ?></h4>
-        <?php
-        echo $this->Form->input('id');
-        echo $this->Form->input('name',array('required'=>true));
-        echo $this->Form->input('kitchen',array('label'=>'Gallery','options'=>array(1=>'Yes',0=>'No')));
-        echo $this->Form->input('product',array('options'=>array(1=>'Yes',0=>'No')));
-        ?>
-        <div class="span3" style="margin-left: 0px">
+        <div class="row-fluid span12">
+            <div class="span6 row-fluid">
+                <h4><?php echo __('Edit Criteria'); ?></h4>
+                <?php
+                echo $this->Form->input('id');
+                echo $this->Form->input('name',array('required'=>true));
+                echo $this->Form->input('kitchen',array('label'=>'Gallery','options'=>array(1=>'Yes',0=>'No')));
+                echo $this->Form->input('product',array('options'=>array(1=>'Yes',0=>'No')));
+                ?>
+            </div>
+            <div class="span6 row-fluid">
+            </div>
+        </div>
+        <div class="row-fluid span8">
             <?php
             echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline'));
             echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary offset1'));
             ?>
+            
+            <?php
+            echo $this->Form->end();
+            ?>
         </div>
-        <?php
-        echo $this->Form->end();
-        ?>
-    </div>
 
-</div>
+    </div>

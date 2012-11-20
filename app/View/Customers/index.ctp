@@ -12,16 +12,17 @@ echo $this->element('override', array("content_override" => $content_override));
 			<li><?php 
 				echo $this->Html->link('Pending Approval : '.$user_count, 
 					array('action'=>'approve'),
-					array('class'=>'alert alert-error')
+					array('class'=>'alert alert-error no-margin-bottom')
 				);
 			?></li>
 		<?php } ?>
 		<li><?php echo $this->Html->link('New Customer', array('action' => 'add')); ?></li>
 	</ul>
+				<!--
 		<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link('List Customer Types', array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link('New Customer Type', array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
-	</ul>
+	</ul>-->
 	<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link('List Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link('New Discounts', array('controller' => 'discounts', 'action' => 'add')); ?> </li>
@@ -35,6 +36,7 @@ echo $this->element('override', array("content_override" => $content_override));
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
@@ -47,13 +49,14 @@ echo $this->element('override', array("content_override" => $content_override));
 	<tr>
 		<td><?php echo h($customer['Customer']['id']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['name']); ?>&nbsp;</td>
+		<td><?php echo h($customer['User']['name']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['email']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['address']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['phone']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
-		<td><?php echo h($customer['Discount']['name']); ?>&nbsp;</td>
+		<td><?php echo h($customer['Discount']['name']).'%'; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>

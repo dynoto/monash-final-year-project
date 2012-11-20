@@ -12,8 +12,17 @@ class ProductsController extends AppController {
  *
  * @return void
  */
+
+	public function beforeFilter(){
+        parent::beforeFilter();
+        $this->loadModel('Criteria');
+        $this->loadModel('CriteriaValuesProduct');
+        $this->loadModel('Image');
+        $this->loadModel('CriteriaValue');
+        $this->loadModel('Discount');
+    }
+
 	public function index() {
-            $this->redirect(array('controller'=>'administrators'));
 		$this->Product->recursive = 0;
 		$this->set('products', $this->paginate());
 	}
@@ -30,7 +39,8 @@ class ProductsController extends AppController {
 		if (!$this->Product->exists()) {
 			throw new NotFoundException(__('Invalid product'));
 		}
-		$this->set('product', $this->Product->read(null, $id));
+		$this->set('products', $this->Product->read(null, $id));
+        $this->set('criteria_names', $this->Criteria->find('list',array('conditions'=>array('product'=>1))));
 	}
 
 /**
@@ -40,16 +50,26 @@ class ProductsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$requestdata = $this->request->data;
 			$this->Product->create();
-			if ($this->Product->save($this->request->data)) {
+			if ($this->Product->save($requestdata)){
+				$product_id = $this->Product->id;
+				$temp_array;
+				foreach ($requestdata['CriteriaValuesProduct']['criteria_value_id'] as $key => $cv_id) {
+					$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'kitchen_id' => $product_id);
+				}
+				$this->CriteriaValuesProduct->create();
+				$this->CriteriaValuesProduct->saveAll($temp_array);
 				$this->Session->setFlash(__('The product has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
 		}
-		$discounts = $this->Product->Discount->find('list');
-		$this->set(compact('discounts'));
+		$criterias = $this->Criteria->find('all',array('conditions'=>array('product'=>1)));
+		$discounts = $this->Discount->find('list');
+		$this->set(compact('discounts','criterias'));
+		$this->Session->setFlash('Image adding is done in Step 2');
 	}
 
 /**
@@ -66,16 +86,39 @@ class ProductsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Product->save($this->request->data)) {
-				$this->Session->setFlash(__('The product has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$rqData = $this->request->data;
+				$product_id = $rqData['Product']['id'];
+				if(isset($rqData['CriteriaValuesProduct']['criteria_value_id'])){
+					$criteriaValuesInput = $rqData['CriteriaValuesProduct']['criteria_value_id'];
+					$criteriaValues = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$product_id),'fields'=>'criteria_value_id'));
+					$insertArray = array_diff($criteriaValuesInput, $criteriaValues);
+					$temp_array = [];
+					foreach ($insertArray as $key => $value) {
+						$temp_array[] = array('criteria_value_id'=>$value,'product_id'=>$product_id);
+					}
+					$this->CriteriaValuesProduct->saveAll($temp_array);
+	
+					$deleteArray = array_diff($criteriaValues, $criteriaValuesInput);
+					foreach ($deleteArray as $key => $value) {
+						$this->CriteriaValuesProduct->delete($key);
+					}
+				} else {
+					$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$product_id));
+				}
+
+				$this->Session->setFlash(__('The product has been updated'));
+				$this->redirect(array('action' => 'view',$product_id));
+
 			} else {
-				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The product could not be updated. Please, try again.'));
 			}
 		} else {
 			$this->request->data = $this->Product->read(null, $id);
 		}
-		$discounts = $this->Product->Discount->find('list');
-		$this->set(compact('discounts'));
+		$discounts = $this->Product->Discount->find('list',array('fields'=>'value'));
+		$criterias = $this->Criteria->findAllByProduct('1');
+        $checked = $this->CriteriaValuesProduct->find('list',array('fields'=>'criteria_value_id','conditions'=>array('product_id'=>$id)));
+        $this->set(compact('criterias','checked','discounts'));
 	}
 
 /**
@@ -93,6 +136,9 @@ class ProductsController extends AppController {
 		$this->Product->id = $id;
 		if (!$this->Product->exists()) {
 			throw new NotFoundException(__('Invalid product'));
+		} else {
+			$this->Image->deleteAll(array('product_id'=>$id));
+			$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$id));
 		}
 		if ($this->Product->delete()) {
 			$this->Session->setFlash(__('Product deleted'));
