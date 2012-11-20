@@ -1,0 +1,12 @@
+div.select > select{
+	width: auto !important;
+}
+div.select{
+	display: inline-block;
+}
+.nowrap {
+	white-space: nowrap;
+}
+div.submit > input {
+	margin-left: 2%;
+}

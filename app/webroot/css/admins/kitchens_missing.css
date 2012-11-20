@@ -1,0 +1,39 @@
+
+div.span1 > p {
+    font-size: 1.5em;
+    text-align: center;
+}
+div.table_header {
+    border-bottom: 1px solid grey;
+    margin-bottom: 1%;
+}
+div.table_header > h4 {
+    border-left: 1px solid #DDDDDD;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+div.kitchen_criteria {
+    margin-bottom: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+div.kitchen_criteria > div {
+    display: inline-block;
+    margin-right: 3%;
+    vertical-align: top;
+}
+div.row-fluid.span12 > div {
+    border-left: 1px solid #DDDDDD;
+    padding: 1%;
+}
+div.row-fluid.span12 {
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+}
+div.submit > input{
+	margin: 1% 0;
+}

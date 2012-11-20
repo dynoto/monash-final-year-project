@@ -1,0 +1,6 @@
+tr.image_column > td > img {
+	margin: 0 auto;
+	display: block;
+	/* IMAGE HEIGHT IS RESIZED DYNAMICALLY USING JAVASCRIPT, THIS VALUE REPRESENTS PERCENTAGE OF SCREEN RESOLUTION*/
+	height: 0.45px; 
+}
