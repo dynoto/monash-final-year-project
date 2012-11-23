@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/admins');
-$override = array('title'=>'Admin HomePage','css'=>array('admins/common'),'js'=>null);
+$override = array('title'=>'Admin HomePage','css'=>array('admins/common'),'js'=>('admins/test'));
 echo $this->element('override',array('content_override'=>$override))
 ?>
 <div class="row-fluid">

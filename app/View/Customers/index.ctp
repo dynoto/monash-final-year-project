@@ -56,7 +56,13 @@ echo $this->element('override', array("content_override" => $content_override));
 		<td>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
-		<td><?php echo h($customer['Discount']['name']).'%'; ?>&nbsp;</td>
+		<td><?php 
+		if(isset($customer['Discount']['value'])){
+			echo h($customer['Discount']['value']).'%'; 
+		} else {
+			echo '-';
+		}
+		?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>

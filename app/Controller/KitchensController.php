@@ -153,7 +153,7 @@ class KitchensController extends AppController {
     public function fill_missing_criteria(){
         if($this->request->is('post')){
             $saveData = $this->request->data['criteriaValuesKitchen'];
-            $saveArray = [];
+            $saveArray = array();
             foreach ($saveData as $k_id => $cv_val) {
                 foreach ($cv_val as $c_key => $cv_id) {
                     $row = ['kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id];
@@ -165,12 +165,12 @@ class KitchensController extends AppController {
             }
 
         }
-            $missing = [];
+            $missing = array();
             $kitchens = $this->Kitchen->find('list');
             $criterias = $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1)));
-            $criteriasArray = [];
+            $criteriasArray = array();
             foreach ($kitchens as $k_id => $k_name) {
-                $temp_array = [];
+                $temp_array = array();
                 $kitCriteriaValues   = $this->CriteriaValuesKitchen->find('list',array('conditions'=>array('kitchen_id'=>$k_id),'fields'=>array('id','criteria_value_id')));
                 foreach ($criterias as $c_id => $c_name) {
                     $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));

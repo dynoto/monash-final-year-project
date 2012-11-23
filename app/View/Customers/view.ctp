@@ -77,7 +77,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<tr>
 				<td><?php echo __('Discount'); ?></td>
 				<td>
-					<?php echo h($customer['Discount']['name']); ?>
+					<?php echo h($customer['Discount']['value']); ?>
 					&nbsp;
 				</td>
 			</tr>

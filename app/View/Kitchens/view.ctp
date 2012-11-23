@@ -51,7 +51,7 @@ echo $this->element('override', array("content_override" => $content_override));
                     <td class="actions">
                         <?php 
                         echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
-                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'kitchens,$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
+                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'kitchens',$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $image['name'])); 
                         ?>
                     </td>
                 </tr>

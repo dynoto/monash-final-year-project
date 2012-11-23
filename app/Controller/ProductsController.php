@@ -92,7 +92,7 @@ class ProductsController extends AppController {
 					$criteriaValuesInput = $rqData['CriteriaValuesProduct']['criteria_value_id'];
 					$criteriaValues = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$product_id),'fields'=>'criteria_value_id'));
 					$insertArray = array_diff($criteriaValuesInput, $criteriaValues);
-					$temp_array = [];
+					$temp_array = array();
 					foreach ($insertArray as $key => $value) {
 						$temp_array[] = array('criteria_value_id'=>$value,'product_id'=>$product_id);
 					}
@@ -147,4 +147,45 @@ class ProductsController extends AppController {
 		$this->Session->setFlash(__('Product was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	public function fill_missing_criteria(){
+        if($this->request->is('post')){
+            $saveData = $this->request->data['criteriaValuesKitchen'];
+            $saveArray = array();
+            foreach ($saveData as $p_id => $cv_val) {
+                foreach ($cv_val as $c_key => $cv_id) {
+                    $row = ['kitchen_id'=>$p_id, 'criteria_value_id'=>$cv_id];
+                    array_push($saveArray, $row);
+                }
+            }
+            if($this->CriteriaValuesProduct->saveAll($saveArray)){
+                $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
+            }
+
+        }
+            $missing = array();
+            $products = $this->Product->find('list');
+            $criterias = $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1)));
+            $criteriasArray = array();
+            foreach ($products as $p_id => $p_name) {
+                $temp_array = array();
+                $prodCriteriaValues   = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$p_id),'fields'=>array('id','criteria_value_id')));
+                foreach ($criterias as $c_id => $c_name) {
+                    $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
+                    $criteriasArray[$c_id]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
+                    $array_intersect = array_intersect($criteriaValues, $prodCriteriaValues);
+                    if(count($array_intersect) == 0){
+                        $temp_array[$c_id] = $c_name;
+                    }
+                }
+                $missing[$p_id] = $temp_array;
+            }
+            $criterias = $criteriasArray;
+            $this->Product->recursive = 0;
+            $products  = $this->Product->find('list');
+            $images = $this->Image->find('list',array('fields'=>array('product_id','name')));
+            $this->set(compact('products','missing','criterias','images'));
+        
+        
+    }
 }
