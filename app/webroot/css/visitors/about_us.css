@@ -1,24 +1,13 @@
-
-
-p.inline
-{
-display:inline;
-} 
-
-body
-{
-margin:0;
-padding:0;
+div.main_content {
+    margin: 0 auto;
 }
-.container
-{
-position:relative;
-width:100%;
+p.focal_description {
+    display: inline-block;
+    margin-right: 3%;
+    vertical-align: top;
+    width: 40%;
 }
-.right
-{
-position:absolute;
-right:0px;
-width:300px;
-background-color:#b0e0e6;
+div.youtube_video {
+    display: inline-block;
+    width: 50%;
 }

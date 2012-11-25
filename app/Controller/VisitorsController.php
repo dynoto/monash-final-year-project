@@ -77,6 +77,17 @@ Class VisitorsController extends AppController{
     }
     
     public function contact_us(){
+        if($this->request->is('post')){
+            $this->loadModel('Enquiry');
+            $requestData = $this->request->data;
+            $this->Enquiry->create();
+            if($this->Enquiry->save($requestData)){
+                $this->Session->setFlash('Your enquiry have been submitted, thank you very much');
+                $this->redirect(array('action'=>'contact_us'));
+            } else {
+                $this->Session->setFlash('Sorry, there seems to be a problem submitting your enquiry');
+            }
+        }
         
     }
 

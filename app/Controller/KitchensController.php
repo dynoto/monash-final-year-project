@@ -96,29 +96,38 @@ class KitchensController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             $request_data = $this->request->data;
             if ($this->Kitchen->save($request_data)) {
+                if (isset($request_data['CriteriaValuesKitchen'])){
+                    $temp = null;
+                    foreach ($request_data['CriteriaValuesKitchen']['criteria_value_id'] as $key => $value) {
+                        $temp = array('criteria_value_id'=>$value,'kitchen_id'=>$id);
+                        array_push($request_data['CriteriaValuesKitchen'], $temp);
+                    }
+                    unset($request_data['CriteriaValuesKitchen']['criteria_value_id']);
+                    $this->CriteriaValuesKitchen->deleteAll(array('kitchen_id'=>$id));
+                    $this->CriteriaValuesKitchen->create();
+                    $this->CriteriaValuesKitchen->saveAll($request_data['CriteriaValuesKitchen']);
+                }
+                if (isset($request_data['Testimonial'])){
+                    $this->Testimonial->updateAll(
+                        array('description'=>'"'.$request_data['Testimonial']['description'].'"'),
+                        array('kitchen_id'=>$id)
+                    );
+                }
+                if (isset($request_data['Image'])){
+                    $this->Image->deleteAll(array('Image.id'=>$request_data['Image']['id']));
+                }
                 $this->Session->setFlash(__('The kitchen has been saved'));
+                $this->redirect(array('action' => 'view', $id));
             } else {
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
             }
-            if (isset($request_data['CriteriaValuesKitchen'])){
-                $temp = null;
-                foreach ($request_data['CriteriaValuesKitchen']['criteria_value_id'] as $key => $value) {
-                    $temp = array('criteria_value_id'=>$value,'kitchen_id'=>$id);
-                    array_push($request_data['CriteriaValuesKitchen'], $temp);
-                }
-                unset($request_data['CriteriaValuesKitchen']['criteria_value_id']);
-                $this->CriteriaValuesKitchen->deleteAll(array('kitchen_id'=>$id));
-                $this->CriteriaValuesKitchen->create();
-                $this->CriteriaValuesKitchen->saveAll($request_data['CriteriaValuesKitchen']);
-            }
-            // $this->redirect(array('action' => 'view', $id));
-
         } else {
             $this->request->data = $this->Kitchen->read(null, $id);
         }
+        $images = $this->Image->find('list',array('conditions'=>array('kitchen_id'=>$id)));
         $criterias = $this->Criteria->findAllByKitchen('1');
         $checked = $this->CriteriaValuesKitchen->find('list',array('fields'=>'criteria_value_id','conditions'=>array('kitchen_id'=>$id)));
-        $this->set(compact('criterias','checked'));
+        $this->set(compact('criterias','checked','images'));
     }
 
     /**

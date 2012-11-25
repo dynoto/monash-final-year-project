@@ -16,7 +16,16 @@ class Product extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-
+	public $validate = array(
+		'price' => array(
+			'rule'=>'numeric',
+			'message'=>'please input numbers only'
+		),
+		'name' => array(
+			'rule'=>'isUnique',
+			'message'=>'Product name exists, please choose another product name'
+		)
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

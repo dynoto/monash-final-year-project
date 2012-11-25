@@ -8,7 +8,7 @@ echo $this->element('override', array("content_override" => $content_override));
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class="nav nav-tabs nav-stacked">
-                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('List Products'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Product'), array('action' => 'edit', $products['Product']['id'])); ?> </li>
                 <li><?php echo $this->Form->postLink(__('Delete product'), array('action' => 'delete', $products['Product']['id']), null, __('Are you sure you want to delete %s?', $products['Product']['name'])); ?> </li>
             </ul>
@@ -54,17 +54,15 @@ echo $this->element('override', array("content_override" => $content_override));
                 <tr>
                     <th><?php echo __('Id'); ?></th>
                     <th><?php echo __('Name'); ?></th>
-                    <th class="actions"><?php echo __('Actions'); ?></th>
+
                 </tr>
                 <?php foreach ($products['Image'] as $image): ?>
                 <tr>
                     <td><?php echo $image['id']; ?></td>
-                    <td><?php echo $image['name']; ?></td>
-                    <td class="actions">
+                    <td>
                         <?php 
-                        echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
-                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'products',$products['Product']['id']), null, __('Are you sure you want to delete # %s?', $image['name'])); 
-                        ?>
+                    echo $this->Html->image('product/'.$image['name'],array('class'=>'view_image_thumbnail','onclick'=>'return show_hide_image('.$image['id'].')'));
+                    echo $image['name']; ?>
                     </td>
                 </tr>
                 <tr class="image_column" id="<?php echo $image['id']; ?>"style="display">

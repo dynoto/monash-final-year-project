@@ -1,13 +1,9 @@
-div.container
-{
-width:100em;
-border:none;
+div.main_content{
+	margin: 0 auto
 }
-div.box
-{
-box-sizing:border-box;
--moz-box-sizing:border-box; /* Firefox */
--webkit-box-sizing:border-box; /* Safari */
-width:32%;
-float:left;
+ul{
+	list-style: none;
+}
+.well{
+	margin-bottom: 10px;
 }

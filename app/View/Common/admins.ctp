@@ -1,7 +1,7 @@
-<header>
+<div class="row-fluid header">
     <div class="row-fluid" style="height:auto">
         <div class="row-fluid">
-            <div class="span8 offset2" id="div_header">
+            <div class="span10 offset1" id="div_header">
                 <div class="span6">
                     <?php echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));?>
                 </div>
@@ -9,13 +9,13 @@
             </div>
         </div>
         <div class="row-fluid">
-            <div class="span8 offset2">
+            <div class="span10 offset1">
                 <ul class="nav nav-tabs">
                     <?php 
                     $current_action = $this->params['controller'];
                     $links = array( 'Home'=>'administrators',
                         'Criterias'=>'criterias',
-                        'Gallery'=>'kitchens',
+                        'Kitchens'=>'kitchens',
                         'Products'=>'products',
                         'Customers'=>'customers',
                         'Orders'=>'orders'); 
@@ -31,6 +31,6 @@
             </div>
         </div>
     </div>
-</header>
+</div>
 <?php echo $this->Session->flash(); ?>
 <?php echo $this->fetch('content'); ?>

@@ -1,6 +1,14 @@
 tr.image_column > td > img {
-	margin: 0 auto;
-	display: block;
-	/* IMAGE HEIGHT IS RESIZED DYNAMICALLY USING JAVASCRIPT, THIS VALUE REPRESENTS PERCENTAGE OF SCREEN RESOLUTION*/
-	height: 0.45px; 
+    display: block;
+    height: 0.45px;
+    margin: 0 auto;
+}
+
+ img.view_image_thumbnail {
+    height: auto;
+    max-height: 80px;
+    max-width: 160px;
+    width: auto;
+    display: inline-block;
+    margin-right: 1%
 }

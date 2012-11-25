@@ -61,7 +61,7 @@ class ProductsController extends AppController {
 				$this->CriteriaValuesProduct->create();
 				$this->CriteriaValuesProduct->saveAll($temp_array);
 				$this->Session->setFlash(__('The product has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'view',$product_id));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
@@ -88,23 +88,34 @@ class ProductsController extends AppController {
 			if ($this->Product->save($this->request->data)) {
 				$rqData = $this->request->data;
 				$product_id = $rqData['Product']['id'];
+
+				#MODIFY CRITERIA VALUES
 				if(isset($rqData['CriteriaValuesProduct']['criteria_value_id'])){
 					$criteriaValuesInput = $rqData['CriteriaValuesProduct']['criteria_value_id'];
 					$criteriaValues = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$product_id),'fields'=>'criteria_value_id'));
+
+					#ASSOCIATE NEWLY SELECTED CRITERIA VALUE
 					$insertArray = array_diff($criteriaValuesInput, $criteriaValues);
 					$temp_array = array();
 					foreach ($insertArray as $key => $value) {
 						$temp_array[] = array('criteria_value_id'=>$value,'product_id'=>$product_id);
 					}
 					$this->CriteriaValuesProduct->saveAll($temp_array);
-	
+					
+					#DISSOCIATE UNSELECTED CRITERIA VALUE
 					$deleteArray = array_diff($criteriaValues, $criteriaValuesInput);
 					foreach ($deleteArray as $key => $value) {
 						$this->CriteriaValuesProduct->delete($key);
 					}
 				} else {
+					#DELETE ALL CRITERIA VALUES IF NONE SELECTED IN THE EDIT PAGE
 					$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$product_id));
 				}
+
+				#DELETE SELECTED IMAGES
+				if (isset($rqData['Image'])){
+                    $this->Image->deleteAll(array('Image.id'=>$rqData['Image']['id']));
+                }
 
 				$this->Session->setFlash(__('The product has been updated'));
 				$this->redirect(array('action' => 'view',$product_id));
@@ -115,10 +126,11 @@ class ProductsController extends AppController {
 		} else {
 			$this->request->data = $this->Product->read(null, $id);
 		}
+		$images = $this->Image->find('list',array('conditions'=>array('product_id'=>$id)));
 		$discounts = $this->Product->Discount->find('list',array('fields'=>'value'));
 		$criterias = $this->Criteria->findAllByProduct('1');
         $checked = $this->CriteriaValuesProduct->find('list',array('fields'=>'criteria_value_id','conditions'=>array('product_id'=>$id)));
-        $this->set(compact('criterias','checked','discounts'));
+        $this->set(compact('criterias','checked','discounts','images'));
 	}
 
 /**

@@ -15,6 +15,12 @@ class Criteria extends AppModel {
  *
  * @var array
  */
+	public $validate = array(
+		'name' => array(
+			'rule'=>'isUnique',
+			'message'=>'Product name exists, please choose another product name'
+		)
+	);
 	public $name = "Criteria";
 	public $hasMany = array(
 		'CriteriaValue' => array(

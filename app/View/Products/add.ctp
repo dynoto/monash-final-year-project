@@ -8,7 +8,7 @@ echo $this->element('override', array('content_override' => $override));
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class='nav nav-tabs nav-stacked'>
-                <li><?php echo $this->Html->link(__('List Prdocuts'), array('action' => 'index')); ?></li>
+                <li><?php echo $this->Html->link(__('List Products'), array('action' => 'index')); ?></li>
             </ul>
         </div>
     </div>
@@ -18,9 +18,14 @@ echo $this->element('override', array('content_override' => $override));
             <?php
             echo $this->Form->input('name',array('required'=>true,'class'=>'span3'));
             echo $this->Form->input('description',array('class'=>'span8','type'=>'textarea'));
-            echo $this->Form->input('price',array('required'=>true,'class'=>'span3'));
             ?>
-
+            <div class="input-prepend">
+                <label for="ProductPrice">Price</label>
+                <span class="add-on">$</span>
+                <?php
+                echo $this->Form->input('price',array('required'=>true,'label'=>false,'div'=>false));
+                ?>
+            </div>
             <!--INPUT CRITERIA VALUES SECTION-->
             <hr>
             <h4>Criteria Values</h4>

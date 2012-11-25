@@ -14,10 +14,9 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class="nav nav-tabs nav-stacked">
-                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('List Criterias'), array('action' => 'index')); ?> </li>
                 <li><?php echo $this->Html->link(__('Edit Criteria'), array('action' => 'edit', $criteria['Criteria']['id'])); ?> </li>
-                <li><?php echo $this->Form->postLink(__('Delete Criteria'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Are you sure you want to delete # %s?', $criteria['Criteria']['id'])); ?> </li>
-                <li><?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add', $criteria['Criteria']['id'])); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete Criteria'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Deleting criterias will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?', $criteria['Criteria']['id'])); ?> </li>
             </ul>
         </div>
     </div>
@@ -66,7 +65,10 @@ $view_logo = $this->Html->image('common/view.png');
             </dl>
         </div>
         <div class="row-fluid">
-            <h4><?php echo __('Criteria Values'); ?></h4>
+            <div class="row-fluid">
+            <h4 class="ib"><?php echo __('Criteria Values'); ?></h4>
+            <?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add', $criteria['Criteria']['id']),array('class'=>'btn' ,'style'=>'float:right')); ?>
+            </div>
             <?php if (!empty($criteria['CriteriaValue'])): ?>
                 <table class="table table-bordered table-striped">
                     <tr>

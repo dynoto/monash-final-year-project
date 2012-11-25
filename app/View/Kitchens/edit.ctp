@@ -1,24 +1,16 @@
 <?php
 echo $this->extend('/common/admins');
-$override = array('title' => 'Edit Kitchen', 'css' => array('admins/common','admins/uploadify'), 'js' => array('admins/jquery.uploadify-3.1.min'));
+$override = array('title' => 'Edit Kitchen', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
 echo $this->element('override', array('content_override' => $override));
 $data = $this->request->data;
 ?>
-<script type="text/javascript">
-$(document).ready(function(){
-        $('#ImageUploadImage').uploadify({
-            'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
-            'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Kitchen']['id'].'/kitchen/');?>",
-        });
-    });
-</script>
 <div class="row-fluid">
     <div class="span2">
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class='nav nav-tabs nav-stacked'>
                 <li><?php echo $this->Html->link('Back',array('action'=>'view',$data['Kitchen']['id'])) ?></li>
-                <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Kitchen.id')), null, __('Are you sure you want to delete '.$data['Kitchen']['name'].'?', $this->Form->value('Kitchen.id'))); ?></li>
+                <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Kitchen.id')), array('class'=>'disableprompt'), __('Are you sure you want to delete '.$data['Kitchen']['name'].'?', $this->Form->value('Kitchen.id'))); ?></li>
                 <li><?php echo $this->Html->link(__('List Kitchens'), array('action' => 'index')); ?></li>
             </ul>
         </div>
@@ -30,7 +22,7 @@ $(document).ready(function(){
             <?php
             echo $this->Form->input('id');
             echo $this->Form->input('name',array('required'=>true));
-            echo $this->Form->input('description',array('class'=>'span8')); ?>
+            echo $this->Form->input('description',array('class'=>'span8','required'=>true)); ?>
 
             <!--EDIT TESTIMONIAL SECTION-->
             <hr>
@@ -48,7 +40,39 @@ $(document).ready(function(){
             <h4>Add Image</h4>
             <?php
             echo $this->Form->input('Upload Image',array('type'=>'file','id'=>'ImageUploadImage'));
-            ?>
+            if (!empty($data['Image'])): ?>
+            <table class="table table-striped">
+                <tr>
+                    <th><?php echo __('Id'); ?></th>
+                    <th><?php echo __('Name'); ?></th>
+                    <th class="Delete"><?php echo __('Delete'); ?></th>
+                </tr>
+                <?php foreach ($images as $key => $value): 
+                    $image['id'] = $key;
+                    $image['name'] = $value
+                ?>
+                <tr>
+                    <td><?php echo $image['id']; ?></td>
+                    <td>
+                        <?php 
+                        echo $this->Html->image('kitchen/'.$image['name'],array('class'=>'view_image_thumbnail','onclick'=>'return show_hide_image('.$image['id'].')'));
+                        echo $image['name']; 
+                        ?>
+                    </td>
+                    <td class="actions">
+                        <?php 
+                        echo $this->Form->input('Image.id.',array('type'=>'checkbox','value'=>$image['id'],'label'=>false,'hiddenField'=>false));
+                        ?>
+                    </td>
+                </tr>
+                <tr class="image_column" id="<?php echo $image['id']; ?>"style="display">
+                    <td colspan="3">
+                        <?php echo $this->Html->image('kitchen/'.$image['name']); ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+            <?php endif; ?>
 
             <!--EDIT CRITERIA VALUES SECTION-->
             <hr>
@@ -73,5 +97,15 @@ $(document).ready(function(){
         echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 
         ?>
     </div>
-
 </div>
+
+<?php $this->start('etc_script'); ?>
+<script type="text/javascript">
+$(document).ready(function(){
+        $('#ImageUploadImage').uploadify({
+            'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
+            'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Kitchen']['id'].'/kitchen/');?>",
+        });
+    });
+</script>
+<?php $this->end(); ?>

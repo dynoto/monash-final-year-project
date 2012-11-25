@@ -49,7 +49,7 @@ echo $this->element('override',array("content_override"=>$content_override));
                     <td class="actions">
                         <?php echo $this->Html->link(__('View'), array('action' => 'view', $criteria['Criteria']['id'])); ?>
                         <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $criteria['Criteria']['id'])); ?>
-                        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Are you sure you want to delete "%s" ?', $criteria['Criteria']['name'])); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $criteria['Criteria']['id']), null, __('Deleting criterias will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?', $criteria['Criteria']['name'])); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

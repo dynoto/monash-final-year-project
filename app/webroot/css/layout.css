@@ -5,6 +5,7 @@ body, html {
 }
 div.header {
     height: auto;
+    width: auto;
     max-width: 1024px;
     margin:0 auto;
 }
@@ -147,7 +148,9 @@ a.login_switch {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-
+.ib{
+    display: inline-block;
+}
 a#login_bar_toggle_button > img {
     float: right;
     width: 14%;
@@ -170,4 +173,8 @@ button.close {
     font-size: 3em;
     right: 2%;
     position: absolute;
+}
+div.main_content{
+    width: auto;
+    max-width: 1024px;
 }

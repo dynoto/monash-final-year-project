@@ -9,9 +9,6 @@
                         'layout'
                         ));
         echo $this->fetch('view_css');
-        echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js',
-                            'twitter_bootstrap/bootstrap.min','layout'));
-        echo $this->fetch('view_js');
     ?>
 </head>
 <body>
@@ -19,5 +16,10 @@
         <?php echo $this->fetch('content');    ?>
     <!-- Content Ends Here -->
 </body>
-    <?php //echo $this->element('sql_dump') ?>
+    <?php 
+        echo $this->Html->script(array('http://code.jquery.com/jquery-1.8.3.min.js',
+                            'twitter_bootstrap/bootstrap.min','layout'));
+        echo $this->fetch('view_js');
+        echo $this->fetch('etc_script');
+    ?>
 </html>

@@ -10,6 +10,7 @@ ul.nav-stacked {
 td.actions, th.actions {
     text-align: center;
     width: 20%;
+    vertical-align: middle;
 }
 div.inline-criteria-values {
     overflow-x: scroll;

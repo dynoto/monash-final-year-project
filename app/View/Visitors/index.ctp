@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/visitors');
-$content_override = array('title'=>'SK Kitchens Index','css'=>'visitors/index','js'=>NULL);
+$content_override = array('title'=>'SK Kitchens Index','css'=>'visitors/index','js'=>'visitors/index');
 echo $this->element('override',array("content_override"=>$content_override));
 ?>
 

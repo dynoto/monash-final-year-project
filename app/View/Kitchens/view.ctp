@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/common/admins');
-$content_override = array('title' => 'View Kitchen', 'css' => array('admins/common','admins/kitchens_product_view'), 'js' => array('admins/kitchen_product_view'));
+$content_override = array('title' => 'View Kitchen', 'css' => array('admins/common','admins/kitchen_product_view'), 'js' => array('admins/kitchen_product_view'));
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
@@ -42,16 +42,14 @@ echo $this->element('override', array("content_override" => $content_override));
                 <tr>
                     <th><?php echo __('Id'); ?></th>
                     <th><?php echo __('Name'); ?></th>
-                    <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php foreach ($kitchen['Image'] as $image): ?>
                 <tr>
                     <td><?php echo $image['id']; ?></td>
-                    <td><?php echo $image['name']; ?></td>
-                    <td class="actions">
+                    <td>
                         <?php 
-                        echo $this->Html->link('View ',array(),array('class'=>'image_action','onclick'=>'return show_hide_image('.$image['id'].')'));
-                        echo $this->Form->postLink(__('Delete'), array('controller' => 'images', 'action' => 'delete', $image['id'],'kitchens',$kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $image['name'])); 
+                        echo $this->Html->image('kitchen/'.$image['name'],array('class'=>'view_image_thumbnail','onclick'=>'return show_hide_image('.$image['id'].')'));
+                        echo $image['name']; 
                         ?>
                     </td>
                 </tr>

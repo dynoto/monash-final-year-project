@@ -39,7 +39,8 @@ class CriteriaValuesController extends AppController {
  */
 	public function add($id = null) {
 		if ($this->request->is('post')) {
-                    $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
+            $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
+            $value = $this->request->data['CriteriaValue']['name'];
 			$this->CriteriaValue->create();
 			if ($this->CriteriaValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The criteria value has been saved'));
