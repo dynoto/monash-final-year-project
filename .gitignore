@@ -1,6 +1,7 @@
 !empty
 app/tmp/*
-.DS_Store
+/*.DS_Store
+/**/*.DS_Store
 app/tmp/cache/models/myapp_cake_model_default_engineered_aros_acos
 
 app/tmp/cache/models/myapp_cake_model_default_engineered_aros
@@ -14,3 +15,7 @@ app/tmp/cache/models/myapp_cake_model_default_engineered_users
 *.log
 *.sublime-workspace
 
+
+app/.DS_Store
+
+.DS_Store

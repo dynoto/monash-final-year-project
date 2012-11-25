@@ -206,84 +206,9 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 (3, 2, 85, '1', '1', '1', '1'),
 (4, 2, 86, '1', '1', '1', '1');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `customers`
---
-
-CREATE TABLE `customers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `address` varchar(45) DEFAULT NULL,
-  `phone` varchar(45) DEFAULT NULL,
-  `customer_type_id` int(11) DEFAULT NULL,
-  `discount_id` int(11) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_customers_customer_type1_idx` (`customer_type_id`),
-  KEY `fk_customers_discounts1_idx` (`discount_id`),
-  KEY `fk_customers_users1_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`id`, `name`, `email`, `address`, `phone`, `customer_type_id`, `discount_id`, `user_id`) VALUES
-(1, 'cust1 full name', 'cust@omer.com', 'something very very long..bla bla bla bal ab ', '2873829479234', 2, 4, 5),
-(2, 'customer33', 'cau@field.com', 'oansetuhaotnueanstuh', '12324235325', 1, 1, 6),
-(3, 'ahahahah', 'hahahaha', 'hahahaha', '340958439058', NULL, NULL, 7),
-(4, 'customer10', 'customer10@email.com', 'my house', '123456', NULL, NULL, 8),
-(5, 'DAVID TJOKROAMINOTO', 'dynamic.dante@gmail.com', '88 park st melbourne 3000', '0486795739333', NULL, NULL, 9),
-(6, 'David Tjokroaminoto', 'haha@gmail.com', 'test', '2345890', NULL, NULL, 10),
-(7, 'SAONETUHAOTNESUH', 'ASEUHTNOEAUH', 'SOAUHTOSANEUH', '34L5G4C5G43R5', NULL, NULL, 12);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `groups`
---
-
-CREATE TABLE `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `groups`
---
-
 INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
 (1, 'Administrators', '2012-10-15 08:56:47', '2012-10-15 08:56:47'),
 (2, 'Customers', '2012-10-15 08:56:52', '2012-10-15 08:56:52');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `group_id` int(11) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  `approved` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`),
-  KEY `fk_users_group1` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
-
---
--- Dumping data for table `users`
---
 
 INSERT INTO `users` (`id`, `name`, `password`, `group_id`, `created`, `modified`, `approved`) VALUES
 (1, 'admin', '129ba08f59a3ccf765267c1676feef7a84b8dc75', 1, '2012-10-15 08:57:01', '2012-10-15 08:57:01', 1),
@@ -296,24 +221,11 @@ INSERT INTO `users` (`id`, `name`, `password`, `group_id`, `created`, `modified`
 (10, 'newUser', 'd33fd9b28f3c36a93ff856f73bbfc09c33d2c97d', 2, '2012-11-15 16:08:05', '2012-11-15 16:08:05', 1),
 (12, 'aosunthoeau', '16138e307f8ec87397254d1accf8252aca260b79', 2, '2012-11-15 16:59:09', '2012-11-15 16:59:09', 1);
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `customers`
---
-ALTER TABLE `customers`
-  ADD CONSTRAINT `fk_customers_customer_type1` FOREIGN KEY (`customer_type_id`) REFERENCES `customer_types` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_customers_discounts1` FOREIGN KEY (`discount_id`) REFERENCES `discounts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_customers_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `fk_users_group1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `customers` (`id`, `name`, `email`, `address`, `phone`, `customer_type_id`, `discount_id`, `user_id`) VALUES
+(1, 'cust1 full name', 'cust@omer.com', 'something very very long..bla bla bla bal ab ', '2873829479234', 2, 4, 5),
+(2, 'customer33', 'cau@field.com', 'oansetuhaotnueanstuh', '12324235325', 1, 1, 6),
+(3, 'ahahahah', 'hahahaha', 'hahahaha', '340958439058', NULL, NULL, 7),
+(4, 'customer10', 'customer10@email.com', 'my house', '123456', NULL, NULL, 8),
+(5, 'DAVID TJOKROAMINOTO', 'dynamic.dante@gmail.com', '88 park st melbourne 3000', '0486795739333', NULL, NULL, 9),
+(6, 'David Tjokroaminoto', 'haha@gmail.com', 'test', '2345890', NULL, NULL, 10),
+(7, 'SAONETUHAOTNESUH', 'ASEUHTNOEAUH', 'SOAUHTOSANEUH', '34L5G4C5G43R5', NULL, NULL, 12);
