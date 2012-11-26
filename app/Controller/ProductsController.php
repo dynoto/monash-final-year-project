@@ -56,12 +56,12 @@ class ProductsController extends AppController {
 				$product_id = $this->Product->id;
 				$temp_array;
 				foreach ($requestdata['CriteriaValuesProduct']['criteria_value_id'] as $key => $cv_id) {
-					$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'kitchen_id' => $product_id);
+					$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'product_id' => $product_id);
 				}
 				$this->CriteriaValuesProduct->create();
 				$this->CriteriaValuesProduct->saveAll($temp_array);
 				$this->Session->setFlash(__('The product has been saved'));
-				$this->redirect(array('action' => 'view',$product_id));
+				$this->redirect(array('controller'=>'image','action' => 'add','product',$product_id,1));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
@@ -162,22 +162,22 @@ class ProductsController extends AppController {
 
 	public function fill_missing_criteria(){
         if($this->request->is('post')){
-            $saveData = $this->request->data['criteriaValuesKitchen'];
+            $saveData = $this->request->data['criteriaValuesProduct'];
             $saveArray = array();
             foreach ($saveData as $p_id => $cv_val) {
                 foreach ($cv_val as $c_key => $cv_id) {
-                    $row = array('kitchen_id'=>$p_id, 'criteria_value_id'=>$cv_id);
+                    $row = array('product_id'=>$p_id, 'criteria_value_id'=>$cv_id);
                     array_push($saveArray, $row);
                 }
             }
             if($this->CriteriaValuesProduct->saveAll($saveArray)){
-                $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
+                $this->Session->setFlash('Criteria Values have been associated with Products(s)');
             }
 
         }
             $missing = array();
             $products = $this->Product->find('list');
-            $criterias = $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1)));
+            $criterias = $this->Criteria->find('list',array('conditions'=>array('product'=>1)));
             $criteriasArray = array();
             foreach ($products as $p_id => $p_name) {
                 $temp_array = array();

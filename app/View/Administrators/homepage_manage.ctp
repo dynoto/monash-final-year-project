@@ -25,8 +25,8 @@ echo $this->element('override', array("content_override" => $content_override));
 						<td><?php echo $v['id'] ?></td>
 						<td><?php echo $this->Html->Image('kitchen/'.$w['Image']['name'],array('class'=>'thumbnail')); ?></td>
 						<td><?php echo $kitchens[$w['Image']['kitchen_id']] ?></td>
-						<td><?php 
-							echo $this->Form->input('HomepageImage.position.'.$v['id'],array('value'=>$v['position'],'label'=>false,'class'=>'span4','required'=>true,'id'=>'image_'.$v['id'],'hiddenField'=>false));
+						<td><?php
+							echo $this->Form->input('HomepageImage.position.',array('multiple'=>'select','options'=>$count,'selected'=>$v['position'],'id'=>'image_'.$v['id'],'hiddenField'=>false));
 						?></td>
 						<td><?php echo $this->Form->input('Homepage.delete.',array('type'=>'checkbox','class'=>'delete_checkbox','label'=>false,'value'=>$v['id'],'hiddenField'=>false,'checked'=>false)); ?></td>
 					</tr>

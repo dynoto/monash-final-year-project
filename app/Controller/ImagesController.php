@@ -17,6 +17,7 @@ class ImagesController extends AppController {
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow('add_ajax');
+        $this->loadModel('Product');
     }
 
 
@@ -55,11 +56,12 @@ class ImagesController extends AppController {
                 $this->Session->setFlash(__('The image could not be saved. Please, try again.'));
             }
         }
-        if ($type == 'Kitchen') {
+        if ($type == 'kitchen') {
             $kitchens = $this->Image->Kitchen->find('list');
             $this->set('item_name',$kitchens[$id]);
-        } else {
-
+        } elseif($type == 'product') {
+            $products = $this->Product->find('list');
+            $this->set('item_name',$products[$id]);
         }
         $this->set('item_type', $type);
         $this->set('item_id', $id);

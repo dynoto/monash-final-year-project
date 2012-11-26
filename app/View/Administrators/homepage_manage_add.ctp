@@ -23,12 +23,13 @@ echo $this->element('override', array("content_override" => $content_override));
 					<div>
 						<?php	
 						if(!in_array($vv['id'], $imageIds)){
-							echo $this->Form->input('homepage_manage.image_id.',array('label'=>false,'type'=>'checkbox','class'=>'select_image_checkbox','hiddenField'=>false,'value'=>$vv['id']));
+							echo $this->Form->input('homepage_manage..image_id',array('label'=>false,'type'=>'checkbox','class'=>'select_image_checkbox','hiddenField'=>false,'value'=>$vv['id']));
 							echo $this->Html->image('kitchen/'.$vv['name'],array('class'=>'thumbnail'));
 						}
 						?>
 					</div>
-					<?php } ?></td>
+					<?php 
+					} ?></td>
 			</tr>
 			<?php } ?>
 		</table>
