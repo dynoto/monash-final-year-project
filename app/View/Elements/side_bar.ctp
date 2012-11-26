@@ -7,7 +7,7 @@
             } 
         ?>
             <div class="row-fluid" id="action_buttons">
-                <?php echo $this->Html->link('Reset',array('action'=>'gallery'),array('class'=>'btn span6','style'=>array('line-height:30px; font-size:15px; font-family:Helvetica')));?>
+                <?php echo $this->Html->link('Clear All',array('action'=>'gallery'),array('class'=>'btn span6','style'=>array('line-height:30px; font-size:15px; font-family:Helvetica')));?>
                 <button type="submit" class="btn span6 btn-primary btn-large" id="sidebar_filter">Filter</button>
             </div>
         <?php echo $this->Form->end(); ?>

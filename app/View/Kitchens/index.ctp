@@ -14,7 +14,7 @@ echo $this->element('override', array("content_override" => $content_override));
     </div>
     <div class="span8">
         <div class="row-fluid">
-            <h4 style="display:inline"><?php echo __('Kitchens'); ?></h4>
+            <h4 style="display:inline">Kitchens</h4>
             <?php echo $this->Html->link(__('New Kitchen'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>
         </div>
         <div class="row-fluid">

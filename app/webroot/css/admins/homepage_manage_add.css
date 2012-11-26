@@ -1,0 +1,11 @@
+img.thumbnail {
+    max-height: 80px;
+    max-width: 200px;
+    display: inline-block;
+}
+div.checkbox{
+    display: inline-block !important;
+}
+.checkbox{
+	margin: 0 1%;
+}

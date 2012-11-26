@@ -6,6 +6,7 @@ echo $this->element('override',array('content_override'=>$override))
 <div class="row-fluid">
 <div class="span2">
 	<div class="offset1">
+				<h4>Actions</h4>
 		<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link('Manage Homepage Carousel',array('controller'=>'administrators','action'=>'homepage_manage')); ?></li>
 		<li><?php echo $this->Html->link('Manage Users',array('controller'=>'users')); ?></li>
@@ -13,6 +14,5 @@ echo $this->element('override',array('content_override'=>$override))
 	</div>
 </div>
 <div class="span9">
-	<?php echo $this->element('under_construction'); ?>
 </div>
 </div>

@@ -1,5 +1,4 @@
 <div class="row-fluid header">
-    <div class="row-fluid" style="height:auto">
         <div class="row-fluid">
             <div class="span10 offset1" id="div_header">
                 <div class="span6">
@@ -30,7 +29,6 @@
                 </ul>
             </div>
         </div>
-    </div>
 </div>
 <?php echo $this->Session->flash(); ?>
 <?php echo $this->fetch('content'); ?>

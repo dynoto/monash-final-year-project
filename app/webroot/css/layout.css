@@ -1,13 +1,17 @@
 
+.flash_style {
+    max-width: 800px;
+    margin: 0 auto 1%;
+}
 body, html {
     font-size: 90%;
     height: 92%;
 }
 div.header {
     height: auto;
-    width: auto;
+    margin: 0 auto;
     max-width: 1024px;
-    margin:0 auto;
+    width: auto;
 }
 ul.nav-tabs > li {
     text-align: center;
@@ -15,25 +19,25 @@ ul.nav-tabs > li {
 ul.nav-tabs > li > a {
     font-size: 1.2em;
 }
-div.modal-header,div.modal-body,ul.nav-tabs > li > a{
+div.modal-header, div.modal-body, ul.nav-tabs > li > a {
     padding-left: 0;
     padding-right: 0;
 }
-
 * {
     font-family: 'Raleway',sans-serif !important;
     font-size: 1em;
 }
 #logo {
+    margin-top: 3%;
     width: 60%;
 }
 ul.nav.nav-tabs {
     margin-bottom: 2%;
 }
 ul.nav.nav-tabs.nav-stacked > li > a {
+    font-size: 1em;
     padding-left: 7%;
     text-align: left;
-    font-size: 1em;
 }
 div[id*="ddcl"] {
     width: 13%;
@@ -62,6 +66,9 @@ img.modal_carousel_image {
 }
 a.login_switch {
     float: right;
+}
+.margin-center {
+    margin: 0 auto;
 }
 .hspn {
     height: 99.5%;
@@ -102,53 +109,53 @@ a.login_switch {
 .hspn12 {
     height: 99.5%;
 }
-.no-margin{
+.no-margin {
     margin: 0 !important;
 }
-.no-margin-left{
-    margin-left: 0px !important;
+.no-margin-left {
+    margin-left: 0 !important;
 }
-.no-margin-right{
-    margin-right: 0px !important;
+.no-margin-right {
+    margin-right: 0 !important;
 }
-.no-margin-top{
-    margin-top: 0px !important;
+.no-margin-top {
+    margin-top: 0 !important;
 }
-.no-margin-bottom{
-    margin-bottom: 0px !important;
+.no-margin-bottom {
+    margin-bottom: 0 !important;
 }
-.no-margin-vertical{
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+.no-margin-vertical {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }
-.no-margin-horizontal{
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+.no-margin-horizontal {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
-.no-padding{
+.no-padding {
     padding: 0 !important;
 }
-.no-padding-left{
-    padding-left: 0px !important;
+.no-padding-left {
+    padding-left: 0 !important;
 }
-.no-padding-right{
-    padding-right: 0px !important;
+.no-padding-right {
+    padding-right: 0 !important;
 }
-.no-padding-top{
-    padding-top: 0px !important;
+.no-padding-top {
+    padding-top: 0 !important;
 }
-.no-padding-bottom{
-    padding-bottom: 0px !important;
+.no-padding-bottom {
+    padding-bottom: 0 !important;
 }
-.no-padding-vertical{
-    padding-top: 0px !important;
-    padding-bottom: 0px; !important
+.no-padding-vertical {
+    padding-bottom: 0;
+    padding-top: 0 !important;
 }
-.no-padding-horizontal{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+.no-padding-horizontal {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
-.ib{
+.ib {
     display: inline-block;
 }
 a#login_bar_toggle_button > img {
@@ -163,18 +170,18 @@ div#login_bar_content > p {
     display: inline-block;
     margin: 3% 0 1%;
     padding: 0 5%;
-    white-space: nowrap;
     text-align: right;
+    white-space: nowrap;
 }
 div#login_bar_content > p > a {
     margin-right: 10px;
 }
 button.close {
     font-size: 3em;
-    right: 2%;
     position: absolute;
+    right: 2%;
 }
-div.main_content{
-    width: auto;
+div.main_content {
     max-width: 1024px;
+    width: auto;
 }

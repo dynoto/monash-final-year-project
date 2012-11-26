@@ -129,7 +129,7 @@ class SessionHelper extends AppHelper {
 			}
 
 			if ($flash['element'] == 'default') {
-				$class = 'message alert alert-info';
+				$class = 'message alert alert-info flash_style';
 				if (!empty($flash['params']['class'])) {
 					$class = $flash['params']['class'];
 				}

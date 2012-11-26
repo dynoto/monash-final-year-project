@@ -10,7 +10,6 @@ $kitchen_description= $item['Kitchen']['description'];
         <h3><?php echo $kitchen_name; ?></h3>
         <p><?php echo $kitchen_description; ?></p>
         </div>
-        <!--
         <div class="span3">
             <ol>
             
@@ -21,7 +20,7 @@ $kitchen_description= $item['Kitchen']['description'];
             <?php }} ?>
         </ul>
         </div>
-        -->
+        
     </div>
     <div class="modal-body row-fluid hspn9">
         <?php if(isset($item['Image'][0])){ ?>

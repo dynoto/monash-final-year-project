@@ -130,6 +130,9 @@ Class VisitorsController extends AppController{
             }
         }
 
+        if(count($info) == 0){
+            $this->Session->setFlash('Sorry, there are no items that matched your search requirements');
+        }
         $this->set('info',$info);
     }
 
