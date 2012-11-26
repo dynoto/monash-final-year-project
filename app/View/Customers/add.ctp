@@ -1,7 +1,7 @@
 <?php 
-$this->extend('/common/visitors');
+echo $this->extend('/Common/visitors');
 $content_override = array('title'=>'Register','js'=>array(null),'css'=>array('admins/common'));
-$this->element('override',array('content_override'=>$content_override));
+echo $this->element('override',array('content_override'=>$content_override));
 
 ?>
 <div class="row-fluid">

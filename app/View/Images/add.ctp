@@ -1,5 +1,5 @@
 <?php
-echo $this->extend('/common/admins');
+echo $this->extend('/Common/admins');
 $override = array('title' => 'Add Image for Kitchen', 'css' => array('admins/common','admins/uploadify'), 'js' => array('admins/jquery.uploadify-3.1.min'));
 echo $this->element('override',array('content_override'=>$override));
 ?>

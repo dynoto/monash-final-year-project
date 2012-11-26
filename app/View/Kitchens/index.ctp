@@ -1,5 +1,5 @@
 <?php
-echo $this->extend('/common/admins');
+echo $this->extend('/Common/admins');
 $content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common', 'js' => NULL);
 echo $this->element('override', array("content_override" => $content_override));
 ?>

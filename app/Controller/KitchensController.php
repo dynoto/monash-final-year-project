@@ -165,7 +165,7 @@ class KitchensController extends AppController {
             $saveArray = array();
             foreach ($saveData as $k_id => $cv_val) {
                 foreach ($cv_val as $c_key => $cv_id) {
-                    $row = ['kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id];
+                    $row = array('kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id);
                     array_push($saveArray, $row);
                 }
             }

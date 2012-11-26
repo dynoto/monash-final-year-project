@@ -1,5 +1,5 @@
 <?php
-echo $this->extend('/common/admins');
+echo $this->extend('/Common/admins');
 $content_override = array('css' => 'admins/common', 'title' => 'Add Criteria Value');
 echo $this->element('override', array('content_override' => $content_override));
 ?>

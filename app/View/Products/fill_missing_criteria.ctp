@@ -1,5 +1,5 @@
 <?php
-echo $this->extend('/common/admins');
+echo $this->extend('/Common/admins');
 $content_override = array('title' => '', 'css' => array('admins/common','admins/Products_missing'), 'js' => array(null));
 echo $this->element('override', array("content_override" => $content_override));
 ?>

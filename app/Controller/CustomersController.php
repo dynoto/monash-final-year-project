@@ -15,7 +15,7 @@ class CustomersController extends AppController {
 	public function beforeFilter(){
 		parent::beforeFilter();
 		$this->Auth->allow('add');
-		$models = ['User','CustomerType','Discount','Order','Product'];
+		$models = array('User','CustomerType','Discount','Order','Product');
 		foreach ($models as $key => $value) {
 			$this->loadModel($value);
 		}

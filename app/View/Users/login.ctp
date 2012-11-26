@@ -1,5 +1,5 @@
 <?php
-echo $this->extend('/common/visitors');
+echo $this->extend('/Common/visitors');
 $content_override = array('title'=>'Login');
 echo $this->element('override',array('content_override'=>$content_override));
 ?>
