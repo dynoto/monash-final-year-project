@@ -30,7 +30,7 @@ echo $this->element('override', array("content_override" => $content_override));
                     <p class="testimonial_description hspn9"><?php echo $val_a['Testimonial'][0]['description'] ?></p>
                 </div>
             </div>
-            <?php echo $this->element('gallery_modal',array('item'=>$val_a));
+            <?php echo $this->element('gallery_modal',array('item'=>$val_a,'type'=>'Kitchen'));
             }
         echo $this->element('pagination'); ?>
     </div>
