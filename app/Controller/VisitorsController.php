@@ -13,7 +13,7 @@ Class VisitorsController extends AppController{
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow();
-        $models = array('Kitchen','Image','CriteriaValue','Criteria','CriteriaValuesKitchen','Testimonial');
+        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Products','Testimonial');
         foreach($models as $model){
             $this->loadModel($model);
         }
@@ -43,8 +43,23 @@ Class VisitorsController extends AppController{
     /*------------------------------------------------------------------------------------------------*/
     /*------------------------------------------------------------------------------------------------*/
     
+    
+    //Function for the products page - visitor side to display the list of available products
     public function products($page=1){
-        $this->set('page',$page);
+
+        unset($this->request->data['page_filter']);
+        if(isset($this->request->data) and !empty($this->request->data)){
+            $product_ids  = $this->__gallery_content_filter();
+        }else{
+            $product_ids  = $this->Products->find('list',array('fields'=>'id'));
+        }
+        $this->__get_product_info($product_ids,$page);
+        
+        $this->__sidebar_query();
+        $paginate_data = $this->__pagination($product_ids,$page);
+        $this->set('paginate_data',$paginate_data);
+        //$this->set('pagination',$return_data['pagination']);
+        //$this->set('info',$kitchen_info);
     }
     
     
@@ -116,6 +131,8 @@ Class VisitorsController extends AppController{
 
     }
 
+    
+    
     private function __get_kitchen_info($kitchen_ids,$page=1){
         $this->paginate = array(
                 'conditions'=>array('id'=>$kitchen_ids),
@@ -135,6 +152,38 @@ Class VisitorsController extends AppController{
         }
         $this->set('info',$info);
     }
+    
+
+    
+    //GET_PRODUCT_INFO: Function to get info about the products and limit the size of the results to 4 items per page
+    private function __get_product_info($product_ids,$page=1){
+        $this->paginate = array(
+                'conditions'=>array('id'=>$product_ids),
+                'limit'=>4,
+                'page' => $page
+            );
+        $info = $this->paginate('Products');
+        $criterias = $this->Criteria->find('list');
+        foreach ($info as $key_a => $val_a) {
+            foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
+                $info[$key_a]['CriteriaValue'][$key_aa]['criteria_name'] = $criterias[$val_aa['criteria_id']];
+            }
+        }
+
+        if(count($info) == 0){
+            $this->Session->setFlash('Sorry, there were no items matching your search requirements.');
+        }
+        $this->set('info',$info);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     private function __pagination($kitchen_ids,$page=1){
         $pagination = array();
@@ -259,4 +308,33 @@ Class VisitorsController extends AppController{
             echo "<br/><br/>";
         }
     }
+    
+    
+    
+    
+    /*-------------------------------------------------
+     *Search results filter controller for PRODUCTS to filter results
+     */
+    
+     private function __product_content_filter(){
+        $filter = $this->request->data['CriteriaValuesProduct']['criteria_value_id'];
+        foreach ($filter as $key_a => $value_a) {
+            if (isset($product)){
+                $conditions = array('criteria_value_id'=>$value_a,'product_id'=>$product);
+            } else {
+                $conditions = array('criteria_value_id'=>$value_a);
+            }
+            $product = $this->CriteriaValuesProduct->find('list',array(
+                'conditions'=>$conditions,
+                'fields'=>array('id','product_id'),
+                'group' =>array('product_id')
+            ));
+        }
+        return $product;
+
+    }
+
+    
+    
+    
 }
