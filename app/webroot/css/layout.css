@@ -185,3 +185,11 @@ div.main_content {
     max-width: 1024px;
     width: auto;
 }
+div.error-message{
+    color: red;
+    font-weight: bold;
+}
+div.error-flash{
+    max-width: 850px !important;
+    width: auto;
+}

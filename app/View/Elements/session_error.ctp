@@ -1,5 +1,5 @@
-<div class="row-fluid">
-	<div class="offset2 span8 alert alert-error ">
+<div class="row-fluid error-flash margin-center">
+	<div class="alert alert-error ">
 		<?php echo $message; ?>
 	</div>
 </div>

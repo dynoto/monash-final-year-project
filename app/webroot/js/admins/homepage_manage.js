@@ -7,13 +7,14 @@ $(document).ready(function(){
 		}else{
 			show_position($(this).val());
 		}
-	})
+	});
 });
 
 function hide_position(id){
 	console.log('hidden');
 	var el = $('#image_'+id);
 	el.attr('disabled','disabled');
+	$('#hidden_'+id).attr('disabled','disabled');
 	el.hide();
 }
 
@@ -21,5 +22,6 @@ function show_position(id){
 	console.log('shown');
 	var el = $('#image_'+id);
 	el.removeAttr('disabled');
+	$('#hidden_'+id).removeAttr('disabled');
 	el.show();
 }

@@ -13,14 +13,17 @@ Class VisitorsController extends AppController{
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow();
-        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Product','Testimonial');
+        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Product','Testimonial','HomepageImage');
         foreach($models as $model){
             $this->loadModel($model);
         }
     }
 
     public function index(){
-        
+        $image_ids = $this->HomepageImage->find('list',array('order'=>'position','fields'=>array('position','image_id')));
+        pr($image_ids);
+        $image_list = $this->Image->find('list',array('conditions'=>array('product_id'=>null,'id'=>$image_ids)));
+        pr($image_list);
     }
 
     public function gallery($page = 1){

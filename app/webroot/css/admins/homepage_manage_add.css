@@ -5,7 +5,8 @@ img.thumbnail {
 }
 div.checkbox{
     display: inline-block !important;
+    margin: 0 1%;
 }
-.checkbox{
-	margin: 0 1%;
+.no-hide{
+	display:block !important;
 }

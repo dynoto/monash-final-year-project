@@ -52,7 +52,7 @@ class CustomersController extends AppController {
 		$this->Customer->recursive = 0;
 		$this->paginate = array('conditions'=>array('User.approved'=>0,'User.group_id'=>2));
 		$this->set('customers', $this->paginate());
-		$discounts = $this->Discount->find('list');
+		$discounts = $this->Discount->find('list',array('fields'=>'value'));
 		$customerTypes = $this->CustomerType->find('list');
 		$this->set(compact('discounts','customerTypes'));
 	}

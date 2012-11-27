@@ -2,3 +2,7 @@ img.thumbnail{
 	max-width: 200px;
 	max-height: 80px;
 }
+select{
+	font-weight: bold;
+	width: auto !important;
+}
