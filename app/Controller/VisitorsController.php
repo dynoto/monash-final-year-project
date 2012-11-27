@@ -13,7 +13,7 @@ Class VisitorsController extends AppController{
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow();
-        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Products','Testimonial');
+        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Product','Testimonial');
         foreach($models as $model){
             $this->loadModel($model);
         }
@@ -51,7 +51,7 @@ Class VisitorsController extends AppController{
         if(isset($this->request->data) and !empty($this->request->data)){
             $product_ids  = $this->__gallery_content_filter();
         }else{
-            $product_ids  = $this->Products->find('list',array('fields'=>'id'));
+            $product_ids  = $this->Product->find('list',array('fields'=>'id'));
         }
         $this->__get_product_info($product_ids,$page);
         
@@ -134,8 +134,9 @@ Class VisitorsController extends AppController{
     
     
     private function __get_kitchen_info($kitchen_ids,$page=1){
+        pr($kitchen_ids);
         $this->paginate = array(
-                'conditions'=>array('id'=>$kitchen_ids),
+                'conditions'=>array('Kitchen.id'=>$kitchen_ids),
                 'limit'=>4,
                 'page' => $page
             );
@@ -157,12 +158,13 @@ Class VisitorsController extends AppController{
     
     //GET_PRODUCT_INFO: Function to get info about the products and limit the size of the results to 4 items per page
     private function __get_product_info($product_ids,$page=1){
+        pr($product_ids);
         $this->paginate = array(
-                'conditions'=>array('id'=>$product_ids),
+                'conditions'=>array('Product.id'=>$product_ids),
                 'limit'=>4,
                 'page' => $page
             );
-        $info = $this->paginate('Products');
+        $info = $this->paginate('Product');
         $criterias = $this->Criteria->find('list');
         foreach ($info as $key_a => $val_a) {
             foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {

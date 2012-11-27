@@ -15,7 +15,6 @@ class Product extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'name';
 	public $validate = array(
 		'price' => array(
 			'rule'=>'numeric',
