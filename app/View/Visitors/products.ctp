@@ -1,6 +1,6 @@
 <?php
     echo $this->extend('/Common/visitors');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter'));
+    $content_override = array('title'=>'SK Kitchens Product','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
@@ -10,7 +10,6 @@
 <div class="row-fluid span7 main_content no-padding">
     <?php
         $count = 0;
-        pr($info);
         foreach ($info as $key_a => $val_a) {
             if($count==0 or $count==2){ ?> <div class='row-fluid gallery_row'> <?php } ?>
             <?php $product_name = $val_a['Product']['name']; ?>
@@ -32,7 +31,7 @@
 
             <!-- modal starts here -->
             <?php 
-            echo $this->element('gallery_modal',array('item'=>$val_a)); 
+            echo $this->element('gallery_modal',array('item'=>$val_a,'type'=>'Product')); 
             ?>
             <!-- modal ends here -->
             

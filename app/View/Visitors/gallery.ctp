@@ -31,7 +31,7 @@
 
             <!-- modal starts here -->
             <?php 
-            echo $this->element('gallery_modal',array('item'=>$val_a)); 
+            echo $this->element('gallery_modal',array('item'=>$val_a,'type'=>'Kitchen')); 
             ?>
             <!-- modal ends here -->
             

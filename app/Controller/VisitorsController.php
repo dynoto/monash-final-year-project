@@ -6,8 +6,8 @@ Class VisitorsController extends AppController{
     public $helper = array('controller','form','html','paginator');     
     private $__sidebar_query;
     private $__content_query;
-    private $__gallery_content_filter;
-    private $__get_kitchen_info;
+    private $__content_filter;
+    private $__get_info;
     private $__pagination;
 
     public function beforeFilter(){
@@ -27,11 +27,11 @@ Class VisitorsController extends AppController{
 
         unset($this->request->data['page_filter']);
         if(isset($this->request->data) and !empty($this->request->data)){
-            $kitchen_ids  = $this->__gallery_content_filter();
+            $kitchen_ids  = $this->__content_filter();
         }else{
             $kitchen_ids  = $this->Kitchen->find('list',array('fields'=>'id'));
         }
-        $this->__get_kitchen_info($kitchen_ids,$page);
+        $this->__get_info($kitchen_ids,'Kitchen',$page);
         
         $this->__sidebar_query();
         $paginate_data = $this->__pagination($kitchen_ids,$page);
@@ -49,11 +49,11 @@ Class VisitorsController extends AppController{
 
         unset($this->request->data['page_filter']);
         if(isset($this->request->data) and !empty($this->request->data)){
-            $product_ids  = $this->__gallery_content_filter();
+            $product_ids  = $this->__content_filter('Product');
         }else{
             $product_ids  = $this->Product->find('list',array('fields'=>'id'));
         }
-        $this->__get_product_info($product_ids,$page);
+        $this->__get_info($product_ids,'Product',$page);
         
         $this->__sidebar_query();
         $paginate_data = $this->__pagination($product_ids,$page);
@@ -72,12 +72,12 @@ Class VisitorsController extends AppController{
 
         $testimonials_id = $this->Testimonial->find('list',array('fields'=>array('kitchen_id')));
         if(isset($this->request->data) and !empty($this->request->data)){
-            $kitchen_ids  = $this->__gallery_content_filter();
+            $kitchen_ids  = $this->__content_filter();
             $kitchen_ids  = array_intersect($kitchen_ids, $testimonials_id);
         }else{
             $kitchen_ids  = $testimonials_id;
         }
-        $this->__get_kitchen_info($kitchen_ids,$page);
+        $this->__get_info($kitchen_ids,'Kitchen',$page);
         
         $this->__sidebar_query();
         $paginate_data = $this->__pagination($kitchen_ids,$page);
@@ -113,34 +113,42 @@ Class VisitorsController extends AppController{
     /*------------------------------------------------------------------------------------------------*/
     /*------------------------------------------------------------------------------------------------*/
 
-    private function __gallery_content_filter(){
-        $filter = $this->request->data['CriteriaValuesKitchen']['criteria_value_id'];
+    private function __content_filter($type = 'Kitchen'){
+        $filter = $this->request->data['CriteriaValues'.$type]['criteria_value_id'];
         foreach ($filter as $key_a => $value_a) {
-            if (isset($kitchen)){
-                $conditions = array('criteria_value_id'=>$value_a,'kitchen_id'=>$kitchen);
+            if (isset($item)){
+                $conditions = array('criteria_value_id'=>$value_a, $type.'_id'=>$item);
             } else {
                 $conditions = array('criteria_value_id'=>$value_a);
             }
-            $kitchen = $this->CriteriaValuesKitchen->find('list',array(
-                'conditions'=>$conditions,
-                'fields'=>array('id','kitchen_id'),
-                'group' =>array('kitchen_id')
-            ));
+            if($type == 'Kitchen'){
+                $item = $this->CriteriaValuesKitchen->find('list',array(
+                    'conditions'=>$conditions,
+                    'fields'=>array('id','kitchen_id'),
+                    'group' =>array('kitchen_id')
+                ));
+            } elseif ($type == 'Product') {
+                $item = $this->CriteriaValuesProduct->find('list',array(
+                    'conditions'=>$conditions,
+                    'fields'=>array('id','product_id'),
+                    'group'=>array('product_id')
+                ));
+            }
         }
-        return $kitchen;
+        return $item;
 
     }
 
     
     
-    private function __get_kitchen_info($kitchen_ids,$page=1){
-        pr($kitchen_ids);
+    private function __get_info($ids,$type='Kitchen',$page=1){
+        // type is either KITCHENS or PRODUCTS
         $this->paginate = array(
-                'conditions'=>array('Kitchen.id'=>$kitchen_ids),
+                'conditions'=>array($type.'.id'=>$ids),
                 'limit'=>4,
                 'page' => $page
             );
-        $info = $this->paginate('Kitchen');
+        $info = $this->paginate($type);
         $criterias = $this->Criteria->find('list');
         foreach ($info as $key_a => $val_a) {
             foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
@@ -153,49 +161,18 @@ Class VisitorsController extends AppController{
         }
         $this->set('info',$info);
     }
-    
 
-    
-    //GET_PRODUCT_INFO: Function to get info about the products and limit the size of the results to 4 items per page
-    private function __get_product_info($product_ids,$page=1){
-        pr($product_ids);
-        $this->paginate = array(
-                'conditions'=>array('Product.id'=>$product_ids),
-                'limit'=>4,
-                'page' => $page
-            );
-        $info = $this->paginate('Product');
-        $criterias = $this->Criteria->find('list');
-        foreach ($info as $key_a => $val_a) {
-            foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
-                $info[$key_a]['CriteriaValue'][$key_aa]['criteria_name'] = $criterias[$val_aa['criteria_id']];
-            }
-        }
-
-        if(count($info) == 0){
-            $this->Session->setFlash('Sorry, there were no items matching your search requirements.');
-        }
-        $this->set('info',$info);
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    private function __pagination($kitchen_ids,$page=1){
+    private function __pagination($ids,$page=1){
+        // item can be KITCHEN or PRODUCTS
+        // ids means many id
         $pagination = array();
-        $kitchen_count = count($kitchen_ids);
-        if($kitchen_count <= 4){
+        $item_count = count($ids);
+        if($item_count <= 4){
             $pagination['hide'] = true;
-        } elseif ($kitchen_count > 4) {
+        } elseif ($item_count > 4) {
             $pagination['hide'] = false;
             $count = ($page-1) * 4;
-            if (($kitchen_count - $count) <= 4){
+            if (($item_count - $count) <= 4){
                 $pagination['last'] = true;
             } else {
                 $pagination['last'] = false;
@@ -205,7 +182,8 @@ Class VisitorsController extends AppController{
         }
     }
 
-    private function __sidebar_query($type = 'kitchen'){
+    private function __sidebar_query($type = 'Kitchen'){
+        // type is either KITCHENS or PRODUCTS
         $sidebar_data = $this->Criteria->find('all',array('conditions'=>array('Criteria.'.$type => 1)));
         foreach($sidebar_data as $count => $result){
             $array_values   = array();
@@ -224,7 +202,7 @@ Class VisitorsController extends AppController{
         
         $selected = array();
         if(isset($this->request->data) and !empty($this->request->data)){
-            foreach ($this->request->data['CriteriaValuesKitchen']['criteria_value_id'] as $key_a => $val_a) {
+            foreach ($this->request->data['CriteriaValues'.$type]['criteria_value_id'] as $key_a => $val_a) {
                 foreach ($val_a as $key_aa => $val_aa) {
                     $selected[] = $val_aa;
                 }
@@ -234,74 +212,74 @@ Class VisitorsController extends AppController{
         $this->set('sidebar_data',$temp_array);
     }
     
-    private function __content_query($page,$testimonial_mode=false,$section='kitchen'){
-        $sidebar_data = $this->__sidebar_query($section);
-        $conditions = array();
-        $selected = array();
-        $filter_values = null;
-        if($this->request->is('Post')){
-            $filter_values = $this->request->data['CriteriaValuesKitchen'][''];
-            unset($filter_values['page_filter']);
-            if(!empty($filter_values)){
-                foreach ($filter_values as $filter_value){
-                    foreach ($filter_value as $value){
-                        $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
-                    }
-                }
-                $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
-            }
-            $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
-        }
-        $info = $this->Kitchen->find('all',array(
-            'fields'=> 'DISTINCT Kitchen.*',
-            'conditions' => $conditions
-        ));
+    // private function __content_query($page,$testimonial_mode=false,$type='Kitchen'){
+    //     $sidebar_data = $this->__sidebar_query($type);
+    //     $conditions = array();
+    //     $selected = array();
+    //     $filter_values = null;
+    //     if($this->request->is('Post')){
+    //         $filter_values = $this->request->data['CriteriaValuesKitchen'][''];
+    //         unset($filter_values['page_filter']);
+    //         if(!empty($filter_values)){
+    //             foreach ($filter_values as $filter_value){
+    //                 foreach ($filter_value as $value){
+    //                     $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
+    //                 }
+    //             }
+    //             $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
+    //         }
+    //         $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
+    //     }
+    //     $info = $this->Kitchen->find('all',array(
+    //         'fields'=> 'DISTINCT Kitchen.*',
+    //         'conditions' => $conditions
+    //     ));
         
-        if($testimonial_mode){
-            foreach ($info as $key_a => $val_a){
-                if(empty($val_a['Testimonial'])){
-                    unset($info[$key_a]);
-                }
-            }
-        }
+    //     if($testimonial_mode){
+    //         foreach ($info as $key_a => $val_a){
+    //             if(empty($val_a['Testimonial'])){
+    //                 unset($info[$key_a]);
+    //             }
+    //         }
+    //     }
         
         
-        if(!empty($filter_values)){
-            $criteria_list = $this->Criteria->find('list');
-            foreach($info as $key_a => $val_a){
-                foreach($val_a['CriteriaValue'] as $val_aa){
-                    $val_aa_id = $criteria_list[$val_aa['criteria_id']];
-                    if(array_key_exists($val_aa_id, $filter_values)){
-                        if(in_array($val_aa['id'], $filter_values[$val_aa_id]) == false){
-                          unset($info[$key_a]);
-                          break;
-                          }
-                    }
-                }
-            }
-        }
+    //     if(!empty($filter_values)){
+    //         $criteria_list = $this->Criteria->find('list');
+    //         foreach($info as $key_a => $val_a){
+    //             foreach($val_a['CriteriaValue'] as $val_aa){
+    //                 $val_aa_id = $criteria_list[$val_aa['criteria_id']];
+    //                 if(array_key_exists($val_aa_id, $filter_values)){
+    //                     if(in_array($val_aa['id'], $filter_values[$val_aa_id]) == false){
+    //                       unset($info[$key_a]);
+    //                       break;
+    //                       }
+    //                 }
+    //             }
+    //         }
+    //     }
         
-        $info = array_slice($info, (4 * ($page - 1)), 5);
-        if($page == 1 and count($info) < 4){
-            $pagination = 'hide';
-        }
-        elseif(count($info) > 4){
-            array_pop($info);
-            $pagination = '';
-        }
-        else{ $pagination = 'end'; }
+    //     $info = array_slice($info, (4 * ($page - 1)), 5);
+    //     if($page == 1 and count($info) < 4){
+    //         $pagination = 'hide';
+    //     }
+    //     elseif(count($info) > 4){
+    //         array_pop($info);
+    //         $pagination = '';
+    //     }
+    //     else{ $pagination = 'end'; }
         
-        foreach ($info as $key_a => $datum){
-            foreach ($datum['CriteriaValue'] as $key_b =>$datum_val){
-                    if($sidebar_data[$datum_val['criteria_id']]['id'] == $datum_val['criteria_id']){
-                        $info[$key_a]['CriteriaValue'][$key_b]['criteria_name'] = $sidebar_data[$datum_val['criteria_id']]['name'];
-                    }
-                    unset($info[$key_a]['CriteriaValue'][$key_b]['CriteriaValuesKitchen']);
-            }
-        }
+    //     foreach ($info as $key_a => $datum){
+    //         foreach ($datum['CriteriaValue'] as $key_b =>$datum_val){
+    //                 if($sidebar_data[$datum_val['criteria_id']]['id'] == $datum_val['criteria_id']){
+    //                     $info[$key_a]['CriteriaValue'][$key_b]['criteria_name'] = $sidebar_data[$datum_val['criteria_id']]['name'];
+    //                 }
+    //                 unset($info[$key_a]['CriteriaValue'][$key_b]['CriteriaValuesKitchen']);
+    //         }
+    //     }
         
-        return array('info'=>$info, 'pagination'=>$pagination, 'selected'=>$selected, 'filter_values'=>$filter_values);
-    }
+    //     return array('info'=>$info, 'pagination'=>$pagination, 'selected'=>$selected, 'filter_values'=>$filter_values);
+    // }
     
     private function __printthis($data){
         foreach($data as $a => $b){
@@ -310,33 +288,5 @@ Class VisitorsController extends AppController{
             echo "<br/><br/>";
         }
     }
-    
-    
-    
-    
-    /*-------------------------------------------------
-     *Search results filter controller for PRODUCTS to filter results
-     */
-    
-     private function __product_content_filter(){
-        $filter = $this->request->data['CriteriaValuesProduct']['criteria_value_id'];
-        foreach ($filter as $key_a => $value_a) {
-            if (isset($product)){
-                $conditions = array('criteria_value_id'=>$value_a,'product_id'=>$product);
-            } else {
-                $conditions = array('criteria_value_id'=>$value_a);
-            }
-            $product = $this->CriteriaValuesProduct->find('list',array(
-                'conditions'=>$conditions,
-                'fields'=>array('id','product_id'),
-                'group' =>array('product_id')
-            ));
-        }
-        return $product;
-
-    }
-
-    
-    
     
 }
