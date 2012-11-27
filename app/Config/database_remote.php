@@ -65,7 +65,7 @@ class DATABASE_CONFIG {
 		'host' => '130.194.7.82',
 		'login' => 'IEMySQL34',
 		'password' => 'priukoew4u',
-		'database' => 'test',
+		'database' => 'fit-ie-s34a',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

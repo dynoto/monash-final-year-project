@@ -13,7 +13,7 @@
                     <?php 
                     $current_action = $this->params['controller'];
                     $links = array( 'Home'=>'administrators',
-                        'Criterias'=>'criterias',
+                        'Criteria'=>'criterias',
                         'Kitchens'=>'kitchens',
                         'Products'=>'products',
                         'Customers'=>'customers',
