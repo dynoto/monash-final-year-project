@@ -180,3 +180,7 @@ div.item_criteria_value{
 div.modal{
     max-height: 90%;
 }
+div.error-message{
+    color: red;
+    font-weight: bold;
+}
