@@ -24,8 +24,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		<li><?php echo $this->Html->link('New Customer Type', array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
 	</ul>-->
 	<ul class="nav nav-tabs nav-stacked">
-		<li><?php echo $this->Html->link('List Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link('New Discounts', array('controller' => 'discounts', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link('Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
 	</ul>
 </div>
 </div>

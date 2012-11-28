@@ -10,6 +10,9 @@ echo $this->element('override', array("content_override" => $content_override));
 		<ul class="nav nav-tabs nav-stacked">
 			<li><?php echo $this->Html->link('Fill Missing Criteria',array('action'=>'fill_missing_criteria')); ?></li>
 		</ul>
+		<ul class="nav nav-tabs nav-stacked">
+			<li><?php echo $this->Html->link('Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
+		</ul>
 	</div>
 	</div>
 	<div class="span8">
