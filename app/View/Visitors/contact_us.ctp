@@ -27,7 +27,7 @@ $gps = "-38.116322,145.143196";
                 <h4>Enquiry Form</h4>
                 <?php
                 echo $this->Form->input('name',array('required'=>true));
-                echo $this->Form->input('phone');
+                echo $this->Form->input('telephone');
                 echo $this->Form->input('email');
                 echo $this->Form->input('message',array('required'=>true));
 
