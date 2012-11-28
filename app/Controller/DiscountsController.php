@@ -15,6 +15,23 @@ class DiscountsController extends AppController {
 	public function index() {
 		$this->Discount->recursive = 0;
 		$this->set('discounts', $this->paginate());
+
+		if ($this->request->is('post')) {
+			$rqData = $this->request->data['Discount']['value'];
+			$validate_non_digit = preg_match("/[\D]+/", $rqData);
+			if($validate_non_digit == 0){
+				preg_match("/[\d]{2}/", $rqData,$rqData);
+				$this->Discount->create();
+				if ($this->Discount->save(array('Discount'=>array('value'=>$rqData[0])))) {
+					$this->Session->setFlash(__('The discount has been saved'));
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The discount could not be saved. Please, try again.'));
+				}
+			} else {
+				$this->Session->setFlash('Oops, save error! Make sure you follow the rules before submitting','session_error');
+			}
+		}
 	}
 
 /**

@@ -1,0 +1,10 @@
+div.number,div.submit{
+	display: inline-block;
+}
+div.number > input{
+	margin-bottom: 0;
+	margin-right: 10px;
+}
+form{
+	float: right;
+}

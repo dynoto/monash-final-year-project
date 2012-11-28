@@ -61,7 +61,7 @@ class ProductsController extends AppController {
 				$this->CriteriaValuesProduct->create();
 				$this->CriteriaValuesProduct->saveAll($temp_array);
 				$this->Session->setFlash(__('The product has been saved'));
-				$this->redirect(array('controller'=>'image','action' => 'add','product',$product_id,1));
+				$this->redirect(array('controller'=>'images','action' => 'add','product',$product_id,1));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}

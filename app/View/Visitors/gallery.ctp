@@ -15,17 +15,15 @@
             <?php $kitchen_name = $val_a['Kitchen']['name']; ?>
             <div class="span6 image_frame">
                     <?php $item_name = str_replace(' ', '_', $kitchen_name) ?>
-                    <div class="imgimgimg">
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
                         if(isset($val_a['Image'][0])){
-                            echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'kitchen_thumbnail '));
+                            echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'img_thumbnail'));
                         } else {
-                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'kitchen_thumbnail'));
+                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'thumbnail'));
                         } 
                         ?>
                     </a>
-                    </div>
                     <p><?php echo $kitchen_name;?></p>
             </div>
 

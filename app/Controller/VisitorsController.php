@@ -21,9 +21,8 @@ Class VisitorsController extends AppController{
 
     public function index(){
         $image_ids = $this->HomepageImage->find('list',array('order'=>'position','fields'=>array('position','image_id')));
-        pr($image_ids);
         $image_list = $this->Image->find('list',array('conditions'=>array('product_id'=>null,'id'=>$image_ids)));
-        pr($image_list);
+        $this->set(compact('image_ids','image_list'));
     }
 
     public function gallery($page = 1){

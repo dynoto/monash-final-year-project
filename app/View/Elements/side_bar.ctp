@@ -1,5 +1,5 @@
-<div class="span3">
-    <div class="well span9 offset3" id="search_well">
+<div class="span3 search_well">
+    <div class="well" id="search_well">
         <?php echo $this->Form->Create('visitor',array('action'=>$visitor_action,'id'=>'criteria_filter')); ?>
         <?php 
             foreach ($sidebar_data as $data){
@@ -7,7 +7,7 @@
             } 
         ?>
             <div class="row-fluid" id="action_buttons">
-                <?php echo $this->Html->link('Clear All',array('action'=>'gallery'),array('class'=>'btn span6','style'=>array('line-height:30px; font-size:15px; font-family:Helvetica')));?>
+                <?php echo $this->Html->link('Clear All',array('action'=>'gallery'),array('class'=>'btn span6'));?>
                 <button type="submit" class="btn span6 btn-primary btn-large" id="sidebar_filter">Filter</button>
             </div>
         <?php echo $this->Form->end(); ?>

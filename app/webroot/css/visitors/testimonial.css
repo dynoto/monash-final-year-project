@@ -1,4 +1,34 @@
+@media all and (max-width:1024px) {
+    div.search_well{
+        display: none !important;
+    }
+    div.main_content{
+        margin: 0 auto !important;
+        width: 80% !important;
+        float: none !important;
+    }
+    img.img_thumbnail{
+        max-height: 200px;
+    }
+}
 
+@media all and (min-width: 1025px){
+    div.main_content{
+        width: 100%;
+        max-width: 900px;
+    }
+    img.img_thumbnail{
+        max-height: 200px;
+    }
+}
+
+@media all and (min-width:1025px) and (max-width: 1320px){
+    div#action_buttons > * {
+        font-size: 1.1em ;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 div.image_frame > a > img {
     display: block;
     margin: 0 auto;
@@ -12,4 +42,29 @@ div.image_frame {
 p.testimonial_description {
     overflow-y: auto;
     padding: 0 1%;
+}
+div.testimonial_frame{
+	margin-bottom: 3%;
+}
+
+
+/*CSS BELOW IS FOR SIDEBAR*/
+div#action_buttons > *{
+    font-size: 1.2em;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+div#action_buttons > a{
+    line-height: 30px;
+}
+div#search_well{
+	float: right;
+    max-width: 200px;
+}
+span.ui-dropdownchecklist-selector-wrapper > span{
+    max-width: 180px !important;
+    padding: 0;
+}
+div.ui-dropdownchecklist-dropcontainer-wrapper{
+    max-width: 182px !important 
 }

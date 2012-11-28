@@ -11,7 +11,7 @@ $item_description= $item[$type]['description'];
         <h3><?php echo $item_name; ?></h3>
         <p><?php echo $item_description; ?></p>
         </div>
-        <div class="span3">
+        <div class="span3 item_criteria_value">
             <ol>
             
             <?php foreach ($item['CriteriaValue'] as $criteria_value) {

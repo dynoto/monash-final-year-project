@@ -1,9 +1,44 @@
+@media all and (max-width:1024px) {
+    div.search_well{
+        display: none !important;
+    }
+    div.main_content{
+        margin: 0 auto !important;
+        width: 80% !important;
+        float: none !important;
+    }
+    img.img_thumbnail{
+        max-height: 200px;
+    }
+}
+
+@media all and (min-width: 1025px){
+    div.main_content{
+        width: 100%;
+        max-width: 900px;
+    }
+    img.img_thumbnail{
+        max-height: 200px;
+    }
+}
+
+@media all and (min-width:1025px) and (max-width: 1320px){
+    div#action_buttons > * {
+        font-size: 1.1em ;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 form > select {
     margin-bottom: 10%;
 }
 form > h5 {
     margin-bottom: 0;
+}
+div.gallery_row{
+    margin-bottom: 3%;
 }
 div.image_frame {
     background: none repeat scroll 0 0 #FAFAFA;
@@ -12,7 +47,7 @@ div.image_frame {
     padding: 2% 4% 0;
 }
 
-img.kitchen_thumbnail {
+img.img_thumbnail {
     display: block;
     margin: 0 auto 3%;
 }
@@ -28,6 +63,23 @@ div#paginate {
     margin: -2% 0 0;
 }
 
-div.gallery_row{
-    margin-left: 0;
+/*CSS BELOW IS FOR SIDEBAR*/
+div#action_buttons > *{
+    font-size: 1.2em;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+div#action_buttons > a{
+    line-height: 30px;
+}
+div#search_well{
+    float: right;
+    max-width: 200px;
+}
+span.ui-dropdownchecklist-selector-wrapper > span{
+    max-width: 180px !important;
+    padding: 0;
+}
+div.ui-dropdownchecklist-dropcontainer-wrapper{
+    max-width: 182px !important 
 }

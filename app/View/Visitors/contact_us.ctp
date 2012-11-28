@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/visitors');
-$content_override = array('title' => 'Contact Us', 'css' => array('visitors/contact_us'), 'js' => array(Null));
+$content_override = array('title' => 'Contact Us', 'css' => array('visitors/contact_us'), 'js' => 'visitors/contact_us');
 echo $this->element('override', array("content_override" => $content_override));
 $gps = "-38.116322,145.143196";
 ?>
@@ -23,13 +23,13 @@ $gps = "-38.116322,145.143196";
                 </ul>
 
                 <?php 
-                echo $this->Form->Create('Enquiry',array('class'=>'well'));?>
+                echo $this->Form->Create('Enquiry',array('class'=>'well','onSubmit'=>'return verify();'));?>
                 <h4>Enquiry Form</h4>
                 <?php
-                echo $this->Form->input('name');
+                echo $this->Form->input('name',array('required'=>true));
                 echo $this->Form->input('phone');
                 echo $this->Form->input('email');
-                echo $this->Form->input('message');
+                echo $this->Form->input('message',array('required'=>true));
 
                 echo $this->Form->End(array('class'=>'btn btn-primary btn-large'))?>
             </div>

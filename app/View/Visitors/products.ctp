@@ -19,9 +19,9 @@
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
                         if(isset($val_a['Image'][0])){
-                            echo $this->Html->image('product/'.$val_a['Image'][0]['name'],array('alt'=>'product images','class'=>'product_thumbnail '));
+                            echo $this->Html->image('product/'.$val_a['Image'][0]['name'],array('alt'=>'product images','class'=>'img_thumbnail'));
                         } else {
-                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'product images','class'=>'product_thumbnail'));
+                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'product images','class'=>'thumbnail'));
                         } 
                         ?>
                     </a>

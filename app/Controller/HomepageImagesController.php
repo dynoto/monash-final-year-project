@@ -72,7 +72,7 @@ class HomepageImagesController extends AppController {
             		$this->Session->setFlash('something is wrong with the image selection, please try again');
             	}
             }
-            $this->redirect('action'=>'index');
+            $this->redirect(array('action'=>'index'));
         }
 
 

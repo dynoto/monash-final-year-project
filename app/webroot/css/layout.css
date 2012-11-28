@@ -1,4 +1,22 @@
+@media all and (min-height: 769px){
+    div.modal{
+        max-height: 700px !important;
+        height: 100%;
+        max-width: 1120px;
+    }
+        div.item > img{
+        max-height: 600px;
+        max-width:960px ;
+    }
+}
 
+@media all and (max-height: 768px){
+    div.modal{
+        max-height: 700px;
+        height: 100%;
+    }
+
+}
 .flash_style {
     max-width: 800px;
     margin: 0 auto 1%;
@@ -10,7 +28,7 @@ body, html {
 div.header {
     height: auto;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1000px;
     width: auto;
 }
 ul.nav-tabs > li {
@@ -69,45 +87,6 @@ a.login_switch {
 }
 .margin-center {
     margin: 0 auto;
-}
-.hspn {
-    height: 99.5%;
-}
-.hspn1 {
-    height: 8.29167%;
-}
-.hspn2 {
-    height: 16.5833%;
-}
-.hspn3 {
-    height: 24.875%;
-}
-.hspn4 {
-    height: 33.1667%;
-}
-.hspn5 {
-    height: 41.4583%;
-}
-.hspn6 {
-    height: 49.75%;
-}
-.hspn7 {
-    height: 58.0417%;
-}
-.hspn8 {
-    height: 66.3333%;
-}
-.hspn9 {
-    height: 74.625%;
-}
-.hspn10 {
-    height: 82.9167%;
-}
-.hspn11 {
-    height: 91.2083%;
-}
-.hspn12 {
-    height: 99.5%;
 }
 .no-margin {
     margin: 0 !important;
@@ -182,7 +161,7 @@ button.close {
     right: 2%;
 }
 div.main_content {
-    max-width: 1024px;
+    max-width: 1000px;
     width: auto;
 }
 div.error-message{
@@ -192,4 +171,12 @@ div.error-message{
 div.error-flash{
     max-width: 850px !important;
     width: auto;
+}
+div.item_criteria_value{
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+div.modal{
+    max-height: 90%;
 }

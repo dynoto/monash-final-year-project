@@ -16,6 +16,12 @@ class Discount extends AppModel {
  *
  * @var array
  */
+	public $validate = array(
+		'value' => array(
+			'rule' => 'isUnique',
+			'message' => 'Oops, duplicate discount value found in database'
+		)
+	);
 	public $hasMany = array(
 		'Customer' => array(
 			'className' => 'Customer',
