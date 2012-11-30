@@ -3,7 +3,6 @@ echo $this->extend('/Common/admins');
 $override = array('title' => 'Edit Product', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
 echo $this->element('override', array('content_override' => $override));
 $data = $this->request->data;
-pr($data);
 ?>
 <div class="row-fluid">
 	<div class="span2">
@@ -112,7 +111,10 @@ pr($data);
 
 			<!-- INPUT DIMENSIONS -->
             <h4>Standard Dimension</h4>
-            <?php echo $this->Form->input('StandardDimension.description',array('type'=>'textarea','class'=>'span8')); ?>
+            <?php 
+            echo $this->Form->input('StandardDimension.0.id');
+            echo $this->Form->input('StandardDimension.0.description',array('type'=>'textarea','class'=>'span8')); 
+            ?>
             <hr>
             <h4>Variable Dimension</h4>
             <table class="table table-striped table-bordered">

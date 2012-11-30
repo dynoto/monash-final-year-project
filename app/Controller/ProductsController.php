@@ -81,11 +81,13 @@ class ProductsController extends AppController {
 				$this->CriteriaValuesProduct->saveAll($temp_array['CriteriaValuesProduct']);
 
 				// SAVING FINISHES
-				$this->Finish->create();
-				foreach ($requestdata['Finish'] as $key => $value) {
-					$requestdata['Finish'][$key]['product_id'] = $value['finish_id'];
-				}
-				$this->Finish->saveAll($requestdata['Finish']);
+				if(isset($requestdata['Finish'])):
+					$this->Finish->create();
+					foreach ($requestdata['Finish'] as $key => $value) {
+						$requestdata['Finish'][$key]['product_id'] = $value['finish_id'];
+					}
+					$this->Finish->saveAll($requestdata['Finish']);
+				endif;
 
 				// SAVING PRODUCT VARIABLE DIMENSIONS
 				$dimensionProducts = array();
@@ -99,11 +101,13 @@ class ProductsController extends AppController {
 				$this->DimensionsProduct->saveAll($dimensionsProduct);
 
 				//IF STANDARD DIMENSION EXISTS - SAVE STANDARD DIMENSION INSTEAD
-				if(isset($requestdata['StandardDimension'])){
+				$this->StandardDimension->create();
+				if(isset($requestdata['StandardDimension'])):
 					$requestdata['StandardDimension']['product_id'] = $product_id;
 					$this->StandardDimension->save($requestdata);
-				}
-
+				else:
+					$this->StandardDimension->save(array('description'=>null));
+				endif;
 				$this->Session->setFlash(__('The product has been saved'));
 				$this->redirect(array('controller'=>'images','action' => 'add','product',$product_id,1));
 			} else {
@@ -133,7 +137,6 @@ class ProductsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Product->save($this->request->data)) {
 				$rqData = $this->request->data;
-				pr($rqData);
 				$product_id = $rqData['Product']['id'];
 
 				//////////////////////////// MODIFY CRITERIA VALUES ////////////////////////////
@@ -184,16 +187,22 @@ class ProductsController extends AppController {
 
 				//////////////////////////// MODIFY DIMENSIONS ////////////////////////////
 				if(isset($rqData['Dimension'])):
-					$this->Dimension->updateAll($rqData['Dimension']);
+						$this->Dimension->saveAll($rqData['Dimension']);
+						foreach ($rqData['Dimension'] as $k => $d_array):
+							$this->DimensionsProduct->Create();
+							$this->DimensionsProduct->save(array('product_id'=>$product_id,'dimension_id'=>$d_array['id']));
+						endforeach;
 				endif;
 
+				if(isset($rqData['StandardDimension'])):
+					$this->StandardDimension->saveAll($rqData['StandardDimension']);
+				endif;
 				//////////////////////////// DELETE SELECTED IMAGES ////////////////////////////
 				if (isset($rqData['Image'])){
                     $this->Image->deleteAll(array('Image.id'=>$rqData['Image']['id']));
                 }
-
 				$this->Session->setFlash(__('The product has been updated'));
-				$this->redirect(array('action' => 'view',$product_id));
+				//$this->redirect(array('action' => 'view',$product_id));
 
 			} else {
 				$this->Session->setFlash(__('The product could not be updated. Please, try again.'));
