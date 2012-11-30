@@ -89,7 +89,7 @@ class CustomersController extends AppController {
 				if ($this->Customer->save($request_data)) {
 					$session_data = $this->Session->read();
 					if($session_data['Auth']['User']['Group']['id'] == 1){
-						$this->Session->setFlash('Customer account have been successfully created');
+						$this->Session->setFlash('Customer account has been successfully created');
 						$this->redirect(array('action'=>'index'));
 					}else{
 						$this->Session->setFlash(__('Your account has been successfully created !'));
