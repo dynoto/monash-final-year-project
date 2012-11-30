@@ -1,10 +1,27 @@
-<div class="orders index">
-	<h2><?php echo __('Orders'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+<?php
+echo $this->extend('/Common/admins');
+$content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common', 'js' => NULL);
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid">
+<div class="span2">
+	<div class="offset1">
+	<h4><?php echo __('Actions'); ?></h4>
+	<ul class="nav nav-tabs nav-stacked">
+		<li><?php echo $this->Html->link(__('Customers List'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Products List'), array('controller' => 'products', 'action' => 'index')); ?> </li>
+	</ul>
+</div>
+</div>
+<div class="span8">
+	<h4 class='ib'><?php echo __('Orders'); ?></h4>
+	<?php echo $this->Html->link(__('New Order'), array('action' => 'add'),array('class'=>'btn pull-right')); ?>
+	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('customers_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('date'); ?></th>
+			<th>Total Price</th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -38,11 +55,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Order'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Customers'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Customers'), array('controller' => 'customers', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

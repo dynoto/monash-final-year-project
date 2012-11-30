@@ -1,7 +1,8 @@
 <?php
 echo $this->extend('/Common/admins');
 $override = array('title'=>'Admin HomePage','css'=>array('admins/common'));
-echo $this->element('override',array('content_override'=>$override))
+echo $this->element('override',array('content_override'=>$override));
+pr($this->Session->read());
 ?>
 <div class="row-fluid">
 <div class="span2">

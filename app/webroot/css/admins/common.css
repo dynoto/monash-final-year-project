@@ -22,3 +22,6 @@ div.inline-criteria-values > div {
     margin-right: 3%;
     vertical-align: top;
 }
+select{
+    width: auto !important;
+}

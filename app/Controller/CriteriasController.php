@@ -41,8 +41,14 @@ class CriteriasController extends AppController {
      */
     public function add() {
         if ($this->request->is('post')) {
+            $rqData = $this->request->data;
+            if($rqData['Criteria']['for'] == 'kitchen'){
+                $rqData['Criteria']['kitchen'] = 1;
+            } else if ($rqData['Criteria']['for'] == 'product') {
+                $rqData['Criteria']['product'] = 1;
+            }
             $this->Criteria->create();
-            if ($this->Criteria->save($this->request->data)) {
+            if ($this->Criteria->save($rqData)) {
                 $this->Session->setFlash(__('The criteria has been saved'));
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -64,11 +70,19 @@ class CriteriasController extends AppController {
             throw new NotFoundException(__('Invalid criteria'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->Criteria->save($this->request->data)) {
-                $this->Session->setFlash(__('The criteria has been saved'));
+            $rqData = $this->request->data;
+            if($rqData['Criteria']['for'] == 'kitchen'){
+                $rqData['Criteria']['kitchen'] = 1;
+                $rqData['Criteria']['product'] = 0;
+            } else if ($rqData['Criteria']['for'] == 'product') {
+                $rqData['Criteria']['product'] = 1;
+                $rqData['Criteria']['kitchen'] = 0;
+            }
+            if ($this->Criteria->save($rqData)) {
+                $this->Session->setFlash(__('The criteria has been updated'));
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(__('The criteria could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('The criteria could not be updated. Please, try again.'));
             }
         } else {
             $this->request->data = $this->Criteria->read(null, $id);

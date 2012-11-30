@@ -53,13 +53,6 @@ class Customer extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'Discount' => array(
-			'className' => 'Discount',
-			'foreignKey' => 'discount_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'user_id',

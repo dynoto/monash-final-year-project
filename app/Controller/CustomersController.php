@@ -15,7 +15,7 @@ class CustomersController extends AppController {
 	public function beforeFilter(){
 		parent::beforeFilter();
 		$this->Auth->allow('add');
-		$models = array('User','CustomerType','Discount','Order','Product');
+		$models = array('User','CustomerType','Order','Product');
 		foreach ($models as $key => $value) {
 			$this->loadModel($value);
 		}
@@ -52,9 +52,8 @@ class CustomersController extends AppController {
 		$this->Customer->recursive = 0;
 		$this->paginate = array('conditions'=>array('User.approved'=>0,'User.group_id'=>2));
 		$this->set('customers', $this->paginate());
-		$discounts = $this->Discount->find('list',array('fields'=>'value'));
 		$customerTypes = $this->CustomerType->find('list');
-		$this->set(compact('discounts','customerTypes'));
+		$this->set(compact('customerTypes'));
 	}
 
 /**
@@ -88,8 +87,14 @@ class CustomersController extends AppController {
 				$request_data['Customer']['user_id'] = $this->User->id;
 				$this->Customer->create();
 				if ($this->Customer->save($request_data)) {
-					$this->Session->setFlash(__('Your account has been successfully created !'));
-					$this->redirect(array('controller'=>'visitors'));
+					$session_data = $this->Session->read();
+					if($session_data['Auth']['User']['Group']['id'] == 1){
+						$this->Session->setFlash('Customer account have been successfully created');
+						$this->redirect(array('action'=>'index'));
+					}else{
+						$this->Session->setFlash(__('Your account has been successfully created !'));
+						$this->redirect(array('controller'=>'visitors'));
+					}
 			} else {
 				$this->Session->setFlash(__("Your account couldn't be created, please try again."));
 			}
@@ -122,8 +127,7 @@ class CustomersController extends AppController {
 			$this->request->data = $this->Customer->read(null, $id);
 		}
 		$customerTypes = $this->Customer->CustomerType->find('list');
-		$discounts = $this->Customer->Discount->find('list');
-		$this->set(compact('customerTypes', 'discounts'));
+		$this->set(compact('customerTypes'));
 	}
 
 /**

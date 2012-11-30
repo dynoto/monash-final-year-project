@@ -1,8 +1,9 @@
 <?php
 echo $this->extend('/Common/admins');
-$override = array('title' => 'Edit Product', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
+$override = array('title' => 'Edit Product', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
 echo $this->element('override', array('content_override' => $override));
 $data = $this->request->data;
+pr($data);
 ?>
 <div class="row-fluid">
 	<div class="span2">
@@ -26,12 +27,12 @@ $data = $this->request->data;
 				<label for="ProductPrice">Price</label>
 				<span class="add-on">$</span>
 				<?php
-				echo $this->Form->input('price',array('required'=>true,'label'=>false,'div'=>false));
+				echo $this->Form->input('price',array('type'=>'text','required'=>true,'label'=>false,'div'=>false));
 				?>
 			</div>
 			<div class="input-append">
-				<label for="DiscountValue">Discount</label>
-				<?php echo $this->Form->input('discount_id',array('label'=>false,'options'=>$discounts,'div'=>false,'empty'=>'-')); ?>
+				<label for="ProductDiscount">Discount</label>
+				<?php echo $this->Form->input('discount',array('label'=>false,'div'=>false,'empty'=>'-','type'=>'text')); ?>
 				<span class="add-on">%</span>
 			</div>
 			<?php
@@ -72,6 +73,71 @@ $data = $this->request->data;
                 <?php endforeach; ?>
             </table>
             <?php endif; ?>
+            <hr>
+
+            <!--INPUT FINISHES -->
+            <h4>Finishes</h4>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>Finish</td>
+                    <td>Finish Types</td>
+                </tr>
+                <?php foreach ($finishes as $k => $finish_array): ?>
+                    <tr>
+                        <td>
+                            <label>
+                            <?php
+                            if(in_array($finish_array['Finish']['id'], $finish_checked)):
+                            	$f_checked = "checked";
+                            else:
+                            	$f_checked = false;
+                            endif;
+                            echo $this->Form->checkbox('Finish.finish_id.',array('type'=>'checkbox','label'=>false,'value'=>$finish_array['Finish']['id'],'hiddenField'=>false,'checked'=>$f_checked)); ?>
+                            <p>
+                            <?php echo $finish_array['Finish']['name']; ?>
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <ul>
+                            <?php foreach ($finish_array['FinishType'] as $kk => $finish_type): ?>
+                                <li><?php echo $finish_type['name']; ?></li>
+                            <?php endforeach; ?>
+                            <ul>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+            <hr>
+
+			<!-- INPUT DIMENSIONS -->
+            <h4>Standard Dimension</h4>
+            <?php echo $this->Form->input('StandardDimension.description',array('type'=>'textarea','class'=>'span8')); ?>
+            <hr>
+            <h4>Variable Dimension</h4>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Type</th>
+                    <th>Minimum</th>
+                    <th>Maximum </th>
+                    <th>Increment</th>
+                    <th>Default</th>
+                </tr>
+                <?php foreach ($data['Dimension'] as $kk => $dimension_array) { ?>
+                    <tr>
+                        <td><?php 
+                            echo $dimension_types[$dimension_array['dimension_type_id']];
+                            echo $this->Form->input('Dimension.'.$kk.'.id');
+                            echo $this->Form->input('Dimension.'.$kk.'.dimension_type_id',array('type'=>'hidden'));
+                        ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+
 
 			<!--EDIT CRITERIA VALUES SECTION-->
 			<hr>

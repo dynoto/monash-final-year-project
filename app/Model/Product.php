@@ -3,45 +3,15 @@ App::uses('AppModel', 'Model');
 /**
  * Product Model
  *
- * @property Discount $Discount
  * @property Image $Image
  * @property CriteriaValue $CriteriaValue
- * @property OrderItem $OrderItem
+ * @property Dimension $Dimension
+ * @property Finish $Finish
  */
 class Product extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
-	public $validate = array(
-		'price' => array(
-			'rule'=>'numeric',
-			'message'=>'please input numbers only'
-		),
-		'name' => array(
-			'rule'=>'isUnique',
-			'message'=>'Product name exists, please choose another product name'
-		)
-	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasOne associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'Discount' => array(
-			'className' => 'Discount',
-			'foreignKey' => 'discount_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 /**
  * hasMany associations
@@ -51,6 +21,19 @@ class Product extends AppModel {
 	public $hasMany = array(
 		'Image' => array(
 			'className' => 'Image',
+			'foreignKey' => 'product_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'StandardDimension' => array(
+			'className' => 'StandardDimension',
 			'foreignKey' => 'product_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -86,21 +69,36 @@ class Product extends AppModel {
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
-		// 'OrderItem' => array(
-		// 	'className' => 'OrderItem',
-		// 	'joinTable' => 'products_order_items',
-		// 	'foreignKey' => 'product_id',
-		// 	'associationForeignKey' => 'order_item_id',
-		// 	'unique' => 'keepExisting',
-		// 	'conditions' => '',
-		// 	'fields' => '',
-		// 	'order' => '',
-		// 	'limit' => '',
-		// 	'offset' => '',
-		// 	'finderQuery' => '',
-		// 	'deleteQuery' => '',
-		// 	'insertQuery' => ''
-		// )
+		'Dimension' => array(
+			'className' => 'Dimension',
+			'joinTable' => 'dimensions_products',
+			'foreignKey' => 'product_id',
+			'associationForeignKey' => 'dimension_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Finish' => array(
+			'className' => 'Finish',
+			'joinTable' => 'finishes_products',
+			'foreignKey' => 'product_id',
+			'associationForeignKey' => 'finish_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
 	);
 
 }

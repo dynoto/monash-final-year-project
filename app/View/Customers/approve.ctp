@@ -23,10 +23,6 @@ echo $this->element('override', array("content_override" => $content_override));
 		<li><?php echo $this->Html->link('List Customer Types', array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link('New Customer Type', array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
 	</ul>-->
-	<ul class="nav nav-tabs nav-stacked">
-		<li><?php echo $this->Html->link('List Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link('New Discounts', array('controller' => 'discounts', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
 </div>
 
@@ -42,7 +38,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('discount_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('discount'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 		</tr>
 		<?php
@@ -60,7 +56,7 @@ echo $this->element('override', array("content_override" => $content_override));
 				echo $this->Form->input('Customer.'.$customer_id.'.customer_type_id',array('label'=>false,'options'=>$customerTypes,'empty'=>''));
 				?>	
 			</td>
-			<td class="nowrap"><?php echo $this->Form->input('Customer.'.$customer_id.'.discount_id',array('label'=>false,'options'=>$discounts,'empty'=>''));?> %</td>
+			<td><?php echo h($customer['Customer']['discount']); ?>&nbsp;</td>
 			<td class="actions">
 				<?php
 				echo $this->Form->input('Checked.',array('label'=>false,'type'=>'checkbox','hiddenField'=>false,'value'=>$customer_id));

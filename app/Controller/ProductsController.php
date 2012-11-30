@@ -15,11 +15,21 @@ class ProductsController extends AppController {
 
 	public function beforeFilter(){
         parent::beforeFilter();
-        $this->loadModel('Criteria');
-        $this->loadModel('CriteriaValuesProduct');
-        $this->loadModel('Image');
-        $this->loadModel('CriteriaValue');
-        $this->loadModel('Discount');
+        $models = array('Criteria',
+        				'CriteriaValuesProduct',
+        				'Image',
+        				'CriteriaValue',
+        				'DimensionType',
+        				'Dimension',
+        				'DimensionsProduct',
+        				'StandardDimension',
+        				'Finish',
+        				'FinishType',
+        				'FinishesProduct'
+        				);
+        foreach ($models as $key => $value) {
+        	$this->loadModel($value);
+        }
     }
 
 	public function index() {
@@ -39,7 +49,14 @@ class ProductsController extends AppController {
 		if (!$this->Product->exists()) {
 			throw new NotFoundException(__('Invalid product'));
 		}
-		$this->set('products', $this->Product->read(null, $id));
+		$this->set('dimension_types', $this->DimensionType->find('list'));
+		$products = $this->Product->read(null, $id);
+		$finishes = array();
+		foreach ($products['Finish'] as $k => $v):
+			$finishes[$v['name']] = $this->FinishType->find('list',array('conditions'=>array('finish_id'=>$v['id'])));
+		endforeach;
+		$this->set('finishes',$finishes);
+		$this->set('products', $products);
         $this->set('criteria_names', $this->Criteria->find('list',array('conditions'=>array('product'=>1))));
 	}
 
@@ -54,12 +71,39 @@ class ProductsController extends AppController {
 			$this->Product->create();
 			if ($this->Product->save($requestdata)){
 				$product_id = $this->Product->id;
+
+				// SAVING CRITERIA VALUES TO THE PRODUCT
 				$temp_array;
 				foreach ($requestdata['CriteriaValuesProduct']['criteria_value_id'] as $key => $cv_id) {
 					$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'product_id' => $product_id);
 				}
 				$this->CriteriaValuesProduct->create();
-				$this->CriteriaValuesProduct->saveAll($temp_array);
+				$this->CriteriaValuesProduct->saveAll($temp_array['CriteriaValuesProduct']);
+
+				// SAVING FINISHES
+				$this->Finish->create();
+				foreach ($requestdata['Finish'] as $key => $value) {
+					$requestdata['Finish'][$key]['product_id'] = $value['finish_id'];
+				}
+				$this->Finish->saveAll($requestdata['Finish']);
+
+				// SAVING PRODUCT VARIABLE DIMENSIONS
+				$dimensionProducts = array();
+				foreach ($requestdata['Dimension'] as $dimension_type_id => $dimension_array) {
+					$this->Dimension->create();
+					$this->Dimension->save($dimension_array);
+					$dimension_id = $this->Dimension->id;
+					$dimensionsProduct[] = array('product_id'=>$product_id,'dimension_id'=>$dimension_id);
+				}
+				$this->DimensionsProduct->create();
+				$this->DimensionsProduct->saveAll($dimensionsProduct);
+
+				//IF STANDARD DIMENSION EXISTS - SAVE STANDARD DIMENSION INSTEAD
+				if(isset($requestdata['StandardDimension'])){
+					$requestdata['StandardDimension']['product_id'] = $product_id;
+					$this->StandardDimension->save($requestdata);
+				}
+
 				$this->Session->setFlash(__('The product has been saved'));
 				$this->redirect(array('controller'=>'images','action' => 'add','product',$product_id,1));
 			} else {
@@ -67,9 +111,11 @@ class ProductsController extends AppController {
 			}
 		}
 		$criterias = $this->Criteria->find('all',array('conditions'=>array('product'=>1)));
-		$discounts = $this->Discount->find('list');
-		$this->set(compact('discounts','criterias'));
-		$this->Session->setFlash('Image adding is done in Step 2');
+		$this->Finish->recursive = 1;
+		$finishes = $this->Finish->find('all');
+		$dimension_types = $this->DimensionType->find('list');
+		$this->set(compact('criterias','dimension_types','finishes'));
+		$this->Session->setFlash('Image adding is done in Step 2','session_error');
 	}
 
 /**
@@ -87,9 +133,10 @@ class ProductsController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Product->save($this->request->data)) {
 				$rqData = $this->request->data;
+				pr($rqData);
 				$product_id = $rqData['Product']['id'];
 
-				#MODIFY CRITERIA VALUES
+				//////////////////////////// MODIFY CRITERIA VALUES ////////////////////////////
 				if(isset($rqData['CriteriaValuesProduct']['criteria_value_id'])){
 					$criteriaValuesInput = $rqData['CriteriaValuesProduct']['criteria_value_id'];
 					$criteriaValues = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$product_id),'fields'=>'criteria_value_id'));
@@ -112,7 +159,35 @@ class ProductsController extends AppController {
 					$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$product_id));
 				}
 
-				#DELETE SELECTED IMAGES
+				//////////////////////////// MODIFY FINISHES ////////////////////////////
+				if(isset($rqData['Finish']['finish_id'])):
+					$finishesProductInput = $rqData['Finish']['finish_id'];
+					$finishesProduct = $this->FinishesProduct->find('list',array('conditions'=>array('product_id'=>$product_id),'fields'=>'finish_id'));
+					
+					#ASSOCIATE NEWLY SELECTED FINISHES
+					$insertArray = array_diff($finishesProductInput, $finishesProduct);
+					$temp_array = array();
+					foreach ($insertArray as $key => $value):
+						$temp_array[] = array('finish_id'=>$value,'product_id'=>$product_id);
+					endforeach;
+					$this->FinishesProduct->saveAll($temp_array);
+					
+					#DISSOCIATE UNSELECTED FINISHES
+					$deleteArray = array_diff($finishesProduct, $finishesProductInput);
+					foreach ($deleteArray as $key => $value):
+						$this->FinishesProduct->delete($key);
+					endforeach;
+				else:
+					#DELETE ALL CRITERIA VALUES IF NONE SELECTED IN THE EDIT PAGE
+					$this->FinishesProduct->deleteAll(array('product_id'=>$product_id));
+				endif;
+
+				//////////////////////////// MODIFY DIMENSIONS ////////////////////////////
+				if(isset($rqData['Dimension'])):
+					$this->Dimension->updateAll($rqData['Dimension']);
+				endif;
+
+				//////////////////////////// DELETE SELECTED IMAGES ////////////////////////////
 				if (isset($rqData['Image'])){
                     $this->Image->deleteAll(array('Image.id'=>$rqData['Image']['id']));
                 }
@@ -127,10 +202,12 @@ class ProductsController extends AppController {
 			$this->request->data = $this->Product->read(null, $id);
 		}
 		$images = $this->Image->find('list',array('conditions'=>array('product_id'=>$id)));
-		$discounts = $this->Product->Discount->find('list',array('fields'=>'value'));
 		$criterias = $this->Criteria->findAllByProduct('1');
+		$finishes = $this->Finish->find('all');
+		$dimension_types = $this->DimensionType->find('list');
+		$finish_checked = $this->FinishesProduct->find('list',array('fields'=>'finish_id','conditions'=>array('product_id'=>$id)));
         $checked = $this->CriteriaValuesProduct->find('list',array('fields'=>'criteria_value_id','conditions'=>array('product_id'=>$id)));
-        $this->set(compact('criterias','checked','discounts','images'));
+        $this->set(compact('criterias','checked','images','dimension_types','finish_checked','finishes'));
 	}
 
 /**
@@ -151,6 +228,11 @@ class ProductsController extends AppController {
 		} else {
 			$this->Image->deleteAll(array('product_id'=>$id));
 			$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$id));
+			$dimensionsIds = $this->DimensionsProduct->find('list',array('fields'=>'dimension_id','conditions'=>array('product_id'=>$id)));
+			$this->FinishesProduct->deleteAll(array('product_id'=>$id));
+			$this->StandardDimension->deleteAll(array('product_id'=>$id));
+			$this->DimensionsProduct->deleteAll(array('product_id'=>$id));
+			$this->Dimension->deleteAll(array('Dimension.id'=>$dimensionIds));
 		}
 		if ($this->Product->delete()) {
 			$this->Session->setFlash(__('Product deleted'));

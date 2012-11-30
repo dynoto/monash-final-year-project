@@ -2,7 +2,6 @@
 echo $this->extend('/Common/visitors');
 $content_override = array('title'=>'Register','js'=>array(null),'css'=>array('visitors/common'),'js'=>array('visitors/register'));
 echo $this->element('override',array('content_override'=>$content_override));
-
 ?>
 <div class="row-fluid">
 <div class="row-fluid span2">

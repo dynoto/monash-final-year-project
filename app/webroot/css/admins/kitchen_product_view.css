@@ -12,3 +12,6 @@ tr.image_column > td > img {
     display: inline-block;
     margin-right: 1%
 }
+ul{
+	list-style-type: none;
+}

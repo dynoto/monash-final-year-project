@@ -1,0 +1,12 @@
+input.dimension_input{
+	max-width: 50px;
+}
+ul{
+	list-style-type: none;
+}
+label > input{
+	margin-top: 0 !important;
+}
+label > p {
+	display: inline-block;
+}

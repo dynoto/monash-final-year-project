@@ -184,3 +184,6 @@ div.error-message{
     color: red;
     font-weight: bold;
 }
+div.search-well{
+    max-width: 200px !important;
+}

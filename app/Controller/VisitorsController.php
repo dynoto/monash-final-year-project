@@ -12,18 +12,22 @@ Class VisitorsController extends AppController{
 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow();
+        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us'));
         $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Product','Testimonial','HomepageImage');
         foreach($models as $model){
             $this->loadModel($model);
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////
+
     public function index(){
         $image_ids = $this->HomepageImage->find('list',array('order'=>'position','fields'=>array('position','image_id')));
         $image_list = $this->Image->find('list',array('conditions'=>array('product_id'=>null,'id'=>$image_ids)));
         $this->set(compact('image_ids','image_list'));
     }
+
+////////////////////////////////////////////////////////////////////////////////
 
     public function gallery($page = 1){
 
@@ -42,9 +46,7 @@ Class VisitorsController extends AppController{
         //$this->set('info',$kitchen_info);
     }
     
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
-    
+////////////////////////////////////////////////////////////////////////////////
     
     //Function for the products page - visitor side to display the list of available products
     public function products($page=1){
@@ -57,16 +59,35 @@ Class VisitorsController extends AppController{
         }
         $this->__get_info($product_ids,'Product',$page);
         
-        $this->__sidebar_query();
+        $this->__sidebar_query('Product');
         $paginate_data = $this->__pagination($product_ids,$page);
         $this->set('paginate_data',$paginate_data);
         //$this->set('pagination',$return_data['pagination']);
         //$this->set('info',$kitchen_info);
     }
     
-    
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
+////////////////////////////////////////////////////////////////////////////////
+
+    public function cart_add(){
+        if($this->request->is('post')){
+            $rqData = $this->request->data;
+
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+
+    public function cart_list(){
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+
+    public function make_order(){
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////
     
     public function testimonials($page=1){
         /* ----------LOAD ESSENTIAL MODELS-----------------*/
@@ -86,12 +107,13 @@ Class VisitorsController extends AppController{
         $this->set('paginate_data',$paginate_data);
     }
     
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
+////////////////////////////////////////////////////////////////////////////////
     
     public function about_us(){
         
     }
+
+////////////////////////////////////////////////////////////////////////////////
     
     public function contact_us(){
         if($this->request->is('post')){
@@ -108,12 +130,7 @@ Class VisitorsController extends AppController{
         
     }
 
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
-    /*------------------------------------------------------------------------------------------------*/
+////////////////////////////////////////////////////////////////////////////////
 
     private function __content_filter($type = 'Kitchen'){
         $filter = $this->request->data['CriteriaValues'.$type]['criteria_value_id'];
@@ -141,7 +158,7 @@ Class VisitorsController extends AppController{
 
     }
 
-    
+////////////////////////////////////////////////////////////////////////////////
     
     private function __get_info($ids,$type='Kitchen',$page=1){
         // type is either KITCHENS or PRODUCTS
@@ -164,6 +181,8 @@ Class VisitorsController extends AppController{
         $this->set('info',$info);
     }
 
+////////////////////////////////////////////////////////////////////////////////
+
     private function __pagination($ids,$page=1){
         // item can be KITCHEN or PRODUCTS
         // ids means many id
@@ -183,6 +202,8 @@ Class VisitorsController extends AppController{
             return $pagination;
         }
     }
+
+////////////////////////////////////////////////////////////////////////////////
 
     private function __sidebar_query($type = 'Kitchen'){
         // type is either KITCHENS or PRODUCTS
@@ -213,82 +234,4 @@ Class VisitorsController extends AppController{
         $this->set('selected',$selected);
         $this->set('sidebar_data',$temp_array);
     }
-    
-    // private function __content_query($page,$testimonial_mode=false,$type='Kitchen'){
-    //     $sidebar_data = $this->__sidebar_query($type);
-    //     $conditions = array();
-    //     $selected = array();
-    //     $filter_values = null;
-    //     if($this->request->is('Post')){
-    //         $filter_values = $this->request->data['CriteriaValuesKitchen'][''];
-    //         unset($filter_values['page_filter']);
-    //         if(!empty($filter_values)){
-    //             foreach ($filter_values as $filter_value){
-    //                 foreach ($filter_value as $value){
-    //                     $conditions['CriteriaValuesKitchen.Criteria_value_id'][] = $value;
-    //                 }
-    //             }
-    //             $selected = $conditions['CriteriaValuesKitchen.Criteria_value_id'];
-    //         }
-    //         $this->Kitchen->bindModel(array('hasOne'=>array('CriteriaValuesKitchen')));
-    //     }
-    //     $info = $this->Kitchen->find('all',array(
-    //         'fields'=> 'DISTINCT Kitchen.*',
-    //         'conditions' => $conditions
-    //     ));
-        
-    //     if($testimonial_mode){
-    //         foreach ($info as $key_a => $val_a){
-    //             if(empty($val_a['Testimonial'])){
-    //                 unset($info[$key_a]);
-    //             }
-    //         }
-    //     }
-        
-        
-    //     if(!empty($filter_values)){
-    //         $criteria_list = $this->Criteria->find('list');
-    //         foreach($info as $key_a => $val_a){
-    //             foreach($val_a['CriteriaValue'] as $val_aa){
-    //                 $val_aa_id = $criteria_list[$val_aa['criteria_id']];
-    //                 if(array_key_exists($val_aa_id, $filter_values)){
-    //                     if(in_array($val_aa['id'], $filter_values[$val_aa_id]) == false){
-    //                       unset($info[$key_a]);
-    //                       break;
-    //                       }
-    //                 }
-    //             }
-    //         }
-    //     }
-        
-    //     $info = array_slice($info, (4 * ($page - 1)), 5);
-    //     if($page == 1 and count($info) < 4){
-    //         $pagination = 'hide';
-    //     }
-    //     elseif(count($info) > 4){
-    //         array_pop($info);
-    //         $pagination = '';
-    //     }
-    //     else{ $pagination = 'end'; }
-        
-    //     foreach ($info as $key_a => $datum){
-    //         foreach ($datum['CriteriaValue'] as $key_b =>$datum_val){
-    //                 if($sidebar_data[$datum_val['criteria_id']]['id'] == $datum_val['criteria_id']){
-    //                     $info[$key_a]['CriteriaValue'][$key_b]['criteria_name'] = $sidebar_data[$datum_val['criteria_id']]['name'];
-    //                 }
-    //                 unset($info[$key_a]['CriteriaValue'][$key_b]['CriteriaValuesKitchen']);
-    //         }
-    //     }
-        
-    //     return array('info'=>$info, 'pagination'=>$pagination, 'selected'=>$selected, 'filter_values'=>$filter_values);
-    // }
-    
-    private function __printthis($data){
-        foreach($data as $a => $b){
-            echo $a."<br/>";
-            print_r($b['Testimonial']);
-            echo "<br/><br/>";
-        }
-    }
-    
 }

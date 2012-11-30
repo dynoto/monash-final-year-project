@@ -3,7 +3,6 @@ echo $this->extend('/Common/visitors');
 $content_override = array('title'=>'SK Kitchens Index','css'=>'visitors/index','js'=>'visitors/index');
 echo $this->element('override',array("content_override"=>$content_override));
 ?>
-
 <!--START OF BODY CONTENT -->
 <div class="row-fluid margin-center main_content">
         <div class="carousel slide carousel-fade row-fluid " id="index_carousel">

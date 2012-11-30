@@ -151,6 +151,7 @@ class UsersController extends AppController {
 		$group->id = 2; //CUSTOMERS GROUP ID
 		$this->Acl->deny($group,'controllers');
 		$this->Acl->deny($group,'controllers/Users/');
+		$this->Acl->allow($group,'controllers/Visitors');
 		$this->Acl->allow($group,'controllers/Users/login');
 		$this->Acl->allow($group,'controllers/Users/logout');
 

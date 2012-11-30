@@ -16,21 +16,19 @@ echo $this->element('override', array("content_override" => $content_override));
 				);
 			?></li>
 		<?php } ?>
-		<li><?php echo $this->Html->link('New Customer', array('action' => 'add')); ?></li>
+		<li></li>
 	</ul>
 				<!--
 		<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link('List Customer Types', array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link('New Customer Type', array('controller' => 'customer_types', 'action' => 'add')); ?> </li>
 	</ul>-->
-	<ul class="nav nav-tabs nav-stacked">
-		<li><?php echo $this->Html->link('Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-	</ul>
 </div>
 </div>
 
 <div class="span9">
-	<h4><?php echo __('Customers'); ?></h4>
+	<h4 class="ib">Customers</h4>
+	<?php echo $this->Html->link('New Customer', array('action' => 'add'),array('class'=>'pull-right btn')); ?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -40,7 +38,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('discount_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('discount'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -56,8 +54,8 @@ echo $this->element('override', array("content_override" => $content_override));
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
 		<td><?php 
-		if(isset($customer['Discount']['value'])){
-			echo h($customer['Discount']['value']).'%'; 
+		if(isset($customer['Customer']['discount'])){
+			echo h($customer['Customer']['discount']).'%'; 
 		} else {
 			echo '-';
 		}

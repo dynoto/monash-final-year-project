@@ -1,6 +1,6 @@
 <?php
     echo $this->extend('/Common/visitors');
-    $content_override = array('title'=>'SK Kitchens Product','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter'));
+    $content_override = array('title'=>'SK Kitchens Product','css'=>array('dropdown-checklist','visitors/testimonial','visitors/product'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter','visitors/cart_add'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
@@ -10,12 +10,11 @@
 <div class="row-fluid span7 main_content no-padding">
     <?php
         $count = 0;
-        foreach ($info as $key_a => $val_a) {
-            if($count==0 or $count==2){ ?> <div class='row-fluid gallery_row'> <?php } ?>
+        foreach ($info as $key_a => $val_a) { ?> 
+        <div class='row-fluid product_frame'>
             <?php $product_name = $val_a['Product']['name']; ?>
-            <div class="span6 image_frame">
+            <div class="span4 image_frame">
                     <?php $item_name = str_replace(' ', '_', $product_name) ?>
-                    <div class="imgimgimg">
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
                         if(isset($val_a['Image'][0])){
@@ -25,8 +24,10 @@
                         } 
                         ?>
                     </a>
-                    </div>
-                    <p><?php echo $product_name;?></p>
+            </div>
+            <div class="span8 cart_frame">
+                <h4><?php echo $product_name;?></h4>
+                <p><?php echo $val_a['Product']['description'] ?></p>
             </div>
 
             <!-- modal starts here -->
@@ -35,7 +36,7 @@
             ?>
             <!-- modal ends here -->
             
-            <?php if($count==1 or $count==3){ ?> </div> <?php } ?>
-            <?php $count+=1; }?>
+        </div>
+        <?php } ?>
         <?php echo $this->element('pagination',array('pagination'=>$paginate_data)); ?>
 </div>

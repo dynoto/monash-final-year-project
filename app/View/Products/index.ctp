@@ -10,14 +10,11 @@ echo $this->element('override', array("content_override" => $content_override));
 		<ul class="nav nav-tabs nav-stacked">
 			<li><?php echo $this->Html->link('Fill Missing Criteria',array('action'=>'fill_missing_criteria')); ?></li>
 		</ul>
-		<ul class="nav nav-tabs nav-stacked">
-			<li><?php echo $this->Html->link('Discounts', array('controller' => 'discounts', 'action' => 'index')); ?> </li>
-		</ul>
 	</div>
 	</div>
 	<div class="span8">
 		<div class="row-fluid">
-            <h4 style="display:inline"><?php echo __('Products'); ?></h4>
+            <h4 class="ib"><?php echo __('Products'); ?></h4>
             <?php echo $this->Html->link(__('New Product'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>
         </div>
 		<div class="row-fluid">
@@ -26,7 +23,7 @@ echo $this->element('override', array("content_override" => $content_override));
 					<th><?php echo $this->Paginator->sort('id'); ?></th>
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
 					<th><?php echo $this->Paginator->sort('price'); ?></th>
-					<th><?php echo $this->Paginator->sort('discounts_id'); ?></th>
+					<th><?php echo $this->Paginator->sort('discount'); ?></th>
 					<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
 				<?php
@@ -37,8 +34,8 @@ echo $this->element('override', array("content_override" => $content_override));
 					<td><?php echo '$ '.h($product['Product']['price']); ?>&nbsp;</td>
 					<td>
 						<?php 
-						if(isset($product['Discount']['id'])){
-							echo h($product['Discount']['value']).'%';
+						if(isset($product['Product']['discount'])){
+							echo h($product['Product']['discount']).'%';
 						}else{
 							echo '-';
 						}

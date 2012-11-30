@@ -32,8 +32,12 @@ $this->element('override',array("content_override"=>$override));
 			echo $this->Form->input('address');
 			echo $this->Form->input('phone');
 			echo $this->Form->input('customer_type_id');
-			echo $this->Form->input('discount_id');
 			?>
+			<div class="input-append">
+				<label for="DiscountValue">Discount</label>
+				<?php echo $this->Form->input('discount_id',array('label'=>false,'options'=>$discounts,'div'=>false,'empty'=>'-')); ?>
+				<span class="add-on">%</span>
+			</div>
 		</fieldset>
 		<?php echo $this->Form->end(array('class'=>'btn btn-large btn-primary')); ?>
 	</div>

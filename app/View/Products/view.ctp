@@ -2,6 +2,7 @@
 echo $this->extend('/Common/admins');
 $content_override = array('title' => 'View Product', 'css' => array('admins/common','admins/kitchen_product_view'), 'js' => array('admins/kitchen_product_view'));
 echo $this->element('override', array("content_override" => $content_override));
+pr($products);
 ?>
 <div class="row-fluid">
     <div class="span2">
@@ -35,7 +36,7 @@ echo $this->element('override', array("content_override" => $content_override));
                 </dd>
                 <dt><?php echo __('Discount'); ?></dt>
                 <dd>
-                    <?php echo h($products['Discount']['value']).'%'; ?>
+                    <?php echo h($products['Product']['discount']).'%'; ?>
                     &nbsp;
                 </dd>
                 <dt><?php echo __('Description'); ?></dt>
@@ -74,28 +75,96 @@ echo $this->element('override', array("content_override" => $content_override));
             </table>
             <?php endif; ?>
         </div>
+        <hr>
+
+        <!-- FINISHES -->
+        <div class="finishes">
+            <h4>Finishes</h4>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>Finish</td>
+                    <td>Finish Types</td>
+                </tr>
+                <?php foreach ($finishes as $finish_name => $finish_array): ?>
+                    <tr>
+                        <td>
+                            <?php echo $finish_name ?>
+                        </td>
+                        <td>
+                            <ul>
+                            <?php foreach ($finish_array as $k => $finish_type_name): ?>
+                                <li><?php echo $finish_type_name; ?></li>
+                            <?php endforeach; ?>
+                            <ul>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+        <hr>
+
+        <!-- DIMENSIONS -->
+        <div class="dimensions">
+            <!-- STANDARD DIMENSION -->
+            <h4>Standard Dimension</h4>
+            <p>
+            <?php   if(isset($products['StandardDimension'][0]['description'])):
+                        echo $products['StandardDimension'][0]['description'];
+                    else:
+                        echo 'no standard dimension available';
+                    endif;
+            ?>
+            </p>
+            <hr>
+
+            <!-- VARIABLE DIMENSION -->
+            <h4>Variable Dimension</h4>
+            <?php if(isset($products['Dimension'])): ?>
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>Type</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                            <th>Increment</th>
+                            <th>Default</th>
+                        </tr>
+                    <?php foreach($products['Dimension'] as $k => $dimension_array): ?>
+                        <tr>
+                            <td><?php echo $dimension_types[$dimension_array['dimension_type_id']] ?></td>
+                            <td><?php echo $dimension_array['min']; ?></td>
+                            <td><?php echo $dimension_array['max']; ?></td>
+                            <td><?php echo $dimension_array['increment']; ?></td>
+                            <td><?php echo $dimension_array['default']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </table>
+            <?php endif; ?>
+
+        </div>
+        <hr>
+
 
         <!-- CRITERIA VALUES -->
         <div class="inline-criteria-values">
-            <h4><?php echo __(' Criteria Values'); ?></h4>
+            <h4>Criteria Values</h4>
             <?php 
-            if (!empty($products['CriteriaValue'])){
-                foreach ($criteria_names as $id => $name){
+            if (!empty($products['CriteriaValue'])):
+                foreach ($criteria_names as $id => $name):
                 ?>
                 <div>
                     <h5><?php echo $name ?></h5>
                     <?php
-                    foreach ($products['CriteriaValue'] as $criteriaValue){
-                        if($criteriaValue['criteria_id'] == $id){
+                    foreach ($products['CriteriaValue'] as $criteriaValue):
+                        if($criteriaValue['criteria_id'] == $id):
                             echo $this->Form->input('',array('label'=>$criteriaValue['name'],'type'=>'checkbox','multiple'=>'checkbox','checked','disabled'=>'disabled'));
-                        }
-                    }
+                        endif;
+                    endforeach;
                     ?>
                     <br>
                 </div>
                 <?php 
-                }
-            } 
+                endforeach;
+            endif;
             ?>
         </div>
 </div>

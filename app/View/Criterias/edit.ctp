@@ -23,8 +23,7 @@ echo $this->element('override', array("content_override" => $content_override));
                 <?php
                 echo $this->Form->input('id');
                 echo $this->Form->input('name',array('required'=>true));
-                echo $this->Form->input('kitchen',array('label'=>'Gallery','options'=>array(1=>'Yes',0=>'No')));
-                echo $this->Form->input('product',array('options'=>array(1=>'Yes',0=>'No')));
+                echo $this->Form->input('for',array('label'=>'Appears in','options'=>array('kitchen'=>'Kitchen','product'=>'Product')));
                 ?>
             </div>
             <div class="span6 row-fluid">
@@ -32,8 +31,8 @@ echo $this->element('override', array("content_override" => $content_override));
         </div>
         <div class="row-fluid span8">
             <?php
-            echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline'));
-            echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary offset1'));
+            echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline-block; margin-right:10px;'));
+            echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary'));
             ?>
             
             <?php
