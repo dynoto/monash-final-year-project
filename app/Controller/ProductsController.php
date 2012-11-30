@@ -237,7 +237,7 @@ class ProductsController extends AppController {
 		} else {
 			$this->Image->deleteAll(array('product_id'=>$id));
 			$this->CriteriaValuesProduct->deleteAll(array('product_id'=>$id));
-			$dimensionsIds = $this->DimensionsProduct->find('list',array('fields'=>'dimension_id','conditions'=>array('product_id'=>$id)));
+			$dimensionIds = $this->DimensionsProduct->find('list',array('fields'=>'dimension_id','conditions'=>array('product_id'=>$id)));
 			$this->FinishesProduct->deleteAll(array('product_id'=>$id));
 			$this->StandardDimension->deleteAll(array('product_id'=>$id));
 			$this->DimensionsProduct->deleteAll(array('product_id'=>$id));

@@ -13,7 +13,17 @@ Class VisitorsController extends AppController{
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us'));
-        $models = array('Criteria','CriteriaValue','CriteriaValuesKitchen','Image','Kitchen','Product','Testimonial','HomepageImage');
+        $models = array('Criteria',
+                        'CriteriaValue',
+                        'CriteriaValuesKitchen',
+                        'CriteriaValuesProduct',
+                        'Image',
+                        'Kitchen',
+                        'Product',
+                        'Testimonial',
+                        'HomepageImage',
+                        'DimensionType'
+                        );
         foreach($models as $model){
             $this->loadModel($model);
         }
@@ -61,7 +71,9 @@ Class VisitorsController extends AppController{
         
         $this->__sidebar_query('Product');
         $paginate_data = $this->__pagination($product_ids,$page);
+        $dimension_types = $this->DimensionType->find('list');
         $this->set('paginate_data',$paginate_data);
+        $this->set(compact('dimension_types'));
         //$this->set('pagination',$return_data['pagination']);
         //$this->set('info',$kitchen_info);
     }
@@ -165,7 +177,8 @@ Class VisitorsController extends AppController{
         $this->paginate = array(
                 'conditions'=>array($type.'.id'=>$ids),
                 'limit'=>4,
-                'page' => $page
+                'page' => $page,
+                'recursive'=>2
             );
         $info = $this->paginate($type);
         $criterias = $this->Criteria->find('list');

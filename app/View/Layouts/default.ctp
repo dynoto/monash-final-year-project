@@ -9,6 +9,8 @@
                         'layout'
                         ));
         echo $this->fetch('view_css');
+        echo $this->Html->meta('icon',$this->webroot.'webroot/img/glyphicons-halflings.png');
+        echo $this->Html->meta('icon',$this->webroot.'webroot/img/glyphicons-halflings.png');
     ?>
 </head>
 <body>

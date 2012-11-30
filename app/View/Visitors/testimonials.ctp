@@ -6,7 +6,7 @@ echo $this->element('override', array("content_override" => $content_override));
 
 <!-- CONTENT STARTS HERE -->
 <div class="row-fluid">
-    <?php echo $this->element('side_bar',array('visitor_action'=>'testimonials')); ?>
+    <?php echo $this->element('side_bar',array('visitor_action'=>'testimonials','table'=>'Kitchen')); ?>
     <div class="row-fluid span7 main_content">
         <?php foreach ($info as $key_a => $val_a) { ?>
             <div class="row-fluid testimonial_frame ">

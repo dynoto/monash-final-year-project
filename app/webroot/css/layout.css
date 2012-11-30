@@ -187,3 +187,6 @@ div.error-message{
 div.search-well{
     max-width: 200px !important;
 }
+[class^="icon-"]{
+    background-image: url("../img/glyphicons-halflings-white.png");
+}

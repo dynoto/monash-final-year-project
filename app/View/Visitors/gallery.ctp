@@ -6,7 +6,7 @@
 
 <!-- CONTENT STARTS HERE -->
 <div class="row-fluid">
-<?php echo $this->element('side_bar',array('visitor_action'=>'gallery')); ?>
+<?php echo $this->element('side_bar',array('visitor_action'=>'gallery','table'=>'Kitchen')); ?>
 <div class="row-fluid span7 main_content no-padding">
     <?php
         $count = 0;
