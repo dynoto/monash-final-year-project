@@ -121,7 +121,7 @@ Class VisitorsController extends AppController{
             $requestData = $this->request->data;
             $this->Enquiry->create();
             if($this->Enquiry->save($requestData)){
-                $this->Session->setFlash('Your enquiry has been submitted. Please allow 2 - 5 working dats for a response. Thank you.');
+                $this->Session->setFlash('Your enquiry has been submitted. Please allow 2 - 5 working days for a response. Thank you.');
                 $this->redirect(array('action'=>'contact_us'));
             } else {
                 $this->Session->setFlash('Sorry, there seems to be a problem submitting your enquiry');
