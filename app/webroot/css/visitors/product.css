@@ -22,3 +22,19 @@ select.finish_dropdown{
 .hide_div{
 	display: none !important;
 }
+td{
+	width: auto !important;
+}
+label.ib{
+	margin-left: 10px;
+}
+h5.ib{
+	vertical-align: middle;
+}
+input.finish_type_select{
+	width: 100px !important;
+	margin-left: 10px;
+}
+.input_required{
+	border:2px solid red !important;
+}

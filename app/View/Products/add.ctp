@@ -78,7 +78,7 @@ echo $this->element('override', array('content_override' => $override));
                         <td><?php echo $this->Form->input('Dimension.'.$type_id.'.min',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$type_id.'.max',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$type_id.'.increment',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0,'required'=>true)); ?></td>
                     </tr>
                 <?php } ?>
             </table>

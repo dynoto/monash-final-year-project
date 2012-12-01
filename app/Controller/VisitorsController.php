@@ -81,9 +81,10 @@ Class VisitorsController extends AppController{
 ////////////////////////////////////////////////////////////////////////////////
 
     public function cart_add(){
+        $this->autoRender = false;
         if($this->request->is('post')){
             $rqData = $this->request->data;
-
+            pr($rqData);
         }
     }
 

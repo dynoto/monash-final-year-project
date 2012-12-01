@@ -202,7 +202,7 @@ class ProductsController extends AppController {
                     $this->Image->deleteAll(array('Image.id'=>$rqData['Image']['id']));
                 }
 				$this->Session->setFlash(__('The product has been updated'));
-				//$this->redirect(array('action' => 'view',$product_id));
+				$this->redirect(array('action' => 'view',$product_id));
 
 			} else {
 				$this->Session->setFlash(__('The product could not be updated. Please, try again.'));

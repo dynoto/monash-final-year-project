@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/visitors');
-$content_override = array('title'=>'About Us','css'=>array('visitors/about_us'),'js'=>array(Null));
+$content_override = array('title'=>'About Us','css'=>array('visitors/about_us'));
 echo $this->element('override',array("content_override"=>$content_override));
 ?>
 

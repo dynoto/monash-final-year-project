@@ -135,7 +135,7 @@ $data = $this->request->data;
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false,'required'=>true)); ?></td>
                     </tr>
                 <?php } ?>
             </table>
