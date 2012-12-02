@@ -29,6 +29,7 @@ class OrdersController extends AppController {
 		if (!$this->Order->exists()) {
 			throw new NotFoundException(__('Invalid order'));
 		}
+		$this->Order->recursive = 2;
 		$this->set('order', $this->Order->read(null, $id));
 	}
 

@@ -1,3 +1,30 @@
+<?php
+echo $this->extend('/Common/admins');
+$content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common');
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid">
+	<div class="span2">
+		<div class="offset1">
+		<h3><?php echo __('Actions'); ?></h3>
+		<ul>
+<!-- 			<li><?php echo $this->Html->link(__('Edit Order Item'), array('action' => 'edit', $orderItem['OrderItem']['id'])); ?> </li> -->
+			<li><?php echo $this->Form->postLink(__('Delete Order Item'), array('action' => 'delete', $orderItem['OrderItem']['id']), null, __('Are you sure you want to delete # %s?', $orderItem['OrderItem']['id'])); ?> </li>
+			<li><?php echo $this->Html->link(__('List Orders'), array('controller' => 'orders', 'action' => 'index')); ?> </li>
+			<!-- <li><?php echo $this->Html->link(__('New Order'), array('controller' => 'orders', 'action' => 'add')); ?> </li> -->
+			<li><?php echo $this->Html->link(__('List Products'), array('controller' => 'products', 'action' => 'index')); ?> </li>
+			<!-- <li><?php echo $this->Html->link(__('New Product'), array('controller' => 'products', 'action' => 'add')); ?> </li> -->
+		</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
 <div class="orderItems view">
 <h2><?php  echo __('Order Item'); ?></h2>
 	<dl>
@@ -17,19 +44,6 @@
 			&nbsp;
 		</dd>
 	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Order Item'), array('action' => 'edit', $orderItem['OrderItem']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Order Item'), array('action' => 'delete', $orderItem['OrderItem']['id']), null, __('Are you sure you want to delete # %s?', $orderItem['OrderItem']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Order Items'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Order Item'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Orders'), array('controller' => 'orders', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Order'), array('controller' => 'orders', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Products'), array('controller' => 'products', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Product'), array('controller' => 'products', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
 <div class="related">
 	<h3><?php echo __('Related Products'); ?></h3>

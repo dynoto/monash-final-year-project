@@ -2,7 +2,6 @@
 echo $this->extend('/Common/admins');
 $content_override = array('title' => 'View Product', 'css' => array('admins/common','admins/kitchen_product_view'), 'js' => array('admins/kitchen_product_view'));
 echo $this->element('override', array("content_override" => $content_override));
-pr($products);
 ?>
 <div class="row-fluid">
     <div class="span2">
