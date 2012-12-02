@@ -140,8 +140,9 @@ Class VisitorsController extends AppController{
         $customer_id = null;
         $customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$user),'fields'=>'id'));
         $customer_id = $customer_id['Customer']['id'];
+        $today = date("Y-m-d H:i:s"); 
         $this->Order->create();
-        $this->Order->saveAll(array('date'=>0));
+        $this->Order->saveAll(array('customer_id'=>$customer_id,'date'=>$today));
 
         foreach ($cart as $key => $item):
             $this->OrderItem->create();

@@ -28,8 +28,8 @@ echo $this->element('override', array("content_override" => $content_override));
 			<dt><?php echo __('By Customer'); ?></dt>
 				<dd>
 					<?php 
-					if(isset($order['Customers']['name'])):
-						echo $this->Html->link($order['Customers']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customers']['id'])); 
+					if(isset($order['Customer']['name'])):
+						echo $this->Html->link($order['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customer']['id'])); 
 					else:
 						echo 'ADMINISTRATOR';
 					endif;
@@ -37,9 +37,41 @@ echo $this->element('override', array("content_override" => $content_override));
 				</dd>
 			<dt><?php echo __('Date'); ?></dt>
 				<dd>
-					<?php echo h($order['Order']['date']); ?>
+					<?php echo h($this->Time->niceShort($order['Order']['date'])); ?>
 				</dd>
 		</dl>
+		</div>
+
+		<div>
+			<h4>Order Items</h4>
+			<table class="table table-bordered table-striped">
+				<tr>
+					<td>Product Name</td>
+					<td>Dimension</td>
+					<td>Range Types</td>
+					<td>Quantity</td>
+				</tr>
+			<?php foreach ($order['OrderItem'] as $orderItem): ?>
+				<tr>
+					<td><?php echo $products[$orderItem['product_id']] ?></td>
+					<td><?php 
+					echo '<b>Height</b> : '.$orderItem['height'].'<br>';
+					echo '<b>Width</b> : '.$orderItem['width'].'<br>';
+					echo '<b>Depth</b> : '.$orderItem['depth'].'<br>';
+					 ?>
+					</td>
+					<td>
+					<?php 
+					foreach ($orderItem['RangeValue'] as $rv):
+						echo '<b>'.$range_types[$rv['range_type_id']].'</b>'.' : '.$rv['name'].'<br>';
+					endforeach;
+					?>
+					</td>
+					<td><?php echo $orderItem['quantity'] ?></td>
+
+				</tr>
+			<?php endforeach; ?>
+			</table>
 		</div>
 	</div>
 </div>

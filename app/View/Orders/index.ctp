@@ -29,20 +29,20 @@ echo $this->element('override', array("content_override" => $content_override));
 	<tr>
 		<td><?php echo h($order['Order']['id']); ?>&nbsp;</td>
 		<td>
-			<?php 
-			if(isset($order['Customers']['name'])):
-				echo $this->Html->link($order['Customers']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customers']['id']));
+			<?php
+			if(isset($order['Customer']['id'])):
+				echo $this->Html->link($order['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customer']['id']));
 			else:
 				echo 'Admin Order';
 			endif;
 			?>
 
 		</td>
-		<td><?php echo h($order['Order']['date']); ?>&nbsp;</td>
+		<td><?php echo h($this->Time->niceShort($order['Order']['date'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $order['Order']['id'])); ?>
 			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $order['Order']['id'])); ?>
-			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

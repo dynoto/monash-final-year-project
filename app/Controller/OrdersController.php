@@ -12,6 +12,31 @@ class OrdersController extends AppController {
  *
  * @return void
  */
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$models = array('Criteria',
+        				'CriteriaValuesProduct',
+        				'Image',
+        				'CriteriaValue',
+        				'DimensionType',
+        				'Dimension',
+        				'DimensionsProduct',
+        				'StandardDimension',
+        				'RangeValue',
+        				'RangeType',
+        				'ProductsRangeValue',
+        				'OrderItemsRangeValue',
+        				'Order',
+        				'OrderItem',
+        				'Product'
+        				);
+        foreach ($models as $key => $value) {
+        	$this->loadModel($value);
+        }
+	}
+
+
+
 	public function index() {
 		$this->Order->recursive = 0;
 		$this->set('orders', $this->paginate());
@@ -30,6 +55,9 @@ class OrdersController extends AppController {
 			throw new NotFoundException(__('Invalid order'));
 		}
 		$this->Order->recursive = 2;
+		$products = $this->Product->find('list');
+		$range_types = $this->RangeType->find('list');
+		$this->set(compact('products','range_types'));
 		$this->set('order', $this->Order->read(null, $id));
 	}
 
@@ -94,6 +122,11 @@ class OrdersController extends AppController {
 		if (!$this->Order->exists()) {
 			throw new NotFoundException(__('Invalid order'));
 		}
+		$order_items = $this->OrderItem->find('list',array('conditions'=>array('order_id'=>$id)));
+		foreach ($order_items as $value) {
+			$this->OrderItemsRangeValue->deleteAll(array('OrderItemsRangeValue.order_item_id'=>$value));
+		}
+		$this->OrderItem->deleteAll(array('OrderItem.order_id'=>$id));
 		if ($this->Order->delete()) {
 			$this->Session->setFlash(__('Order deleted'));
 			$this->redirect(array('action' => 'index'));
