@@ -22,3 +22,8 @@ function show_hide_image(image_id){
     $('tr.image_column#'+image_id).toggle();
     return false;
 }
+
+function validate_fields(){
+	console.log('yup!')
+	return false;
+}

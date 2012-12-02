@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Order $Order
  * @property Product $Product
+ * @property RangeValue $RangeValue
  */
 class OrderItem extends AppModel {
 
@@ -34,6 +35,16 @@ class OrderItem extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'product_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -50,6 +61,13 @@ class OrderItem extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Product' => array(
+			'className' => 'Product',
+			'foreignKey' => 'product_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
@@ -59,11 +77,11 @@ class OrderItem extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Product' => array(
-			'className' => 'Product',
-			'joinTable' => 'products_order_items',
+		'RangeValue' => array(
+			'className' => 'RangeValue',
+			'joinTable' => 'order_items_range_values',
 			'foreignKey' => 'order_item_id',
-			'associationForeignKey' => 'product_id',
+			'associationForeignKey' => 'range_value_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

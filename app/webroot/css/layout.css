@@ -137,6 +137,12 @@ a.login_switch {
 .ib {
     display: inline-block;
 }
+.va-top{
+    vertical-align: top;
+}
+.va-middle{
+    vertical-align: middle;
+}
 a#login_bar_toggle_button > img {
     float: right;
     width: 14%;

@@ -22,7 +22,10 @@ Class VisitorsController extends AppController{
                         'Product',
                         'Testimonial',
                         'HomepageImage',
-                        'DimensionType'
+                        'DimensionType',
+                        'RangeType',
+                        'RangeValue',
+                        'ProductsRangeValue'
                         );
         foreach($models as $model){
             $this->loadModel($model);
@@ -84,14 +87,20 @@ Class VisitorsController extends AppController{
         $this->autoRender = false;
         if($this->request->is('post')){
             $rqData = $this->request->data;
-            pr($rqData);
+            foreach ($rqData['RangeValue'] as $key => $value):
+                $rv_name = $this->RangeValue->read('name',$value['id']);
+                $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
+            endforeach;
+            $cart_count = count($this->Session->read('Order'));
+            $this->Session->write('Order.'.$cart_count,$rqData);
         }
     }
 
 ////////////////////////////////////////////////////////////////////////////////
 
     public function cart_list(){
-
+        $cart = $this->Session->read('Order');
+        $this->set(compact('cart'));
     }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$('input.dimension_input').hover(
 		function(){
-			console.log('clicked!');
 			var max = $(this).attr('dimension-max');
 			var min = $(this).attr('dimension-min');
 			var incr = $(this).attr('dimension-increment');
@@ -28,14 +27,10 @@ $(document).ready(function(){
 	$('input.finish_type_select').popover(options);
 	$('input.quantity_input').popover(options);
 
-	$('select.finish_dropdown').change(function(){
-		var finish_group = 'div.finish_group_'+$(this).attr('data-product');
-		var finish_class = 'div.finish_' + $(this).val();
-		$(finish_group).children(finish_class).removeClass('hide_div');
-		$(finish_group).children(finish_class).find('input').removeAttr('disabled');
-		$(finish_group).children().not(finish_class).addClass('hide_div');
-		$(finish_group).children().not(finish_class).children('input').attr('disabled','disabled');
-		$('select.finish_dropdown').not($(this)).val($(this).val());
+	$('select.RangeValueSelect').change(function(){
+		var selectValue = $(this).val();
+		console.log(selectValue);
+		$('select.RangeValueSelect').not($(this)).val(selectValue);
 	});
 });
 
@@ -43,6 +38,7 @@ function add_to_cart(p_id){
 	var submit = true;
 	$('div#product_'+p_id).find('input').not(':disabled').each(function(index){
 		var check_value = $(this).val();
+		console.log($(this).attr('name'));
 		if(check_value == ''){
 			$(this).addClass('input_required');
 			submit = false;

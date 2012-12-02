@@ -16,11 +16,12 @@
 			}elseif($groupName == 'Administrators'){
 				echo $this->Html->link('Visitor Site',array('controller'=>'visitors'));
 			}
+			echo $this->Html->link('Cart',array('controller'=>'visitors','action'=>'cart_list'));
 			echo $this->Html->link('Log Out',array('controller'=>'users','action'=>'logout'));?>
 			</p><?php } ?>
 		</div>
 		<div id="login_bar_toggle" class="row-fluid">
-		<a id="login_bar_toggle_button" onclick="toggle_login()">
+		<a id="login_bar_toggle_button" class="disableprompt" onclick="toggle_login()">
 			<?php echo $this->html->image('common/arrow_down.png') ?>
 		</a>
 		</div>

@@ -29,7 +29,11 @@
                     </a>
             </div>
             <div class="cart_frame span8" id="<?php echo 'product_'.$p_id; ?>">
-                <?php echo $this->Form->create('OrderItem_'.$p_id,array('id'=>'product_'.$p_id)); ?>
+                <?php 
+                echo $this->Form->create('OrderItem_'.$p_id,array('id'=>'product_'.$p_id));
+                echo $this->Form->input('OrderItem.product_id',array('type'=>'hidden','value'=>$p_id));
+                echo $this->Form->input('OrderItem.product_name',array('type'=>'hidden','value'=>$val_a['Product']['name']));
+                ?>
                 <table class="table table-striped table-bordered">
                     <tr>
                         <td class="title_cell no-padding-vertical">
@@ -41,19 +45,21 @@
                             <?php
                             echo $this->Form->input("OrderItem.quantity",array('type'=>'text','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','label'=>false,'data-v'=>'int','div'=>false)); ?></label>
                             <?php
-                            echo $this->Form->button("<i class='icon-shopping-cart'></i> $".$val_a['Product']['price'],array('type'=>'button','class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
+                            echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Cart',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
                             ?>
                         </td>
                     </tr>
+
+                    <!---------------------------- DIMENSIONS -------------------------------->
                     <tr>
-                        <td class="dimension_cell no-padding-vertical" colspan="2">
-                            <h5 class="ib">Dimension : </h5>
+                        <td><h5 class="ib">Dimension : </h5></td>
+                        <td>
                             <?php if (!empty($val_a['Dimension'])):
-                                    foreach($val_a['Dimension'] as $k => $d_array): ?>
+                                    foreach($val_a['Dimension'] as $d_array): ?>
                                     <label class="ib no-margin-vertical">
                                     <?php
                                     echo $dimension_types[$d_array['dimension_type_id']][0].': ';
-                                    echo $this->Form->input('Dimension.'.$dimension_types[$d_array['dimension_type_id']],array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','label'=>false,'div'=>false,'value'=>$d_array['default']));
+                                    echo $this->Form->input('OrderItem.'.strtolower($dimension_types[$d_array['dimension_type_id']]),array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','label'=>false,'div'=>false,'value'=>$d_array['default']));
                                     ?>
                                     </label>
                                     <?php
@@ -63,42 +69,31 @@
                             <?php endif; ?>
                         </td>
                     </tr>
+
+                    <!---------------------------- RANGE TYPES -------------------------------->
+                    <?php 
+                    $range_array = array();
+                    foreach ($val_a['RangeValue'] as $rv_array):
+                        $rt_name = $rv_array['RangeType']['name'];
+                        $rv_id = $rv_array['id'];
+                        $rv_name = $rv_array['name'];
+                        $range_array[$rt_name][$rv_id] = $rv_name;
+                    endforeach;
+                    $count = 0;
+                    foreach ($range_array as $rt_name => $rv_options): ?>
                     <tr>
-                        <td class="finish_cell" nowrap="nowrap">
-                            <div>
-                            <h5 class="ib">Finish : </h5>
-                            <?php $finishList = array();
-                            foreach ($val_a['Finish'] as $k => $f_array):
-                                $finishList[$f_array['id']] = $f_array['name'];
-                            endforeach; 
-                            echo $this->Form->input('',array('options'=>$finishList,'name'=>'','label'=>false,'class'=>'finish_dropdown ib','multiple'=>'select','hiddenField'=>false,'div'=>false,'data-product'=>$val_a['Product']['id']));
-                            ?>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="finish_group_<?php echo $val_a['Product']['id'] ?>">
-                            <?php 
-                            $hide = '';
-                            $disabled = false;
-                            foreach ($val_a['Finish'] as $k => $f_array):
-                                $this->Form->input('Finish.name');
-                            ?>
-                            <div class="<?php echo 'finish_'.$f_array['id'].' '.$hide;?>">
-                                <?php foreach ($f_array['FinishType'] as $k => $ft_array): ?>
-                                <label>
-                                <?php
-                                    echo $ft_array['name'].' : ';
-                                    echo $this->Form->input('FinishType.id.'.$ft_array['id'],array('label'=>$ft_array['name'],'class'=>'finish_type_select','div'=>false,'label'=>false,'data-v'=>'str','disabled'=>$disabled)); ?>
-                                </label>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php 
-                            $hide = 'hide_div';
-                            $disabled = 'disabled';
-                            endforeach; ?>
-                            </div>
-                        </td>
+                    <td><h5 class="ib"><?php echo $rt_name; ?></h5></td>
+                    <td>
+                    <?php
+                        echo $this->Form->input('RangeValue.'.$count.'.type',array('type'=>'hidden','value'=>$rt_name));
+                        echo $this->Form->input('RangeValue.'.$count.'.id',array('type'=>'select','class'=>'RangeValueSelect','options'=>$rv_options,'hiddenField'=>false,'class'=>'ib','label'=>false,'div'=>false));
+                    ?>
+                    </td>
                     </tr>
+                    <?php
+                    $count += 1;
+                    endforeach;
+                    ?>
                 </table>
                 <?php echo $this->Form->end(); ?>
             </div>

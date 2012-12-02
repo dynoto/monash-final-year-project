@@ -4,11 +4,19 @@ App::uses('AppModel', 'Model');
  * Product Model
  *
  * @property Image $Image
+ * @property OrderItem $OrderItem
  * @property CriteriaValue $CriteriaValue
  * @property Dimension $Dimension
- * @property Finish $Finish
+ * @property RangeValue $RangeValue
  */
 class Product extends AppModel {
+
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'name';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -32,8 +40,8 @@ class Product extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'StandardDimension' => array(
-			'className' => 'StandardDimension',
+		'OrderItem' => array(
+			'className' => 'OrderItem',
 			'foreignKey' => 'product_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -84,11 +92,11 @@ class Product extends AppModel {
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
-		'Finish' => array(
-			'className' => 'Finish',
-			'joinTable' => 'finishes_products',
+		'RangeValue' => array(
+			'className' => 'RangeValue',
+			'joinTable' => 'products_range_values',
 			'foreignKey' => 'product_id',
-			'associationForeignKey' => 'finish_id',
+			'associationForeignKey' => 'range_value_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

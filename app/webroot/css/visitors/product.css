@@ -13,28 +13,25 @@ input.dimension_input{
 	width: 50px !important;
 }
 td.title_cell{
-	width: 30% !important;
+	width: 35% !important;
 }
-select.finish_dropdown{
+select{
 	width: auto;
-	margin-left: 10px;
+	min-width: 100px;
 }
 .hide_div{
 	display: none !important;
 }
-td{
-	width: auto !important;
-}
 label.ib{
-	margin-left: 10px;
-}
-h5.ib{
-	vertical-align: middle;
-}
-input.finish_type_select{
-	width: 100px !important;
 	margin-left: 10px;
 }
 .input_required{
 	border:2px solid red !important;
+}
+td{
+	padding-bottom: 0 !important;
+	padding-top: 3px !important;
+}
+td >select{
+	margin: 0;
 }

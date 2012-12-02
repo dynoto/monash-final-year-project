@@ -16,28 +16,30 @@ $data = $this->request->data;
 		</div>
 	</div>
 	<div class="span8">
-		<?php echo $this->Form->create('Product'); ?>
-		<fieldset>
+		<?php echo $this->Form->create('Product',array('onsubmit'=>'return validate_fields()')); ?>
 			<h4><?php echo __('Edit Product'); ?></h4>
 			<?php
 			echo $this->Form->input('id');
 			echo $this->Form->input('name',array('required'=>true)); ?>
-			<div class="input-prepend">
+
+            <!-------------------------------PRICE---------------------------------------- -->
+<!-- 			<div class="input-prepend">
 				<label for="ProductPrice">Price</label>
 				<span class="add-on">$</span>
 				<?php
 				echo $this->Form->input('price',array('type'=>'text','required'=>true,'label'=>false,'div'=>false));
 				?>
-			</div>
-			<div class="input-append">
+			</div> -->
+            <!-------------------------------DISCOUNT---------------------------------------- -->
+<!-- 			<div class="input-append">
 				<label for="ProductDiscount">Discount</label>
 				<?php echo $this->Form->input('discount',array('label'=>false,'div'=>false,'empty'=>'-','type'=>'text')); ?>
 				<span class="add-on">%</span>
 			</div>
 			<?php
-			echo $this->Form->input('description',array('class'=>'span8')); ?>
+			echo $this->Form->input('description',array('class'=>'span8')); ?> -->
 
-			<!--ADD IMAGE SECTION -->
+			<!-------------------------------IMAGES---------------------------------------- -->
 			<hr>
 			<h4>Images</h4>
 			<?php
@@ -74,48 +76,45 @@ $data = $this->request->data;
             <?php endif; ?>
             <hr>
 
-            <!--INPUT FINISHES -->
-            <h4>Finishes</h4>
-            <table class="table table-striped table-bordered">
-                <tr>
-                    <td>Finish</td>
-                    <td>Finish Types</td>
-                </tr>
-                <?php foreach ($finishes as $k => $finish_array): ?>
-                    <tr>
-                        <td>
-                            <label>
-                            <?php
-                            if(in_array($finish_array['Finish']['id'], $finish_checked)):
-                            	$f_checked = "checked";
-                            else:
-                            	$f_checked = false;
-                            endif;
-                            echo $this->Form->checkbox('Finish.finish_id.',array('type'=>'checkbox','label'=>false,'value'=>$finish_array['Finish']['id'],'hiddenField'=>false,'checked'=>$f_checked)); ?>
-                            <p>
-                            <?php echo $finish_array['Finish']['name']; ?>
-                            </p>
-                            </label>
-                        </td>
-                        <td>
-                            <ul>
-                            <?php foreach ($finish_array['FinishType'] as $kk => $finish_type): ?>
-                                <li><?php echo $finish_type['name']; ?></li>
-                            <?php endforeach; ?>
-                            <ul>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
+            <!--------------------------CRITERIA VALUES-------------------------------------------- -->
+            <h4>Criteria Values</h4>
+            <div class="inline-criteria-values">
+                <?php
+                foreach ($criterias as $key_a => $val_a) { ?>
+                <div>
+                    <h5><?php echo $val_a['Criteria']['name']; ?></h5>
+                    <?php
+                    $temp = null;
+                    foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
+                        $temp[$val_aa['id']] = $val_aa['name'];
+                    }
+                    echo $this->Form->input('CriteriaValuesProduct.criteria_value_id',array('label'=>false,'type'=>'select','multiple'=>'checkbox','options'=>$temp,'selected'=>$criterias_checked,'hiddenField'=>null)); ?>
+                    <br>
+                </div>
+                <?php } ?>
+            </div>
             <hr>
 
-			<!-- INPUT DIMENSIONS -->
-            <h4>Standard Dimension</h4>
-            <?php 
-            echo $this->Form->input('StandardDimension.0.id');
-            echo $this->Form->input('StandardDimension.0.description',array('type'=>'textarea','class'=>'span8')); 
-            ?>
+            <!--------------------------CRITERIA VALUES-------------------------------------------- -->
+            <h4>Range Values</h4>
+            <div class="inline-criteria-values">
+                <?php
+                foreach ($range_types as $key_a => $val_a) { ?>
+                <div>
+                    <h5><?php echo $val_a['RangeType']['name']; ?></h5>
+                    <?php
+                    $temp = null;
+                    foreach ($val_a['RangeValue'] as $key_aa => $val_aa) {
+                        $temp[$val_aa['id']] = $val_aa['name'];
+                    }
+                    echo $this->Form->input('ProductsRangeValue.range_value_id',array('label'=>false,'type'=>'select','multiple'=>'checkbox','options'=>$temp,'selected'=>$rangeVal_checked,'hiddenField'=>null)); ?>
+                    <br>
+                </div>
+                <?php } ?>
+            </div>
             <hr>
+
+			<!------------------------------INPUT DIMENSIONS---------------------------------------- -->
             <h4>Variable Dimension</h4>
             <table class="table table-striped table-bordered">
                 <tr>
@@ -139,27 +138,8 @@ $data = $this->request->data;
                     </tr>
                 <?php } ?>
             </table>
+            <hr>
 
-
-			<!--EDIT CRITERIA VALUES SECTION-->
-			<hr>
-			<h4>Criteria Values</h4>
-			<div class="inline-criteria-values">
-				<?php
-				foreach ($criterias as $key_a => $val_a) { ?>
-				<div>
-					<h5><?php echo $val_a['Criteria']['name']; ?></h5>
-					<?php
-					$temp = null;
-					foreach ($val_a['CriteriaValue'] as $key_aa => $val_aa) {
-						$temp[$val_aa['id']] = $val_aa['name'];
-					}
-					echo $this->Form->input('CriteriaValuesProduct.criteria_value_id',array('label'=>false,'type'=>'select','multiple'=>'checkbox','options'=>$temp,'selected'=>$checked,'hiddenField'=>null)); ?>
-					<br>
-				</div>
-				<?php } ?>
-			</div>
-		</fieldset>
 		<?php 
 		echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 
 		?>
