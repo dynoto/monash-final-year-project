@@ -5,10 +5,12 @@
 ?>
 <div class="row-fluid main_content">
   <div class="span10 offset1">
+    <?php echo $this->Form->create('Cart'); ?>
   	<table class="table table-bordered table-striped">
   		<tr>
   			<th>Product</th>
         <th>Dimension</th>
+        <th>Range Types</th>
   			<th>Quantity</th>
   			<th>Delete</th>
   		</tr>
@@ -19,11 +21,22 @@
           <td><?php echo 'Height : '.$order_item['height']; ?><br>
           <?php echo 'Width : '.$order_item['width']; ?><br>
           <?php echo 'Depth : '.$order_item['depth']; ?></td>
-          <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'text','value'=>$order_item['quantity'],'label'=>false)); ?></td>
-          <td><?php echo $this->Form->input('OrderItem.delete.',array('type'=>'checkbox','value'=>$item_id,'label'=>false)); ?></td>
+          <td>
+            <?php foreach ($item['RangeValue'] as $rv):
+              echo $rv['type'].' : '.$rv['name'].'<br>';
+            endforeach; ?>
+          </td>
+          <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'text','class'=>'quantity_input','value'=>$order_item['quantity'],'label'=>false)); ?></td>
+          <td><?php echo $this->Form->input('OrderItem.delete.',array('type'=>'checkbox','value'=>'cart_'.$item_id,'label'=>false,'hiddenField'=>false)); ?></td>
         </tr>
       <?php endforeach; ?>
+
   	</table>
+    <div class="action_buttons">
+    <?php 
+    echo $this->Form->input('Update Cart',array('type'=>'submit','value'=>'update','div'=>false,'label'=>false,'name'=>'data[submit]','class'=>'ib btn btn-large'));
+    echo $this->Form->input('Request Quote',array('type'=>'submit','value'=>'order','div'=>false,'label'=>false,'name'=>'data[submit]','class'=>'ib btn btn-large btn-primary'));
+    echo $this->Form->end(); ?>
+  </div>
  </div>
 </div>
-<?php pr($cart); ?>

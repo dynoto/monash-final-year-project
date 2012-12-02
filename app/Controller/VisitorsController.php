@@ -9,12 +9,14 @@ Class VisitorsController extends AppController{
     private $__content_filter;
     private $__get_info;
     private $__pagination;
+    private $__make_order;
 
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us'));
         $models = array('Criteria',
                         'CriteriaValue',
+                        'Customer',
                         'CriteriaValuesKitchen',
                         'CriteriaValuesProduct',
                         'Image',
@@ -25,7 +27,10 @@ Class VisitorsController extends AppController{
                         'DimensionType',
                         'RangeType',
                         'RangeValue',
-                        'ProductsRangeValue'
+                        'ProductsRangeValue',
+                        'Order',
+                        'OrderItem',
+                        'OrderItemsRangeValue'
                         );
         foreach($models as $model){
             $this->loadModel($model);
@@ -91,7 +96,7 @@ Class VisitorsController extends AppController{
                 $rv_name = $this->RangeValue->read('name',$value['id']);
                 $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
             endforeach;
-            $cart_count = count($this->Session->read('Order'));
+            $cart_count = rand(1000,999999);
             $this->Session->write('Order.'.$cart_count,$rqData);
         }
     }
@@ -99,14 +104,62 @@ Class VisitorsController extends AppController{
 ////////////////////////////////////////////////////////////////////////////////
 
     public function cart_list(){
+        if($this->request->is('post')):
+            $rqData = $this->request->data;
+            if($rqData['submit'] == 'Update Cart'){
+                $cart = $this->Session->read('Order');
+                foreach ($rqData['OrderItem']['delete'] as $value) {
+                    $value = explode('_', $value)[1];
+                    unset($cart[$value]);
+                }
+                foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
+                    if(isset($cart[$cart_id])):
+                        if($quantity > 0):
+                            $cart[$cart_id]['OrderItem']['quantity'] = $quantity;
+                        else:
+                            unset($cart[$cart_id]);
+                        endif;
+                    endif;
+                endforeach;
+                $this->Session->write('Order',$cart);
+            $this->Session->setFlash('Your cart has been updated');
+            }else{
+                $this->__make_order();
+            }
+        endif;
+
         $cart = $this->Session->read('Order');
         $this->set(compact('cart'));
     }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-    public function make_order(){
+    private function __make_order(){
+        $cart = $this->Session->read('Order');
+        $user = $this->Session->read('Auth.User.id');
+        $customer_id = null;
+        $customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$user),'fields'=>'id'));
+        $customer_id = $customer_id['Customer']['id'];
+        $this->Order->create();
+        $this->Order->saveAll(array('date'=>0));
 
+        foreach ($cart as $key => $item):
+            $this->OrderItem->create();
+            $item['OrderItem']['order_id'] = $this->Order->id;
+            $this->OrderItem->save($item['OrderItem']);
+
+            $order_item_id = $this->OrderItem->id;
+            $count = 0;
+            $temp_array = array();
+            foreach ($item['RangeValue'] as $rv_array):
+                $temp_array[$count]['range_value_id'] = $rv_array['id'];
+                $temp_array[$count]['order_item_id'] = $order_item_id;
+                $count += 1;
+            endforeach;
+            $this->OrderItemsRangeValue->create();
+            $this->OrderItemsRangeValue->saveAll($temp_array);
+        endforeach;
+        $this->Session->setFlash('Your request have been submitted!');
     }
 
 ////////////////////////////////////////////////////////////////////////////////
