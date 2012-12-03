@@ -75,4 +75,4 @@ echo $this->element('override', array("content_override" => $content_override));
 		</div>
 	</div>
 </div>
-<?php pr($order) ?>
+<?php //pr($order) ?>

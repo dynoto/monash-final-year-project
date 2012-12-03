@@ -25,13 +25,14 @@ select{
 label.ib{
 	margin-left: 10px;
 }
-.input_required{
-	border:2px solid red !important;
-}
 td{
 	padding-bottom: 0 !important;
 	padding-top: 3px !important;
 }
 td >select{
 	margin: 0;
+}
+div.add_cart_success{
+	max-width: 782px;
+	margin-bottom: 10px !important;
 }

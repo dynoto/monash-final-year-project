@@ -9,16 +9,16 @@ $data = $this->request->data;
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class='nav nav-tabs nav-stacked'>
-                <li><?php echo $this->Html->link('Back',array('action'=>'view',$data['Kitchen']['id'])) ?></li>
-                <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Kitchen.id')), array('class'=>'disableprompt'), __('Are you sure you want to delete '.$data['Kitchen']['name'].'?', $this->Form->value('Kitchen.id'))); ?></li>
-                <li><?php echo $this->Html->link(__('List Kitchens'), array('action' => 'index')); ?></li>
+                <li><?php echo $this->Html->link(__('List Gallery'), array('action' => 'index')); ?></li>
+                <li><?php echo $this->Html->link('Back to Gallery',array('action'=>'view',$data['Kitchen']['id'])) ?></li>
+                <li><?php echo $this->Form->postLink(__('Delete Gallery'), array('action' => 'delete', $this->Form->value('Kitchen.id')), array('class'=>'disableprompt'), __('Are you sure you want to delete '.$data['Kitchen']['name'].'?', $this->Form->value('Kitchen.id'))); ?></li>
             </ul>
         </div>
     </div>
     <div class="span8">
         <?php echo $this->Form->create('Kitchen'); ?>
         <fieldset>
-            <h4><?php echo __('Edit Kitchen'); ?></h4>
+            <h4><?php echo __('Edit Gallery'); ?></h4>
             <?php
             echo $this->Form->input('id');
             echo $this->Form->input('name',array('required'=>true));

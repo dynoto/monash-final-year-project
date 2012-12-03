@@ -20,7 +20,7 @@
 </body>
     <?php 
         echo $this->Html->script(array('http://code.jquery.com/jquery-1.8.3.min.js',
-                            'twitter_bootstrap/bootstrap.min','layout'));
+                            'twitter_bootstrap/bootstrap.min','layout','reg_valid'));
         echo $this->fetch('view_js');
         echo $this->fetch('etc_script');
     ?>

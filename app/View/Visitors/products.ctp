@@ -5,6 +5,10 @@
 ?>
 
 <!-- CONTENT STARTS HERE -->
+<div class="alert add_cart_success margin-center hide_div">
+  <button type="button" class="close_cart_success close" data>×</button>
+  <strong>Success!</strong> the item has been added to the cart.
+</div>
 <div class="row-fluid">
 <?php echo $this->element('side_bar',array('visitor_action'=>'products','table'=>'Product')); ?>
 <div class="row-fluid span7 main_content no-padding">

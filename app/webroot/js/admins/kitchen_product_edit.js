@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('a:not(.disableprompt)').click(function(){
 		console.log('test');
-		var r = confirm('Where are you going? unsubmitted changes will be lost.\n Are you sure you wanted to do this?');
+		var r = confirm('Unsubmitted changes will be lost.\nAre you sure you wanted to do this? \npress YES to confirm or CANCEL to continue editing');
 		if (r == true) {
 			return true;
 		}else{

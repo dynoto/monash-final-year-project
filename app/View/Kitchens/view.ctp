@@ -8,9 +8,9 @@ echo $this->element('override', array("content_override" => $content_override));
         <div class="offset1">
             <h4><?php echo __('Actions'); ?></h4>
             <ul class="nav nav-tabs nav-stacked">
-                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
-                <li><?php echo $this->Html->link(__('Edit Kitchen'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?> </li>
-                <li><?php echo $this->Form->postLink(__('Delete Kitchen'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $kitchen['Kitchen']['name'])); ?> </li>
+                <li><?php echo $this->Html->link(__('List Gallery'), array('action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('Edit Gallery'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete Gallery'), array('action' => 'delete', $kitchen['Kitchen']['id']), null, __('Are you sure you want to delete %s?', $kitchen['Kitchen']['name'])); ?> </li>
             </ul>
         </div>
     </div>

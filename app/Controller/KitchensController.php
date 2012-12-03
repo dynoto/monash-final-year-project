@@ -185,9 +185,7 @@ class KitchensController extends AppController {
                     $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
                     $criteriasArray[$c_id]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
                     $array_intersect = array_intersect($criteriaValues, $kitCriteriaValues);
-                    if(count($array_intersect) == 0){
-                        $temp_array[$c_id] = $c_name;
-                    }
+                    $temp_array[$c_id] = $c_name;
                 }
                 $missing[$k_id] = $temp_array;
             }

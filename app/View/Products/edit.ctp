@@ -35,9 +35,9 @@ $data = $this->request->data;
 				<label for="ProductDiscount">Discount</label>
 				<?php echo $this->Form->input('discount',array('label'=>false,'div'=>false,'empty'=>'-','type'=>'text')); ?>
 				<span class="add-on">%</span>
-			</div>
+			</div>-->
 			<?php
-			echo $this->Form->input('description',array('class'=>'span8')); ?> -->
+			echo $this->Form->input('description',array('class'=>'span8')); ?>
 
 			<!-------------------------------IMAGES---------------------------------------- -->
 			<hr>

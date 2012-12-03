@@ -8,7 +8,8 @@ $this->element('override',array("content_override"=>$override));
 		<div class="offset1">
 			<h4><?php echo __('Actions'); ?></h4>
 			<ul class="nav nav-tabs nav-stacked">
-				<li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('List Customers'), array('action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Back to view customer'), array('action' => 'view',$customer_id)); ?></li>
 				<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Customer.id')), null, __('Are you sure you want to delete this customer?')); ?></li>
 			</ul>
 <!-- 			<ul class="nav nav-tabs nav-stacked">

@@ -19,6 +19,11 @@ $(document).ready(function(){
 		}
 	);
 
+	$('button.close_cart_success').click(function(){
+		$('div.add_cart_success').addClass('hide_div');
+	})
+
+
 	var options = {
 		'trigger':'hover',
 		'content':'Characters only, No Symbols or Special Characters',
@@ -29,7 +34,6 @@ $(document).ready(function(){
 
 	$('select.RangeValueSelect').change(function(){
 		var selectValue = $(this).val();
-		console.log(selectValue);
 		$('select.RangeValueSelect').not($(this)).val(selectValue);
 	});
 });
@@ -38,39 +42,54 @@ function add_to_cart(p_id){
 	var submit = true;
 	$('div#product_'+p_id).find('input').not(':disabled').each(function(index){
 		var check_value = $(this).val();
-		console.log($(this).attr('name'));
 		if(check_value == ''){
 			$(this).addClass('input_required');
 			submit = false;
 		}else{
 			var validate = $(this).attr('data-v');
-			console.log(validate);
-			var intRegex = /^[\d]+$/i;
-			var strRegex = /^[\w]+$/i;
 			if(validate == 'int'){
-				if(intRegex.test(check_value) == false){
+				if(reg_int(check_value) == false){
 					$(this).addClass('input_required');
 					submit = false;
 				}else{
 					$(this).removeClass('input_required');
 				}
 			} else if(validate == 'str'){
-				if(strRegex.test(check_value) == false){
+				if(reg_int(check_value) == false){
 					$(this).addClass('input_required');
 					submit = false;
 				}else{
 					$(this).removeClass('input_required');
 				}
 			}
+
+			if($(this).hasClass('dimension_input')){
+				if(validate_size($(this)) == false){
+					submit = false;
+				}
+			}
 		}
 	});
 	if(submit == true){
-		console.log('everything green!');
-		console.log('div#product_'+p_id);
 		$.post('cart_add',$('form#product_'+p_id).serialize(),function(data){
 			console.log(data);
 		});
+		$('div.add_cart_success').removeClass('hide_div');
 	}else{
 		console.log('missing?');
+	}
+}
+
+function validate_size(elem){
+	var min = parseInt(elem.attr('dimension-min'));
+	var max = parseInt(elem.attr('dimension-max'));
+	var input_size = elem.val();
+	if(reg_min_max(input_size,min,max)){
+		console.log('pass');
+		elem.removeClass('hide_div');
+	}else{
+		console.log('not pass');
+		elem.addClass('input_required');
+		return false;
 	}
 }

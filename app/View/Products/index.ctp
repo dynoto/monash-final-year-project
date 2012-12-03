@@ -8,7 +8,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		<div class="offset1">
 			<h4><?php echo __('Actions'); ?></h4>
 		<ul class="nav nav-tabs nav-stacked">
-			<li><?php echo $this->Html->link('Fill Missing Criteria',array('action'=>'fill_missing_criteria')); ?></li>
+			<li><?php echo $this->Html->link('Edit Product(s) Criteria',array('action'=>'fill_missing_criteria')); ?></li>
 		</ul>
 	</div>
 	</div>
@@ -22,8 +22,8 @@ echo $this->element('override', array("content_override" => $content_override));
 				<tr>
 					<th><?php echo $this->Paginator->sort('id'); ?></th>
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
-					<th><?php echo $this->Paginator->sort('price'); ?></th>
-					<th><?php echo $this->Paginator->sort('discount'); ?></th>
+<!-- 					<th><?php echo $this->Paginator->sort('price'); ?></th>
+					<th><?php echo $this->Paginator->sort('discount'); ?></th> -->
 					<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
 				<?php
@@ -31,7 +31,7 @@ echo $this->element('override', array("content_override" => $content_override));
 				<tr>
 					<td><?php echo h($product['Product']['id']); ?>&nbsp;</td>
 					<td><?php echo h($product['Product']['name']); ?>&nbsp;</td>
-					<td><?php echo '$ '.h($product['Product']['price']); ?>&nbsp;</td>
+					<!-- <td><?php echo '$ '.h($product['Product']['price']); ?>&nbsp;</td>
 					<td>
 						<?php 
 						if(isset($product['Product']['discount'])){
@@ -40,7 +40,7 @@ echo $this->element('override', array("content_override" => $content_override));
 							echo '-';
 						}
 						?>
-					</td>
+					</td> -->
 					<td class="actions">
 						<?php echo $this->Html->link(__('View'), array('action' => 'view', $product['Product']['id'])); ?>
 						<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $product['Product']['id'])); ?>

@@ -86,7 +86,7 @@ a.login_switch {
     float: right;
 }
 .margin-center {
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 .no-margin {
     margin: 0 !important;
@@ -179,9 +179,14 @@ div.error-flash{
     width: auto;
 }
 div.item_criteria_value{
-    position: absolute;
-    right: 0;
-    z-index: -1;
+    background-color:white;
+    border:1px solid rgba(0, 0, 0, 0.3);
+    border-radius:6px 6px 6px 6px;
+    height:auto;
+    position:fixed;
+    right:2%;
+    top:5%;
+    width:12% !important;
 }
 div.modal{
     max-height: 90%;
@@ -195,4 +200,10 @@ div.search-well{
 }
 [class^="icon-"]{
     background-image: url("../img/glyphicons-halflings-white.png");
+}
+.no-dots{
+    list-style-type: none;
+}
+.input_required{
+    border:2px solid red !important;
 }

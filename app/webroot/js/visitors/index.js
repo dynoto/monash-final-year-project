@@ -1,1 +1,4 @@
-$('.carousel').carousel({interval:3000});
+$('.crsl').cycle({
+	fx: 'fade',
+	speed: 3000
+});

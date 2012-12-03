@@ -98,6 +98,7 @@ Class VisitorsController extends AppController{
             endforeach;
             $cart_count = rand(1000,999999);
             $this->Session->write('Order.'.$cart_count,$rqData);
+            return true;
         }
     }
 
@@ -109,7 +110,7 @@ Class VisitorsController extends AppController{
             if($rqData['submit'] == 'Update Cart'){
                 $cart = $this->Session->read('Order');
                 foreach ($rqData['OrderItem']['delete'] as $value) {
-                    $value = explode('_', $value)[1];
+                    $value = (explode('_', $value)[1]);
                     unset($cart[$value]);
                 }
                 foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
@@ -140,10 +141,13 @@ Class VisitorsController extends AppController{
         $customer_id = null;
         $customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$user),'fields'=>'id'));
         $customer_id = $customer_id['Customer']['id'];
+        if(!(isset($customer_id))){
+            $customer_id = null;
+
+        }
         $today = date("Y-m-d H:i:s"); 
         $this->Order->create();
-        $this->Order->saveAll(array('customer_id'=>$customer_id,'date'=>$today));
-
+        $this->Order->save(array('customer_id'=>$customer_id,'date'=>$today));
         foreach ($cart as $key => $item):
             $this->OrderItem->create();
             $item['OrderItem']['order_id'] = $this->Order->id;

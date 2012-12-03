@@ -2,10 +2,8 @@ function verify(){
 	var name = $('input#EnquiryName')
 	var phone = $('input#EnquiryTelephone')
 	var email = $('input#EnquiryEmail')
-	var emailRegex = /^[\w\.\_\-]+[\@][\w]+[\.][\w\.]+$/i;
-	var phoneRegex = /^[\d\s\-\(\)]+$/i;
-	var emailR = emailRegex.test(email.val());
-	var phoneR = phoneRegex.test(phone.val());
+	var emailR = reg_email(email.val());
+	var phoneR = reg_phone(phone.val());
 	console.log('phone :'+phoneR);
 	console.log('email :'+emailR);
 	console.log(emailR && phoneR);

@@ -8,13 +8,13 @@ echo $this->element('override', array("content_override" => $content_override));
         <div class="offset1">
         <h4><?php echo __('Actions'); ?></h4>
         <ul class="nav nav-tabs nav-stacked">
-        <li><?php echo $this->Html->link('Fill Missing Criteria',array('action'=>'fill_missing_criteria')); ?></li>
+        <li><?php echo $this->Html->link('Edit Gallery Criterias',array('action'=>'fill_missing_criteria')); ?></li>
         </ul>
     </div>
     </div>
     <div class="span8">
         <div class="row-fluid">
-            <h4 class="ib">Kitchens</h4>
+            <h4 class="ib">Gallery</h4>
             <?php echo $this->Html->link(__('New Kitchen'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>
         </div>
         <div class="row-fluid">

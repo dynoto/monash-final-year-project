@@ -10,3 +10,9 @@ div.select{
 div.submit > input {
 	margin-left: 2%;
 }
+td.actions,th.actions{
+	width: 50px !important;
+}
+.table{
+	table-layout: auto !important;
+}

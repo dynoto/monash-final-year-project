@@ -34,11 +34,9 @@ class CustomersController extends AppController {
 	public function approve(){
 		if($this->request->is('post')){
 			$data = $this->request->data;
-			pr($data);
 			$customers = $data['Customer']['Checked'];
 			$users = $this->Customer->find('list',array('conditions'=>array('id'=>$customers),'fields'=>'user_id'));
 			if($data['Customer']['approve_boolean'] == 1){
-				pr($users);
 				$this->User->updateAll(
 					array('User.approved'=>1),
 					array('User.id'=>$users)
@@ -88,9 +86,11 @@ class CustomersController extends AppController {
 				$this->Customer->create();
 				if ($this->Customer->save($request_data)) {
 					$session_data = $this->Session->read();
-					if($session_data['Auth']['User']['Group']['id'] == 1){
-						$this->Session->setFlash('Customer account has been successfully created');
-						$this->redirect(array('action'=>'index'));
+					if(isset($session_data)){
+						if($session_data['Auth']['User']['Group']['id'] == 1){
+							$this->Session->setFlash('Customer account has been successfully created');
+							$this->redirect(array('action'=>'index'));
+						}
 					}else{
 						$this->Session->setFlash(__('Your account has been successfully created !'));
 						$this->redirect(array('controller'=>'visitors'));
@@ -126,8 +126,9 @@ class CustomersController extends AppController {
 		} else {
 			$this->request->data = $this->Customer->read(null, $id);
 		}
+		$customer_id = $id;
 		$customerTypes = $this->Customer->CustomerType->find('list');
-		$this->set(compact('customerTypes'));
+		$this->set(compact('customerTypes','customer_id'));
 	}
 
 /**

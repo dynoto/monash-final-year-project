@@ -8,16 +8,8 @@ echo $this->element('override', array("content_override" => $content_override));
 		<div class="offset1">
 			<h4><?php echo __('Actions'); ?></h4>
 			<ul class="nav nav-tabs nav-stacked">
-				<?php if(isset($user_count)){ ?>
-				<li><?php 
-				echo $this->Html->link('Pending Approval : '.$user_count, 
-					array('action'=>'approve'),
-					array('class'=>'alert alert-error')
-					);
-					?></li>
-					<?php } ?>
-					<li><?php echo $this->Html->link('New Customer', array('action' => 'add')); ?></li>
-				</ul>
+					<li><?php echo $this->Html->link('List Customers', array('action' => 'index')); ?></li>
+			</ul>
 				<!--
 		<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link('List Customer Types', array('controller' => 'customer_types', 'action' => 'index')); ?> </li>
@@ -27,9 +19,10 @@ echo $this->element('override', array("content_override" => $content_override));
 </div>
 
 <div class="span9">
-	<h4><?php echo __('Customers'); ?></h4>
+	<h4 class="ib"><?php echo __('Customers'); ?></h4>
+	<?php echo $this->Html->link('New Customer', array('action' => 'add'),array('class'=>'pull-right btn')); ?>
 	<?php echo $this->Form->create('Customer'); ?>
-	<table cellpadding="0" cellspacing="0" class="table table-striped">
+	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 		<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -38,7 +31,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('discount'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('discount'); ?></th> -->
 			<th class="actions"><?php echo __('Actions'); ?></th>
 		</tr>
 		<?php
@@ -56,10 +49,10 @@ echo $this->element('override', array("content_override" => $content_override));
 				echo $this->Form->input('Customer.'.$customer_id.'.customer_type_id',array('label'=>false,'options'=>$customerTypes,'empty'=>''));
 				?>	
 			</td>
-			<td><?php echo h($customer['Customer']['discount']); ?>&nbsp;</td>
+			<!-- <td><?php echo h($customer['Customer']['discount']); ?>&nbsp;</td> -->
 			<td class="actions">
 				<?php
-				echo $this->Form->input('Checked.',array('label'=>false,'type'=>'checkbox','hiddenField'=>false,'value'=>$customer_id));
+				echo $this->Form->input('Checked.',array('label'=>false,'type'=>'checkbox','hiddenField'=>false,'div'=>false,'class'=>'ib','value'=>$customer_id));
 				?>
 			</td>
 		</tr>

@@ -14,7 +14,7 @@
                     $current_action = $this->params['controller'];
                     $links = array( 'Home'=>'administrators',
                         'Criteria'=>'criterias',
-                        'Kitchens'=>'kitchens',
+                        'Gallery'=>'kitchens',
                         'Products'=>'products',
                         'Customers'=>'customers',
                         'Orders'=>'orders'); 

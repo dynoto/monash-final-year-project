@@ -29,7 +29,7 @@ echo $this->element('override', array("content_override" => $content_override));
 <div class="span9">
 	<h4 class="ib">Customers</h4>
 	<?php echo $this->Html->link('New Customer', array('action' => 'add'),array('class'=>'pull-right btn')); ?>
-	<table cellpadding="0" cellspacing="0" class="table table-striped">
+	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -38,7 +38,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<th><?php echo $this->Paginator->sort('address'); ?></th>
 			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th><?php echo $this->Paginator->sort('customer_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('discount'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('discount'); ?></th> -->
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -53,13 +53,13 @@ echo $this->element('override', array("content_override" => $content_override));
 		<td>
 			<?php echo $this->Html->link($customer['CustomerType']['name'], array('controller' => 'customer_types', 'action' => 'view', $customer['CustomerType']['id'])); ?>
 		</td>
-		<td><?php 
+<!-- 		<td><?php 
 		if(isset($customer['Customer']['discount'])){
 			echo h($customer['Customer']['discount']).'%'; 
 		} else {
 			echo '-';
 		}
-		?>&nbsp;</td>
+		?>&nbsp;</td> -->
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $customer['Customer']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $customer['Customer']['id'])); ?>

@@ -74,6 +74,7 @@ $view_logo = $this->Html->image('common/view.png');
                     <tr>
                         <th><?php echo __('Id'); ?></th>
                         <th><?php echo __('Value'); ?></th>
+                        <th>Actions</th>
                     </tr>
                     <?php
                     $i = 0;
@@ -82,6 +83,12 @@ $view_logo = $this->Html->image('common/view.png');
                         <tr>
                             <td><?php echo $criteriaValue['id']; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
+                            <td>
+                                <?php 
+                                echo $this->Html->link('Edit',array('controller'=>'criteriavalues','action'=>'edit',$criteriaValue['id']));
+                                echo '  ';
+                                echo $this->Form->postLink(__('Delete'), array('controller'=>'criteriavalues','action' => 'delete',$criteriaValue['id'],$criteria['Criteria']['id']), null, __('Deleting this criterias value will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?')); ?>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </table>
