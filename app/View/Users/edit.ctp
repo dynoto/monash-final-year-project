@@ -21,7 +21,7 @@ echo $this->element('override',array('content_override'=>$override))
 		echo $this->Form->input('name',array('required'=>true));
 		echo $this->Form->input('password',array('required'=>true,'value'=>false));
 		echo $this->Form->input('',array('label'=>'Confirm Password','class'=>'password','id'=>'UserPasswordConfirm','required'=>true,'value'=>false));
-		echo $this->Form->input('group_id');
+		//echo $this->Form->input('group_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit',array('class'=>'btn btn-primary btn-large'))); ?>
@@ -36,12 +36,15 @@ confirm_password = reg_compare($('#UserPassword'),$('#UserPasswordConfirm'));
 if(confirm_password == false){
 	submit = false;
 }
-	if(submit){
-		return true;
-	}else{
-		return false;
-	}
+
+if(submit){
+	return true;
+}else{
+	return false;
+}
 
 }
+
+
 </script>
 <?php $this->end(); ?>

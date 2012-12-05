@@ -18,7 +18,7 @@ echo $this->element('override',array('content_override'=>$override))
 	<div class="span8 row-fluid">
 		<div class="row-fluid">
 			<h4 style="display:inline"><?php echo __('Users'); ?></h4>
-			<?php echo $this->Html->link('Add Users',array('controller'=>'users','action'=>'add'),array('class'=>'pull-right btn'));?>
+			<?php echo $this->Html->link('Add Admin',array('controller'=>'users','action'=>'add'),array('class'=>'pull-right btn'));?>
 		</div>
 		<div class="row-fluid">
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">

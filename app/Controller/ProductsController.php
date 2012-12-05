@@ -277,39 +277,47 @@ class ProductsController extends AppController {
         if($this->request->is('post')){
             $saveData = $this->request->data['criteriaValuesProduct'];
             $saveArray = array();
-            foreach ($saveData as $p_id => $cv_val) {
-                foreach ($cv_val as $c_key => $cv_id) {
-                    $row = array('product_id'=>$p_id, 'criteria_value_id'=>$cv_id);
-                    array_push($saveArray, $row);
-                }
-            }
-            if($this->CriteriaValuesProduct->saveAll($saveArray)){
-                $this->Session->setFlash('Criteria Values have been associated with Products(s)');
-            }
+            foreach ($saveData as $p_id => $cv_arr) {
+            	$cv_list = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$p_id),'fields'=>'criteria_value_id'));
 
-        }
-            $missing = array();
+            	//COMPARE AND RETRIEVE NOT-ASSOCIATED CRITERIA VALUES THEN SAVE IT
+                $add = array_diff($cv_arr, $cv_list);
+                $add_temp = array();
+                foreach ($add as $cv_id) {
+                    array_push($add_temp,array('product_id'=>$p_id, 'criteria_value_id'=>$cv_id));
+                }
+                $this->CriteriaValuesProduct->create();
+                $this->CriteriaValuesProduct->saveAll($add_temp);
+
+                //COMPARE AND RETRIEVE ASSOCIATED CRITERIA VALUES THEN DELETE THOSE UNSELECTED
+                $delete = array_diff($cv_list, $cv_arr);
+                foreach ($delete as $cvp_id => $cv) {
+                    $this->CriteriaValuesProduct->delete($cvp_id);
+                }
+            $this->Session->setFlash('Criteria Values have been associated with Products(s)');
+
+        	}
+    	}
+            $selected = array();
             $products = $this->Product->find('list');
             $criterias = $this->Criteria->find('list',array('conditions'=>array('product'=>1)));
             $criteriasArray = array();
             foreach ($products as $p_id => $p_name) {
                 $temp_array = array();
                 $prodCriteriaValues   = $this->CriteriaValuesProduct->find('list',array('conditions'=>array('product_id'=>$p_id),'fields'=>array('id','criteria_value_id')));
-                foreach ($criterias as $c_id => $c_name) {
-                    $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
-                    $criteriasArray[$c_id]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
-                    $array_intersect = array_intersect($criteriaValues, $prodCriteriaValues);
-                    if(count($array_intersect) == 0){
-                        $temp_array[$c_id] = $c_name;
-                    }
-                }
-                $missing[$p_id] = $temp_array;
+                $selected[$p_id] = $prodCriteriaValues;
+            }
+            foreach ($criterias as $c_id => $c_name) {
+                $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
+                $criteriasArray[$c_name]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
             }
             $criterias = $criteriasArray;
             $this->Product->recursive = 0;
             $products  = $this->Product->find('list');
             $images = $this->Image->find('list',array('fields'=>array('product_id','name')));
-            $this->set(compact('products','missing','criterias','images'));
+            $this->set(compact('products','selected','criterias','images'));
+            pr($criterias);
+            pr($selected);
         
         
     }

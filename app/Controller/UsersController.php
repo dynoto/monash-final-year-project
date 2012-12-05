@@ -56,6 +56,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			$requestData = $this->request->data;
 			$requestData['User']['approved'] = 1;
+			$requestData['User']['group_id'] = 1;
 			if ($this->User->save($requestData)) {
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
