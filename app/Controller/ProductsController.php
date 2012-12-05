@@ -70,20 +70,24 @@ class ProductsController extends AppController {
 				$product_id = $this->Product->id;
 
 				// SAVING CRITERIA VALUES TO THE PRODUCT
-				$temp_array = array();
-				foreach ($requestdata['CriteriaValuesProduct']['criteria_value_id'] as $key => $cv_id) {
-					$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'product_id' => $product_id);
+				if(isset($requestdata['CriteriaValuesProduct'])){
+					$temp_array = array();
+					foreach ($requestdata['CriteriaValuesProduct']['criteria_value_id'] as $key => $cv_id) {
+						$temp_array['CriteriaValuesProduct'][] = array('criteria_value_id' => $cv_id, 'product_id' => $product_id);
+					}
+					$this->CriteriaValuesProduct->create();
+					$this->CriteriaValuesProduct->saveAll($temp_array['CriteriaValuesProduct']);
 				}
-				$this->CriteriaValuesProduct->create();
-				$this->CriteriaValuesProduct->saveAll($temp_array['CriteriaValuesProduct']);
 
 				// SAVING RANGE VALUES TO THE PRODUCT
-				$temp_array = array();
-				foreach ($requestdata['ProductsRangeValue']['range_value_id'] as $key => $cv_id) {
-					$temp_array['ProductsRangeValue'][] = array('range_value_id' => $cv_id, 'product_id' => $product_id);
+				if(isset($requestdata['ProductsRangeValue'])){
+					$temp_array = array();
+					foreach ($requestdata['ProductsRangeValue']['range_value_id'] as $key => $cv_id) {
+						$temp_array['ProductsRangeValue'][] = array('range_value_id' => $cv_id, 'product_id' => $product_id);
+					}
+					$this->ProductsRangeValue->create();
+					$this->ProductsRangeValue->saveAll($temp_array['ProductsRangeValue']);
 				}
-				$this->ProductsRangeValue->create();
-				$this->ProductsRangeValue->saveAll($temp_array['ProductsRangeValue']);
 
 				// SAVING PRODUCT VARIABLE DIMENSIONS
 				$dimensionProducts = array();

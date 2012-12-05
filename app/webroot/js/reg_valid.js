@@ -49,3 +49,14 @@ function test_regex(reg_param,val){
 	var result = reg_param.test(val);
 	return result;
 }
+
+function reg_compare(p1,p2){
+	if (p1.val() === p2.val()){
+		return true;
+	}
+	else{
+		p1.addClass('input_required');
+		p2.addClass('input_required');
+		return false;
+	}
+}

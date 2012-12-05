@@ -38,8 +38,8 @@ echo $this->element('override',array('content_override'=>$override))
 					<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 					<!--<td><?php echo h($user['User']['password']); ?>&nbsp;</td>-->
 					<td><?php echo h($user['Group']['name']); ?>&nbsp;</td>
-					<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
-					<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
+					<td><?php echo h($this->Time->format('D, d-M-Y',$user['User']['created'])); ?>&nbsp;</td>
+					<td><?php echo h($this->Time->format('D, d-M-Y',$user['User']['modified'])); ?>&nbsp;</td>
 					<td class="actions">
 						<!--<?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id'])); ?>-->
 						<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?>

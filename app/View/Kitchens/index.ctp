@@ -15,7 +15,7 @@ echo $this->element('override', array("content_override" => $content_override));
     <div class="span8">
         <div class="row-fluid">
             <h4 class="ib">Gallery</h4>
-            <?php echo $this->Html->link(__('New Kitchen'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>
+            <?php echo $this->Html->link(__('New Gallery'), array('action' => 'add'), array('class' => 'pull-right btn')); ?>
         </div>
         <div class="row-fluid">
             <table class="table table-striped table-bordered">

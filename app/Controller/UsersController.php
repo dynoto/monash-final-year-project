@@ -23,6 +23,7 @@ class UsersController extends AppController {
 				'scope'=>array("User.approved" => 1)
 			)
 		);
+		$this->loadModel('Customer');
 	}
 
 	public function index() {
@@ -108,12 +109,28 @@ class UsersController extends AppController {
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		if ($this->User->delete()) {
-			$this->Session->setFlash(__('User deleted'));
+		$active_user = $this->Session->read('Auth.User.id');
+		$group_id = $this->User->find('first',array('conditions'=>array('User.id'=>$id)))['Group']['id'];
+		if($id != $active_user){
+			if($group_id == 1){
+				$admin_count = $this->User->find('count',array('conditions'=>array('group_id'=>1)));
+				if($admin_count > 1){
+					$this->User->delete();
+					$this->Session->setFlash(__('User deleted'));
+					$this->redirect(array('action' => 'index'));
+				}
+			}
+			else if($group_id == 2){
+				$customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$id)))['Customer']['id'];
+				$this->Customer->save(array('Customer'=>array('id'=>$customer_id,'user_id'=>NULL)));
+				$this->User->delete();
+				$this->Session->setFlash(__('User deleted'));
+				$this->redirect(array('action' => 'index'));
+			}
+		}else{
+			$this->Session->setFlash(__('User was not deleted'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('User was not deleted'));
-		$this->redirect(array('action' => 'index'));
 	}
 
 	public function login(){
@@ -123,7 +140,12 @@ class UsersController extends AppController {
 				$this->redirect('/');
 			} else {
 				if ($this->Auth->login()){
-					$this->redirect($this->Auth->redirect());
+					$group_id = $this->Session->read('Auth.User.Group.id');
+					if($group_id == 1){
+						$this->redirect('/Administrators');
+					}else{
+						$this->redirect($this->Auth->redirect());
+					}
 				} else{
 					$this->Session->setFlash("Your Username & Password is incorrect / User have not yet approved",'session_error');
 				}

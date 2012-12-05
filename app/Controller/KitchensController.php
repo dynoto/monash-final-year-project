@@ -163,37 +163,43 @@ class KitchensController extends AppController {
         if($this->request->is('post')){
             $saveData = $this->request->data['criteriaValuesKitchen'];
             $saveArray = array();
-            foreach ($saveData as $k_id => $cv_val) {
-                foreach ($cv_val as $c_key => $cv_id) {
-                    $row = array('kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id);
-                    array_push($saveArray, $row);
+            foreach ($saveData as $k_id => $cv_arr) {
+                $cv_list = $this->CriteriaValuesKitchen->find('list',array('conditions'=>array('kitchen_id'=>$k_id),'fields'=>'criteria_value_id'));
+
+                //COMPARE AND RETRIEVE NOT-ASSOCIATED CRITERIA VALUES THEN SAVE IT
+                $add = array_diff($cv_arr, $cv_list);
+                $add_temp = array();
+                foreach ($add as $cv_id) {
+                    array_push($add_temp,array('kitchen_id'=>$k_id, 'criteria_value_id'=>$cv_id));
+                }
+                $this->CriteriaValuesKitchen->create();
+                $this->CriteriaValuesKitchen->saveAll($add_temp);
+
+                //COMPARE AND RETRIEVE ASSOCIATED CRITERIA VALUES THEN DELETE THOSE UNSELECTED
+                $delete = array_diff($cv_list, $cv_arr);
+                foreach ($delete as $cvk_id => $cv) {
+                    $this->CriteriaValuesKitchen->delete($cvk_id);
                 }
             }
-            if($this->CriteriaValuesKitchen->saveAll($saveArray)){
-                $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
-            }
+            $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
 
         }
-            $missing = array();
+            $selected = array();
             $kitchens = $this->Kitchen->find('list');
             $criterias = $this->Criteria->find('list',array('conditions'=>array('kitchen'=>1)));
             $criteriasArray = array();
             foreach ($kitchens as $k_id => $k_name) {
                 $temp_array = array();
                 $kitCriteriaValues   = $this->CriteriaValuesKitchen->find('list',array('conditions'=>array('kitchen_id'=>$k_id),'fields'=>array('id','criteria_value_id')));
-                foreach ($criterias as $c_id => $c_name) {
-                    $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
-                    $criteriasArray[$c_id]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
-                    $array_intersect = array_intersect($criteriaValues, $kitCriteriaValues);
-                    $temp_array[$c_id] = $c_name;
-                }
-                $missing[$k_id] = $temp_array;
+                $selected[$k_id] = $kitCriteriaValues;
+            }
+            foreach ($criterias as $c_id => $c_name) {
+                $criteriaValues  = $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id),'fields'=>array('id')));
+                $criteriasArray[$c_name]= $this->CriteriaValue->find('list',array('conditions'=>array('criteria_id'=>$c_id)));
             }
             $criterias = $criteriasArray;
-            $this->Kitchen->recursive = 0;
-            $kitchens  = $this->Kitchen->find('list');
             $images = $this->Image->find('list',array('fields'=>array('kitchen_id','name')));
-            $this->set(compact('kitchens','missing','criterias','images'));
+            $this->set(compact('kitchens','selected','criterias','images'));
         
         
     }

@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/visitors');
-$content_override = array('title' => 'SK Kitchens Gallery', 'css' => array('dropdown-checklist', 'visitors/testimonial'), 'js' => array('jquery-ui', 'dropdown-checklist', 'visitors/filter'));
+$content_override = array('title' => 'SK Kitchens Gallery', 'css' => array('dropdown-checklist', 'visitors/testimonial'), 'js' => array('jquery-ui', 'dropdown-checklist','galleria/galleria-1.2.8.min','visitors/modal','visitors/filter'));
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 

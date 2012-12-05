@@ -20,6 +20,5 @@ $(document).ready(function(){
         $('span.ui-dropdownchecklist-text').text("");
         $('[id^=ddcl-]').attr('checked',false);
     });
-
     $('div.modal').detach().appendTo('body');
 });

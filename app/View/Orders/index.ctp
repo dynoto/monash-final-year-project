@@ -38,7 +38,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			?>
 
 		</td>
-		<td><?php echo h($this->Time->niceShort($order['Order']['date'])); ?>&nbsp;</td>
+		<td><?php echo h($this->Time->format('D, d-M-Y',$order['Order']['date'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $order['Order']['id'])); ?>
 			<?php //echo $this->Html->link(__('Edit'), array('action' => 'edit', $order['Order']['id'])); ?>

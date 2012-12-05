@@ -11,9 +11,10 @@ echo $this->element('override',array("content_override"=>$content_override));
         </div>
         <?php   
         $k_p = 'kitchen';
+        $k_p_n = 'Gallery';
         for ($i=0; $i < 2; $i++){ ?>
         <div class="row-fluid">
-            <h4>For <?php echo $k_p; ?></h4>
+            <h4>For <?php echo $k_p_n; ?></h4>
             <table class="table table-striped table-bordered">
                 <tr>
                     <th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -40,6 +41,7 @@ echo $this->element('override',array("content_override"=>$content_override));
         </div>
         <?php   
         $k_p = 'product';
+        $k_p_n = 'Product';
         } ?>
         <div class="row-fluid">
         <p>

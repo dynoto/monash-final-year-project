@@ -83,3 +83,7 @@ span.ui-dropdownchecklist-selector-wrapper > span{
 div.ui-dropdownchecklist-dropcontainer-wrapper{
     max-width: 182px !important 
 }
+div.crsl{
+    height: 460px;
+    /*max-height: 400px;*/
+}

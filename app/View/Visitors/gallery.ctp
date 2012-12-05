@@ -1,6 +1,6 @@
 <?php
     echo $this->extend('/Common/visitors');
-    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter'));
+    $content_override = array('title'=>'SK Kitchens Gallery','css'=>array('dropdown-checklist','visitors/gallery'),'js'=>array('jquery-ui','dropdown-checklist','galleria/galleria-1.2.8.min','visitors/filter','visitors/modal'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
@@ -17,10 +17,11 @@
                     <?php $item_name = str_replace(' ', '_', $kitchen_name) ?>
                     <a href="#<?php echo $item_name; ?>" role="button" data-toggle="modal" class="modal_toggle">
                         <?php
+                        $fire_galleria = $val_a['Kitchen']['id'];
                         if(isset($val_a['Image'][0])){
-                            echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'img_thumbnail'));
+                            echo $this->Html->image('kitchen/'.$val_a['Image'][0]['name'],array('alt'=>'kitchen images','class'=>'img_thumbnail','data-id'=>$fire_galleria));
                         } else {
-                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'thumbnail'));
+                            echo $this->Html->image('common/image_error.jpg',array('alt'=>'kitchen images','class'=>'thumbnail','data-id'=>$fire_galleria));
                         } 
                         ?>
                     </a>

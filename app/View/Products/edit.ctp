@@ -20,7 +20,7 @@ $data = $this->request->data;
 			<h4><?php echo __('Edit Product'); ?></h4>
 			<?php
 			echo $this->Form->input('id');
-			echo $this->Form->input('name',array('required'=>true)); ?>
+			echo $this->Form->input('name',array('required'=>true,'class'=>'name_input')); ?>
 
             <!-------------------------------PRICE---------------------------------------- -->
 <!-- 			<div class="input-prepend">
@@ -95,7 +95,7 @@ $data = $this->request->data;
             </div>
             <hr>
 
-            <!--------------------------CRITERIA VALUES-------------------------------------------- -->
+            <!--------------------------RANGE VALUES-------------------------------------------- -->
             <h4>Range Values</h4>
             <div class="inline-criteria-values">
                 <?php
@@ -125,16 +125,16 @@ $data = $this->request->data;
                     <th>Default</th>
                 </tr>
                 <?php foreach ($data['Dimension'] as $kk => $dimension_array) { ?>
-                    <tr>
+                    <tr class="dimension_row">
                         <td><?php 
                             echo $dimension_types[$dimension_array['dimension_type_id']];
                             echo $this->Form->input('Dimension.'.$kk.'.id');
                             echo $this->Form->input('Dimension.'.$kk.'.dimension_type_id',array('type'=>'hidden'));
                         ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false,'required'=>true)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input min','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input max','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input default','label'=>false,'required'=>true)); ?></td>
                     </tr>
                 <?php } ?>
             </table>

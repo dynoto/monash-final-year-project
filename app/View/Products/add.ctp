@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/admins');
-$override = array('title' => 'Add Product', 'css' => array('admins/common','admins/uploadify','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min'));
+$override = array('title' => 'Add Product', 'css' => array('admins/common','admins/uploadify','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
 echo $this->element('override', array('content_override' => $override));
 ?>
 <div class="row-fluid offset2">
@@ -13,10 +13,10 @@ echo $this->element('override', array('content_override' => $override));
         </div>
     </div>
     <div class="span6">
-        <?php echo $this->Form->create('Product'); ?>
+        <?php echo $this->Form->create('Product',array('onsubmit'=>'return validate_fields()')); ?>
             <h4><?php echo __('Step 1 : New Product'); ?></h4>
             <?php
-            echo $this->Form->input('name',array('required'=>true,'class'=>'span3'));
+            echo $this->Form->input('name',array('required'=>true,'class'=>'span3 name_input'));
             echo $this->Form->input('description',array('class'=>'span8','type'=>'textarea'));
             ?>
 <!--             <div class="input-prepend">
@@ -81,10 +81,10 @@ echo $this->element('override', array('content_override' => $override));
                             echo $type_value;
                             echo $this->Form->input('Dimension.'.$type_id.'.dimension_type_id',array('type'=>'hidden','value'=>$type_id));
                         ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.min',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.max',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.increment',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'text','class'=>'dimension_input','label'=>false,'value'=>0,'required'=>true)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.min',array('type'=>'text','class'=>'dimension_input min','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.max',array('type'=>'text','class'=>'dimension_input max','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'text','class'=>'dimension_input default','label'=>false,'required'=>true)); ?></td>
                     </tr>
                 <?php } ?>
             </table>

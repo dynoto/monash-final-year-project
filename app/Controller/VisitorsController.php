@@ -110,7 +110,8 @@ Class VisitorsController extends AppController{
             if($rqData['submit'] == 'Update Cart'){
                 $cart = $this->Session->read('Order');
                 foreach ($rqData['OrderItem']['delete'] as $value) {
-                    $value = (explode('_', $value)[1]);
+                    $value = explode('_', $value);
+                    $value = $value[1];
                     unset($cart[$value]);
                 }
                 foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
