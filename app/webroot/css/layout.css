@@ -221,3 +221,13 @@ div.search-well{
 .invisible{
     visibility: hidden;
 }
+.modal{
+    background: black;
+}
+.modal-header{
+    background: white;
+}
+.modal-body{
+    position: absolute;
+    bottom: 0;
+}
