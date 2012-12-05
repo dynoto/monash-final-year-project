@@ -210,7 +210,10 @@ div.search-well{
     border:2px solid red !important;
 }
 .galleria-errors{
-    display:none !important;
+    /*display:none !important;*/
+}
+.galleria-thumbnails > .galleria-image{
+    border: 1px solid white;
 }
 .invisible{
     visibility: hidden;

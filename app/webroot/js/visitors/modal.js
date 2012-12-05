@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
+	// Galleria.loadTheme('/js/galleria/themes/classic/galleria.classic.min.js');
 	$('div.modal').on('shown',function(){
 		var crsl_id = $(this).attr('id');
 		console.log(crsl_id);

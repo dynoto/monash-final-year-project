@@ -15,8 +15,10 @@ class CriteriasController extends AppController {
      * @return void
      */
     public function index() {
+        $this->loadModel('RangeType');
         $this->Criteria->recursive = 0;
         $this->set('criterias', $this->paginate());
+        $this->set('rangetypes',$this->RangeType->find('list'));
     }
 
     /**

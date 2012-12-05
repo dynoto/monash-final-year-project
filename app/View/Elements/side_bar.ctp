@@ -2,9 +2,11 @@
     <div class="well" id="search_well">
         <?php echo $this->Form->Create('visitor',array('action'=>$visitor_action,'id'=>'criteria_filter')); ?>
         <?php 
-            foreach ($sidebar_data as $data){
-            echo $this->Form->input('CriteriaValues'.$table.'.criteria_value_id.'.$data['id'],array('label'=>$data['name'],'id'=>'search_'.$data['name'],'multiple'=>'multiple','options'=>$data['values'],'selected'=>$selected,'hiddenField'=>null, 'class'=>'span12 criteria_filter'));
-            } 
+            foreach ($sidebar_data as $data):
+            if(isset($data['values'])):
+                echo $this->Form->input('CriteriaValues'.$table.'.criteria_value_id.'.$data['id'],array('label'=>$data['name'],'id'=>'search_'.$data['name'],'multiple'=>'multiple','options'=>$data['values'],'selected'=>$selected,'hiddenField'=>null, 'class'=>'span12 criteria_filter'));
+                endif;
+            endforeach;
         ?>
             <div class="row-fluid" id="action_buttons">
                 <?php echo $this->Html->link('Clear All',array('action'=>$visitor_action),array('class'=>'btn span6'));?>

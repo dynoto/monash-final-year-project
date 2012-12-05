@@ -14,7 +14,9 @@
   			<th>Quantity</th>
   			<th>Delete</th>
   		</tr>
-  		<?php foreach ($cart as $item_id => $item): ?>
+  		<?php 
+      if(isset($cart)):
+      foreach ($cart as $item_id => $item): ?>
         <tr>
           <?php $order_item = $item['OrderItem']; ?>
           <td><?php echo $order_item['product_name']; ?></td>
@@ -29,7 +31,10 @@
           <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'text','class'=>'quantity_input','value'=>$order_item['quantity'],'label'=>false)); ?></td>
           <td><?php echo $this->Form->input('OrderItem.delete.',array('type'=>'checkbox','value'=>'cart_'.$item_id,'label'=>false,'hiddenField'=>false)); ?></td>
         </tr>
-      <?php endforeach; ?>
+      <?php 
+      endforeach; 
+      endif;
+      ?>
 
   	</table>
     <div class="action_buttons">

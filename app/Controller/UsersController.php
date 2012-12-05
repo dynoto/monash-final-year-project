@@ -58,6 +58,15 @@ class UsersController extends AppController {
 			$requestData['User']['approved'] = 1;
 			$requestData['User']['group_id'] = 1;
 			if ($this->User->save($requestData)) {
+				$aro = new Aro();
+				$user = array(
+						'alias'=>$requestData['User']['name'],
+						'parent_id'=>1,
+						'model'=>'User',
+						'foreign_key'=>$this->User->id
+				);
+				$aro->Create();
+				$aro->save($user);
 				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -129,7 +138,7 @@ class UsersController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			}
 		}else{
-			$this->Session->setFlash(__('User was not deleted'));
+			$this->Session->setFlash(__('Admin cannot delete your own account'));
 			$this->redirect(array('action' => 'index'));
 		}
 	}

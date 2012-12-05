@@ -14,11 +14,11 @@ echo $this->element('override',array("content_override"=>$content_override));
         $k_p_n = 'Gallery';
         for ($i=0; $i < 2; $i++){ ?>
         <div class="row-fluid">
-            <h4>For <?php echo $k_p_n; ?></h4>
+            <h5>For <?php echo $k_p_n; ?></h5>
             <table class="table table-striped table-bordered">
                 <tr>
-                    <th><?php echo $this->Paginator->sort('id'); ?></th>
-                    <th><?php echo $this->Paginator->sort('name'); ?></th>
+                    <th>Id</th>
+                    <th>Name</th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php 
@@ -43,7 +43,34 @@ echo $this->element('override',array("content_override"=>$content_override));
         $k_p = 'product';
         $k_p_n = 'Product';
         } ?>
-        <div class="row-fluid">
+        <hr>
+        <div class "row-fluid">
+            <h4 class="ib">Range Types</h4>
+            <?php echo $this->Html->link(__('New Criteria'), array('controller'=>'rangetypes','action' => 'add'),array('class'=>'btn' ,'style'=>'float:right')); ?>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th class="actions"><?php echo __('Actions'); ?></th>
+                </tr>
+                <?php 
+                foreach ($rangetypes as $rt_id => $rt_name):
+                ?>
+                <tr>
+                    <td><?php echo h($rt_id); ?>&nbsp;</td>
+                    <td><?php echo h($rt_name); ?>&nbsp;</td>
+                    <td class="actions">
+                        <?php echo $this->Html->link(__('View'), array('controller'=>'rangetypes','action' => 'view', $rt_id)); ?>
+                        <?php echo $this->Html->link(__('Edit'), array('controller'=>'rangetypes','action' => 'edit', $rt_id)); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller'=>'rangetypes','action' => 'delete', $rt_id), null, __('Deleting range types will REMOVE association from PRODUCTS.\nare you sure you want to do this?', $rt_name)); ?>
+                    </td>
+                </tr>
+                <?php 
+                endforeach; ?>
+            </table>
+        </div>
+
+<!--         <div class="row-fluid">
         <p>
             <?php
             echo $this->Paginator->counter(array(
@@ -59,5 +86,6 @@ echo $this->element('override',array("content_override"=>$content_override));
                     ?>
                 </div>
             </div>
-        </div>
+        </div> -->
+
     </div>

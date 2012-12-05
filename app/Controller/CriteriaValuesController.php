@@ -39,7 +39,6 @@ class CriteriaValuesController extends AppController {
  */
 	public function add($id = null) {
 		if ($this->request->is('post')) {
-            $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
             $value = $this->request->data['CriteriaValue']['name'];
 			$this->CriteriaValue->create();
 			if ($this->CriteriaValue->save($this->request->data)) {
@@ -49,9 +48,9 @@ class CriteriaValuesController extends AppController {
 				$this->Session->setFlash(__('The criteria value could not be saved. Please, try again.'));
 			}
 		}
+		$criteria_id = $id;
 		$criterias = $this->CriteriaValue->Criteria->find('list');
-		$this->set('kitchen_id',$id);
-		$this->set(compact('criterias'));
+		$this->set(compact('criterias','criteria_id'));
 	}
 
 /**
@@ -67,7 +66,7 @@ class CriteriaValuesController extends AppController {
 			throw new NotFoundException(__('Invalid criteria value'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-                        $criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
+			$criteria_id = $this->request->data['CriteriaValue']['criteria_id'];
 			if ($this->CriteriaValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The criteria value has been saved'));
 				$this->redirect(array('controller'=>'criterias','action' => 'view',$criteria_id));
@@ -78,7 +77,6 @@ class CriteriaValuesController extends AppController {
 			$this->request->data = $this->CriteriaValue->read(null, $id);
 		}
 		$criterias = $this->CriteriaValue->Criteria->find('list');
-		$kitchens = $this->CriteriaValue->Kitchen->find('list');
 		$this->set(compact('criterias', 'kitchens'));
 	}
 

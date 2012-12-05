@@ -1,0 +1,41 @@
+<?php
+echo $this->extend('/Common/admins');
+$content_override = array('title' => 'Manage Criteria', 'css' => 'admins/common');
+echo $this->element('override', array("content_override" => $content_override));
+?>
+<div class="row-fluid">
+    <div class="span2 row-fluid">
+        <div class="offset1">
+            <h4><?php echo __('Actions'); ?></h4>
+            <ul class="nav nav-tabs nav-stacked">
+                <li><?php echo $this->Html->link(__('List Range Types'), array('action' => 'index')); ?></li>
+                <li><?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?> </li>
+                <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('RangeType.id')), null, __('Are you sure you want to delete this range type?', $this->Form->value('RangeType.id'))); ?></li>
+            </ul>
+        </div>
+    </div>
+    <div class="span8 row-fluid">
+        <?php echo $this->Form->create('RangeType'); ?>
+        <div class="row-fluid span12">
+            <div class="span6 row-fluid">
+                <h4><?php echo __('Edit Range Type'); ?></h4>
+                <?php
+                echo $this->Form->input('id');
+                echo $this->Form->input('name',array('required'=>true));
+                ?>
+            </div>
+            <div class="span6 row-fluid">
+            </div>
+        </div>
+        <div class="row-fluid span8">
+            <?php
+            echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn btn-large ', 'style' => 'display:inline-block; margin-right:10px;'));
+            echo $this->Form->button('Submit', array('type' => 'submit', 'class' => 'btn btn-large btn-primary'));
+            ?>
+            
+            <?php
+            echo $this->Form->end();
+            ?>
+        </div>
+
+    </div>

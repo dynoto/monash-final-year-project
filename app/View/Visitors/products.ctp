@@ -49,7 +49,7 @@
                             <?php
                             echo $this->Form->input("OrderItem.quantity",array('type'=>'text','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','label'=>false,'data-v'=>'int','div'=>false)); ?></label>
                             <?php
-                            echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Cart',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
+                            echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Quote',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
                             ?>
                         </td>
                     </tr>

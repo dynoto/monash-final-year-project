@@ -18,14 +18,20 @@
                         'Products'=>'products',
                         'Customers'=>'customers',
                         'Orders'=>'orders'); 
-                    foreach($links as $name => $href){
+                    foreach($links as $name => $href):
                         if ($current_action === $href){ $params = "active span2";}
                         else{ $params = "span2"; }
-                        ?>
+
+                        if($href === 'criterias'): ?>
+                        <li class="<?php echo $params; ?> dropdown">
+                            <?php echo $this->Html->link($name,array('controller'=>$href,'action'=>'index')); ?>      
+                        </li>
+                        <?php else: ?>
                         <li class="<?php echo $params; ?>">
                             <?php echo $this->Html->link($name,array('controller'=>$href,'action'=>'index')); ?>
                         </li>
-                    <?php } ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
