@@ -25,7 +25,7 @@ $gps = "-38.116322,145.143196";
             echo $this->Form->Create('Enquiry',array('class'=>'well','onSubmit'=>'return verify();'));?>
             <h4>Enquiry Form</h4>
             <?php
-            echo $this->Form->input('name',array('required'=>true));
+            echo $this->Form->input('name',array('required'=>true,'data-tooltip'=>'username'));
             echo $this->Form->input('telephone');
             echo $this->Form->input('email');
             echo $this->Form->input('message',array('required'=>true));

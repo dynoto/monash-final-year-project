@@ -17,7 +17,9 @@ class Product extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-
+	public $validate = array(
+		'name' => 'alphaNumeric'
+	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 

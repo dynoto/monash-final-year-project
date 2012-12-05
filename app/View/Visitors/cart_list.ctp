@@ -39,7 +39,7 @@
   	</table>
     <div class="action_buttons">
     <?php 
-    echo $this->Form->input('Update Cart',array('type'=>'submit','value'=>'update','div'=>false,'label'=>false,'name'=>'data[submit]','class'=>'ib btn btn-large'));
+    echo $this->Form->input('Update List',array('type'=>'submit','value'=>'update','div'=>false,'label'=>false,'name'=>'data[submit]','class'=>'ib btn btn-large'));
     echo $this->Form->input('Request Quote',array('type'=>'submit','value'=>'order','div'=>false,'label'=>false,'name'=>'data[submit]','class'=>'ib btn btn-large btn-primary'));
     echo $this->Form->end(); ?>
   </div>

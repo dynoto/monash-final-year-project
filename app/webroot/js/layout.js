@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$('input[required="1"]').addClass('input_required_min');
 });
 
 function toggle_login(){

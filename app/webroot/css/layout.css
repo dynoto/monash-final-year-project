@@ -209,6 +209,9 @@ div.search-well{
 .input_required{
     border:2px solid red !important;
 }
+.input_required_min{
+    border:1px solid #DD1111 !important;
+}
 .galleria-errors{
     /*display:none !important;*/
 }

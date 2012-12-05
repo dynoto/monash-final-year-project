@@ -1,14 +1,15 @@
 $(document).ready(function(){
 	// Galleria.loadTheme('/js/galleria/themes/classic/galleria.classic.min.js');
 	$('div.modal').on('shown',function(){
-		var crsl_id = $(this).attr('id');
-		console.log(crsl_id);
-		$('div#crsl_'+crsl_id).galleria({
+		var carousel = $(this).find('div.crsl');
+		if(carousel.hasClass('crsl')){
+		$(this).find('div.crsl').galleria({
 			transition:'fade',
 			showInfo:false,
 			height:450,
 			imageCrop:'height'	
 		});
+		}
 	});
 
 

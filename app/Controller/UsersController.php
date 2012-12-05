@@ -120,7 +120,8 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$active_user = $this->Session->read('Auth.User.id');
-		$group_id = $this->User->find('first',array('conditions'=>array('User.id'=>$id)))['Group']['id'];
+		$group_id = $this->User->find('first',array('conditions'=>array('User.id'=>$id)));
+		$group_id = $group_id['Group']['id'];
 		if($id != $active_user){
 			if($group_id == 1){
 				$admin_count = $this->User->find('count',array('conditions'=>array('group_id'=>1)));
@@ -131,7 +132,8 @@ class UsersController extends AppController {
 				}
 			}
 			else if($group_id == 2){
-				$customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$id)))['Customer']['id'];
+				$customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$id)));
+				$customer_id = $customer_id['Customer']['id'];
 				$this->Customer->save(array('Customer'=>array('id'=>$customer_id,'user_id'=>NULL)));
 				$this->User->delete();
 				$this->Session->setFlash(__('User deleted'));

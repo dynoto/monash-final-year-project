@@ -1,6 +1,6 @@
 <?php
     echo $this->extend('/Common/visitors');
-    $content_override = array('title'=>'SK Kitchens Product','css'=>array('dropdown-checklist','visitors/testimonial','visitors/product'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter','visitors/product'));
+    $content_override = array('title'=>'SK Kitchens Product','css'=>array('dropdown-checklist','visitors/testimonial','visitors/product'),'js'=>array('jquery-ui','dropdown-checklist','visitors/filter','visitors/product','visitors/modal'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 
@@ -14,9 +14,11 @@
 <div class="row-fluid span7 main_content no-padding">
     <?php
         $count = 0;
-        foreach ($info as $key_a => $val_a) { ?> 
+        foreach ($info as $key_a => $val_a) {
+        echo $this->element('gallery_modal',array('item'=>$val_a,'type'=>'Product','image'=>$val_a['Image'])); 
+        ?>
         <div class='row-fluid product_frame'>
-            <?php 
+            <?php
             $product_name = $val_a['Product']['name']; 
             $p_id = $val_a['Product']['id'];
             ?>
@@ -47,7 +49,7 @@
                         <td class="quantity_cell no-padding-vertical" >
                             <label>Qty.
                             <?php
-                            echo $this->Form->input("OrderItem.quantity",array('type'=>'text','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','label'=>false,'data-v'=>'int','div'=>false)); ?></label>
+                            echo $this->Form->input("OrderItem.quantity",array('type'=>'text','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','required'=>true,'label'=>false,'data-v'=>'int','div'=>false,'data-tooltip'=>'number')); ?></label>
                             <?php
                             echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Quote',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
                             ?>
@@ -63,7 +65,7 @@
                                     <label class="ib no-margin-vertical">
                                     <?php
                                     echo $dimension_types[$d_array['dimension_type_id']][0].': ';
-                                    echo $this->Form->input('OrderItem.'.strtolower($dimension_types[$d_array['dimension_type_id']]),array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','label'=>false,'div'=>false,'value'=>$d_array['default']));
+                                    echo $this->Form->input('OrderItem.'.strtolower($dimension_types[$d_array['dimension_type_id']]),array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','label'=>false,'div'=>false,'required'=>true,'value'=>$d_array['default']));
                                     ?>
                                     </label>
                                     <?php
@@ -102,9 +104,6 @@
                 <?php echo $this->Form->end(); ?>
             </div>
             <!-- modal starts here -->
-            <?php 
-            echo $this->element('gallery_modal',array('item'=>$val_a,'type'=>'Product')); 
-            ?>
             <!-- modal ends here -->
         </div>
         <?php } ?>

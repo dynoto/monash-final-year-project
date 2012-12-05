@@ -138,34 +138,38 @@ Class VisitorsController extends AppController{
 
     private function __make_order(){
         $cart = $this->Session->read('Order');
-        $user = $this->Session->read('Auth.User.id');
-        $customer_id = null;
-        $customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$user),'fields'=>'id'));
-        $customer_id = $customer_id['Customer']['id'];
-        if(!(isset($customer_id))){
+        if(isset($cart)):
+            $user = $this->Session->read('Auth.User.id');
             $customer_id = null;
+            $customer_id = $this->Customer->find('first',array('conditions'=>array('user_id'=>$user),'fields'=>'id'));
+            $customer_id = $customer_id['Customer']['id'];
+            if(!(isset($customer_id))){
+                $customer_id = null;
 
-        }
-        $today = date("Y-m-d H:i:s"); 
-        $this->Order->create();
-        $this->Order->save(array('customer_id'=>$customer_id,'date'=>$today));
-        foreach ($cart as $key => $item):
-            $this->OrderItem->create();
-            $item['OrderItem']['order_id'] = $this->Order->id;
-            $this->OrderItem->save($item['OrderItem']);
+            }
+            $today = date("Y-m-d H:i:s"); 
+            $this->Order->create();
+            $this->Order->save(array('customer_id'=>$customer_id,'date'=>$today));
+            foreach ($cart as $key => $item):
+                $this->OrderItem->create();
+                $item['OrderItem']['order_id'] = $this->Order->id;
+                $this->OrderItem->save($item['OrderItem']);
 
-            $order_item_id = $this->OrderItem->id;
-            $count = 0;
-            $temp_array = array();
-            foreach ($item['RangeValue'] as $rv_array):
-                $temp_array[$count]['range_value_id'] = $rv_array['id'];
-                $temp_array[$count]['order_item_id'] = $order_item_id;
-                $count += 1;
+                $order_item_id = $this->OrderItem->id;
+                $count = 0;
+                $temp_array = array();
+                foreach ($item['RangeValue'] as $rv_array):
+                    $temp_array[$count]['range_value_id'] = $rv_array['id'];
+                    $temp_array[$count]['order_item_id'] = $order_item_id;
+                    $count += 1;
+                endforeach;
+                $this->OrderItemsRangeValue->create();
+                $this->OrderItemsRangeValue->saveAll($temp_array);
             endforeach;
-            $this->OrderItemsRangeValue->create();
-            $this->OrderItemsRangeValue->saveAll($temp_array);
-        endforeach;
-        $this->Session->setFlash('Your request have been submitted!');
+            $this->Session->setFlash('Your request have been submitted!');
+        else:
+            $this->Session->setFlash('Please add products into list before requesting quote');
+        endif;
     }
 
 ////////////////////////////////////////////////////////////////////////////////
