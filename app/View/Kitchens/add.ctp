@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/admins');
-$override = array('css' => 'admins/common', 'js' => NULL, 'title' => 'New Kitchen');
+$override = array('css' => 'admins/common', 'js' => NULL, 'title' => 'New Gallery');
 echo $this->element('override', array('content_override' => $override));
 ?>
 <div class="row-fluid">
@@ -14,11 +14,11 @@ echo $this->element('override', array('content_override' => $override));
     </div>
     <div class="row-fluid span8">
         <?php echo $this->Form->create('Kitchen'); ?>
-        <h4 class=""><?php echo __('Add Kitchen'); ?></h4>
+        <h4 class=""><?php echo __('Add Gallery'); ?></h4>
         <div class="row-fluid well">
             <div class="row-fluid">
                 <ul class="span8 nav nav-pills">
-                    <li class="active"><a>Step 1 : Create Kitchen</a></li>
+                    <li class="active"><a>Step 1 : Create Gallery</a></li>
                     <li class="disabled"><a>Step 2 : Add Images</a></li>
                 </ul>
             </div>

@@ -76,7 +76,6 @@ class KitchensController extends AppController {
         }
         $this->set('criteria_data', $this->Criteria->find('all',array('conditions'=>array('kitchen'=>1))));
         $criteriaValues = $this->Kitchen->CriteriaValue->find('list');
-        pr($criteriaValues);
         $this->set(compact('criteriaValues'));
     }
 
