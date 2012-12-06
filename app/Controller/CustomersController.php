@@ -85,9 +85,20 @@ class CustomersController extends AppController {
 				$request_data['Customer']['user_id'] = $this->User->id;
 				$this->Customer->create();
 				if ($this->Customer->save($request_data)) {
-					$session_data = $this->Session->read();
+
+					$aro = new Aro();
+					$user = array(
+						'alias'=>$request_data['User']['name'],
+						'parent_id'=>2, //PARENT ID CUSTOMER
+						'model'=>'User',
+						'foreign_key'=>$this->User->id
+					);
+					$aro->Create();
+					$aro->save($user);
+
+					$session_data = $this->Session->read('Auth.User.Group.id');
 					if(isset($session_data)){
-						if($session_data['Auth']['User']['Group']['id'] == 1){
+						if(isset($session_data) && $session_data == 1){
 							$this->Session->setFlash('Customer account has been successfully created');
 							$this->redirect(array('action'=>'index'));
 						}
