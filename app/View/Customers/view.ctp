@@ -83,6 +83,26 @@ echo $this->element('override', array("content_override" => $content_override));
 			</tr> -->
 		</table>
 		<h4>Orders</h4>
-
+		<table class="table table-striped table-bordered">
+			<tr>
+				<th>Order Number</th>
+				<th>Date</th>
+				<th>Actions</th>
+			</tr>
+			<?php foreach ($orders as $order):?>
+				<tr>
+					<td><?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>&nbsp;</td>
+					<td><?php echo $order['Order']['date']; ?></td>
+					<td>
+						<?php 
+						echo $this->Html->link('View',array('controller'=>'orders','action'=>'view',$order['Order']['id'],$customer['Customer']['id']));
+						?>&nbsp; 
+						<?php 
+						echo $this->Form->postLink(__('Delete'), array('controller'=>'orders','action' => 'delete', $order['Order']['id'],$customer['Customer']['id']), null, __('Are you sure you want to delete this order?', $order['Order']['id'])); 
+						?>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+		</table>
 	</div>
 </div>

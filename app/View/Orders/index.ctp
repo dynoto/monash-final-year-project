@@ -6,7 +6,7 @@ echo $this->element('override', array("content_override" => $content_override));
 <div class="row-fluid">
 <div class="span2">
 	<div class="offset1">
-	<h4><?php echo __('Actions'); ?></h4>
+	<!-- <h4><?php echo __('Actions'); ?></h4> -->
 	<ul class="nav nav-tabs nav-stacked">
 		<li><?php echo $this->Html->link(__('Customers List'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Products List'), array('controller' => 'products', 'action' => 'index')); ?> </li>
@@ -18,8 +18,8 @@ echo $this->element('override', array("content_override" => $content_override));
 	<?php echo $this->Html->link(__('New Order'), array('action' => 'add'),array('class'=>'btn pull-right')); ?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('customers_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('id','Order Number'); ?></th>
+			<th><?php echo $this->Paginator->sort('customers_id','Customer'); ?></th>
 			<th><?php echo $this->Paginator->sort('date'); ?></th>
 			<!-- <th>Total Price</th> -->
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -27,7 +27,7 @@ echo $this->element('override', array("content_override" => $content_override));
 	<?php
 	foreach ($orders as $order): ?>
 	<tr>
-		<td><?php echo h($order['Order']['id']); ?>&nbsp;</td>
+		<td><?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>&nbsp;</td>
 		<td>
 			<?php
 			if(isset($order['Customer']['id'])):

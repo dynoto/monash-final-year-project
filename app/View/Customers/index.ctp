@@ -6,7 +6,7 @@ echo $this->element('override', array("content_override" => $content_override));
 <div class="row-fluid">
 <div class="span2">
 	<div class="offset1">
-	<h4><?php echo __('Actions'); ?></h4>
+	<!-- <h4><?php echo __('Actions'); ?></h4> -->
 	<ul class="nav nav-tabs nav-stacked">
 		<?php if(isset($user_count)){ ?>
 			<li><?php 
@@ -31,7 +31,7 @@ echo $this->element('override', array("content_override" => $content_override));
 	<?php echo $this->Html->link('New Customer', array('action' => 'add'),array('class'=>'pull-right btn')); ?>
 	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
+			<!-- <th><?php echo $this->Paginator->sort('id'); ?></th> -->
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
@@ -44,7 +44,7 @@ echo $this->element('override', array("content_override" => $content_override));
 	<?php
 	foreach ($customers as $customer): ?>
 	<tr>
-		<td><?php echo h($customer['Customer']['id']); ?>&nbsp;</td>
+		<!-- <td><?php echo h($customer['Customer']['id']); ?>&nbsp;</td> -->
 		<td><?php echo h($customer['Customer']['name']); ?>&nbsp;</td>
 		<td><?php echo h($customer['User']['name']); ?>&nbsp;</td>
 		<td><?php echo h($customer['Customer']['email']); ?>&nbsp;</td>

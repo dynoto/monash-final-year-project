@@ -25,3 +25,9 @@ div.inline-criteria-values > div {
 select{
     width: auto !important;
 }
+input.btn-submit-priority{
+    margin-left: 10px;
+}
+div.priority-edit > input{
+    width: 50px;
+}

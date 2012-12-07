@@ -18,7 +18,8 @@ class Product extends AppModel {
  */
 	public $displayField = 'name';
 	public $validate = array(
-		'name' => 'alphaNumeric'
+		'name' => array('rule'=>'/^[\w\s\(\)]+$/','message'=>'Alphanumeric, Spaces and Parentheses only'),
+		'priority' => array('rule'=>'numeric','message'=>'Numbers only','allowEmpty'=>true)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

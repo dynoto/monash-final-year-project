@@ -9,8 +9,11 @@ echo $this->element('override', array("content_override" => $content_override));
 		<h3><?php echo __('Actions'); ?></h3>
 		<ul>
 <!-- 			<li><?php echo $this->Html->link(__('Edit Order Item'), array('action' => 'edit', $orderItem['OrderItem']['id'])); ?> </li> -->
-			<li><?php echo $this->Form->postLink(__('Delete Order Item'), array('action' => 'delete', $orderItem['OrderItem']['id']), null, __('Are you sure you want to delete # %s?', $orderItem['OrderItem']['id'])); ?> </li>
 			<li><?php echo $this->Html->link(__('List Orders'), array('controller' => 'orders', 'action' => 'index')); ?> </li>
+			<?php if(isset($customer_id)): ?>
+			<li><?php echo $this->Html->link('Back to View Customer',array('controller'=>'customers','action'=>'view',$customer_id)); ?></li>
+			<?php endif; ?>
+			<li><?php echo $this->Form->postLink(__('Delete Order Item'), array('action' => 'delete', $orderItem['OrderItem']['id']), null, __('Are you sure you want to delete # %s?', $orderItem['OrderItem']['id'])); ?> </li>
 			<!-- <li><?php echo $this->Html->link(__('New Order'), array('controller' => 'orders', 'action' => 'add')); ?> </li> -->
 			<li><?php echo $this->Html->link(__('List Products'), array('controller' => 'products', 'action' => 'index')); ?> </li>
 			<!-- <li><?php echo $this->Html->link(__('New Product'), array('controller' => 'products', 'action' => 'add')); ?> </li> -->

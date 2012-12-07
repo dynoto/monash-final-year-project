@@ -36,6 +36,17 @@ class ProductsController extends AppController {
 	public function index() {
 		$this->Product->recursive = 0;
 		$this->set('products', $this->paginate());
+
+		if($this->request->is('post')):
+            $requestData = $this->request->data('Product');
+            if($this->Product->saveAll($requestData)):
+                $this->Session->setFlash('Priority is successfully updated!');
+            else:
+                $this->Session->setFlash('Priority could not be updated!','session_error');
+            endif;
+            $this->redirect(array('action'=>'index'));
+        endif;
+
 	}
 
 /**

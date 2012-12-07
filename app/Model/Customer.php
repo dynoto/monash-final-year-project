@@ -36,6 +36,29 @@ class Customer extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'name' => array(
+			'rule' => '/^[\w\s\.]+$/',
+			'message'=>'Alphanumeric, Period(.) and Spaces only',
+		),
+		'email' => array(
+			'rule' => array('email',true),
+			'message' => 'Please input a valid email',
+			'allowEmpty' => true
+		),
+		'phone' => array(
+			'regex' => array(
+				'rule' => '/^[\d\s\-\(\)]+$/',
+				'message' => 'Numbers, Spaces, Dashes(-) and Curly Brackets only',
+				'allowEmpty' => false,
+ 			)
+		),
+		// 'address' => array(
+		// 	'regex' => array(
+		// 		'message' => 'Please input your address',
+		// 		'allowEmpty' => false
+		// 	)
+		// )
+
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

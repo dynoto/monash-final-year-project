@@ -9,8 +9,9 @@ echo $this->element('override', array("content_override" => $content_override));
 		<h4><?php echo __('Actions'); ?></h4>
 		<ul class="nav nav-tabs nav-stacked">
 			<!-- <li><?php echo $this->Html->link(__('Edit Order'), array('action' => 'edit', $order['Order']['id'])); ?> </li> -->
-			<li><?php echo $this->Form->postLink(__('Delete Order'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?> </li>
 			<li><?php echo $this->Html->link(__('List Orders'), array('action' => 'index')); ?> </li>
+			<li><?php echo $this->Form->postLink(__('Delete Order'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?> </li>
+			<li><?php echo $this->Html->link('Back to View Customer',array('controller'=>'customers','action'=>'view',$customer_id)); ?></li>
 			<!-- <li><?php echo $this->Html->link(__('New Order'), array('action' => 'add')); ?> </li> -->
 			<!-- <li><?php echo $this->Html->link(__('List Customers'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
 			<li><?php echo $this->Html->link(__('New Customers'), array('controller' => 'customers', 'action' => 'add')); ?> </li> -->
@@ -23,7 +24,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		<dl>
 			<dt><?php echo __('Id'); ?></dt>
 				<dd>
-					<?php echo h($order['Order']['id']); ?>
+					<?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>
 				</dd>
 			<dt><?php echo __('By Customer'); ?></dt>
 				<dd>

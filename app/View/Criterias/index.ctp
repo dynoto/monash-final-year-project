@@ -17,7 +17,7 @@ echo $this->element('override',array("content_override"=>$content_override));
             <h5>For <?php echo $k_p_n; ?></h5>
             <table class="table table-striped table-bordered">
                 <tr>
-                    <th>Id</th>
+                    <!-- <th>Id</th> -->
                     <th>Name</th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
@@ -26,7 +26,7 @@ echo $this->element('override',array("content_override"=>$content_override));
                 if($criteria['Criteria'][$k_p] == 1){
                 ?>
                 <tr>
-                    <td><?php echo h($criteria['Criteria']['id']); ?>&nbsp;</td>
+                    <!-- <td><?php echo h($criteria['Criteria']['id']); ?>&nbsp;</td> -->
                     <td><?php echo h($criteria['Criteria']['name']); ?>&nbsp;</td>
                     <td class="actions">
                         <?php echo $this->Html->link(__('View'), array('action' => 'view', $criteria['Criteria']['id'])); ?>
@@ -49,7 +49,7 @@ echo $this->element('override',array("content_override"=>$content_override));
             <?php echo $this->Html->link(__('New Range Type'), array('controller'=>'rangetypes','action' => 'add'),array('class'=>'btn' ,'style'=>'float:right')); ?>
             <table class="table table-striped table-bordered">
                 <tr>
-                    <th>Id</th>
+                    <!-- <th>Id</th> -->
                     <th>Name</th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
@@ -57,7 +57,7 @@ echo $this->element('override',array("content_override"=>$content_override));
                 foreach ($rangetypes as $rt_id => $rt_name):
                 ?>
                 <tr>
-                    <td><?php echo h($rt_id); ?>&nbsp;</td>
+                    <!-- <td><?php echo h($rt_id); ?>&nbsp;</td> -->
                     <td><?php echo h($rt_name); ?>&nbsp;</td>
                     <td class="actions">
                         <?php echo $this->Html->link(__('View'), array('controller'=>'rangetypes','action' => 'view', $rt_id)); ?>

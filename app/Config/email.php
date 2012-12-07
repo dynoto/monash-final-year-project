@@ -95,22 +95,22 @@ class EmailConfig {
 	);
 
 	public $noreply = array(
-		'from' => 'noreply@engcabs.com.au',
+		'from' => array('noreply@engcabs.com.au'=>'Engineered Cabinets Noreply'),
 		'host' => 'mail.engcabs.com.au',
 		'username' => 'noreply@engcabs.com.au',
 		'password' => '4J5vf7%,=(Mc',
 		'port' => 25,
-		// 'tls'  => true,
+		'tls'  => true,
 		'transport' => 'Smtp'
 	);
 
 	public $liam = array(
-		'from' => 'liam@engcabs.com.au',
+		'from' => array('liam@engcabs.com.au','Liam Gonsalvez'),
 		'host' => 'mail.engcabs.com.au',
 		'username' => 'liam@engcabs.com.au',
 		'password' => '*q&xrc$Lm$y)',
 		'port' => 25,
-		// 'tls'  => true,
+		'tls'  => true,
 		'transport' => 'Smtp'
 	);
 

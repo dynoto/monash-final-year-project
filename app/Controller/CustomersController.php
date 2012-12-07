@@ -66,6 +66,7 @@ class CustomersController extends AppController {
 		if (!$this->Customer->exists()) {
 			throw new NotFoundException(__('Invalid customer'));
 		}
+		$this->set('orders',$this->Order->find('all',array('conditions'=>array('customer_id'=>$id))));
 		$this->set('customer', $this->Customer->read(null, $id));
 	}
 

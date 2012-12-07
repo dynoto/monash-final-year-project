@@ -49,7 +49,7 @@ class OrdersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id = null,$customer_id = null) {
 		$this->Order->id = $id;
 		if (!$this->Order->exists()) {
 			throw new NotFoundException(__('Invalid order'));
@@ -57,7 +57,7 @@ class OrdersController extends AppController {
 		$this->Order->recursive = 2;
 		$products = $this->Product->find('list');
 		$range_types = $this->RangeType->find('list');
-		$this->set(compact('products','range_types'));
+		$this->set(compact('products','range_types','customer_id'));
 		$this->set('order', $this->Order->read(null, $id));
 	}
 
@@ -114,7 +114,7 @@ class OrdersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null,$customer_id = nul) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -127,10 +127,14 @@ class OrdersController extends AppController {
 			$this->OrderItemsRangeValue->deleteAll(array('OrderItemsRangeValue.order_item_id'=>$value));
 		}
 		$this->OrderItem->deleteAll(array('OrderItem.order_id'=>$id));
-		if ($this->Order->delete()) {
+		if ($this->Order->delete()):
 			$this->Session->setFlash(__('Order deleted'));
-			$this->redirect(array('action' => 'index'));
-		}
+			if($customer_id != null):
+				$this->redirect(array('controller'=>'customers','action' => 'view',$customer_id));
+			else:
+				$this->redirect(array('action' => 'index'));
+			endif;
+		endif;
 		$this->Session->setFlash(__('Order was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}

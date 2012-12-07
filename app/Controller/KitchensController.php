@@ -26,6 +26,16 @@ class KitchensController extends AppController {
     public function index() {
         $this->Kitchen->recursive = 0;
         $this->set('kitchens', $this->paginate());
+
+        if($this->request->is('post')):
+            $requestData = $this->request->data('Kitchen');
+            if($this->Kitchen->saveAll($requestData)):
+                $this->Session->setFlash('Priority is successfully updated!');
+            else:
+                $this->Session->setFlash('Priority could not be updated!','session_error');
+            endif;
+            $this->redirect(array('action'=>'index'));
+        endif;
     }
 
     /**

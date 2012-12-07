@@ -10,6 +10,7 @@ Class VisitorsController extends AppController{
     private $__get_info;
     private $__pagination;
     private $__make_order;
+    private $__send_email;
 
     public function beforeFilter(){
         parent::beforeFilter();
@@ -149,24 +150,43 @@ Class VisitorsController extends AppController{
             }
             $today = date("Y-m-d H:i:s"); 
             $this->Order->create();
-            $this->Order->save(array('customer_id'=>$customer_id,'date'=>$today));
-            foreach ($cart as $key => $item):
-                $this->OrderItem->create();
-                $item['OrderItem']['order_id'] = $this->Order->id;
-                $this->OrderItem->save($item['OrderItem']);
+            if($this->Order->save(array('customer_id'=>$customer_id,'date'=>$today))):
+                foreach ($cart as $key => $item):
+                    $this->OrderItem->create();
+                    $item['OrderItem']['order_id'] = $this->Order->id;
+                    $this->OrderItem->save($item['OrderItem']);
 
-                $order_item_id = $this->OrderItem->id;
-                $count = 0;
-                $temp_array = array();
-                foreach ($item['RangeValue'] as $rv_array):
-                    $temp_array[$count]['range_value_id'] = $rv_array['id'];
-                    $temp_array[$count]['order_item_id'] = $order_item_id;
-                    $count += 1;
+                    $order_item_id = $this->OrderItem->id;
+                    $count = 0;
+                    $temp_array = array();
+                    foreach ($item['RangeValue'] as $rv_array):
+                        $temp_array[$count]['range_value_id'] = $rv_array['id'];
+                        $temp_array[$count]['order_item_id'] = $order_item_id;
+                        $count += 1;
+                    endforeach;
+                    $this->OrderItemsRangeValue->create();
+                    $this->OrderItemsRangeValue->saveAll($temp_array);
                 endforeach;
-                $this->OrderItemsRangeValue->create();
-                $this->OrderItemsRangeValue->saveAll($temp_array);
-            endforeach;
-            $this->Session->setFlash('Your request have been submitted!');
+
+                //SEND EMAIL
+                $email = new CakeEmail();
+                $email->helpers(array('Html', 'Custom', 'Text'));
+                $email->config('noreply');
+                $email->subject('Engineered Cabinets: Order Autoresponse');
+                $email->emailFormat('text');
+                $cust_email = $this->Customer->find('first',array('conditions'=>array('Customer.id'=>$customer_id),'fields'=>'email'));
+                if(isset($cust_email['Customer']['email'])):
+                    $cust_email = $cust_email['Customer']['email'];
+                    $order_num = 'ORD'.str_pad(h($this->Order->id),7,"0",STR_PAD_LEFT);
+                    $email->to($cust_email)->send('Dear Valued Customer, your request have been send.Please use this number when you contact us if you have any other enquiries :'.$order_num);
+                    $email->to('liam@engcabs.com.au')->send('New Quote Request received :'.$order_num);
+                endif;
+
+                $this->Session->delete('Order');
+                $this->Session->setFlash('Your request have been submitted!');
+                //REDIRECTION
+                $this->redirect(array('action'=>'index'));
+            endif;
         else:
             $this->Session->setFlash('Please add products into list before requesting quote');
         endif;
@@ -206,6 +226,7 @@ Class VisitorsController extends AppController{
             $requestData = $this->request->data;
             $this->Enquiry->create();
             if($this->Enquiry->save($requestData)){
+                $this->__send_email($requestData);
                 $this->Session->setFlash('Your enquiry has been submitted. Please allow 2 - 5 working days for a response. Thank you.');
                 $this->redirect(array('action'=>'contact_us'));
             } else {
@@ -213,6 +234,20 @@ Class VisitorsController extends AppController{
             }
         }
         
+    }
+
+    private function __send_email($requestData = null){
+        $email = new CakeEmail();
+        $email->helpers(array('Html', 'Custom', 'Text'));
+        $email->config('noreply');
+        if(isset($requestData['Enquiry']['email'])){
+            $email->subject('Engineered Cabinets : Enquiry Autoresponse');
+            $email->emailFormat('text');
+            $email->to($requestData['Enquiry']['email'])->send('Dear Customer, this email is to verify that your enquiry have been submitted. Thank you very much.');
+        }
+        $email_liam = new CakeEmail();
+        $email->helpers(array('Html', 'Custom', 'Text'));
+        $email->config('noreply');
     }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -249,9 +284,10 @@ Class VisitorsController extends AppController{
         // type is either KITCHENS or PRODUCTS
         $this->paginate = array(
                 'conditions'=>array($type.'.id'=>$ids),
+                'order'=>('COALESCE('.$type.'.priority,999999999) ASC'),
                 'limit'=>4,
                 'page' => $page,
-                'recursive'=>2
+                'recursive'=>2,
             );
         $info = $this->paginate($type);
         $criterias = $this->Criteria->find('list');

@@ -24,6 +24,30 @@ class Dimension extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'max' => array(
+			'numeric' => array(
+				'rule' => 'numeric',
+				'allowEmpty' => true,
+			)
+		),
+		'min' => array(
+			'numeric' => array(
+				'rule' => 'numeric',
+				'allowEmpty' => true,
+			)
+		),
+		'increment' => array(
+			'numeric' => array(
+				'rule' => 'numeric',
+				'allowEmpty' => true,
+			)
+		),
+		'default' => array(
+			'numeric' => array(
+				'rule' => 'numeric',
+				'allowEmpty' => false,
+			)
+		),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
