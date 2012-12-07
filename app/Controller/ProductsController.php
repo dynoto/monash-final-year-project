@@ -327,8 +327,6 @@ class ProductsController extends AppController {
             $products  = $this->Product->find('list');
             $images = $this->Image->find('list',array('fields'=>array('product_id','name')));
             $this->set(compact('products','selected','criterias','images'));
-            pr($criterias);
-            pr($selected);
         
         
     }

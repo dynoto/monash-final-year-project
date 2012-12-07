@@ -1,5 +1,19 @@
 $(document).ready(function(){
-
+	$('#username').tooltip({
+		'trigger':'hover',
+		'title':'Alphanumeric, Dashes(-), Period(.) and Underscore(_) only',
+		'placement':'right'
+	});
+	$('#name').tooltip({
+		'trigger':'hover',
+		'title':'Alphanumeric, Spaces, and Period(.) only',
+		'placement':'right'
+	});
+	$('#phone').tooltip({
+		'trigger':'hover',
+		'title':'Digits, Spaces, Dashes(-), and Curly Brackets only ()',
+		'placement':'right'
+	});
 })
 
 function validate_register(){
@@ -21,34 +35,7 @@ function validate_register(){
 		go_ahead = false;
 		$('#password').addClass('input_required');
 		$('#confirm_password').addClass('input_required');
-	}
-	if(!(reg_name(full_name))){
-		go_ahead = false;
-		$('#name').addClass('input_required');
-		console.log('name error');
-	}
-	if((phone != '') && (email != '')){
-		if(!(reg_phone(phone))){
-			go_ahead = false;
-			$('#phone').addClass('input_required');
-			console.log('phone error - both');
-		}else if(!(reg_email(email))){
-			go_ahead = false;
-			$('#email').addClass('input_required');
-			console.log('email error - both');
-		}
-	}else if(phone != ''){
-		if(!(reg_phone(phone))){
-			go_ahead = false;
-			$('#phone').addClass('input_required');
-			console.log('phone error');
-		}
-	}else if(email != ''){
-		if(!(reg_email(email))){
-			go_ahead = false;;
-			$('#email').addClass('input_required');
-			console.log('email error');
-		}
+		alert('Passwords Do not Match');
 	}
 
 	if(go_ahead){

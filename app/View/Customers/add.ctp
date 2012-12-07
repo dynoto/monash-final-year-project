@@ -28,9 +28,9 @@ $session
 		echo $this->Form->input('User.password',array('required'=>true,'id'=>'password'));
 		echo $this->Form->input('',array('label'=>'Confirm Password','required'=>true,'id'=>'confirm_password','type'=>'password'));
 		echo $this->Form->input('name',array('label'=>'Full Name','required'=>true,'id'=>'name'));
-		echo $this->Form->input('email',array('id'=>'email'));
-		echo $this->Form->input('address',array('id'=>'address','required'=>true));
+		echo $this->Form->input('email',array('id'=>'email','required'=>true));
 		echo $this->Form->input('phone',array('id'=>'phone'));
+		echo $this->Form->input('address',array('id'=>'address','required'=>true));
 	?>
 <?php echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); ?>
 </div>

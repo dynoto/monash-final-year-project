@@ -36,5 +36,21 @@
             </div>
         </div>
 </div>
-<?php echo $this->Session->flash(); ?>
-<?php echo $this->fetch('content'); ?>
+<?php 
+echo $this->Session->flash();
+echo $this->fetch('content'); 
+?>
+
+<?php $this->start('etc_script') ;
+echo $this->Html->script('datatables/jquery.dataTables.min');
+?>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('table.datatables').dataTable({
+        'bSort':false
+    });
+    console.log('test');
+});
+
+</script>
+<?php $this->end() ?>

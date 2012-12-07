@@ -19,13 +19,16 @@ echo $this->element('override', array("content_override" => $content_override));
         </div>
         <div class="row-fluid">
             <?php echo $this->Form->create('Kitchen'); ?>
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered datatables">
+                <thead>
                 <tr>
                     <!-- <th><?php echo $this->Paginator->sort('id'); ?></th> -->
                     <th><?php echo $this->Paginator->sort('name'); ?></th>
                     <th><?php echo $this->Paginator->sort('priority'); ?></th>
                     <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
+                </thead>
+                <tbody>
                 <?php foreach ($kitchens as $kitchen): ?>
                     <tr>
                         <!-- <td><?php echo h($kitchen['Kitchen']['id']); ?>&nbsp;</td> -->
@@ -47,11 +50,12 @@ echo $this->element('override', array("content_override" => $content_override));
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                </tbody>
             </table>
             <div class="pull-right">
                 <?php 
-                echo $this->Form->button('Edit Priority',array('class'=>'ib btn btn-large btn-edit-priority','type'=>'button'));
                 echo $this->Form->submit('Update Priority',array('class'=>'ib btn btn-submit-priority invisible btn-large btn-primary','div'=>false));
+                echo $this->Form->button('Edit Priority',array('class'=>'ib btn btn-large btn-edit-priority','type'=>'button'));
                 ?>
             </div>
             <?php echo $this->Form->end(); ?>

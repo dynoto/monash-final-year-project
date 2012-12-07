@@ -82,11 +82,10 @@ class CustomersController extends AppController {
 			$request_data = $this->request->data;
 			$request_data['User']['group_id'] = 2; // 2 = CUSTOMERS GROUP
 			$request_data['User']['approved'] = 0; // 0 = NOT APPROVED BY DEFAULT
-			if($this->User->save($request_data)){
+			if($this->User->save($request_data)):
 				$request_data['Customer']['user_id'] = $this->User->id;
 				$this->Customer->create();
-				if ($this->Customer->save($request_data)) {
-
+				if ($this->Customer->save($request_data)):
 					$aro = new Aro();
 					$user = array(
 						'alias'=>$request_data['User']['name'],
@@ -98,19 +97,22 @@ class CustomersController extends AppController {
 					$aro->save($user);
 
 					$session_data = $this->Session->read('Auth.User.Group.id');
-					if(isset($session_data)){
-						if(isset($session_data) && $session_data == 1){
+					if(isset($session_data)):
+						if(isset($session_data) && $session_data == 1):
 							$this->Session->setFlash('Customer account has been successfully created');
 							$this->redirect(array('action'=>'index'));
-						}
-					}else{
+						endif;
+					else:
 						$this->Session->setFlash(__('Your account has been successfully created !'));
 						$this->redirect(array('controller'=>'visitors'));
-					}
-			} else {
+					endif;
+				else:
+					$this->User->delete($this->User->id);
+					$this->Session->setFlash(__("Your account couldn't be created, please try again."));
+				endif;
+			else:
 				$this->Session->setFlash(__("Your account couldn't be created, please try again."));
-			}
-		}
+			endif;
 		}
 		$customerTypes = $this->Customer->CustomerType->find('list');
 		$this->set(compact('customerTypes'));

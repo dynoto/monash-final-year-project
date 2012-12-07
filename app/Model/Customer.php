@@ -39,17 +39,18 @@ class Customer extends AppModel {
 		'name' => array(
 			'rule' => '/^[\w\s\.]+$/',
 			'message'=>'Alphanumeric, Period(.) and Spaces only',
+			'allowEmpty'=>false
 		),
 		'email' => array(
 			'rule' => array('email',true),
 			'message' => 'Please input a valid email',
-			'allowEmpty' => true
+			'allowEmpty' => false
 		),
 		'phone' => array(
 			'regex' => array(
-				'rule' => '/^[\d\s\-\(\)]+$/',
-				'message' => 'Numbers, Spaces, Dashes(-) and Curly Brackets only',
-				'allowEmpty' => false,
+				'rule' => '/^[\d\s\-\(\)\+]+$/',
+				'message' => 'Numbers, Spaces, Dashes(-), Plus Sign(+) and Curly Brackets only',
+				'allowEmpty' => true,
  			)
 		),
 		// 'address' => array(

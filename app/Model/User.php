@@ -20,8 +20,8 @@ class User extends AppModel {
 	public $validate = array(
 		'name' => array(
 			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Please enter your username',
+				'rule' => '/^[\w\.\-\_]+$/',
+				'message' => 'Alphanumeric, Period(.), Dash(-) and Underscore(_) only',
 				'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule

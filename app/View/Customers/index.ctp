@@ -29,7 +29,8 @@ echo $this->element('override', array("content_override" => $content_override));
 <div class="span9">
 	<h4 class="ib">Customers</h4>
 	<?php echo $this->Html->link('New Customer', array('action' => 'add'),array('class'=>'pull-right btn')); ?>
-	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
+	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered datatables">
+		<thead>
 	<tr>
 			<!-- <th><?php echo $this->Paginator->sort('id'); ?></th> -->
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -41,6 +42,8 @@ echo $this->element('override', array("content_override" => $content_override));
 			<!-- <th><?php echo $this->Paginator->sort('discount'); ?></th> -->
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
+	</thead>
+	<tbody>
 	<?php
 	foreach ($customers as $customer): ?>
 	<tr>
@@ -67,8 +70,9 @@ echo $this->element('override', array("content_override" => $content_override));
 		</td>
 	</tr>
 <?php endforeach; ?>
+</tbody>
 	</table>
-	<p>
+	<!-- <p>
 	<?php
 	echo $this->Paginator->counter(array(
 	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
@@ -81,6 +85,6 @@ echo $this->element('override', array("content_override" => $content_override));
 		echo $this->Paginator->numbers(array('separator' => ''));
 		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
-	</div>
+	</div> -->
 </div>
 </div>

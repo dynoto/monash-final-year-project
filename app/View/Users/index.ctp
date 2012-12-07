@@ -21,7 +21,8 @@ echo $this->element('override',array('content_override'=>$override))
 			<?php echo $this->Html->link('Add Admin',array('controller'=>'users','action'=>'add'),array('class'=>'pull-right btn'));?>
 		</div>
 		<div class="row-fluid">
-			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
+			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered datatables">
+				<thead>
 				<tr>
 					<th><?php echo $this->Paginator->sort('id'); ?></th>
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -31,6 +32,8 @@ echo $this->element('override',array('content_override'=>$override))
 					<th><?php echo $this->Paginator->sort('modified'); ?></th>
 					<th class="actions"><?php echo __('Actions'); ?></th>
 				</tr>
+			</thead>
+			<tbody>
 				<?php
 				foreach ($users as $user): ?>
 				<tr>
@@ -47,9 +50,10 @@ echo $this->element('override',array('content_override'=>$override))
 					</td>
 				</tr>
 			<?php endforeach; ?>
+		</tbody>
 		</table>
 	</div>
-	<div>
+<!-- 	<div>
 		<p>
 			<?php
 			echo $this->Paginator->counter(array(
@@ -64,6 +68,6 @@ echo $this->element('override',array('content_override'=>$override))
 					echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
 					?>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>

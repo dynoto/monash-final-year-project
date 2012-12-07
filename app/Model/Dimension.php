@@ -27,24 +27,28 @@ class Dimension extends AppModel {
 		'max' => array(
 			'numeric' => array(
 				'rule' => 'numeric',
+				'message' => 'numbers only, no negative(-) numbers',
 				'allowEmpty' => true,
 			)
 		),
 		'min' => array(
 			'numeric' => array(
 				'rule' => 'numeric',
+				'message' => 'numbers only, no negative(-) numbers',
 				'allowEmpty' => true,
 			)
 		),
 		'increment' => array(
 			'numeric' => array(
 				'rule' => 'numeric',
+				'message' => 'numbers only, no negative(-) numbers',
 				'allowEmpty' => true,
 			)
 		),
 		'default' => array(
 			'numeric' => array(
 				'rule' => 'numeric',
+				'message' => 'numbers only, no negative(-) numbers',
 				'allowEmpty' => false,
 			)
 		),

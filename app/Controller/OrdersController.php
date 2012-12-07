@@ -39,6 +39,9 @@ class OrdersController extends AppController {
 
 	public function index() {
 		$this->Order->recursive = 0;
+		$this->paginate = array(
+			'order' => array('Order.id'=>'desc')
+		);
 		$this->set('orders', $this->paginate());
 	}
 
