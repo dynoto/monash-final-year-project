@@ -24,7 +24,6 @@ echo $this->element('override',array('content_override'=>$override));
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
 					<th><?php echo $this->Paginator->sort('email'); ?></th>
 					<th><?php echo $this->Paginator->sort('telephone'); ?></th>
-					<th><?php echo $this->Paginator->sort('message'); ?></th>
 					<th class="actions"><?php echo __('Actions'); ?></th>
 			</tr>
 			</thead>
@@ -35,7 +34,6 @@ echo $this->element('override',array('content_override'=>$override));
 				<td><?php echo h($enquiry['Enquiry']['name']); ?>&nbsp;</td>
 				<td><?php echo h($enquiry['Enquiry']['email']); ?>&nbsp;</td>
 				<td><?php echo h($enquiry['Enquiry']['telephone']); ?>&nbsp;</td>
-				<td><?php echo h($enquiry['Enquiry']['message']); ?>&nbsp;</td>
 				<td class="actions">
 					<?php echo $this->Html->link(__('View'), array('controller'=>'enquiries','action' => 'view', $enquiry['Enquiry']['id'])); ?>
 					<?php echo $this->Form->postLink(__('Delete'), array('controller'=>'enquiries','action' => 'delete', $enquiry['Enquiry']['id']), null, __('Are you sure you want to delete # %s?', $enquiry['Enquiry']['id'])); ?>
