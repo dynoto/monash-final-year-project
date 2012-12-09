@@ -102,12 +102,12 @@ class ProductsController extends AppController {
 
 				// SAVING PRODUCT VARIABLE DIMENSIONS
 				$dimensionProducts = array();
-				foreach ($requestdata['Dimension'] as $dimension_type_id => $dimension_array) {
+				foreach ($requestdata['Dimension'] as $dimension_type_id => $dimension_array):
 					$this->Dimension->create();
 					$this->Dimension->save($dimension_array);
 					$dimension_id = $this->Dimension->id;
 					$dimensionsProduct[] = array('product_id'=>$product_id,'dimension_id'=>$dimension_id);
-				}
+				endforeach;
 				$this->DimensionsProduct->create();
 				$this->DimensionsProduct->saveAll($dimensionsProduct);
 
@@ -262,6 +262,7 @@ class ProductsController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		$this->autoRender = false;
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -278,10 +279,11 @@ class ProductsController extends AppController {
 		}
 		if ($this->Product->delete()) {
 			$this->Session->setFlash(__('Product deleted'));
-			$this->redirect(array('action' => 'index'));
+			return true;
+			//$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Product was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		//$this->redirect(array('action' => 'index'));
 	}
 
 	public function fill_missing_criteria(){

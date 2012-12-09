@@ -20,6 +20,7 @@
 .flash_style {
     max-width: 800px;
     margin: 0 auto 1%;
+    font-weight: bold;
 }
 body, html {
     font-size: 90%;

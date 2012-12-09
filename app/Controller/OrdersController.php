@@ -117,7 +117,7 @@ class OrdersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null,$customer_id = nul) {
+	public function delete($id = null,$customer_id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}

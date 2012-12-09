@@ -81,7 +81,12 @@ class CustomersController extends AppController {
 			$this->User->create();
 			$request_data = $this->request->data;
 			$request_data['User']['group_id'] = 2; // 2 = CUSTOMERS GROUP
-			$request_data['User']['approved'] = 0; // 0 = NOT APPROVED BY DEFAULT
+			$group_id = $this->Session->read('Auth.User.Group.id');
+			if($group_id == 1):
+				$request_data['User']['approved'] = 1;
+			else:
+				$request_data['User']['approved'] = 0; // 0 = NOT APPROVED BY DEFAULT
+			endif;
 			if($this->User->save($request_data)):
 				$request_data['Customer']['user_id'] = $this->User->id;
 				$this->Customer->create();

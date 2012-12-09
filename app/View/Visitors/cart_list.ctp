@@ -20,13 +20,29 @@
         <tr>
           <?php $order_item = $item['OrderItem']; ?>
           <td><?php echo $order_item['product_name']; ?></td>
-          <td><?php echo 'Height : '.$order_item['height']; ?><br>
-          <?php echo 'Width : '.$order_item['width']; ?><br>
-          <?php echo 'Depth : '.$order_item['depth']; ?></td>
+          <td><?php 
+          if(isset($order_item['height'])):
+              echo 'Height : '.$order_item['height']; 
+          endif;
+          ?><br>
+          <?php 
+          if(isset($order_item['width'])):
+            echo 'Width : '.$order_item['width']; 
+          endif;
+          ?><br>
+          <?php 
+          if(isset($order_item['depth'])):
+            echo 'Depth : '.$order_item['depth']; 
+          endif;
+          ?></td>
           <td>
-            <?php foreach ($item['RangeValue'] as $rv):
-              echo $rv['type'].' : '.$rv['name'].'<br>';
-            endforeach; ?>
+            <?php 
+            if(isset($item['RangeValue'])):
+              foreach ($item['RangeValue'] as $rv):
+                echo $rv['type'].' : '.$rv['name'].'<br>';
+              endforeach; 
+            endif;
+            ?>
           </td>
           <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'text','class'=>'quantity_input','value'=>$order_item['quantity'],'label'=>false)); ?></td>
           <td><?php echo $this->Form->input('OrderItem.delete.',array('type'=>'checkbox','value'=>'cart_'.$item_id,'label'=>false,'hiddenField'=>false)); ?></td>

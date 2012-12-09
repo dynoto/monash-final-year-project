@@ -7,11 +7,12 @@ $(document).ready(function(){
 			transition:'fade',
 			showInfo:false,
 			height:450,
-			imageCrop:'height'	
+			autoplay:false,
+			imageCrop:'height',
+			transitionSpeed: 1500
 		});
 		}
 	});
-
 
 	// $('div.crsl').each(function(i){
 	// 	var div_id = $(this).attr('id');

@@ -21,6 +21,7 @@ class KitchensController extends AppController {
         $this->loadModel('CriteriaValuesKitchen');
         $this->loadModel('Image');
         $this->loadModel('CriteriaValue');
+        $this->loadModel('HomepageImage');
     }
 
     public function index() {
@@ -148,6 +149,7 @@ class KitchensController extends AppController {
      * @return void
      */
     public function delete($id = null) {
+        $this->autoRender = false;
         if (!$this->request->is('post')) {
             throw new MethodNotAllowedException();
         }
@@ -156,15 +158,20 @@ class KitchensController extends AppController {
             throw new NotFoundException(__('Invalid kitchen'));
         } else {
             $this->Testimonial->deleteAll(array('Testimonial.kitchen_id'=>$id));
+            $image_ids = $this->Image->find('list',array('conditions'=>array('Image.kitchen_id'=>$id)));
+            foreach ($image_ids as $im_id => $value):
+                $this->HomepageImage->deleteAll(array('HomepageImage.image_id'=>$im_id));
+            endforeach;
             $this->Image->deleteAll(array('Image.kitchen_id'=>$id));
             $this->CriteriaValuesKitchen->deleteAll(array('CriteriaValuesKitchen.kitchen_id'=>$id));
         }
         if ($this->Kitchen->delete()) {
             $this->Session->setFlash(__('Kitchen deleted'));
-            $this->redirect(array('action' => 'index'));
+            return true;
+            //$this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Kitchen was not deleted'));
-            $this->redirect(array('action' => 'index'));
+            //$this->redirect(array('action' => 'index'));
         }
     }
 

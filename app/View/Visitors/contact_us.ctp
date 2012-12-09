@@ -10,7 +10,7 @@ $gps = "-38.116322,145.143196";
     <div class="span10 offset1">
         <div>
         <div class="no-margin">
-            <h3>Contact Us Directly</h3>
+            <h3>Contact Us</h3>
         </div>
         <div class="span6 no-margin"> 
             <ul class="well no-margin-horizontal">

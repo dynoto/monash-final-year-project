@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/admins');
-$content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common', 'js' => 'admins/gallery_product_index');
+$content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common', 'js' => array('admins/gallery_product_index','admins/post_link'));
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
@@ -58,9 +58,10 @@ echo $this->element('override', array("content_override" => $content_override));
 						?>
 					</td> -->
 					<td class="actions">
+						<?php $postLink = 'postLink("products/delete/'.$product['Product']['id'].'")'; ?>
 						<?php echo $this->Html->link(__('View'), array('action' => 'view', $product['Product']['id'])); ?>
 						<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $product['Product']['id'])); ?>
-						<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $product['Product']['id']), null, __('Are you sure you want to delete # %s?', $product['Product']['id'])); ?>
+						<?php echo $this->Html->link(__('Delete'), '#', array('onclick'=>$postLink) ); ?>
 					</td>
 				</tr>
 			<?php endforeach; ?>

@@ -49,7 +49,7 @@ class Dimension extends AppModel {
 			'numeric' => array(
 				'rule' => 'numeric',
 				'message' => 'numbers only, no negative(-) numbers',
-				'allowEmpty' => false,
+				'allowEmpty' => true,
 			)
 		),
 	);

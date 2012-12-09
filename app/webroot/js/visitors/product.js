@@ -3,12 +3,12 @@ $(document).ready(function(){
 		function(){
 			var max = $(this).attr('dimension-max');
 			var min = $(this).attr('dimension-min');
-			var incr = $(this).attr('dimension-increment');
+			// var incr = $(this).attr('dimension-increment');
 			var def = $(this).attr('dimension-default');
 			var type = $(this).attr('dimension-type');
 			var options = {
 				'trigger':'hover',
-				'content': 'Maximum: '+max+'<br>Minimum: '+min+'<br>Increment: '+incr,
+				'content': 'Maximum: '+max+'<br>Minimum: '+min,//+'<br>Increment: '+incr,
 				'title': type+(' (Numbers Only)')
 			};
 			$(this).popover(options);
@@ -36,6 +36,12 @@ $(document).ready(function(){
 		var selectValue = $(this).val();
 		$('select.RangeValueSelect').not($(this)).val(selectValue);
 	});
+
+	$('tr.dimension-row').each(function(){
+		if($(this).has('label').length == 0){
+			$(this).hide();
+		}
+	})
 });
 
 function add_to_cart(p_id){
@@ -73,6 +79,7 @@ function add_to_cart(p_id){
 	if(submit == true){
 		$.post('cart_add',$('form#product_'+p_id).serialize(),function(data){
 			console.log(data);
+			
 		});
 		$('div.add_cart_success').removeClass('hide_div');
 	}else{

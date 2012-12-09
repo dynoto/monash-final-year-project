@@ -14,7 +14,7 @@ Class VisitorsController extends AppController{
 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us'));
+        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us','products'));
         $models = array('Criteria',
                         'CriteriaValue',
                         'Customer',
@@ -93,10 +93,12 @@ Class VisitorsController extends AppController{
         $this->autoRender = false;
         if($this->request->is('post')){
             $rqData = $this->request->data;
-            foreach ($rqData['RangeValue'] as $key => $value):
-                $rv_name = $this->RangeValue->read('name',$value['id']);
-                $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
-            endforeach;
+            if(isset($rqData['RangeValue'])):
+                foreach ($rqData['RangeValue'] as $key => $value):
+                    $rv_name = $this->RangeValue->read('name',$value['id']);
+                    $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
+                endforeach;
+            endif;
             $cart_count = rand(1000,999999);
             $this->Session->write('Order.'.$cart_count,$rqData);
             return true;
@@ -108,13 +110,15 @@ Class VisitorsController extends AppController{
     public function cart_list(){
         if($this->request->is('post')):
             $rqData = $this->request->data;
-            if($rqData['submit'] == 'Update Cart'){
+            if(preg_match('/Update/', $rqData['submit'])){
                 $cart = $this->Session->read('Order');
-                foreach ($rqData['OrderItem']['delete'] as $value) {
-                    $value = explode('_', $value);
-                    $value = $value[1];
-                    unset($cart[$value]);
-                }
+                if(isset($rqData['OrderItem']['delete'])):
+                    foreach ($rqData['OrderItem']['delete'] as $value) {
+                        $value = explode('_', $value);
+                        $value = $value[1];
+                        unset($cart[$value]);
+                    }
+                endif;
                 foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
                     if(isset($cart[$cart_id])):
                         if($quantity > 0):
@@ -159,11 +163,13 @@ Class VisitorsController extends AppController{
                     $order_item_id = $this->OrderItem->id;
                     $count = 0;
                     $temp_array = array();
-                    foreach ($item['RangeValue'] as $rv_array):
-                        $temp_array[$count]['range_value_id'] = $rv_array['id'];
-                        $temp_array[$count]['order_item_id'] = $order_item_id;
-                        $count += 1;
-                    endforeach;
+                    if(isset($item['RangeValue'])):
+                        foreach ($item['RangeValue'] as $rv_array):
+                            $temp_array[$count]['range_value_id'] = $rv_array['id'];
+                            $temp_array[$count]['order_item_id'] = $order_item_id;
+                            $count += 1;
+                        endforeach;
+                    endif;
                     $this->OrderItemsRangeValue->create();
                     $this->OrderItemsRangeValue->saveAll($temp_array);
                 endforeach;
@@ -240,7 +246,8 @@ Class VisitorsController extends AppController{
         $email = new CakeEmail();
         $email->helpers(array('Html', 'Custom', 'Text'));
         $email->config('noreply');
-        if(isset($requestData['Enquiry']['email'])){
+        $email_address = $requestData['Enquiry']['email'];
+        if(isset($email_address) && $email_address != null){
             $email->subject('Engineered Cabinets : Enquiry Autoresponse');
             $email->emailFormat('text');
             $email->to($requestData['Enquiry']['email'])->send('Dear Customer, this email is to verify that your enquiry have been submitted. Thank you very much.');
