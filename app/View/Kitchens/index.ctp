@@ -44,7 +44,8 @@ echo $this->element('override', array("content_override" => $content_override));
                             </div>
                         </td>
                         <td class="actions">
-                            <?php $postLink = 'postLink("kitchens/delete/'.$kitchen['Kitchen']['id'].'")'; ?>
+                            <?php $deleteURL = $this->Html->url(array('controller'=>'kitchens','action'=>'delete',$kitchen['Kitchen']['id'])); ?>
+                            <?php $postLink = 'postLink("'.$deleteURL.'")'; ?>
                             <?php echo $this->Html->link(__('View'), array('action' => 'view', $kitchen['Kitchen']['id'])); ?>
                             <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $kitchen['Kitchen']['id'])); ?>
                             <?php echo $this->Html->link(__('Delete'), '#', array('onclick'=>$postLink) ); ?>

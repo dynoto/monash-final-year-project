@@ -64,7 +64,7 @@ class KitchensController extends AppController {
         if ($this->request->is('post')) {
             $request_data = $this->request->data;
             $this->Kitchen->create();
-            if ($this->Kitchen->save($this->request->data)) {
+            if ($this->Kitchen->save($this->request->data)):
                 $this->Session->setFlash(__('The kitchen has been saved'));
                 $kitchen_id = $this->Kitchen->id;
                 $request_data['Testimonial']['kitchen_id'] = $kitchen_id;
@@ -74,20 +74,21 @@ class KitchensController extends AppController {
                 $this->Testimonial->save($request_data);
                 
                 //SAVE RELATED KITCHEN CRITERIA VALUES
-                foreach ($request_data['CriteriaValuesKitchen']['CriteriaValue_id'] as $key_a => $val_a) {
-                    $this->CriteriaValuesKitchen->create();
-                    $temp_array['CriteriaValuesKitchen'] = array('criteria_value_id' => $val_a, 'kitchen_id' => $kitchen_id);
-                    $this->CriteriaValuesKitchen->save($temp_array);
-                }
+                if(isset($request_data['CriteriaValuesKitchen'])):
+                    foreach ($request_data['CriteriaValuesKitchen']['criteria_value_id'] as $val_a):
+                        $this->CriteriaValuesKitchen->create();
+                        $temp_array['CriteriaValuesKitchen'] = array('criteria_value_id' => $val_a, 'kitchen_id' => $kitchen_id);
+                        $this->CriteriaValuesKitchen->save($temp_array);
+                    endforeach;
+                endif;
                 
-                $this->redirect(array('controller'=>'images','action' => 'add', 'Kitchen',$kitchen_id));
-            } else {
+                $this->redirect(array('controller'=>'images','action' => 'add', 'kitchen',$kitchen_id));
+            else:
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
-            }
+            endif;
         }
-        $this->set('criteria_data', $this->Criteria->find('all',array('conditions'=>array('kitchen'=>1))));
-        $criteriaValues = $this->Kitchen->CriteriaValue->find('list');
-        $this->set(compact('criteriaValues'));
+        $criterias = $this->Criteria->findAllByKitchen('1');
+        $this->set(compact('criterias','images'));
     }
 
     /**

@@ -16,7 +16,8 @@ class UsersController extends AppController {
 	public $helpers = array('Html','Form','Session');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('login','logout','add','initDB');
+		// $this->Auth->allow('login','logout','add','initDB');
+		// $this->Auth->allow();
 		$this->Auth->authenticate = array(
 			"Form"=>array(
 				'fields'=>array("username" =>"name"),
@@ -178,7 +179,13 @@ class UsersController extends AppController {
 	//CREATE ADMINS GROUP FROM WEBSITE
 	//CREATE USERS GROUP FROM WEBSITE 
 	
-	public function initDB(){
+	public function initdb(){
+		// $aro = $this->Acl->Aro;
+		// $aro->create();
+		// $aro->save(array('alias'=>'Administrators'));
+		// $aro->create();
+		// $aro->save(array('alias'=>'Customers'));
+
 		$group = $this->User->Group;
 		$group->id = 1; //ADMINISITRATORS GROUP ID
 		$this->Acl->allow($group,'controllers');
