@@ -19,7 +19,7 @@ class Kitchen extends AppModel {
  */
 	public $validate = array(
 		'name' => array('rule'=>'/^[\w\s\(\)]+$/','message'=>'Alphanumeric, Spaces and Parentheses only'),
-		'priority' => array('rule'=>'numeric','message'=>'Numbers only','allowEmpty'=>true)
+		'priority' => array('rule'=>'decimal','message'=>'Decimals only','allowEmpty'=>true)
 	);
 
 	public $hasMany = array(

@@ -1,6 +1,6 @@
 <?php
 echo $this->extend('/Common/admins');
-$override = array('title' => 'Edit Product', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min','admins/kitchen_product_edit'));
+$override = array('title' => 'Edit Product', 'css' => array('admins/common','admins/uploadify','admins/kitchen_product_view','admins/product_add'), 'js' => array('admins/jquery.uploadify-3.1.min','reg_valid','admins/kitchen_product_edit'));
 echo $this->element('override', array('content_override' => $override));
 $data = $this->request->data;
 ?>
@@ -116,6 +116,7 @@ $data = $this->request->data;
 
 			<!------------------------------INPUT DIMENSIONS---------------------------------------- -->
             <h4>Variable Dimension</h4>
+            <p class="alertmsg alert"></p>
             <table class="table table-striped table-bordered">
                 <tr>
                     <th>Type</th>
@@ -133,7 +134,7 @@ $data = $this->request->data;
                         ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input min','label'=>false)); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input max','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false,'disabled'=>'disabled')); ?></td>
                         <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input default','label'=>false)); ?></td>
                     </tr>
                 <?php } ?>

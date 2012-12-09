@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('p.alertmsg').hide();
 	$('a:not(.disableprompt)').click(function(){
 		console.log('test');
 		var r = confirm('Unsubmitted changes will be lost.\nAre you sure you wanted to do this? \npress YES to confirm or CANCEL to continue editing');
@@ -33,11 +34,12 @@ function show_hide_image(image_id){
 }
 
 function validate_fields(){
+	$('p.alertmsg').hide();
 	var submit = true;
 	$('input.dimension_input').removeClass('input_required');
 	$('input.dimension_input').each(function(){
 		this_val = $(this).val()
-		if(reg_int(this_val)==false && this_val!==''){
+		if(reg_int(this_val) == false && this_val!==''){
 			submit = false;
 			$(this).addClass('input_required');
 			console.log('characters detected');
@@ -51,47 +53,90 @@ function validate_fields(){
 		console.log('prod name error');
 	}
 
+	var pass_null = true;
+	var def_null = false;
+	var non_numeric = false;
+	var alertmsg = '';
+	var count = 1;
 	$('tr.dimension_row').each(function(){
+		alertmsg = alertmsg.concat('Line '+count+' ------- <br>');
 		var min = $(this).find('input.min');
-		var min_val = parseInt(min.val());
-		console.log(min_val);
+
 		var max = $(this).find('input.max');
-		var max_val = parseInt(max.val());
-		console.log(max_val);
-		var incr = $(this).find('input.increment');
-		var incr_val = parseInt(incr.val());
-		console.log(incr_val);
+
+		// var incr = $(this).find('input.increment');
+		// var incr_val = parseInt(incr.val());
+		
 		var def = $(this).find('input.default');
-		var def_val = def.val();
-		console.log(def_val);
-		if((min_val !== '') || (max_val !== '') || (incr_val !== '')){
-			console.log(def_val);
-			if(min_val > max_val){
-				min.addClass('input_required');
+
+		if(min.val()!='' && isNaN(min.val())){
+			min.addClass('input_required');
+			alertmsg = alertmsg.concat('Non Digit Detected in Dimension Input. <br> ');
+			submit = false;
+		}
+		if(max.val()!='' && isNaN(max.val())){
+			max.addClass('input_required');
+			alertmsg = alertmsg.concat('Non Digit Detected in Dimension Input');
+			submit = false;
+		}
+		if(def.val()!='' && isNaN(def.val())){
+			def.addClass('input_required');
+			alertmsg = alertmsg.concat('Non Digit Detected in Dimension Input <br> ');
+			submit = false;
+		}
+
+		if(def.val() == '' && min.val() == '' && max.val() == ''){
+			// ALL VALUES ARE BLANK
+			def_null = true;
+
+		}else if(def.val() == '' && (min.val() != '' || max.val() != '')){
+			//DEFAULT IS BLANK, BUT MIN or MAX IS PRESENT
+			submit = false;
+			min.addClass('input_required');
+			max.addClass('input_required');
+			alertmsg = alertmsg.concat('Remove Min and Max if Default is set to NULL <br> ');
+
+		}else if(def.val() != ''){
+			if(min.val() != '' && max.val() == ''){
+				alertmsg = alertmsg.concat('Maximum has to be filled <br> ');
 				max.addClass('input_required');
 				submit = false;
-				console.log('too small');
-			}
-			if((max_val-min_val) < incr_val){
+			}else if(min.val() == '' && max.val() != ''){
+				alertmsg = alertmsg.concat('Minimum has to be filled <br> ');
 				min.addClass('input_required');
-				max.addClass('input_required');
-				incr.addClass('input_required');
 				submit = false;
-				console.log('incr too big');
-			}
-			if(def_val <= min_val){
-				min.addClass('input_required');
-				def.addClass('input_required');
-				console.log('default value not matched');
-				submit = false;
-			}
-			if(def_val >= max_val){
-				max.addClass('input_required');
-				def.addClass('input_required');
-				console.log('default value not matched');
-				submit = false;
+			}else{
+				if(parseInt(min.val()) > parseInt(max.val())){
+					min.addClass('input_required');
+					max.addClass('input_required');
+					submit = false;
+					alertmsg = alertmsg.concat('Minimum is larger than Maximum <br> ');
+				}
+				if( (parseInt(min.val()) > parseInt(def.val()) ) || (parseInt(max.val()) < parseInt(def.val()))){
+					min.addClass('input_required');
+					max.addClass('input_required');
+					def.addClass('input_required');
+					submit = false;
+					alertmsg = alertmsg.concat('Default is either Larger than Maximum or Smaller than minimum <br> ');
+				}
+
 			}
 		}
+		count += 1;
 	});
+	if(def_null && pass_null){
+		def_null = confirm('There are empty default dimension fields, are you sure you want to skip them?');
+		if(def_null == false){
+			submit = false;
+		}
+	}else if(def_null){
+		alertmsg.concat('Default is empty but Minimum Maximum fields are inserted <br> ');
+		submit = false;
+	}
+	if(alertmsg != ''){
+		console.log(alertmsg);
+		$('p.alertmsg').html(alertmsg);
+		$('p.alertmsg').show();
+	}
 	return submit;
 }

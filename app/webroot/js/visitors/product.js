@@ -9,7 +9,8 @@ $(document).ready(function(){
 			var options = {
 				'trigger':'hover',
 				'content': 'Maximum: '+max+'<br>Minimum: '+min,//+'<br>Increment: '+incr,
-				'title': type+(' (Numbers Only)')
+				'title': type+(' (Numbers Only)'),
+				'placement':'top'
 			};
 			$(this).popover(options);
 			$(this).popover('show');
@@ -27,9 +28,10 @@ $(document).ready(function(){
 	var options = {
 		'trigger':'hover',
 		'content':'Characters only, No Symbols or Special Characters',
-		'title'	 :'Please input values'
+		'title'	 :'Please input values',
+		'placement':'top'
 	};
-	$('input.finish_type_select').popover(options);
+	//$('input.finish_type_select').popover(options);
 	$('input.quantity_input').popover(options);
 
 	$('select.RangeValueSelect').change(function(){
@@ -79,9 +81,23 @@ function add_to_cart(p_id){
 	if(submit == true){
 		$.post('cart_add',$('form#product_'+p_id).serialize(),function(data){
 			console.log(data);
+			$('div#product_'+p_id).find('input.dimension_input').val('');
+			$('div#product_'+p_id).find('input.quantity_input').val('');
+			var cart_button = $('div#product_'+p_id).find('button');
+			cart_button.tooltip({
+				title:"Add to Quote Success!",
+				trigger:'manual',
+				placement:'right'
+			});
+			cart_button.tooltip('show');
+			var timeout = setTimeout(function() {
+				cart_button.tooltip('hide');
+			}, 5000);
+
+
 			
 		});
-		$('div.add_cart_success').removeClass('hide_div');
+		//$('div.add_cart_success').removeClass('hide_div');
 	}else{
 		console.log('missing?');
 	}

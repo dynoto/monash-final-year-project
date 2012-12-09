@@ -19,32 +19,55 @@ echo $this->element('override', array("content_override" => $content_override));
 		</div>
 	</div>
 	<div class="span8">
-		<div class="orders view">
-		<h4><?php  echo __('Order'); ?></h4>
-		<dl>
-			<dt><?php echo __('Id'); ?></dt>
-				<dd>
-					<?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>
+		<div class="span12 row-fluid">
+			<div class="orders view span5">
+			<h4><?php  echo __('Order'); ?></h4>
+			<dl>
+				<dt><?php echo __('Id'); ?></dt>
+					<dd>
+						<?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>
+					</dd>
+<!-- 				<dt><?php echo __('By Customer'); ?></dt>
+					<dd>
+						<?php
+						if(isset($order['Customer']['name'])):
+							echo $this->Html->link($order['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customer']['id']));
+						else:
+							echo 'ADMINISTRATOR';
+						endif;
+						?>
+					</dd> -->
+				<dt><?php echo __('Date'); ?></dt>
+					<dd>
+						<?php echo h($this->Time->niceShort($order['Order']['date'])); ?>
+					</dd>
+			</dl>
+			</div>
+			<div class="span6">
+			<h4>Customer</h4>
+			<?php $customer = $order['Customer'] ?>
+			<dl>
+				<dt>Id</dt><dd><?php echo $customer['id']; ?></dd>
+				<dt>Name</dt>
+				<dd><?php
+						if(isset($order['Customer']['name'])):
+							echo $this->Html->link($order['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customer']['id']));
+						else:
+							echo 'ADMINISTRATOR';
+						endif;
+						?>
 				</dd>
-			<dt><?php echo __('By Customer'); ?></dt>
-				<dd>
-					<?php 
-					if(isset($order['Customer']['name'])):
-						echo $this->Html->link($order['Customer']['name'], array('controller' => 'customers', 'action' => 'view', $order['Customer']['id'])); 
-					else:
-						echo 'ADMINISTRATOR';
-					endif;
-					?>
-				</dd>
-			<dt><?php echo __('Date'); ?></dt>
-				<dd>
-					<?php echo h($this->Time->niceShort($order['Order']['date'])); ?>
-				</dd>
-		</dl>
+				<dt>Email</dt>
+				<dd><?php if(isset($customer['email'])){echo $customer['email'];} ?></dd>
+				<dt>Phone</dt><dd><?php if(isset($customer['phone'])){echo $customer['phone'];} ?></dd>
+				<dt>Address</dt><dd><?php if(isset($customer['phone'])){echo $customer['address'];} ?></dd>
+			</dl>
 		</div>
-
-		<div>
-			<h4>Order Items</h4>
+		<div class="row-fluid span12">
+			<div>
+			<h4 class="ib">Order Items</h4>
+			<button class="btn btn-primary btn-large pull-right ib" onClick="window.print()">Print</button>
+			</div>
 			<table class="table table-bordered table-striped">
 				<tr>
 					<td>Product Name</td>
