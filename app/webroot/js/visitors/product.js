@@ -27,7 +27,7 @@ $(document).ready(function(){
 
 	var options = {
 		'trigger':'hover',
-		'content':'Characters only, No Symbols or Special Characters',
+		'content':'Numbers only, No Symbols or Special Characters',
 		'title'	 :'Please input values',
 		'placement':'top'
 	};

@@ -10,7 +10,7 @@ echo $this->element('override', array("content_override" => $content_override));
             <h4>Add Criteria</h4>
             <?php 
             echo $this->Form->input('name',array('required'=>true));
-            echo $this->Form->input('for',array('label'=>'Appears in','options'=>array('kitchen'=>'Kitchen','product'=>'Product')));
+            echo $this->Form->input('for',array('label'=>'Appears in','options'=>array('kitchen'=>'Gallery','product'=>'Product')));
             ?>
         </fieldset>
         <div class="span3 no-margin-left">

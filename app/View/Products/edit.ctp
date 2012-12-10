@@ -115,7 +115,7 @@ $data = $this->request->data;
             <hr>
 
 			<!------------------------------INPUT DIMENSIONS---------------------------------------- -->
-            <h4>Variable Dimension</h4>
+            <h4>Dimension</h4>
             <p class="alertmsg alert"></p>
             <table class="table table-striped table-bordered">
                 <tr>
@@ -152,6 +152,7 @@ $data = $this->request->data;
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#ImageUploadImage').uploadify({
+        'buttontext'    : "Select Images ...",
 		'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
 		'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Product']['id'].'/product/');?>",
 	});

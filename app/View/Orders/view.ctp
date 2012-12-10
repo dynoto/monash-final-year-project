@@ -39,7 +39,7 @@ echo $this->element('override', array("content_override" => $content_override));
 					</dd> -->
 				<dt><?php echo __('Date'); ?></dt>
 					<dd>
-						<?php echo h($this->Time->niceShort($order['Order']['date'])); ?>
+						<?php echo h($this->Time->format('D, d-M-Y',$order['Order']['date'])); ?>
 					</dd>
 			</dl>
 			</div>

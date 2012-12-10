@@ -40,6 +40,7 @@ echo $this->element('override',array('content_override'=>$override));
 <script type="text/javascript">
 $(document).ready(function(){
         $('#ImageUploadImage').uploadify({
+            'buttontext'    : "Select Images ...",
             'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
             'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$item_id.'/'.$item_type.'/');?>",
         });

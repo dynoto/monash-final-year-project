@@ -76,7 +76,7 @@ function validate_fields(){
 		}
 		if(max.val()!='' && isNaN(max.val())){
 			max.addClass('input_required');
-			alertmsg = alertmsg.concat('Non Digit Detected in Dimension Input');
+			alertmsg = alertmsg.concat('Non Digit Detected in Dimension Input. <br> ');
 			submit = false;
 		}
 		if(def.val()!='' && isNaN(def.val())){

@@ -36,6 +36,17 @@ echo $this->element('override', array("content_override" => $content_override));
 				<?php echo h($enquiry['Enquiry']['telephone']); ?>
 				&nbsp;
 			</dd>
+			<dt><?php echo __('Receive Newsletter'); ?></dt>
+			<dd>
+				<?php 
+				if(h($enquiry['Enquiry']['newsletter']) == 1):
+					echo 'Yes';
+				else:
+					echo 'No';
+				endif;
+				?>
+				&nbsp;
+			</dd>
 			<dt><?php echo __('Message'); ?></dt>
 			<dd>
 				<?php echo h($enquiry['Enquiry']['message']); ?>

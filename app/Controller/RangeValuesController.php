@@ -69,7 +69,7 @@ class RangeValuesController extends AppController {
 			$range_type_id = $this->request->data['RangeValue']['range_type_id'];
 			if ($this->RangeValue->save($this->request->data)) {
 				$this->Session->setFlash(__('The range value has been saved'));
-				$this->redirect(array('controller'=>'rangetypes','action' => 'view',$range_type_id));
+				$this->redirect(array('controller'=>'RangeTypes','action' => 'view',$range_type_id));
 			} else {
 				$this->Session->setFlash(__('The range value could not be saved. Please, try again.'));
 			}
@@ -98,9 +98,9 @@ class RangeValuesController extends AppController {
 		}
 		if ($this->RangeValue->delete()) {
 			$this->Session->setFlash(__('Range value deleted'));
-			$this->redirect(array('controller'=>'rangetypes','action' => 'view',$range_type_id));
+			$this->redirect(array('controller'=>'range_types','action' => 'view',$range_type_id));
 		}
 		$this->Session->setFlash(__('Range value was not deleted'));
-		$this->redirect(array('controller'=>'rangetypes','action' => 'view',$range_type_id));
+		$this->redirect(array('controller'=>'range_types','action' => 'view',$range_type_id));
 	}
 }

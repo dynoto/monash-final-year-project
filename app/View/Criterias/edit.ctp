@@ -60,9 +60,9 @@ echo $this->element('override', array("content_override" => $content_override));
                             <td><?php echo $criteriaValue['name']; ?></td>
                             <td>
                                 <?php 
-                                echo $this->Html->link('Edit',array('controller'=>'criteriavalues','action'=>'edit',$criteriaValue['id']));
+                                echo $this->Html->link('Edit',array('controller'=>'criteria_values','action'=>'edit',$criteriaValue['id']));
                                 echo '  ';
-                                echo $this->Form->postLink(__('Delete'), array('controller'=>'criteriavalues','action' => 'delete',$criteriaValue['id'],$criteria['Criteria']['id']), null, __('Deleting this criterias value will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?')); ?>
+                                echo $this->Form->postLink(__('Delete'), array('controller'=>'criteria_values','action' => 'delete',$criteriaValue['id'],$criteria['Criteria']['id']), null, __('Deleting this criterias value will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?')); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -77,7 +77,7 @@ echo $this->element('override', array('content_override' => $override));
                     <th>Default</th>
                 </tr>
                 <?php foreach ($dimension_types as $type_id => $type_value) { ?>
-                    <tr>
+                    <tr class="dimension_row">
                         <td><?php 
                             echo $type_value;
                             echo $this->Form->input('Dimension.'.$type_id.'.dimension_type_id',array('type'=>'hidden','value'=>$type_id));

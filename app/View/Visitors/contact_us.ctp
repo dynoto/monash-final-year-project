@@ -29,6 +29,7 @@ $gps = "-38.116322,145.143196";
             echo $this->Form->input('telephone');
             echo $this->Form->input('email');
             echo $this->Form->input('message',array('required'=>true));
+            echo $this->Form->input('newsletter',array('type'=>'checkbox','label'=>'I want to receive newsletters and future updates from this website'));
 
             echo $this->Form->End(array('class'=>'btn btn-primary btn-large'))?>
         </div>

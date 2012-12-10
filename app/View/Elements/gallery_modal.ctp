@@ -13,12 +13,24 @@ $item_description= $item[$type]['description'];
         </div>
         <div class="span3 item_criteria_value">
             <ul class="no-dots">   
-            <?php foreach ($item['CriteriaValue'] as $criteria_value) {
-                if(isset($criteria_value['criteria_name'])){
-            ?>
-                <li><h5><?php echo $criteria_value['criteria_name']?></h5><?php echo $criteria_value['name']?><hr></li>
-            <?php }} ?>
-        </ul>
+            <?php $temp = array(); ?>
+            <?php 
+            foreach ($item['CriteriaValue'] as $criteria_value):
+                if(isset($criteria_value['criteria_name'])):
+                    $temp[$criteria_value['criteria_name']][] = $criteria_value['name'];
+                endif;
+            endforeach; 
+
+            foreach ($temp as $cn => $cv_array): ?>
+                <li>
+                    <h5><?php echo $cn; ?></h5>
+                    <?php foreach ($cv_array as $cv_name):
+                        echo $cv_name.'<br>';
+                    endforeach;?>
+                </li>
+                <hr>
+            <?php endforeach; ?>
+            </ul>
         </div>
         
     </div>

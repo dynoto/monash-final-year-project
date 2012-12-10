@@ -287,7 +287,7 @@ class ProductsController extends AppController {
 	}
 
 	public function fill_missing_criteria(){
-        if($this->request->is('post')){
+        if($this->request->is('post') && isset($this->request->data['criteriaValuesProduct'])){
             $saveData = $this->request->data['criteriaValuesProduct'];
             $saveArray = array();
             foreach ($saveData as $p_id => $cv_arr) {
