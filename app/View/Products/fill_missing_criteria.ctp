@@ -28,9 +28,11 @@ echo $this->element('override', array("content_override" => $content_override));
 				</div>
 				<div class="product_criteria span9">
 					<?php 
-						foreach ($criterias as $c_id => $c_array) {
+						foreach ($criterias as $c_id => $c_array):
+							if(count($c_array) > 0):
 							echo $this->Form->input('criteriaValuesProduct['+$p_id+']',array('label'=>array('style'=>'font-size:1.1em ; font-weight:bold','text'=>$c_id),'type'=>'select','multiple'=>'checkbox','options'=>$c_array,'hiddenField'=>null,'selected'=>$selected[$p_id]));
-						}
+							endif;
+						endforeach;
 					?>
 				</div>
 		</div>

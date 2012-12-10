@@ -62,7 +62,7 @@ echo $this->element('override',array("content_override"=>$content_override));
                     <td class="actions">
                         <?php echo $this->Html->link(__('View'), array('controller'=>'RangeTypes','action' => 'view', $rt_id)); ?>
                         <?php echo $this->Html->link(__('Edit'), array('controller'=>'RangeTypes','action' => 'edit', $rt_id)); ?>
-                        <?php echo $this->Form->postLink(__('Delete'), array('controller'=>'Rangetypes','action' => 'delete', $rt_id), null, __('Deleting range types will REMOVE association from PRODUCTS.\nare you sure you want to do this?', $rt_name)); ?>
+                        <?php echo $this->Form->postLink(__('Delete'), array('controller'=>'RangeTypes','action' => 'delete', $rt_id), null, __('Deleting range types will REMOVE association from PRODUCTS.\nare you sure you want to do this?', $rt_name)); ?>
                     </td>
                 </tr>
                 <?php 

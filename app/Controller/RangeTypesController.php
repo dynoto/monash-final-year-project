@@ -72,6 +72,7 @@ class RangeTypesController extends AppController {
 		} else {
 			$this->request->data = $this->RangeType->read(null, $id);
 		}
+		$this->set('rangeType', $this->RangeType->read(null, $id));
 	}
 
 /**
