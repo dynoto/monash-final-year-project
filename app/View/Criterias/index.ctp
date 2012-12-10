@@ -46,7 +46,7 @@ echo $this->element('override',array("content_override"=>$content_override));
         <hr>
         <div class "row-fluid">
             <h4 class="ib">Range Types</h4>
-            <?php echo $this->Html->link(__('New Range Type'), array('controller'=>'rangetypes','action' => 'add'),array('class'=>'btn' ,'style'=>'float:right')); ?>
+            <?php echo $this->Html->link(__('New Range Type'), array('controller'=>'RangeTypes','action' => 'add'),array('class'=>'btn' ,'style'=>'float:right')); ?>
             <table class="table table-striped table-bordered">
                 <tr>
                     <!-- <th>Id</th> -->

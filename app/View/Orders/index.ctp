@@ -15,7 +15,7 @@ echo $this->element('override', array("content_override" => $content_override));
 	</div>
 	<div class="span8">
 		<h4 class='ib'><?php echo __('Orders'); ?></h4>
-		<?php echo $this->Html->link(__('New Order'), array('action' => 'add'),array('class'=>'btn pull-right')); ?>
+		<?php //echo $this->Html->link(__('New Order'), array('action' => 'add'),array('class'=>'btn pull-right')); ?>
 		<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered datatables">
 			<thead>
 				<tr>
