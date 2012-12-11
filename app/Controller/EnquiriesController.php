@@ -64,7 +64,7 @@ class EnquiriesController extends AppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Enquiry->save($this->request->data)) {
 				$this->Session->setFlash(__('The enquiry has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'administrators','action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The enquiry could not be saved. Please, try again.'));
 			}
@@ -91,9 +91,9 @@ class EnquiriesController extends AppController {
 		}
 		if ($this->Enquiry->delete()) {
 			$this->Session->setFlash(__('Enquiry deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller'=>'administrators','action' => 'index'));
 		}
 		$this->Session->setFlash(__('Enquiry was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		$this->redirect(array('controller'=>'administrators','action' => 'index'));
 	}
 }

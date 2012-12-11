@@ -1,5 +1,5 @@
 function reg_phone(val){
-	var regex = /^[\d\s\-\(\)]+$/i;
+	var regex = /^[\d\s\-\(\)\+]+$/i;
 	return test_regex(regex,val);
 }
 

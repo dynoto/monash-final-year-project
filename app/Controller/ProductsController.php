@@ -26,7 +26,8 @@ class ProductsController extends AppController {
         				'RangeValue',
         				'RangeType',
         				'ProductsRangeValue',
-        				'OrderItemsRangeValue'
+        				'OrderItemsRangeValue',
+        				'OrderItem'
         				);
         foreach ($models as $key => $value) {
         	$this->loadModel($value);
@@ -276,14 +277,19 @@ class ProductsController extends AppController {
 			$this->ProductsRangeValue->deleteAll(array('product_id'=>$id));
 			$this->DimensionsProduct->deleteAll(array('product_id'=>$id));
 			$this->Dimension->deleteAll(array('Dimension.id'=>$dimensionIds));
+
+			$orderIds = $this->OrderItem->find('list',array('conditions'=>array('product_id'=>$id)));
+			foreach ($orderIds as $key => $value):
+				$this->OrderItemsRangeValue->deleteAll(array('order_item_id'=>$key));
+				$this->OrderItem->delete($key);
+			endforeach;
 		}
 		if ($this->Product->delete()) {
 			$this->Session->setFlash(__('Product deleted'));
-			return true;
-			//$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlash(__('Product was not deleted'));
-		//$this->redirect(array('action' => 'index'));
+		$this->redirect(array('action' => 'index'));
 	}
 
 	public function fill_missing_criteria(){

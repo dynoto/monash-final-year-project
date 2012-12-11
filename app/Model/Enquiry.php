@@ -35,7 +35,7 @@ class Enquiry extends AppModel {
 		),
 		'telephone' => array(
 			'regex' => array(
-				'rule' => '/^[\d\s\-\(\)]+$/',
+				'rule' => '/^[\d\s\-\(\)\+]+$/',
 				'message' => 'Numbers, Spaces, Dashes(-) and Curly Brackets only',
 				'allowEmpty' => true
  			)

@@ -44,7 +44,7 @@
             endif;
             ?>
           </td>
-          <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'text','class'=>'quantity_input','value'=>$order_item['quantity'],'label'=>false)); ?></td>
+          <td><?php echo $this->Form->input('OrderItem.quantity.'.$item_id,array('type'=>'number','class'=>'quantity_input','value'=>$order_item['quantity'],'label'=>false)); ?></td>
           <td><?php echo $this->Form->input('OrderItem.delete.',array('type'=>'checkbox','value'=>'cart_'.$item_id,'label'=>false,'hiddenField'=>false)); ?></td>
         </tr>
       <?php 

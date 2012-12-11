@@ -48,7 +48,7 @@
                         <td class="quantity_cell no-padding-vertical" >
                             <label>Qty.
                             <?php
-                            echo $this->Form->input("OrderItem.quantity",array('type'=>'text','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','required'=>true,'label'=>false,'data-v'=>'int','div'=>false,'data-tooltip'=>'number')); ?></label>
+                            echo $this->Form->input("OrderItem.quantity",array('type'=>'number','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','required'=>true,'label'=>false,'data-v'=>'int','div'=>false,'data-tooltip'=>'number')); ?></label>
                             <?php
                             echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Quote',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
                             ?>
@@ -69,7 +69,7 @@
                                         <?php 
                                         if($d_array['max'] != '' && $d_array['min'] != ''):
                                             echo $dimension_types[$d_array['dimension_type_id']][0].': ';
-                                            echo $this->Form->input('OrderItem.'.strtolower($dimension_types[$d_array['dimension_type_id']]),array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','label'=>false,'div'=>false,'required'=>true,'value'=>$d_array['default']));
+                                            echo $this->Form->input('OrderItem.'.strtolower($dimension_types[$d_array['dimension_type_id']]),array('class'=>'dimension_input ib no-margin-vertical','dimension-min'=>$d_array['min'],'dimension-max'=>$d_array['max'],'dimension-increment'=>$d_array['increment'],'dimension-default'=>$d_array['default'],'data-rel'=>'tooltip','dimension-type'=> $dimension_types[$d_array['dimension_type_id']],'data-v'=>'int','type'=>'number','label'=>false,'div'=>false,'required'=>true,'value'=>$d_array['default']));
                                         elseif($d_array['default'] != ''):
                                             echo $dimension_types[$d_array['dimension_type_id']][0].': ';
                                             echo $this->Form->input('',array('disabled'=>'disabled','class'=>'ib no-margin-vertical','value'=>$d_array['default'],'style'=>"width:30px",'div'=>false,'label'=>false));

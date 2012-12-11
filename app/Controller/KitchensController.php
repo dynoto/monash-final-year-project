@@ -168,16 +168,15 @@ class KitchensController extends AppController {
         }
         if ($this->Kitchen->delete()) {
             $this->Session->setFlash(__('Kitchen deleted'));
-            return true;
-            //$this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'index'));
         } else {
             $this->Session->setFlash(__('Kitchen was not deleted'));
-            //$this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'index'));
         }
     }
 
     public function fill_missing_criteria(){
-        if($this->request->is('post')){
+        if($this->request->is('post') && isset($this->request->data['criteriaValuesKitchen'])){
             $saveData = $this->request->data['criteriaValuesKitchen'];
             $saveArray = array();
             foreach ($saveData as $k_id => $cv_arr) {
@@ -199,7 +198,8 @@ class KitchensController extends AppController {
                 }
             }
             $this->Session->setFlash('Criteria Values have been associated with Kitchen(s)');
-
+        }else{
+            $this->Session->setFlash('No Criteria Values selected in any kitchen');
         }
             $selected = array();
             $kitchens = $this->Kitchen->find('list');

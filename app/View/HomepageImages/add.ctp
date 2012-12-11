@@ -17,7 +17,7 @@ echo $this->element('override', array("content_override" => $content_override));
 				</tr>
 				<tr>
 					<td>
-						<?php echo $this->Form->input('',array('type'=>'select','options'=>$kitchens_list,'label'=>false,'class'=>'kitchen_list')); ?>
+						<?php echo $this->Form->input('',array('type'=>'select','options'=>$kitchens_list,'label'=>false,'name'=>'wawwawaa','class'=>'kitchen_list')); ?>
 					</td>
 					<td class="unchecked_td">
 					<?php 

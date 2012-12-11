@@ -22,7 +22,7 @@ echo $this->element('override', array("content_override" => $content_override));
                 <?php
                 echo $this->Form->input('id');
                 echo $this->Form->input('name',array('required'=>true));
-                echo $this->Form->input('for',array('label'=>'Appears in','options'=>array('kitchen'=>'Kitchen','product'=>'Product')));
+                echo $this->Form->input('for',array('label'=>'Appears in','options'=>array('kitchen'=>'Gallery','product'=>'Product')));
                 ?>
             </div>
             <div class="span6 row-fluid">
