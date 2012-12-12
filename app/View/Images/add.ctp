@@ -29,7 +29,7 @@ echo $this->element('override',array('content_override'=>$override));
             ?>
                 </div>
             <?php
-            echo $this->Html->link('Finish Uploading', array('controller' => $item_type . 's', 'action' => 'view', $item_id), array('class' => 'btn btn-primary'));
+            echo $this->Html->link('Submit', array('controller' => $item_type . 's', 'action' => 'view', $item_id), array('class' => 'btn btn-primary'));
             echo $this->Form->end();
             ?>
             </div>
@@ -40,7 +40,7 @@ echo $this->element('override',array('content_override'=>$override));
 <script type="text/javascript">
 $(document).ready(function(){
         $('#ImageUploadImage').uploadify({
-            'buttontext'    : "Select Images ...",
+            'buttonText'    : "Select Images",
             'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
             'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$item_id.'/'.$item_type.'/');?>",
         });

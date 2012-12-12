@@ -87,6 +87,7 @@ class KitchensController extends AppController {
                 $this->Session->setFlash(__('The kitchen could not be saved. Please, try again.'));
             endif;
         }
+        $this->Session->setFlash('Image adding is done in Step 2','session_error');
         $criterias = $this->Criteria->findAllByKitchen('1');
         $this->set(compact('criterias','images'));
     }

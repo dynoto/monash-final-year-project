@@ -46,6 +46,10 @@ p.testimonial_description {
 div.testimonial_frame{
 	margin-bottom: 3%;
 }
+p.testimonial_description{
+    max-height: 140px !important;
+    overflow-y: scroll;
+}
 
 
 /*CSS BELOW IS FOR SIDEBAR*/

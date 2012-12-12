@@ -39,3 +39,9 @@ div.add_cart_success{
 div.product_frame{
 	margin-bottom: 15px !important
 }
+div.tooltip-arrow{
+	border-right-color: #097A00 !important;
+}
+div.tooltip-inner{
+	background: #097A00 !important;
+}

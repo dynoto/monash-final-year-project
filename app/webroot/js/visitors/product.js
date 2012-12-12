@@ -8,7 +8,7 @@ $(document).ready(function(){
 			var type = $(this).attr('dimension-type');
 			var options = {
 				'trigger':'hover',
-				'content': 'Maximum: '+max+'<br>Minimum: '+min,//+'<br>Increment: '+incr,
+				'content': 'Maximum: '+max+' mm'+'<br>Minimum: '+min+' mm',//+'<br>Increment: '+incr,
 				'title': type+(' (Numbers Only)'),
 				'placement':'top'
 			};
@@ -78,28 +78,29 @@ function add_to_cart(p_id){
 			}
 		}
 	});
+
+
+	var cart_button = $('div#product_'+p_id).find('button');
+
 	if(submit == true){
 		$.post('cart_add',$('form#product_'+p_id).serialize(),function(data){
 			console.log(data);
 			$('div#product_'+p_id).find('input.dimension_input').val('');
 			$('div#product_'+p_id).find('input.quantity_input').val('');
-			var cart_button = $('div#product_'+p_id).find('button');
+
 			cart_button.tooltip({
 				title:"Add to Quote Success!",
 				trigger:'manual',
 				placement:'right'
 			});
+
 			cart_button.tooltip('show');
 			var timeout = setTimeout(function() {
 				cart_button.tooltip('hide');
-			}, 5000);
-
-
-			
+			}, 5000);	
 		});
-		//$('div.add_cart_success').removeClass('hide_div');
 	}else{
-		console.log('missing?');
+		alert('Add to Quote failed, please check dimensions inputted');
 	}
 }
 

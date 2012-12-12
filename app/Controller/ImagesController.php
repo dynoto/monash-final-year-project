@@ -93,6 +93,7 @@ class ImagesController extends AppController {
     }
 
     public function add_ajax($id = null,$type = null){
+        $this->autoRender = false;
         $targetFolder = Router::url('/app/webroot/img/'.$type.'/'); // Relative to the root
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
@@ -105,15 +106,14 @@ class ImagesController extends AppController {
             
             if (in_array($fileParts['extension'],$fileTypes)) {
                 move_uploaded_file($tempFile,$targetFile);
-                echo '1';
+                $type = $type.'_id';
+                $image_data = array('name'=>$hashFile,$type=>$id);
+                $this->Image->create();
+                if($this->Image->save($image_data)){
+                    return true;
+                }
             } else {
-                echo 'Invalid file type.';
-            }
-            $type = $type.'_id';
-            $image_data = array('name'=>$hashFile,$type=>$id);
-            $this->Image->create();
-            if($this->Image->save($image_data)){
-                echo 'Image Saved Successfully';
+                return false;
             }
         }
     }

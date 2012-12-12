@@ -9,7 +9,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		<div class="row-fluid span12 table_header">
 			<h4 class="span1">ID</h4>
 			<h4 class="span2">Name</h4>
-			<h4 class="span9">Missing Criterias</h4>
+			<h4 class="span9">Edit Criterias</h4>
 		</div>
 		<?php foreach ($kitchens as $k_id => $k_name) { ?>
 		<div class="row-fluid span12">

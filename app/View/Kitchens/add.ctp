@@ -52,7 +52,7 @@ echo $this->element('override', array('content_override' => $override));
             </div>
         </fieldset>
         <?php 
-        echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 
+        echo $this->Form->end(array('class'=>'btn btn-primary btn-large','label'=>'Add Images')); 
         ?>
     </div>
 </div>

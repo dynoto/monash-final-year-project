@@ -1,16 +1,16 @@
 <?php
 echo $this->extend('/Common/admins');
-$content_override = array('title' => 'SK Kitchens Index', 'css' => 'admins/common');
+$content_override = array('title' => 'SK Kitchens Index', 'css' => array('admins/common','admins/orders'));
 echo $this->element('override', array("content_override" => $content_override));
 ?>
 <div class="row-fluid">
-	<div class="span2">
+	<div class="span2 actions_sidebar">
 		<div class="offset1">
 		<h4><?php echo __('Actions'); ?></h4>
 		<ul class="nav nav-tabs nav-stacked">
 			<!-- <li><?php echo $this->Html->link(__('Edit Order'), array('action' => 'edit', $order['Order']['id'])); ?> </li> -->
-			<li><?php echo $this->Html->link(__('List Orders'), array('action' => 'index')); ?> </li>
-			<li><?php echo $this->Form->postLink(__('Delete Order'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?> </li>
+			<li><?php echo $this->Html->link(__('List Quotes'), array('action' => 'index')); ?> </li>
+			<li><?php echo $this->Form->postLink(__('Delete Quote'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?> </li>
 			<li><?php echo $this->Html->link('Back to View Customer',array('controller'=>'customers','action'=>'view',$customer_id)); ?></li>
 			<!-- <li><?php echo $this->Html->link(__('New Order'), array('action' => 'add')); ?> </li> -->
 			<!-- <li><?php echo $this->Html->link(__('List Customers'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
@@ -20,10 +20,10 @@ echo $this->element('override', array("content_override" => $content_override));
 	</div>
 	<div class="span8">
 		<div class="span12 row-fluid">
-			<div class="orders view span5">
-			<h4><?php  echo __('Order'); ?></h4>
+			<div class="orders_view span5">
+			<h4><?php  echo __('Quote'); ?></h4>
 			<dl>
-				<dt><?php echo __('Id'); ?></dt>
+				<dt><?php echo __('Quote Id'); ?></dt>
 					<dd>
 						<?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>
 					</dd>
@@ -43,11 +43,11 @@ echo $this->element('override', array("content_override" => $content_override));
 					</dd>
 			</dl>
 			</div>
-			<div class="span6">
+			<div class="span6 customers_view">
 			<h4>Customer</h4>
 			<?php $customer = $order['Customer'] ?>
 			<dl>
-				<dt>Id</dt><dd><?php echo $customer['id']; ?></dd>
+				<!-- <dt>Id</dt><dd><?php echo $customer['id']; ?></dd> -->
 				<dt>Name</dt>
 				<dd><?php
 						if(isset($order['Customer']['name'])):
@@ -65,7 +65,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		</div>
 		<div class="row-fluid span12">
 			<div>
-			<h4 class="ib">Order Items</h4>
+			<h4 class="ib">Quote Items</h4>
 			<button class="btn btn-primary btn-large pull-right ib" onClick="window.print()">Print</button>
 			</div>
 			<table class="table table-bordered table-striped">

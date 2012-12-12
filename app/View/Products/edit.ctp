@@ -132,10 +132,10 @@ $data = $this->request->data;
                             echo $this->Form->input('Dimension.'.$kk.'.id');
                             echo $this->Form->input('Dimension.'.$kk.'.dimension_type_id',array('type'=>'hidden'));
                         ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'text','class'=>'dimension_input min','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'text','class'=>'dimension_input max','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false,'disabled'=>'disabled')); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'text','class'=>'dimension_input default','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.min',array('type'=>'number','class'=>'dimension_input min','label'=>false,'div'=>false)); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.max',array('type'=>'number','class'=>'dimension_input max','label'=>false,'div'=>false)); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.increment',array('type'=>'number','class'=>'dimension_input increment','label'=>false,'div'=>false,'disabled'=>'disabled')); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$kk.'.default',array('type'=>'number','class'=>'dimension_input default','label'=>false,'div'=>false)); ?> mm</td>
                     </tr>
                 <?php } ?>
             </table>
@@ -152,9 +152,12 @@ $data = $this->request->data;
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#ImageUploadImage').uploadify({
-        'buttontext'    : "Select Images ...",
+        'buttonText'    : "Select Images",
 		'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
 		'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Product']['id'].'/product/');?>",
+        'onUploadSuccess': function(file,data,response){
+            console.log(data);
+        }
 	});
 });
 </script>

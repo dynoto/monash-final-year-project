@@ -82,15 +82,15 @@ echo $this->element('override', array('content_override' => $override));
                             echo $type_value;
                             echo $this->Form->input('Dimension.'.$type_id.'.dimension_type_id',array('type'=>'hidden','value'=>$type_id));
                         ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.min',array('type'=>'text','class'=>'dimension_input min','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.max',array('type'=>'text','class'=>'dimension_input max','label'=>false)); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.increment',array('type'=>'text','class'=>'dimension_input increment','label'=>false,'disabled'=>'disabled')); ?></td>
-                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'text','class'=>'dimension_input default','label'=>false)); ?></td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.min',array('type'=>'number','class'=>'dimension_input min','label'=>false,'div'=>false)); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.max',array('type'=>'number','class'=>'dimension_input max','label'=>false,'div'=>false)); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.increment',array('type'=>'number','class'=>'dimension_input increment','label'=>false,'div'=>false,'disabled'=>'disabled')); ?> mm</td>
+                        <td><?php echo $this->Form->input('Dimension.'.$type_id.'.default',array('type'=>'number','class'=>'dimension_input default','label'=>false,'div'=>false)); ?> mm</td>
                     </tr>
                 <?php } ?>
             </table>
         <?php 
-        echo $this->Form->end(array('class'=>'btn btn-primary btn-large')); 
+        echo $this->Form->end(array('class'=>'btn btn-primary btn-large','label'=>'Add Images')); 
         ?>
     </div>
 

@@ -8,7 +8,7 @@ echo $this->element('override', array("content_override" => $content_override));
 		<div class="offset1">
 			<!-- <h4><?php echo __('Actions'); ?></h4> -->
 		<ul class="nav nav-tabs nav-stacked">
-			<li><?php echo $this->Html->link('Edit Product(s) Criteria',array('action'=>'fill_missing_criteria')); ?></li>
+			<li><?php echo $this->Html->link('Edit Product Criterias',array('action'=>'fill_missing_criteria')); ?></li>
 		</ul>
 	</div>
 	</div>

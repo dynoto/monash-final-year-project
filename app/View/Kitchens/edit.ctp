@@ -103,7 +103,7 @@ $data = $this->request->data;
 <script type="text/javascript">
 $(document).ready(function(){
         $('#ImageUploadImage').uploadify({
-            'buttontext'    : "Select Images ...",
+            'buttonText'    : "Select Images",
             'swf'           : "<?php echo $this->html->url('/app/webroot/uploadify/uploadify.swf');?>",
             'uploader'      : "<?php echo $this->html->url('/images/add_ajax/'.$data['Kitchen']['id'].'/kitchen/');?>",
         });

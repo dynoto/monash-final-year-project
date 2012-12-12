@@ -14,12 +14,12 @@ echo $this->element('override', array("content_override" => $content_override));
 		</div>
 	</div>
 	<div class="span8">
-		<h4 class='ib'><?php echo __('Orders'); ?></h4>
+		<h4 class='ib'><?php echo __('Quotes'); ?></h4>
 		<?php //echo $this->Html->link(__('New Order'), array('action' => 'add'),array('class'=>'btn pull-right')); ?>
 		<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered datatables">
 			<thead>
 				<tr>
-					<th><?php echo $this->Paginator->sort('id','Order Number'); ?></th>
+					<th><?php echo $this->Paginator->sort('id','Quote Number'); ?></th>
 					<th><?php echo $this->Paginator->sort('customers_id','Customer'); ?></th>
 					<th><?php echo $this->Paginator->sort('date'); ?></th>
 					<!-- <th>Total Price</th> -->

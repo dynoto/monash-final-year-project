@@ -7,7 +7,7 @@
                 <?php echo $this->element('login_bar'); ?>
             </div>
         </div>
-        <div class="row-fluid">
+        <div class="row-fluid navbar_frame">
             <div class="span10 offset1">
                 <ul class="nav nav-tabs">
                     <?php 
@@ -17,7 +17,7 @@
                         'Gallery'=>'kitchens',
                         'Products'=>'products',
                         'Customers'=>'customers',
-                        'Orders'=>'orders'); 
+                        'Quotes'=>'orders'); 
                     foreach($links as $name => $href):
                         if ($current_action === $href){ $params = "active span2";}
                         else{ $params = "span2"; }

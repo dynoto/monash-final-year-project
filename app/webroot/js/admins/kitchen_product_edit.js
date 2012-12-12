@@ -89,15 +89,22 @@ function validate_fields(){
 			// ALL VALUES ARE BLANK
 			def_null = true;
 
+		}else if( (def.val() == '') && (min.val() == max.val()) ){
+			//OVERWRITE DEFAULT VALUE WITH MIN-MAX VALUE
+			def.val(min.val());
+
 		}else if(def.val() == '' && (min.val() != '' || max.val() != '')){
 			//DEFAULT IS BLANK, BUT MIN or MAX IS PRESENT
 			submit = false;
 			min.addClass('input_required');
 			max.addClass('input_required');
-			alertmsg = alertmsg.concat('Remove Min and Max if Default is set to NULL <br> ');
+			alertmsg = alertmsg.concat('Default not set or MIN MAX should be emptied or Min Max should be the same value<br> ');
 
 		}else if(def.val() != ''){
-			if(min.val() != '' && max.val() == ''){
+			if(min.val() == '' && max.val() == ''){
+				max.val(def.val());
+				min.val(def.val());
+			}else if(min.val() != '' && max.val() == ''){
 				alertmsg = alertmsg.concat('Maximum has to be filled <br> ');
 				max.addClass('input_required');
 				submit = false;
