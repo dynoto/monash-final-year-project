@@ -12,6 +12,13 @@ class RangeTypesController extends AppController {
  *
  * @return void
  */
+    public function beforeFilter(){
+        parent::beforeFilter();
+        $this->loadModel('OrderItemsRangeValue');
+        $this->loadModel('RangeValue');
+    }
+
+
 	public function index() {
 		// $this->RangeType->recursive = 0;
 		// $this->set('rangeTypes', $this->paginate());
@@ -91,6 +98,13 @@ class RangeTypesController extends AppController {
 		if (!$this->RangeType->exists()) {
 			throw new NotFoundException(__('Invalid range type'));
 		}
+		$rangevalues = $this->RangeValue->find('all',array('conditions'=>array('range_type_id'=>$id)));
+		foreach ($rangevalues as $rv):
+			foreach ($rv['OrderItem'] as $oi):
+				$this->OrderItemsRangeValue->delete($oi['OrderItemsRangeValue']['id']);
+			endforeach;
+			$this->RangeValue->delete($rv['RangeValue']['id']);
+		endforeach;
 		if ($this->RangeType->delete()) {
 			$this->Session->setFlash(__('Range type deleted'));
 			$this->redirect(array('action' => 'index'));

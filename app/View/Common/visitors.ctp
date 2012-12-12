@@ -2,7 +2,7 @@
     <div class="span10 offset1">
     <div class="row-fluid ">
         <div class="span6">
-        <?php   echo $this->Html->image('common/Softkitchens-logo.png',array('id'=>'logo','alt'=>'SK logo'));
+        <?php   echo $this->Html->image('common/website-logo.png',array('id'=>'logo','alt'=>'SK logo'));
                 //echo $this->Html->link('Login',array('controller'=>'users','action'=>'login'),array('class'=>'login_switch')); 
         ?>
         </div>

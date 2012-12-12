@@ -1,11 +1,11 @@
 <?php
     echo $this->extend('/Common/visitors');
-    $content_override = array('title'=>'SK Kitchens Product','css'=>array('visitors/cart'),'js'=>array('visitors/cart'));
+    $content_override = array('title'=>'SK Kitchens Product','css'=>array('visitors/cart'),'js'=>array('reg_valid','visitors/cart'));
     echo $this->element('override',array("content_override"=>$content_override));
 ?>
 <div class="row-fluid main_content">
   <div class="span10 offset1">
-    <?php echo $this->Form->create('Cart'); ?>
+    <?php echo $this->Form->create('Cart',array('onSubmit'=>'return verify()')); ?>
   	<table class="table table-bordered table-striped">
   		<tr>
   			<th>Product</th>

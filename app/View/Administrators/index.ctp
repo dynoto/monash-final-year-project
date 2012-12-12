@@ -8,7 +8,7 @@ echo $this->element('override',array('content_override'=>$override));
 	<div class="offset1">
 				<!-- <h4>Actions</h4> -->
 		<ul class="nav nav-tabs nav-stacked">
-		<li><?php echo $this->Html->link('Manage Homepage Carousel',array('controller'=>'Homepageimages','action'=>'index')); ?></li>
+		<li><?php echo $this->Html->link('Manage Homepage Carousel',array('controller'=>'Homepage_Images','action'=>'index')); ?></li>
 		<li><?php echo $this->Html->link('Manage Users',array('controller'=>'users')); ?></li>
 		</ul>
 	</div>

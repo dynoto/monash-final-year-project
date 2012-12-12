@@ -110,26 +110,28 @@ Class VisitorsController extends AppController{
     public function cart_list(){
         if($this->request->is('post')):
             $rqData = $this->request->data;
-            if(preg_match('/Update/', $rqData['submit'])){
-                $cart = $this->Session->read('Order');
-                if(isset($rqData['OrderItem']['delete'])):
-                    foreach ($rqData['OrderItem']['delete'] as $value) {
-                        $value = explode('_', $value);
-                        $value = $value[1];
-                        unset($cart[$value]);
-                    }
-                endif;
-                foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
-                    if(isset($cart[$cart_id])):
-                        if($quantity > 0):
-                            $cart[$cart_id]['OrderItem']['quantity'] = $quantity;
-                        else:
-                            unset($cart[$cart_id]);
-                        endif;
+            $cart = $this->Session->read('Order');
+            if(isset($rqData['OrderItem']['delete'])):
+                foreach ($rqData['OrderItem']['delete'] as $value) {
+                    $value = explode('_', $value);
+                    $value = $value[1];
+                    unset($cart[$value]);
+                }
+            endif;
+            foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
+                if(isset($cart[$cart_id])):
+                    if($quantity > 0):
+                        $cart[$cart_id]['OrderItem']['quantity'] = $quantity;
+                    else:
+                        unset($cart[$cart_id]);
                     endif;
-                endforeach;
-                $this->Session->write('Order',$cart);
-            $this->Session->setFlash('Your cart has been updated');
+                endif;
+            endforeach;
+            $this->Session->write('Order',$cart);
+
+
+            if(preg_match('/Update/', $rqData['submit'])){
+                $this->Session->setFlash('Your cart has been updated');
             }else{
                 $this->__make_order();
             }

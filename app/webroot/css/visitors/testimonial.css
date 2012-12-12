@@ -48,7 +48,7 @@ div.testimonial_frame{
 }
 p.testimonial_description{
     max-height: 140px !important;
-    overflow-y: scroll;
+    overflow-y: auto !important;
 }
 
 

@@ -6,11 +6,8 @@ td.quantity_cell{
 	vertical-align: middle;
 	text-align: right;
 }
-input.quantity_input{
+input.quantity_input,input.dm_size{
 	width: 50px !important
-}
-input.dimension_input{
-	width: 30px !important;
 }
 td.title_cell{
 	width: 35% !important;

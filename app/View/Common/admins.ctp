@@ -2,7 +2,7 @@
         <div class="row-fluid">
             <div class="span10 offset1" id="div_header">
                 <div class="span6">
-                    <?php echo $this->Html->image('common/Softkitchens-logo-whiteBG.jpg',array('id'=>'logo','alt'=>'SK logo'));?>
+                    <?php echo $this->Html->image('common/website-logo.jpg',array('id'=>'logo','alt'=>'SK logo'));?>
                 </div>
                 <?php echo $this->element('login_bar'); ?>
             </div>
