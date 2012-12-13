@@ -52,7 +52,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<!-- <td><?php echo h($customer['Customer']['discount']); ?>&nbsp;</td> -->
 			<td class="actions">
 				<?php
-				echo $this->Form->input('Checked.',array('label'=>false,'type'=>'checkbox','hiddenField'=>false,'div'=>false,'class'=>'ib','value'=>$customer_id));
+				echo $this->Form->input('Checked.',array('label'=>false,'type'=>'checkbox','hiddenField'=>false,'div'=>false,'class'=>'ib checkboxes','value'=>$customer_id));
 				?>
 			</td>
 		</tr>

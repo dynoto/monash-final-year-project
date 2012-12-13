@@ -14,7 +14,7 @@ Class VisitorsController extends AppController{
 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us','products'));
+        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us','products','forget'));
         $models = array('Criteria',
                         'CriteriaValue',
                         'Customer',
@@ -93,17 +93,53 @@ Class VisitorsController extends AppController{
         $this->autoRender = false;
         if($this->request->is('post')){
             $rqData = $this->request->data;
-            if(isset($rqData['RangeValue'])):
-                foreach ($rqData['RangeValue'] as $key => $value):
-                    $rv_name = $this->RangeValue->read('name',$value['id']);
-                    $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
-                endforeach;
+            if($rqData['OrderItem']['quantity'] > 0):
+                if(isset($rqData['RangeValue'])):
+                    foreach ($rqData['RangeValue'] as $key => $value):
+                        $rv_name = $this->RangeValue->read('name',$value['id']);
+                        $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
+                    endforeach;
+                endif;
+                $cart_count = rand(1000,999999);
+                $this->Session->write('Order.'.$cart_count,$rqData);
+                return true;
+            else:
+                return false;
             endif;
-            $cart_count = rand(1000,999999);
-            $this->Session->write('Order.'.$cart_count,$rqData);
-            return true;
         }
     }
+
+////////////////////////////////////////////////////////////////////////////////
+
+    public function forget(){
+        $this->loadModel('Customer');
+        $this->loadModel('User');
+        if($this->request->is('post')){
+            $customer_email = $this->request->data['Customer']['email'];
+
+            if(preg_match('/^[\w\.\_\-]+[\@][\w]+[\.][\w\.]+$/', $customer_email)):
+                $customer = $this->Customer->find('first',array('conditions'=>array('Customer.email'=>$customer_email)));
+                if(isset($customer['Customer']['id'])):
+                    $customer_id = $customer['Customer']['id'];
+                    $user_id = $customer['User']['id'];
+
+                    $email = new CakeEmail();
+                    $email->helpers(array('Html', 'Custom', 'Text'));
+                    $email->config('noreply');
+                    $email->subject('Engineered Cabinets: Forget Email');
+                    $email->emailFormat('text');
+                    $newpass = rand(10000,99999);
+                    $this->User->id = $user_id;
+                    $this->User->saveField('password',strval($newpass));
+                    $email->to($customer_email)->send('Dear Customer, your new password is :'.$newpass);
+                    $this->Session->setFlash('Your password have been sent to your email');
+                    $this->redirect(array('controller'=>'users','action'=>'login'));
+                endif;
+            endif;
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -118,6 +154,7 @@ Class VisitorsController extends AppController{
                     unset($cart[$value]);
                 }
             endif;
+            if(isset($rqData['OrderItem']['quantity'])):
             foreach ($rqData['OrderItem']['quantity'] as $cart_id => $quantity):
                 if(isset($cart[$cart_id])):
                     if($quantity > 0):
@@ -127,13 +164,16 @@ Class VisitorsController extends AppController{
                     endif;
                 endif;
             endforeach;
+            endif;
             $this->Session->write('Order',$cart);
 
 
             if(preg_match('/Update/', $rqData['submit'])){
-                $this->Session->setFlash('Your cart has been updated');
-            }else{
+                $this->Session->setFlash('Your list has been updated');
+            }else if(count($this->Session->read('Order')) > 0 ){
                 $this->__make_order();
+            }else{
+                $this->Session->setFlash('Cannot submit request without any item in the list');
             }
         endif;
 
@@ -187,7 +227,7 @@ Class VisitorsController extends AppController{
                     $cust_email = $cust_email['Customer']['email'];
                     $order_num = 'ORD'.str_pad(h($this->Order->id),7,"0",STR_PAD_LEFT);
                     $email->to($cust_email)->send('Dear Valued Customer, your request have been send.Please use this number when you contact us if you have any other enquiries :'.$order_num);
-                    $email->to('liam@engcabs.com.au')->send('New Quote Request received :'.$order_num);
+                    $email->to('admin@engineeredcabinets.com.au')->send('New Quote Request received :'.$order_num);
                 endif;
 
                 $this->Session->delete('Order');
@@ -225,6 +265,7 @@ Class VisitorsController extends AppController{
     public function about_us(){
         
     }
+
 
 ////////////////////////////////////////////////////////////////////////////////
     

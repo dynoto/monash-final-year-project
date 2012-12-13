@@ -7,23 +7,21 @@ echo $this->element('override', array("content_override" => $content_override));
 	<div class="span10 offset1">
 		<div class="row-fluid">
 			<h4 style="display:inline">Homepage Carousel Management</h4>
-			<?php echo $this->Html->link('Add Images',array('action'=>'add'),array('class'=>'pull-right btn')); ?>
+			<?php echo $this->Html->link('Pick Images',array('action'=>'add'),array('class'=>'pull-right btn')); ?>
 		</div>
 		<div class="row-fluid">
 			<?php echo $this->Form->create('HomepageImage')?>
 			<table class="table table-striped table-bordered">
 				<tr>
-					<th>Id</th>
 					<th>Image</th>
 					<th>Kitchen Name</th>
 					<th>Position</th>
-					<th>Delete</th>
+					<th>Remove from Homepage</th>
 				</tr>
 				<?php $c = 0; ?>
 				<?php foreach ($homepageImages as $k => $w) {
 					$v = $w['HomepageImage'];?>
 					<tr>
-						<td><?php echo $v['id'] ?></td>
 						<td><?php echo $this->Html->Image('kitchen/'.$w['Image']['name'],array('class'=>'thumbnail')); ?></td>
 						<td><?php echo $kitchens[$w['Image']['kitchen_id']] ?></td>
 						<td><?php

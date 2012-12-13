@@ -1,4 +1,18 @@
 function validateConfirm(approve){
+	var submit = false;
+	$('input.checkboxes').each(function(){
+		var checked = $(this).is(':checked');
+		console.log(checked);
+		if(checked == true){
+			submit = true;
+		}
+	});
+	console.log(submit);
+	if(submit == false){
+		alert('Please select at least one checkbox');
+		return false;
+	}
+
 	var word = '';
 	var bool;
 	if (approve == '1'){
@@ -21,7 +35,7 @@ function validateConfirm(approve){
 	var conf = confirm('are you sure you want to '+word+' these users ?');
 	if(conf){
 		$("#CustomerApproveBoolean").val(approve);
-		return true;
+		return false;
 	} else {
 		return false;
 	}

@@ -17,7 +17,7 @@
 			}elseif($groupName == 'Administrators'){
 				echo $this->Html->link('Visitor Site',array('controller'=>'visitors'));
 			}
-			echo $this->Html->link('Quote Request List',array('controller'=>'visitors','action'=>'cart_list'));
+			echo $this->Html->link('View Quote',array('controller'=>'visitors','action'=>'cart_list'));
 			echo $this->Html->link('Log Out',array('controller'=>'users','action'=>'logout'));?>
 			</p><?php } ?>
 		</div>

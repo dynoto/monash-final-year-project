@@ -37,7 +37,7 @@ class Customer extends AppModel {
 			),
 		),
 		'name' => array(
-			'rule' => '/^[\w\s\.]+$/',
+			'rule' => "/^[\w\s\.\']+$/",
 			'message'=>'Alphanumeric, Period(.) and Spaces only',
 			'allowEmpty'=>false
 		),

@@ -3,7 +3,7 @@ div.main_content {
     margin: 0 auto;
 }
 input.quantity_input {
-    max-width: 30px;
+    max-width: 100px;
 }
 div.submit {
     width: auto;

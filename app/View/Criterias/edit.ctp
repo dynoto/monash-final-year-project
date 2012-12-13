@@ -47,7 +47,6 @@ echo $this->element('override', array("content_override" => $content_override));
             <?php if (!empty($criteria['CriteriaValue'])): ?>
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th><?php echo __('Id'); ?></th>
                         <th><?php echo __('Value'); ?></th>
                         <th>Actions</th>
                     </tr>
@@ -56,7 +55,6 @@ echo $this->element('override', array("content_override" => $content_override));
                     foreach ($criteria['CriteriaValue'] as $criteriaValue):
                         ?>
                         <tr>
-                            <td><?php echo $criteriaValue['id']; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
                             <td>
                                 <?php 

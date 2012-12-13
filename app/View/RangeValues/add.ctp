@@ -12,7 +12,6 @@ echo $this->element('override', array('content_override' => $content_override));
                 <?php echo $this->Html->link('Back',array('controller'=>'RangeTypes','action'=>'view',$rangeType_id)); ?>
             </li>
             <li><?php echo $this->Html->link(__('List RangeTypes'), array('controller' => 'RangeTypes', 'action' => 'index')); ?> </li>
-            <li><?php echo $this->Html->link(__('List Kitchens'), array('controller' => 'kitchens', 'action' => 'index')); ?> </li>
         </ul>
     </div>
     </div>

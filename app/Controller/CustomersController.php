@@ -163,15 +163,19 @@ class CustomersController extends AppController {
 			throw new MethodNotAllowedException();
 		}
 		$this->Customer->id = $id;
-		if (!$this->Customer->exists()) {
-			throw new NotFoundException(__('Invalid customer'));
-		}
-		if ($this->Customer->delete()) {
-			$this->Session->setFlash(__('Customer deleted'));
+		$order_lists = $this->Order->find('list',array('conditions'=>array('customer_id'=>$id)));
+		if(count($order_lists) == 0):
+			if (!$this->Customer->exists()):
+				throw new NotFoundException(__('Invalid customer'));
+			endif;
+			if ($this->Customer->delete()):
+				$this->Session->setFlash(__('Customer deleted'));
+				$this->redirect(array('action' => 'index'));
+			endif;
+		else:
+			$this->Session->setFlash(__('Please delete all Quotes associated with the Customer before attempting to delete the Customer'));
 			$this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('Customer was not deleted'));
-		$this->redirect(array('action' => 'index'));
+		endif;
 	}
 
 	// public function approve($id = null) {

@@ -24,11 +24,6 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="row-fluid">
             <h4><?php echo __('Criteria'); ?></h4>
             <dl>
-                <dt><?php echo __('Id').' : '; ?></dt>
-                <dd>
-                    <?php echo h($criteria['Criteria']['id']); ?>
-                    &nbsp;
-                </dd>
                 <dt><?php echo __('Name'); ?></dt>
                 <dd>
                     <?php echo h($criteria['Criteria']['name']); ?>
@@ -67,28 +62,26 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="row-fluid">
             <div class="row-fluid">
             <h4 class="ib"><?php echo __('Criteria Values'); ?></h4>
-            <?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add', $criteria['Criteria']['id']),array('class'=>'btn' ,'style'=>'float:right')); ?>
+<!--             <?php echo $this->Html->link(__('New Criteria Value'), array('controller' => 'criteria_values', 'action' => 'add', $criteria['Criteria']['id']),array('class'=>'btn' ,'style'=>'float:right')); ?> -->
             </div>
             <?php if (!empty($criteria['CriteriaValue'])): ?>
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th><?php echo __('Id'); ?></th>
                         <th><?php echo __('Value'); ?></th>
-                        <th>Actions</th>
+                        <!-- <th>Actions</th> -->
                     </tr>
                     <?php
                     $i = 0;
                     foreach ($criteria['CriteriaValue'] as $criteriaValue):
                         ?>
                         <tr>
-                            <td><?php echo $criteriaValue['id']; ?></td>
                             <td><?php echo $criteriaValue['name']; ?></td>
-                            <td>
+<!--                             <td>
                                 <?php 
                                 echo $this->Html->link('Edit',array('controller'=>'criteria_values','action'=>'edit',$criteriaValue['id']));
                                 echo '  ';
                                 echo $this->Form->postLink(__('Delete'), array('controller'=>'criteria_values','action' => 'delete',$criteriaValue['id'],$criteria['Criteria']['id']), null, __('Deleting this criterias value will REMOVE association from both KITCHENS and PRODUCTS.\nare you sure you want to do this?')); ?>
-                            </td>
+                            </td> -->
                         </tr>
                     <?php endforeach; ?>
                 </table>

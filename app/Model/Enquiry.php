@@ -22,13 +22,13 @@ class Enquiry extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 			'regex' => array(
-				'rule'=>'/^[\w\s\.]+$/',
+				'rule'=>"/^[\w\s\.\']+$/",
 				'message'=>'Alphanumeric, Period(.) and Spaces only'
 			)
 		),
 		'email' => array(
 			'regex' => array(
-				'rule' => '/^[\w\.\_\-]+[\@][\w]+[\.][\w\.]+$/',
+				'rule' => array('email',true),
 				'message' => 'Alphanumeric, Period( . ), Dash( - ), Underscore( _ ), At Sign( @ ) only',
 				'allowEmpty' => true
  			)

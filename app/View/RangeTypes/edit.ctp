@@ -46,7 +46,6 @@ echo $this->element('override', array("content_override" => $content_override));
         <?php if (!empty($rangeType['RangeValue'])): ?>
         <table class="table table-bordered table-striped">
             <tr>
-                <th><?php echo __('Id'); ?></th>
                 <th><?php echo __('Value'); ?></th>
                 <th>Actions</th>
             </tr>
@@ -55,7 +54,6 @@ echo $this->element('override', array("content_override" => $content_override));
             foreach ($rangeType['RangeValue'] as $rangeTypeValue):
                 ?>
             <tr>
-                <td><?php echo $rangeTypeValue['id']; ?></td>
                 <td><?php echo $rangeTypeValue['name']; ?></td>
                 <td>
                     <?php 

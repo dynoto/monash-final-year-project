@@ -11,7 +11,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<!-- <li><?php echo $this->Html->link(__('Edit Order'), array('action' => 'edit', $order['Order']['id'])); ?> </li> -->
 			<li><?php echo $this->Html->link(__('List Quotes'), array('action' => 'index')); ?> </li>
 			<li><?php echo $this->Form->postLink(__('Delete Quote'), array('action' => 'delete', $order['Order']['id']), null, __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?> </li>
-			<li><?php echo $this->Html->link('Back to View Customer',array('controller'=>'customers','action'=>'view',$customer_id)); ?></li>
+			<li><?php echo $this->Html->link('Back to View Customer',array('controller'=>'customers','action'=>'view',$order['Customer']['id'])); ?></li>
 			<!-- <li><?php echo $this->Html->link(__('New Order'), array('action' => 'add')); ?> </li> -->
 			<!-- <li><?php echo $this->Html->link(__('List Customers'), array('controller' => 'customers', 'action' => 'index')); ?> </li>
 			<li><?php echo $this->Html->link(__('New Customers'), array('controller' => 'customers', 'action' => 'add')); ?> </li> -->
@@ -23,7 +23,7 @@ echo $this->element('override', array("content_override" => $content_override));
 			<div class="orders_view span5">
 			<h4><?php  echo __('Quote'); ?></h4>
 			<dl>
-				<dt><?php echo __('Quote Id'); ?></dt>
+				<dt><?php echo __('Quote Number'); ?></dt>
 					<dd>
 						<?php echo 'ORD'.str_pad(h($order['Order']['id']),7,"0",STR_PAD_LEFT); ?>
 					</dd>

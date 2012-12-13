@@ -24,11 +24,6 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="row-fluid">
             <h4><?php echo __('Range Type'); ?></h4>
             <dl>
-                <dt><?php echo __('Id').' : '; ?></dt>
-                <dd>
-                    <?php echo h($rangeType['RangeType']['id']); ?>
-                    &nbsp;
-                </dd>
                 <dt><?php echo __('Name'); ?></dt>
                 <dd>
                     <?php echo h($rangeType['RangeType']['name']); ?>
@@ -39,28 +34,26 @@ $view_logo = $this->Html->image('common/view.png');
         <div class="row-fluid">
             <div class="row-fluid">
             <h4 class="ib"><?php echo __('Range Values'); ?></h4>
-            <?php echo $this->Html->link(__('New Range Value'), array('controller' => 'RangeValues', 'action' => 'add', $rangeType['RangeType']['id']),array('class'=>'btn' ,'style'=>'float:right')); ?>
+<!--             <?php echo $this->Html->link(__('New Range Value'), array('controller' => 'RangeValues', 'action' => 'add', $rangeType['RangeType']['id']),array('class'=>'btn' ,'style'=>'float:right')); ?> -->
             </div>
             <?php if (!empty($rangeType['RangeValue'])): ?>
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th><?php echo __('Id'); ?></th>
                         <th><?php echo __('Value'); ?></th>
-                        <th>Actions</th>
+                        <!-- <th>Actions</th> -->
                     </tr>
                     <?php
                     $i = 0;
                     foreach ($rangeType['RangeValue'] as $rangeTypeValue):
                         ?>
                         <tr>
-                            <td><?php echo $rangeTypeValue['id']; ?></td>
                             <td><?php echo $rangeTypeValue['name']; ?></td>
-                            <td>
+<!--                             <td>
                                 <?php 
                                 echo $this->Html->link('Edit',array('controller'=>'RangeValues','action'=>'edit',$rangeTypeValue['id']));
                                 echo '  ';
                                 echo $this->Form->postLink(__('Delete'), array('controller'=>'RangeValues','action' => 'delete',$rangeTypeValue['id'],$rangeType['RangeType']['id']), null, __('Deleting this Range Types value will REMOVE association from PRODUCTS.\nare you sure you want to do this?')); ?>
-                            </td>
+                            </td> -->
                         </tr>
                     <?php endforeach; ?>
                 </table>
