@@ -35,7 +35,7 @@ function validateConfirm(approve){
 	var conf = confirm('are you sure you want to '+word+' these users ?');
 	if(conf){
 		$("#CustomerApproveBoolean").val(approve);
-		return false;
+		return true;
 	} else {
 		return false;
 	}

@@ -168,7 +168,11 @@ class CustomersController extends AppController {
 			if (!$this->Customer->exists()):
 				throw new NotFoundException(__('Invalid customer'));
 			endif;
+
+			$user_id = $this->Customer->find('first',array('conditions'=>array('Customer.id'=>$id)));
+			$user_id = $user_id['User']['id'];
 			if ($this->Customer->delete()):
+				$this->User->delete($user_id);
 				$this->Session->setFlash(__('Customer deleted'));
 				$this->redirect(array('action' => 'index'));
 			endif;

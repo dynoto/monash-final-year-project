@@ -84,20 +84,23 @@ function add_to_cart(p_id){
 
 	if(submit == true){
 		$.post('cart_add',$('form#product_'+p_id).serialize(),function(data){
-			console.log(data);
-			$('div#product_'+p_id).find('input.dimension_input').val('');
-			$('div#product_'+p_id).find('input.quantity_input').val('');
+			if(data == 1){console.log(data);
+				$('div#product_'+p_id).find('input.dimension_input').val('');
+				$('div#product_'+p_id).find('input.quantity_input').val('');
 
-			cart_button.tooltip({
-				title:"Add to Quote Success!",
-				trigger:'manual',
-				placement:'right'
-			});
+				cart_button.tooltip({
+					title:"Add to Quote Success!",
+					trigger:'manual',
+					placement:'right'
+				});
 
-			cart_button.tooltip('show');
-			var timeout = setTimeout(function() {
-				cart_button.tooltip('hide');
-			}, 5000);	
+				cart_button.tooltip('show');
+				var timeout = setTimeout(function() {
+					cart_button.tooltip('hide');
+				}, 5000);
+			}else if(data == 2){
+				window.location =  'login';
+			}
 		});
 	}else{
 		alert('Add to Quote failed, please check dimensions inputted');

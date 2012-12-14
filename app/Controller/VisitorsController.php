@@ -14,7 +14,7 @@ Class VisitorsController extends AppController{
 
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us','products','forget'));
+        $this->Auth->allow(array('index','gallery','testimonials','about_us','contact_us','products','forget','cart_add'));
         $models = array('Criteria',
                         'CriteriaValue',
                         'Customer',
@@ -93,18 +93,23 @@ Class VisitorsController extends AppController{
         $this->autoRender = false;
         if($this->request->is('post')){
             $rqData = $this->request->data;
-            if($rqData['OrderItem']['quantity'] > 0):
-                if(isset($rqData['RangeValue'])):
-                    foreach ($rqData['RangeValue'] as $key => $value):
-                        $rv_name = $this->RangeValue->read('name',$value['id']);
-                        $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
-                    endforeach;
+            $user_session = $this->Session->read('Auth.User');
+            if(isset($user_session['id'])):
+                if($rqData['OrderItem']['quantity'] > 0):
+                    if(isset($rqData['RangeValue'])):
+                        foreach ($rqData['RangeValue'] as $key => $value):
+                            $rv_name = $this->RangeValue->read('name',$value['id']);
+                            $rqData['RangeValue'][$key]['name'] = $rv_name['RangeValue']['name'];
+                        endforeach;
+                    endif;
+                    $cart_count = rand(1000,999999);
+                    $this->Session->write('Order.'.$cart_count,$rqData);
+                    return 1;
+                else:
+                    return 0;
                 endif;
-                $cart_count = rand(1000,999999);
-                $this->Session->write('Order.'.$cart_count,$rqData);
-                return true;
             else:
-                return false;
+                return 2;
             endif;
         }
     }
@@ -405,5 +410,9 @@ Class VisitorsController extends AppController{
         }
         $this->set('selected',$selected);
         $this->set('sidebar_data',$temp_array);
+    }
+
+    public function login(){
+        $this->redirect(array('controller'=>'Users','action'=>'login'));
     }
 }
