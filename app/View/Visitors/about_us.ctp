@@ -14,7 +14,21 @@ echo $this->element('override',array("content_override"=>$content_override));
      We pride ourselves on our vast experience, industry knowledge, quality workmanship and high level of customer service to ensure that your experience with Focal / Engineering Cabinets   is a memorable one.
    </p>
    <div class="youtube_video">
+    <div class="one_image">
+      <?php 
+        //echo $this->Html->image('common/about_us_one_image.jpg',array('style'=>array('width'=>'100%'),'class'=>'ib'));
+      ?>
+    </div>
+
+    <div class="two_image">
+      <?php
+        //echo $this->Html->image('common/about_us_two_image_1.jpg',array('style'=>array('width'=>'50%'),'class'=>'ib'));
+        //echo $this->Html->image('common/about_us_two_image_2.jpg',array('style'=>array('width'=>'50%'),'class'=>'ib')); 
+      ?>
+    </div>
+    <div>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/NK8zYHyKWb4" frameborder="0" allowfullscreen></iframe>
+    </div>
    </div>
 
  </div>
