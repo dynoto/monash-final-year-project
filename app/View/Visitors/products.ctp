@@ -50,8 +50,8 @@
                             <?php
                             echo $this->Form->input("OrderItem.quantity",array('type'=>'number','class'=>'quantity_input no-margin-vertical product_'.$p_id,'input-type'=>'quantity','required'=>true,'label'=>false,'data-v'=>'int','div'=>false,'data-tooltip'=>'number')); ?></label>
                             <?php
-                            echo $this->Html->link('View Quote',array('action'=>'cart_list'),array('class'=>'btn btn-primary'));
                             echo $this->Form->button('<i class="icon-shopping-cart"></i> Add to Quote',array('type'=>'button','name'=>false,'class'=>"btn btn-primary",'label'=>false,'div'=>false,'onClick'=>'add_to_cart('.$p_id.')'));
+                            echo $this->Html->link('View Quote',array('action'=>'cart_list'),array('class'=>'btn btn-primary'));
                             ?>
                         </td>
                     </tr>

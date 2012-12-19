@@ -234,6 +234,7 @@ class ProductsController extends AppController {
 				endif;
 				//////////////////////////// DELETE SELECTED IMAGES ////////////////////////////
 				if (isset($rqData['Image'])){
+					pr($rqData['Image']['id']);
                     $this->Image->deleteAll(array('Image.id'=>$rqData['Image']['id']));
                 }
 				$this->Session->setFlash(__('The product has been updated'));

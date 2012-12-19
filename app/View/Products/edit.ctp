@@ -62,7 +62,7 @@ $data = $this->request->data;
                     </td>
                     <td class="actions">
                         <?php 
-                        echo $this->Form->input('Image.id',array('type'=>'checkbox','value'=>$image_id,'label'=>false,'hiddenField'=>false));
+                        echo $this->Form->input('Image.id.',array('type'=>'checkbox','value'=>$image_id,'label'=>false,'hiddenField'=>false));
                         ?>
                     </td>
                 </tr>
